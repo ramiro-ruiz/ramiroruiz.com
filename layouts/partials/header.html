@@ -8,7 +8,7 @@
     {{ if .IsHome }}{{ partial "meta-home.html" . }}{{ else if .IsPage }}{{ partial "meta-page.html" . }}{{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}main.css" />{{ if eq .Params.section "post"}}
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}/main.css" />{{ if eq .Params.section "post"}}
     <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">{{end}}{{ if .Params.post_bg }}
     <style>@media only screen and (min-width: 580px) { html{background-image: url({{ .Site.BaseURL }}i/blog/{{ .Params.post_bg }}); background-repeat: no-repeat; background-position: center; background-size: cover; background-attachment: fixed;}}</style>{{end}}
   </head>

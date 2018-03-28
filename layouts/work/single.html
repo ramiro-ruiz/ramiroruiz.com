@@ -2,7 +2,7 @@
 <main>
   <article class="case">
     <header>
-      <img src="{{ .Site.BaseURL }}i/work/{{ with .Params.post_image }}{{ . }}{{ end }}" alt="{{ .Title }}">
+      <img src="{{ .Site.BaseURL }}/i/work/{{ with .Params.post_image }}{{ . }}{{ end }}" alt="{{ .Title }}">
       <h1>{{ .Title }}</h1>
     </header>
     <section class="intro-content">
@@ -29,11 +29,11 @@
         <ul>
           {{ if in .Params.tags "featured_project" }}
           {{ range first 2 (where .Site.Taxonomies.tags.project.Pages "Type" "work" ) }}
-          <li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>
+          <li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}/i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>
           {{end}}{{end}}
           {{ if in .Params.tags "project" }}
-          {{ with .PrevInSection }}<li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>{{ end }}
-          {{ with .NextInSection }}<li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>{{ end }}
+          {{ with .PrevInSection }}<li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}/i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>{{ end }}
+          {{ with .NextInSection }}<li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}/i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>{{ end }}
           {{end}}
         </ul>
       </nav>
