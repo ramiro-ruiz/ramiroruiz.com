@@ -1,0 +1,41 @@
+baseurl = "http://ramiroruiz.com"
+title = "Ramiro Ruiz, designer"
+theme = "Ramiro-V.1"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+disableFastRender = true
+
+[related]
+threshold = 80
+includeNewer = true
+toLower = false
+[[related.indices]]
+name  = "tags"
+weight = 100
+[[related.indices]]
+name  = "categories"
+weight = 140
+
+[params]
+  description = "Personal homepage of Ramiro Ruiz, designer."
+  myintro = '<h1>Ramiro Ruiz <span class="job">is a designer</span> <span class="location">from Monterrey, N.L. Mexico</span></h1>
+              <p>I work with startups and small businesses, helping them create remarkable experiences. After ten years working and learning from different design fields. I’m now focused on Digital Products and Branding projects.</p>
+              <p>As a non-stop learner that loves challenges, Martial Arts is my other passion. I’ve been training and competing for fifteen years.</p>'
+  goals ='ok'
+[languages]
+[languages.en]
+languageName = "English"
+weight = 1
+title = "Ramiro Ruiz, designer"
+
+[languages.es]
+languageName = "Español"
+weight = 2
+title = "Ramiro Ruiz, diseñador"
+description = "Página personal de Ramiro Ruiz, diseñador."
+about_menu = "Acerca"
+work_menu = "Trabajo"
+myintro = '<h1>Ramiro Ruiz <span class="job">es un diseñador</span> <span class="location">de Monterrey, N.L. Mexico</span></h1>
+            <p>I work as a designer in my studio "mirdum", which I started with the conviction of creating innovative concepts to fight problems of branding, communication and marketing. I am specialized in branding &amp; UX/UI design.</p>
+            <p>I have had the opportunity to work with clients such as the Universidad Autonoma de Nuevo Leon.</p>'

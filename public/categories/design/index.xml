@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design on Ramiro Ruiz, designer</title>
+    <link>http://ramiroruiz.com/categories/design/</link>
+    <description>Recent content in Design on Ramiro Ruiz, designer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Mar 2018 10:28:39 -0600</lastBuildDate>
+    
+	<atom:link href="http://ramiroruiz.com/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Benefit of Constraints</title>
+      <link>http://ramiroruiz.com/blog/the-benefit-of-constraints/</link>
+      <pubDate>Mon, 26 Mar 2018 10:28:39 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/blog/the-benefit-of-constraints/</guid>
+      <description>When I was starting as a designer I regularly complain about restriction, feeling that I needed complete freedom to release my creativity.
+I was young and didn’t fear the blank canvas, I would immediately start throwing and moving stuff around but all my results didn’t had any real authenticity and didn’t solve the problem effectively, just trendy designs all over the place, they represent what style I was inspired by in that moment.</description>
+    </item>
+    
+    <item>
+      <title>Best resource to learn UI / UX</title>
+      <link>http://ramiroruiz.com/blog/best-resource-to-learn-ui-ux/</link>
+      <pubDate>Sat, 24 Mar 2018 09:18:15 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/blog/best-resource-to-learn-ui-ux/</guid>
+      <description>The best resource is understanding English.
+Design is a discipline in constant evolution, the foundations and fundamentals will always be important but the implementation, channels, trends, and people change. So you have to be in constant movement and learning.
+When you add that the design is aimed at the web or digital products, the speed of how things change increases exponentially. The source of most changes comes from the United States, thanks to its large market, its startups and global popularity, which is why the importance of English.</description>
+    </item>
+    
+  </channel>
+</rss>

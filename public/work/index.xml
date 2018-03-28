@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Works on Ramiro Ruiz, designer</title>
+    <link>http://ramiroruiz.com/work/</link>
+    <description>Recent content in Works on Ramiro Ruiz, designer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Dec 2017 02:08:37 -0600</lastBuildDate>
+    
+	<atom:link href="http://ramiroruiz.com/work/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chromite Comercial</title>
+      <link>http://ramiroruiz.com/work/chromite-comercial/</link>
+      <pubDate>Sat, 30 Dec 2017 02:08:37 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/work/chromite-comercial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recicladora Industrial Mty</title>
+      <link>http://ramiroruiz.com/work/recicladora-industrial-mty/</link>
+      <pubDate>Sat, 30 Dec 2017 02:27:42 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/work/recicladora-industrial-mty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extra Servicios</title>
+      <link>http://ramiroruiz.com/work/extra-servicios/</link>
+      <pubDate>Sat, 30 Dec 2017 02:30:38 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/work/extra-servicios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Games IHG</title>
+      <link>http://ramiroruiz.com/work/games-ihg/</link>
+      <pubDate>Sun, 31 Dec 2017 20:18:21 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/work/games-ihg/</guid>
+      <description>I was contacted by the design agency V09 to help them create a new digital solution for their client. I also been helping IHG for different design projects for the last 5 years. I know them very well, I’ve been in their offices many times and that familiarity from both sides helped to have a smooth process.
+V09 had some ideas but they were not sure if they were possible, they wanted a personalized game but the budget didn’t allow them to consider developing a native app/game.</description>
+    </item>
+    
+  </channel>
+</rss>

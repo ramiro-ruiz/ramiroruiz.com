@@ -1,0 +1,55 @@
+- id: work
+  translation: "Work"
+
+- id: about
+  translation: "About"
+
+- id: hash
+  translation: "#"
+
+- id: share
+  translation: "Share"
+
+- id: prev
+  translation: "Prev"
+
+- id: next
+  translation: "Next"
+
+- id: client
+  translation: "Client"
+
+- id: problem
+  translation: "Problem"
+
+- id: challenge
+  translation: "The Challenge"
+
+- id: role
+  translation: "My Role"
+
+- id: goals
+  translation: "Goals"
+
+- id: recent
+  translation: "Recent posts"
+
+- id: otherprojects
+  translation: "Other Projects"
+
+- id: seeproject
+  translation: "See project"
+
+- id: fullpost
+  translation: "Read full post"
+
+- id: moreposts
+  translation: "More posts"
+
+- id: readingTime
+  translation:
+    one: "One minute read"
+    other: "{{ .Count }} minutes read"
+
+- id: photoby
+  translation: "Background photo by"

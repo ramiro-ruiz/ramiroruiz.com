@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Ramiro Ruiz, designer</title>
+    <link>http://ramiroruiz.com/tags/project/</link>
+    <description>Recent content in Project on Ramiro Ruiz, designer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Dec 2017 02:08:37 -0600</lastBuildDate>
+    
+	<atom:link href="http://ramiroruiz.com/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chromite Comercial</title>
+      <link>http://ramiroruiz.com/work/chromite-comercial/</link>
+      <pubDate>Sat, 30 Dec 2017 02:08:37 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/work/chromite-comercial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recicladora Industrial Mty</title>
+      <link>http://ramiroruiz.com/work/recicladora-industrial-mty/</link>
+      <pubDate>Sat, 30 Dec 2017 02:27:42 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/work/recicladora-industrial-mty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Extra Servicios</title>
+      <link>http://ramiroruiz.com/work/extra-servicios/</link>
+      <pubDate>Sat, 30 Dec 2017 02:30:38 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/work/extra-servicios/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

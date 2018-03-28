@@ -1,0 +1,43 @@
+{{ partial "header.html" . }}
+<main>
+  <article class="case">
+    <header>
+      <img src="{{ .Site.BaseURL }}i/work/{{ with .Params.post_image }}{{ . }}{{ end }}" alt="{{ .Title }}">
+      <h1>{{ .Title }}</h1>
+    </header>
+    <section class="intro-content">
+      <p class="client"><strong>{{ i18n "client" }}</strong> {{ .Params.client }}</p>
+      <p class="problem"><strong>{{ i18n "problem" }}</strong> {{ .Params.problem }}</p>
+      <p class="intro">{{ .Params.intro }}</p>
+    </section>
+    <section class="content">
+      <p class="challange"><strong>{{ i18n "challenge" }}</strong> {{ .Params.challenge }}</p>
+      <p class="role"><strong>{{ i18n "role" }}</strong> {{ .Params.role }}</p>
+      <section class="goals">
+        <strong>{{ i18n "goals" }}</strong>
+        {{with .Params.goals}}<ul>
+              {{ . | safeHTML }}
+          </ul>{{end}}
+      </section>
+      <section class="content-text">
+        {{ .Content }}
+      </section>
+    </section>
+    <footer>
+      <h3>{{ i18n "otherprojects" }}</h3>
+      <nav class="pagination">
+        <ul>
+          {{ if in .Params.tags "featured_project" }}
+          {{ range first 2 (where .Site.Taxonomies.tags.project.Pages "Type" "work" ) }}
+          <li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>
+          {{end}}{{end}}
+          {{ if in .Params.tags "project" }}
+          {{ with .PrevInSection }}<li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>{{ end }}
+          {{ with .NextInSection }}<li style="background: {{ .Params.post_color }} url({{ .Site.BaseURL }}i/work/{{ .Params.post_image }}) center / cover no-repeat;"><a href="{{ .Permalink }}"><h3>{{ .Title }}</h3><p>{{ i18n "seeproject" }}</p> <p class="tags">{{ .Params.type_work }}</p></a></li>{{ end }}
+          {{end}}
+        </ul>
+      </nav>
+    </footer>
+  </article>
+</main>
+{{ partial "single-footer.html" . }}

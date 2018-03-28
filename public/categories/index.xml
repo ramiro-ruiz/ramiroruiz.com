@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Ramiro Ruiz, designer</title>
+    <link>http://ramiroruiz.com/categories/</link>
+    <description>Recent content in Categories on Ramiro Ruiz, designer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://ramiroruiz.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Design</title>
+      <link>http://ramiroruiz.com/categories/design/</link>
+      <pubDate>Mon, 26 Mar 2018 10:28:39 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/categories/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>General</title>
+      <link>http://ramiroruiz.com/categories/general/</link>
+      <pubDate>Fri, 12 Jan 2018 17:21:56 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/categories/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal</title>
+      <link>http://ramiroruiz.com/categories/personal/</link>
+      <pubDate>Mon, 26 Mar 2018 10:43:29 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/categories/personal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

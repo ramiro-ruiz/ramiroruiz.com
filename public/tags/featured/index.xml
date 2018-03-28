@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Featured on Ramiro Ruiz, designer</title>
+    <link>http://ramiroruiz.com/tags/featured/</link>
+    <description>Recent content in Featured on Ramiro Ruiz, designer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Dec 2017 17:21:56 -0600</lastBuildDate>
+    
+	<atom:link href="http://ramiroruiz.com/tags/featured/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Featured Post</title>
+      <link>http://ramiroruiz.com/blog/my-featured-post/</link>
+      <pubDate>Wed, 27 Dec 2017 17:21:56 -0600</pubDate>
+      
+      <guid>http://ramiroruiz.com/blog/my-featured-post/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

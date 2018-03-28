@@ -1,0 +1,11 @@
+{{$siteName := "davidj3.com" }}
+<div class="social-media-share-menu">
+    <ul class="share-menu">
+      <li><a class="facebook share" href="https://www.facebook.com/sharer/sharer.php?u={{.Permalink}}"><i class="icon-facebook"></i></a></li>
+        <li><a href="https://twitter.com/home?status={{.Permalink}}" class="twitter share"><i class="icon-twitter"></i></a></li>
+        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{.Permalink}}&title={{.Title}}&summary={{.Description}}" class="linkedin share"><i class="icon-linkedin"></i></a></li>
+        <li><a href="https://plus.google.com/share?url={{.Permalink}}" class="googleplus share"><i class="icon-googleplus"></i></a></li>
+        <li><a href="mailto:?subject=Read %22{{.Title}}%22 on {{$siteName}}&body=Check out %22{{.Title}}%22 on {{$siteName}}%0D%0DDescription:%0D%0D%22{{ .Description }}%22%0D%0D{{.Permalink}}" class="email share"><i class="icon-email"></i></a></li>
+    </ul>
+    <a id="share-button" href="#"><i class="icon-share"></i></a>
+</div>

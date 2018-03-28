@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+<main>
+  <article class="post">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <section class="content archives">
+      {{ range (.Site.RegularPages.GroupByDate "2006") }}
+                  <h2>{{ .Key }}</h2>
+
+                  <ul class="archive-list">
+                      {{ range (where .Pages "Type" "blog") }}
+                          <li style="background-image: url({{ .Site.BaseURL }}i/{{ .Params.post_image }}); background-color: {{ .Params.post_color }};">
+                              <a href="{{ .RelPermalink }}">
+                                <h3>{{ .Title }}</h3>
+                                <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }}{{ else }}{{.Date.Format "Jan 2"}}{{ end }}</time>
+                              </a>
+                          </li>
+                      {{ end }}
+                  </ul>
+              {{ end }}
+
+    </section>
+  </article>
+</main>
+{{ partial "archive-footer.html" . }}
