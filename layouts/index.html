@@ -36,7 +36,7 @@
           <article class="featured">
             <h1 class="hidden">Blog</h1>
             {{ range first 1 (where .Data.Pages "Type" "blog") }}<section class="content">
-              <h2 style="background-image: url({{ .Site.BaseURL }}/i/blog/{{ .Params.post_image }}); background-color: {{ .Params.post_color }};"><a href="{{.Permalink}}">{{.Title}}</a></h2>
+              <h2 style="background-image: url({{ .Site.BaseURL }}/i/blog/{{ .Params.post_image }});"><a href="{{.Permalink}}">{{.Title}}</a></h2>
               {{ with .Params.excerpt }}<p class="excerpt">{{ . }}</p>{{ end }}
               <p class="meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> | <span class="readtime">{{ i18n "readingTime" .ReadingTime }}</span> | {{ .Params.categories }}</p>
               <p class="open"><a href="{{.Permalink}}">{{ i18n "fullpost" }}</a></p>

@@ -659,8 +659,8 @@ a {
                 color: #fff;
                 text-decoration: none;
                 line-height: 1;
-                padding: 5rem 1.5rem;
-                background-color: rgba(0, 0, 0, 0.3);
+                padding: 8rem 1.5rem;
+                background-color: rgba(0, 0, 0, 0.6);
               }
                 #blog h2 a::after{
                   content: '';
@@ -703,6 +703,7 @@ a {
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
+                min-height: 8rem;
               }
               .posts li:nth-child(1){
                 grid-area: p1;
@@ -820,7 +821,7 @@ a {
                 .single .content-text{border-top: 4px double #999; padding-top: 2rem; margin: 2rem 1rem;}
                 .single .content-text p{margin: 1.5rem 0;}
             .single article footer{background-color: #fff; padding: 1rem 0 0; margin: 0; text-align: center; display: block; position: static; height: auto; border-top: none;}
-            .single article footer > h3, .recent h4{font-family:'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif; font-weight: 900; font-size: 2rem; color: #414141; position: relative;}
+            .single article footer > h3, .recent h4{font-family:'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif; font-weight: 900; font-size: 1.5rem; color: #414141; position: relative;}
             .single article footer > h3::before,
             .single article footer > h3::after,
             .recent h4::before, .recent h4::after {
@@ -830,7 +831,7 @@ a {
                 height: .1em;
                 position: relative;
                 vertical-align: middle;
-                width: 10%;
+                width: 2%;
             }
             .single article footer > h3::before {
                 right: 0.5em;
@@ -991,7 +992,7 @@ a {
                     .recent h4::before, .recent h4::after {
                         border-top: 1px solid #191F26;
                         margin: 0 .5rem;
-                        width: 10%;
+                        width: 2%;
                     }
                     .recent article{ width: 100%; margin: 1rem auto; text-align: left;}
                     .recent article a:hover h5, .recent article a:hover p{color:#ccc;}
@@ -1004,7 +1005,7 @@ a {
             .archives h2:first-child{margin-top: 0;}
             .archives h2{margin: 2.5rem 0 1.5rem;}
             .archive-list li{background-position: center; background-size: cover; margin: .5rem 0;}
-              .archive-list a{min-height: 10em; display: flex; flex-direction: row; padding: .5rem 1rem; background-color: rgba(0, 0, 0, .3);}
+              .archive-list a{min-height: 10em; display: flex; flex-direction: column; padding: .5rem 1rem; background-color: rgba(0, 0, 0, .3);}
                 .archive-list h3{margin: 0; color: rgba(255,255,255, .8);}
                 .archive-list time{margin: auto -1rem -.5rem auto; padding: .5rem 1rem; color: rgba(0,0,0, .8); background-color: rgba(255,255,255, .8); font-family: 'Titillium Web', sans-serif; font-weight: 700;}
               .archive-list a:hover{background-color: 0;}
@@ -1039,22 +1040,6 @@ a {
     background-image: radial-gradient(#8ABFC5, #9BA8B6, #AB92A7);
     animation: none;
   }
-  .post-single:before {
-  content: "";
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -10;
-  background-repeat: no-repeat;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
   .single{animation: none;}
   body{
     position: relative;
@@ -1109,7 +1094,7 @@ a {
     .projects{flex-direction: row; margin: 0 .5rem; flex-wrap: wrap;}
       #work .projects li{flex-basis: 100%; margin: .3rem .5rem; background-size: contain;}
 
-      #blog aside{padding-bottom: 7rem;}
+      #blog aside{padding-bottom: 4rem;}
     .posts{margin-top: 1rem;}
       .posts time{justify-self: right;padding: 0 .6rem 0 1rem;}
 
@@ -1185,19 +1170,19 @@ a {
         .pagination a strong{ margin: .5rem 1rem; text-transform: uppercase; color: #999;}
           .pagination a:hover strong{ opacity: .7;}
         .post-meta{text-align: left; padding: 2rem 1rem; border-bottom: 1.5px solid darkgray; font-weight: 700; color: #666; display: flex;}
-        .post-meta p{display: inline-block; font-size:  .9rem;}
-        .post-meta .share{text-align: right; margin-left: auto; position: relative; height: auto;}
+        .post-meta p{display: inline-block; font-size:  .9rem; flex-basis: 70%;}
+        .post-meta .share{text-align: right; margin-left: auto; position: relative; height: auto; flex-basis: 35%;}
           .share a{text-decoration: none; text-transform: uppercase; display: flex;align-items: center; color:#444; color: rgba(255, 255, 255, 0);}
             .share a svg{margin: 0 .5rem;}
-              .share-menu{display: block; align-items: center; opacity: 1; margin-right: -.5rem;}
+              .share-menu{display: block; align-items: center; opacity: 1; margin-right: -.5rem; margin-left: 0;}
               .share-menu li {display: inline-block; margin: 0;}
                 .share-menu li a{display: flex; align-items: center;}
                   .share-menu li a.twitter:hover path{fill:#00aced;}
                   .share-menu li a.facebook:hover path{fill:#3a589e;}
                   .share-menu li a.linkedin:hover path{fill:#0d77b7;}
-                .share p{display: flex; color: rgba(0,0,0,0);}
+                .share p{display: flex; color: rgba(0,0,0,0); font-size: .2rem; flex-basis: 15%;}
           .recent{display: flex;flex-wrap: wrap;padding: 0 1rem 2.5rem;background-color: #292F36;margin: 0;}
-            .recent h4{width: 100%; color: #8E9399; margin: 2rem 0 1rem;font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif;font-weight: 900;font-size: 2rem; text-align: center;}
+            .recent h4{width: 100%; color: #8E9399; margin: 2rem 0 1rem;font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif;font-weight: 900;font-size: 1.8rem; text-align: center;}
             .recent h4::before, .recent h4::after {
                 content: '';
                 display: inline-block;
@@ -1207,7 +1192,7 @@ a {
                 border-top: 1px solid #191F26;
                 margin: 0 .5rem;
                 width: 20%;
-            } .es .recent h4::before, .es .recent h4::after{width: 18%;}
+            } .es .recent h4::before, .es .recent h4::after{width: 14%;}
             .recent article{ width: 30%; margin: 0 auto; text-align: left;}
             .recent article a:hover h5, .recent article a:hover p{color:#ccc;}
               .recent time{text-transform: uppercase; font-size: .6rem; color: #4D5560; font-family:'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif;}
@@ -1697,7 +1682,7 @@ html{
               line-height: 1;
               height: 13.2rem;
               padding: 2.1rem 1.5rem;
-              background-color: rgba(0, 0, 0, 0.3);
+              background-color: rgba(0, 0, 0, 0.6);
             }
               #blog h2 a::after{
                 content: '';
@@ -2000,7 +1985,7 @@ html{
                       border-top: 1px solid #191F26;
                       margin: 0 .5rem;
                       width: 35%;
-                  } .es .recent h4::before, .es .recent h4::after{width: 30%;}
+                  } .es .recent h4::before, .es .recent h4::after{width: 20%;}
                   .recent article{ width: 30%; margin: 0 auto; text-align: left;}
                   .recent article a:hover h5, .recent article a:hover p{color:#ccc;}
                     .recent time{text-transform: uppercase; font-size: .6rem; color: #4D5560; font-family:'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif;}

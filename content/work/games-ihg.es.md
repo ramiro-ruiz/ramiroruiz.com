@@ -3,7 +3,7 @@ title: "Juegos IHG"
 date: 2017-12-31T20:18:21-06:00
 draft: false
 section: "project"
-excerpt: "En conjunto con V09, se creó una plataforma web flexible y entretenida como nueva solución digital, dirigida para agradar a los huéspedes más jóvenes pero abierta para todos. Con juegos interactivos y tabla de posiciones."
+excerpt: "En conjunto con V09, se creó una plataforma web flexible y entretenida como nueva solución digital, dirigida para agradar a los huéspedes más jóvenes pero abierta para todos. Con juegos interactivos y rankings."
 tags: [featured_project]
 post_image: "IHG-games.jpg"
 type_work: "UX, Desarrollo, Móvil"
