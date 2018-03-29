@@ -1058,7 +1058,6 @@ a {
   .single{animation: none;}
   body{
     position: relative;
-    margin-bottom: 6rem;
     overflow: hidden;
   }
   html::after, html::before{
