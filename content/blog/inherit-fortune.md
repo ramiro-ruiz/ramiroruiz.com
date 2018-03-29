@@ -1,6 +1,6 @@
 ---
 title: "Inherit fortune"
-date: 2018-03-26T10:33:33-06:00
+date: 2018-02-12T10:33:33-06:00
 draft: false
 section: "post"
 slug: ""

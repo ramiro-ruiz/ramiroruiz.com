@@ -1,6 +1,6 @@
 ---
 title: "Best resource to learn UI / UX"
-date: 2018-03-24T09:18:15-06:00
+date: 2018-02-26T09:18:15-06:00
 draft: false
 section: "post"
 slug: "best-resource-to-learn-UI-UX"

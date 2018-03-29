@@ -1,6 +1,6 @@
 ---
 title: "The Benefit of Constraints"
-date: 2018-03-26T10:28:39-06:00
+date: 2018-03-09T10:28:39-06:00
 draft: false
 section: "post"
 slug: ""

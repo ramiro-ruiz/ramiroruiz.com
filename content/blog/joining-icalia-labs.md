@@ -1,6 +1,6 @@
 ---
 title: "Joining Icalia Labs"
-date: 2018-03-26T10:43:29-06:00
+date: 2018-03-16T10:43:29-06:00
 draft: false
 section: "post"
 slug: ""

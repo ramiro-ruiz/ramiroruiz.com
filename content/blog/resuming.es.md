@@ -1,6 +1,6 @@
 ---
 title: "Reanudando"
-date: 2018-03-24T08:20:23-06:00
+date: 2017-12-27T08:20:23-06:00
 draft: false
 section: "post"
 slug: "reanudando"
