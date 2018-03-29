@@ -511,6 +511,9 @@ a {
             margin: 0 -1.5rem;
             display: block;
           }
+          #work .content > a img{
+            height: 100%;
+          }
           #work h2{
             margin: 1rem 0 0;
           }
@@ -626,8 +629,8 @@ a {
                     font-size: .8rem;
                     width: auto;
                     border: none;
-                    color: #FD6C6E;
-                    background-color: #414141;
+                    color: #c0c0c0;
+                    background-color: rgba(74, 70, 74, 1);
                     transition: all 0.5s ease;
                     opacity: 1;
                   }
@@ -1020,7 +1023,7 @@ a {
             .projects h3{
               backdrop-filter: blur(2px);
               -webkit-backdrop-filter: blur(2px);
-              background: rgba(255, 107, 107, .8);
+              background: rgba(255, 255, 255, .7);
             }
           }
 }/* Ends mobile styles */
@@ -1104,8 +1107,8 @@ a {
       .es .location{font-size: 5.2vw;}
 
     #work .content{padding-bottom: 1.5rem;}
-    .projects{flex-direction: row; margin: 0 .5rem;}
-      #work .projects li{width: 33.3%; margin: .3rem .5rem; background-size: contain;}
+    .projects{flex-direction: row; margin: 0 .5rem; flex-wrap: wrap;}
+      #work .projects li{flex-basis: 100%; margin: .3rem .5rem; background-size: contain;}
 
       #blog aside{padding-bottom: 7rem;}
     .posts{margin-top: 1rem;}
