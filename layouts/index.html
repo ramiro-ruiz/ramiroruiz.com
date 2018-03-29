@@ -127,5 +127,10 @@
 			}
 	  });
   </script>{{ end }}
+  <script>
+  $(window).resize(function(){
+    mySwiper.reInit() // or mySwiper.resizeFix()
+  });
+  </script>
   </body>
 </html>
