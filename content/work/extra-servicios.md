@@ -12,7 +12,7 @@ type_work: "Branding, UI/UX"
 weight: "4"
 
 client: "Extra Servicios is a new company servicing hotels and enterprises covering professional cleaning and private security."
-problem: "Struggling with getting new clients to trust them without any kind of branding or website, so they want to present themselves in a way that can help them look as a serious and professional company. "
+problem: "Struggling with getting new clients to trust them without any kind of branding or website, they want to present themselves in a way that can help them look as a serious and professional company. "
 intro: "As they started with small group of clients and their good work was enough, now they’re trying to grow but they’re having troubles closing new deals. "
 challenge: "Create and give Extra Servicios a professional look and maintaining a balance representing their two very different services areas, cleaning and private security."
 role: "I was in charge of the whole project, making the new branding and website."
