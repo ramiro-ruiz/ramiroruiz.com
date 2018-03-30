@@ -625,10 +625,12 @@ a {
                     text-align: center;
                     margin: auto;
                     padding: .2rem;
-                    border: 1px solid #fff;
+                    border: 2px solid #fff;
+                    background-color: rgba(0,0,0,.2);
                     text-transform: uppercase;
                     width: 50%;
                     font-size: .8rem;
+                    letter-spacing: 1px;
                     opacity: 0;
                   }
                   .projects .tags{
@@ -1587,7 +1589,6 @@ html{
           opacity: .8;
           padding: .5rem;
           font-size: 1.05rem;
-          font-weight: 400;
           color: #fff;
           opacity: 0;
           transition: opacity .5s;
@@ -1637,14 +1638,7 @@ html{
               opacity: 1;
             }
               .projects p{
-                grid-area: w-see;
-                text-align: center;
-                margin: auto;
-                padding: .2rem;
-                border: 1px solid #fff;
-                text-transform: uppercase;
-                width: 50%;
-                font-size: .8rem;
+                background-color: rgba(0,0,0,.2);
               }
               .projects .tags{
                 grid-area: w-tags;
