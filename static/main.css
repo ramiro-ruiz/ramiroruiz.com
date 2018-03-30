@@ -604,6 +604,9 @@ a {
                   background-color: rgba(255, 107, 107, .9);
                   border: .5rem solid rgba(255, 255, 255, 0.9);
                 }
+                .projects li:hover a{
+                  border-bottom: none;
+                }
                 .projects li:hover h3{
                   padding: .5rem;
                 }
@@ -1006,10 +1009,9 @@ a {
                         width: 2%;
                     }
                     .recent article{ width: 100%; margin: 1rem auto; text-align: left;}
-                    .recent article a:hover h5, .recent article a:hover p{color:#ccc;}
                       .recent time{text-transform: uppercase; font-size: .6rem; color: #4D5560; font-family:'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif;}
                       .recent article h5{margin: 0 0 .5rem; font-weight: 900; font-size: 1rem; line-height: 1.2; text-transform: uppercase; color: #8E9399;}
-                      .recent article p{font-size: .9rem;line-height: 1.4;margin: 0; color: #6A717A;}
+                      .recent article p{font-size: .9rem;line-height: 1.4;margin: 0; color: #888e96;}
                     .post-single footer{margin: -1rem 1rem .5rem; border: none;}
 
             /*-------Archive--------*/
@@ -1630,8 +1632,8 @@ html{
               border: .5rem solid rgba(255, 255, 255, 0.9);
               opacity: 1;
             }
-            body:hover .posts li:hover a{
-              padding: 0 0 0 .3rem;
+            body:hover .projects li:hover a{
+              border-bottom: none;
             }
             .projects li:hover h3{
               padding: .5rem;
@@ -1642,7 +1644,7 @@ html{
               }
               .projects .tags{
                 grid-area: w-tags;
-                margin: auto 0 -.5rem;
+                margin: auto 0 0;
                 padding: 0;
                 font-size: .625rem;
                 width: auto;
@@ -1728,7 +1730,7 @@ html{
               }
               .posts li a{
                 border: .5rem solid rgba(255, 255, 255, 0);
-                padding: 0;
+                padding: 0 0 0 .3rem;
               }
                 .posts h3{
                   font-weight: 400;
@@ -1778,14 +1780,13 @@ html{
           }
           aside .past{
             background-color: #587A9D;
-            padding: 0.2rem .5rem .3rem;
+            padding: .1rem .2rem;
             margin: 0;
-            width: 40%;
+            width: 45%;
             position: relative;
             z-index: 90;
-            border: .5rem solid rgba(220,220,220,1);
-            border-top: none;
-            top: -0.5rem; left: -.5rem;
+            outline: .5rem solid rgba(255,255,255,.8);
+            top: 0rem; left: .5rem;
             text-transform: uppercase;
             text-decoration: none;
             font-size: .7rem;
@@ -1990,10 +1991,10 @@ html{
                       width: 35%;
                   } .es .recent h4::before, .es .recent h4::after{width: 20%;}
                   .recent article{ width: 30%; margin: 0 auto; text-align: left;}
-                  .recent article a:hover h5, .recent article a:hover p{color:#ccc;}
+                  .recent:hover article h5, .recent:hover article p{color:#ccc; transition: color .5s;}
                     .recent time{text-transform: uppercase; font-size: .6rem; color: #4D5560; font-family:'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif;}
                     .recent article h5{margin: 0 0 .5rem; font-weight: 900; font-size: 1rem; line-height: 1.2; text-transform: uppercase; color: #8E9399;}
-                    .recent article p{font-size: .9rem;line-height: 1.4;margin: 0; color: #6A717A;}
+                    .recent article p{font-size: .9rem;line-height: 1.4;margin: 0; color: #888e96;}
 
                     /*-------Archive--------*/
                     .archive-list{display: grid; grid-template-columns: 1fr 1fr; grid-gap: 1rem;}
