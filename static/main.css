@@ -229,7 +229,7 @@ a {
     display: block;
     overflow: auto;
     background-image: none;
-    background-color: #E1E1E1;
+    background-color: #f1f1f1;
   }
   body{
     padding-bottom: 1rem;
@@ -380,7 +380,7 @@ a {
           grid-template-columns: 1fr;
         }
         main{
-          background-color: #E1E1E1;
+          background-color: #f1f1f1;
           font-family: Lato, Helvetica, sans-serif;
           font-weight: 300;
         }
@@ -1206,7 +1206,7 @@ a {
             border: 0;
             padding: 0 1rem;
             align-items: center;
-            background-color: #E1E1E1;
+            background-color: #f1f1f1;
           }
           .single .social{position: static;display: flex; width: auto; list-style: none; margin:0; padding: 0;align-items: center;margin-right: 1rem;order: 2;}
             .single .social li{margin: 0 1rem;}
