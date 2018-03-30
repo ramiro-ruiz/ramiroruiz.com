@@ -173,7 +173,16 @@ th {
 blockquote {
   font-style: italic;
   opacity: .7;
+  margin: 2.5rem 2.5rem;
 }
+  .post-single .content blockquote p{
+    margin: 0;
+    padding: 0;
+  }
+  blockquote em{
+    font-size: .8rem;
+    font-weight: 700;
+  }
 
 cite {
   font-style: normal; }

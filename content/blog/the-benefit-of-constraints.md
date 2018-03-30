@@ -22,7 +22,8 @@ Having a lot of options is overwhelming most of the times, theres no obvious sta
 When you work for an established brand you have a to follow a lot of rules, their guidelines and voice. Is not only about using the same typefaces and colors, there’s much to consider and you end up with a small window to make something remarkable and once you work with that much restriction is incredible seeing how good the results are.
 
 > “Necessity is the mother of all invention”
-> — Victor Hugo
+
+> _— Victor Hugo_
 
 It not always easy, one time I was presenting the finished site to a client. They loved it, a week later they ask me to remove many features that added a lot to the site. The lawyers department saw it and feared for a sue by letting users create accounts. Even when I tried to explain them, the features had to go. It wasn’t the same experience without them but that’s way it is for big companies. The bigger they are the bigger the risks.
 
@@ -31,4 +32,5 @@ Constraints push you towards new concepts or methods that you wouldn’t have co
 Personally I sketch a lot when I’m brainstorming solutions in the beginning of a project. I use a pen, instead of a pencil. That forces me to keep going and redo something if I make a mistake, no way to erase or clean the sketch up and get more detailed. The reality is that sometimes we think the second or third sketch may be the one, but usually it never is. Is best to get out of the way the first 30, 50 or more solutions. And don’t worry, even after sketching that many options, that second sketch was really the one. You’ll remember it.
 
 > “Such power there is in clear-eyed self-restraint."
-> — James Russell
+
+> _— James Russell_

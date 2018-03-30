@@ -22,7 +22,8 @@ Tener muchas opciones es abrumador la mayoría de las veces, no hay un punto obv
 Cuando trabajas para una marca establecida, tienes que seguir muchas reglas, pautas y una voz. No se trata solo de utilizar los mismos tipos de fuentes y colores, hay mucho que considerar y terminas con una pequeña ventana para hacer algo excepcional y una vez que trabajas con esa gran restricción es increíble ver qué tan buenos son usualmente los resultados.
 
 > “La necesidad es la madre de toda invención”
-> — Victor Hugo
+
+> _— Victor Hugo_
 
 No siempre es fácil, una vez estaba presentando un proyecto web finalizado a un cliente. Les encantó, una semana después me pidieron que eliminara muchas características que agregaban mucho al sitio. El departamento de abogados lo vio y temió por una demanda al permitir varias acciones a los usuarios, una de ellas era crear una cuenta. Incluso cuando traté de explicarles, varias características tuvieron que irse. No fue la misma experiencia, pero así es para las grandes empresas. Entre más grandes mayores los riesgos.
 
@@ -31,4 +32,5 @@ Las restricciones te empujan hacia nuevos conceptos o métodos que de otro modo 
 Personalmente _sketcheo_ mucho cuando estoy teniendo una lluvia de ideas al comienzo de un proyecto. Para eso uso una pluma, en lugar de un lápiz. Eso me obliga a seguir y rehacer algo si me equivoco, no hay forma de borrar o limpiar el boceto y obtener más detalles. La realidad es que a veces creemos que el segundo o tercer boceto puede ser el indicado, pero por lo general nunca lo es. Lo mejor es sacar del camino las primeras 20, 40 o más soluciones. Y no te preocupes, incluso después de dibujar tantas opciones, si ese segundo boceto era realmente el elegido. Lo recordarás.
 
 > “Tal poder existe en el autocontrol de una clara vista.”
-> — James Russell
+
+> _— James Russell_
