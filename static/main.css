@@ -503,12 +503,11 @@ a {
             fill: #000;
           }
           .copy{
-            margin: 0 auto 0 0;
+            margin: .35rem auto 0 0;
             font-weight: 300;
             font-size: .7rem;
-            color: rgba(0,0,0,.6);
+            color: rgba(0,0,0,.8);
           }
-            .copy:hover{color: rgba(0,0,0,.9);}
 
           /* Work Panel - Mobile
           ========================================================================== */
@@ -1458,7 +1457,7 @@ html{
             opacity: 1;
           }
     .copy{
-      opacity: .3;
+      opacity: .35;
     }
     /* Content frames */
     main::before, main::after, .swiper-slide::before, .single main article::before, .swiper-slide:after, .single main article::after{
