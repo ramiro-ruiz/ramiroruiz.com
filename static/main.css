@@ -117,7 +117,11 @@ h1 span{
   display: block;
 }
 
-p{
+.content h2{
+  padding: 0;
+}
+
+p, .content li{
   color: rgba(41, 47, 54, .8);
 }
 
@@ -419,8 +423,8 @@ a {
           margin: .5rem 1rem;
           line-height: 1.625rem;
         }
-        .single article figure{margin: 0 -.5rem;}
-        .single article .no-full, .single article .no-full img{margin: 0 auto;}
+        .single article figure{margin: 4rem -.5rem;}
+        .single article .no-full, .single article .no-full img{margin: 8rem auto;}
         h2{
           padding: 0 1rem 0;
         }
@@ -1170,9 +1174,9 @@ a {
     .single small{margin: 0;}
     .single main{border-left: .5rem solid rgba(255,255,255,.8); border-right: .5rem solid rgba(255,255,255,.8); border-top: .5rem solid rgba(255,255,255,.8);}
     .single article.post{margin: 0;}
-    .single article figure{margin: 0 -1rem;}
+    .single article figure{margin: 8rem -1rem;}
     .project-single .content-text figure{margin: 8rem -1rem 8rem -29.9%; position: relative; z-index: 20;}
-    .project-single .content-text figure:last-child{margin-bottom: 0;}
+    .project-single .content-text figure:last-child, .post-single .content figure:last-child {margin-bottom: 0;}
     .single footer{margin: 0; display: block; background-color: #fff;}
     .post-single section.content{display: block; margin: 0 1rem; padding-bottom: 1rem;}
     .post-single .content p{font-size: 1.5rem; line-height: 1.4; margin: 1.5rem 0;}
@@ -1823,9 +1827,9 @@ html{
         .single body{overflow: auto; margin: 3rem auto 0; padding-bottom: 3rem; height: auto;}
         .single main, .single .content{height: auto;}
         .single article.post{margin: 0 1.5rem;}
-        .single article figure{margin: 0 -1rem;}
+        .single article figure{margin: 8rem -1rem;}
         .project-single .content-text figure{margin: 8rem .5rem 8rem -25.7%; position: relative; z-index: 20;}
-        .project-single .content-text figure:last-child{margin-bottom: 0;}
+        .project-single .content-text figure:last-child, .post-single .content figure:last-child{margin-bottom: 0;}
         .single p{font-size: 1.2rem; margin: .5rem 0;}
         .project-single article header{display: block; margin: 0;}
 
