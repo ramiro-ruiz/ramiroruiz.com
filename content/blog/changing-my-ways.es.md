@@ -4,7 +4,7 @@ date: 2018-05-06T21:06:14-04:00
 draft: false
 section: "post"
 slug: "cambiando-mis-formas"
-excerpt: "Nowadays I’ve been making things that I learned you should never do, the cleaner the markup the better. No extra classes when you know your way on selectors and semantically structures. Now is all about components and scalability, while it took me some time to adapt and shift my way of thinking."
+excerpt: "Hoy en día he estado haciendo cosas que había aprendido que nunca debes hacer, mientras más limpio el código, mejor. Nada de clases adicionales cuando conoces bien los selectores y estructuras semánticas. Ahora todo se basa en componentes y en la escalabilidad que me tomó tiempo adaptarme."
 tags: ["aprender", "web", "diseño" , "mejores prácticas"]
 categories: "desarrollo"
 post_color: ""
