@@ -11,7 +11,7 @@ post_color: "#D9AD53"
 post_image: "inherit.jpg"
 post_bg: "inherit-bg.jpg"
 photo_link: "https://unsplash.com/@andrewwelch3?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge"
-photo_name: "andrew welch"
+photo_name: "Andrew Welch"
 ---
 A couple of months ago my father stayed in the hospital around 3 weeks, as in most places in the world, healthcare is very expensive, so he has social insurance which gives you medical care but it comes with a price. Hospitals are packed, few places to sit, little information and I don’t even want to talk about the restrooms.
 
