@@ -2,38 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Ramiro Ruiz, designer</title>
-    <link>http://ramiroruiz.com/categories/</link>
+    <link>https://ramiroruiz.com/categories/</link>
     <description>Recent content in Categories on Ramiro Ruiz, designer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://ramiroruiz.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ramiroruiz.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Design</title>
-      <link>http://ramiroruiz.com/categories/design/</link>
-      <pubDate>Mon, 26 Mar 2018 10:28:39 -0600</pubDate>
+      <link>https://ramiroruiz.com/categories/design/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://ramiroruiz.com/categories/design/</guid>
+      <guid>https://ramiroruiz.com/categories/design/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>General</title>
-      <link>http://ramiroruiz.com/categories/general/</link>
-      <pubDate>Fri, 12 Jan 2018 17:21:56 -0600</pubDate>
+      <title>Development</title>
+      <link>https://ramiroruiz.com/categories/development/</link>
+      <pubDate>Sun, 06 May 2018 21:06:14 -0400</pubDate>
       
-      <guid>http://ramiroruiz.com/categories/general/</guid>
+      <guid>https://ramiroruiz.com/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fighting</title>
+      <link>https://ramiroruiz.com/categories/fighting/</link>
+      <pubDate>Fri, 29 Jun 2018 22:32:14 -0500</pubDate>
+      
+      <guid>https://ramiroruiz.com/categories/fighting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Personal</title>
-      <link>http://ramiroruiz.com/categories/personal/</link>
-      <pubDate>Mon, 26 Mar 2018 10:43:29 -0600</pubDate>
+      <link>https://ramiroruiz.com/categories/personal/</link>
+      <pubDate>Fri, 16 Mar 2018 10:43:29 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/categories/personal/</guid>
+      <guid>https://ramiroruiz.com/categories/personal/</guid>
       <description></description>
     </item>
     

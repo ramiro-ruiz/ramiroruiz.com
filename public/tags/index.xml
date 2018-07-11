@@ -2,201 +2,282 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Ramiro Ruiz, designer</title>
-    <link>http://ramiroruiz.com/tags/</link>
+    <link>https://ramiroruiz.com/tags/</link>
     <description>Recent content in Tags on Ramiro Ruiz, designer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Mar 2018 09:09:04 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jan 2018 09:09:04 -0600</lastBuildDate>
     
-	<atom:link href="http://ramiroruiz.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ramiroruiz.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Accidents</title>
-      <link>http://ramiroruiz.com/tags/accidents/</link>
-      <pubDate>Sat, 24 Mar 2018 09:09:04 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/accidents/</link>
+      <pubDate>Tue, 09 Jan 2018 09:09:04 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/accidents/</guid>
+      <guid>https://ramiroruiz.com/tags/accidents/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Best Practices</title>
+      <link>https://ramiroruiz.com/tags/best-practices/</link>
+      <pubDate>Sun, 06 May 2018 21:06:14 -0400</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/best-practices/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comebacks</title>
+      <link>https://ramiroruiz.com/tags/comebacks/</link>
+      <pubDate>Fri, 29 Jun 2018 22:32:14 -0500</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/comebacks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Constraints</title>
-      <link>http://ramiroruiz.com/tags/constraints/</link>
-      <pubDate>Mon, 26 Mar 2018 10:28:39 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/constraints/</link>
+      <pubDate>Fri, 09 Mar 2018 10:28:39 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/constraints/</guid>
+      <guid>https://ramiroruiz.com/tags/constraints/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Creativity</title>
-      <link>http://ramiroruiz.com/tags/creativity/</link>
-      <pubDate>Mon, 26 Mar 2018 10:28:39 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/creativity/</link>
+      <pubDate>Fri, 09 Mar 2018 10:28:39 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/creativity/</guid>
+      <guid>https://ramiroruiz.com/tags/creativity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>https://ramiroruiz.com/tags/design/</link>
+      <pubDate>Sun, 06 May 2018 21:06:14 -0400</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Design Sprints</title>
-      <link>http://ramiroruiz.com/tags/design-sprints/</link>
-      <pubDate>Mon, 26 Mar 2018 10:43:29 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/design-sprints/</link>
+      <pubDate>Fri, 16 Mar 2018 10:43:29 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/design-sprints/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dos</title>
-      <link>http://ramiroruiz.com/tags/dos/</link>
-      <pubDate>Fri, 12 Jan 2018 17:21:56 -0600</pubDate>
-      
-      <guid>http://ramiroruiz.com/tags/dos/</guid>
+      <guid>https://ramiroruiz.com/tags/design-sprints/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Family</title>
-      <link>http://ramiroruiz.com/tags/family/</link>
-      <pubDate>Sat, 24 Mar 2018 09:09:04 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/family/</link>
+      <pubDate>Tue, 09 Jan 2018 09:09:04 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/family/</guid>
+      <guid>https://ramiroruiz.com/tags/family/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Featured_project</title>
-      <link>http://ramiroruiz.com/tags/featured_project/</link>
+      <link>https://ramiroruiz.com/tags/featured_project/</link>
       <pubDate>Sun, 31 Dec 2017 20:18:21 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/featured_project/</guid>
+      <guid>https://ramiroruiz.com/tags/featured_project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fortune</title>
-      <link>http://ramiroruiz.com/tags/fortune/</link>
-      <pubDate>Mon, 26 Mar 2018 10:33:33 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/fortune/</link>
+      <pubDate>Mon, 12 Feb 2018 10:33:33 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/fortune/</guid>
+      <guid>https://ramiroruiz.com/tags/fortune/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Grateful</title>
-      <link>http://ramiroruiz.com/tags/grateful/</link>
-      <pubDate>Mon, 26 Mar 2018 10:33:33 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/grateful/</link>
+      <pubDate>Mon, 12 Feb 2018 10:33:33 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/grateful/</guid>
+      <guid>https://ramiroruiz.com/tags/grateful/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Happiness</title>
-      <link>http://ramiroruiz.com/tags/happiness/</link>
-      <pubDate>Mon, 26 Mar 2018 10:33:33 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/happiness/</link>
+      <pubDate>Mon, 12 Feb 2018 10:33:33 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/happiness/</guid>
+      <guid>https://ramiroruiz.com/tags/happiness/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://ramiroruiz.com/tags/hugo/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Learning</title>
-      <link>http://ramiroruiz.com/tags/learning/</link>
-      <pubDate>Sat, 24 Mar 2018 09:18:15 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/learning/</link>
+      <pubDate>Sun, 06 May 2018 21:06:14 -0400</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/learning/</guid>
+      <guid>https://ramiroruiz.com/tags/learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lesson Learned</title>
-      <link>http://ramiroruiz.com/tags/lesson-learned/</link>
-      <pubDate>Sat, 24 Mar 2018 09:09:04 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/lesson-learned/</link>
+      <pubDate>Tue, 09 Jan 2018 09:09:04 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/lesson-learned/</guid>
+      <guid>https://ramiroruiz.com/tags/lesson-learned/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Martial Arts</title>
+      <link>https://ramiroruiz.com/tags/martial-arts/</link>
+      <pubDate>Fri, 29 Jun 2018 22:32:14 -0500</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/martial-arts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mma</title>
+      <link>https://ramiroruiz.com/tags/mma/</link>
+      <pubDate>Fri, 29 Jun 2018 22:32:14 -0500</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/mma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Netlify</title>
+      <link>https://ramiroruiz.com/tags/netlify/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/netlify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Passions</title>
+      <link>https://ramiroruiz.com/tags/passions/</link>
+      <pubDate>Fri, 29 Jun 2018 22:32:14 -0500</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/passions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal</title>
+      <link>https://ramiroruiz.com/tags/personal/</link>
+      <pubDate>Fri, 29 Jun 2018 22:32:14 -0500</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/personal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Procastination</title>
-      <link>http://ramiroruiz.com/tags/procastination/</link>
-      <pubDate>Sat, 24 Mar 2018 08:20:23 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/procastination/</link>
+      <pubDate>Wed, 27 Dec 2017 08:20:23 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/procastination/</guid>
+      <guid>https://ramiroruiz.com/tags/procastination/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project</title>
-      <link>http://ramiroruiz.com/tags/project/</link>
+      <link>https://ramiroruiz.com/tags/project/</link>
       <pubDate>Sat, 30 Dec 2017 02:08:37 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/project/</guid>
+      <guid>https://ramiroruiz.com/tags/project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resources</title>
-      <link>http://ramiroruiz.com/tags/resources/</link>
-      <pubDate>Sat, 24 Mar 2018 09:18:15 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/resources/</link>
+      <pubDate>Mon, 26 Feb 2018 09:18:15 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/resources/</guid>
+      <guid>https://ramiroruiz.com/tags/resources/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Starting</title>
-      <link>http://ramiroruiz.com/tags/starting/</link>
-      <pubDate>Sat, 24 Mar 2018 08:20:23 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/starting/</link>
+      <pubDate>Wed, 27 Dec 2017 08:20:23 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/starting/</guid>
+      <guid>https://ramiroruiz.com/tags/starting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static Site</title>
+      <link>https://ramiroruiz.com/tags/static-site/</link>
+      <pubDate>Mon, 02 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ramiroruiz.com/tags/static-site/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Team</title>
-      <link>http://ramiroruiz.com/tags/team/</link>
-      <pubDate>Mon, 26 Mar 2018 10:43:29 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/team/</link>
+      <pubDate>Fri, 16 Mar 2018 10:43:29 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/team/</guid>
+      <guid>https://ramiroruiz.com/tags/team/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ui / Ux</title>
-      <link>http://ramiroruiz.com/tags/ui-/-ux/</link>
-      <pubDate>Sat, 24 Mar 2018 09:18:15 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/ui-/-ux/</link>
+      <pubDate>Mon, 26 Feb 2018 09:18:15 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/ui-/-ux/</guid>
+      <guid>https://ramiroruiz.com/tags/ui-/-ux/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Uno</title>
-      <link>http://ramiroruiz.com/tags/uno/</link>
-      <pubDate>Fri, 12 Jan 2018 17:21:56 -0600</pubDate>
+      <title>Web</title>
+      <link>https://ramiroruiz.com/tags/web/</link>
+      <pubDate>Sun, 06 May 2018 21:06:14 -0400</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/uno/</guid>
+      <guid>https://ramiroruiz.com/tags/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Work</title>
-      <link>http://ramiroruiz.com/tags/work/</link>
-      <pubDate>Mon, 26 Mar 2018 10:43:29 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/work/</link>
+      <pubDate>Fri, 16 Mar 2018 10:43:29 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/work/</guid>
+      <guid>https://ramiroruiz.com/tags/work/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing</title>
-      <link>http://ramiroruiz.com/tags/writing/</link>
-      <pubDate>Sat, 24 Mar 2018 08:20:23 -0600</pubDate>
+      <link>https://ramiroruiz.com/tags/writing/</link>
+      <pubDate>Wed, 27 Dec 2017 08:20:23 -0600</pubDate>
       
-      <guid>http://ramiroruiz.com/tags/writing/</guid>
+      <guid>https://ramiroruiz.com/tags/writing/</guid>
       <description></description>
     </item>
     

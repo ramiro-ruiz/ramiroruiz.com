@@ -142,12 +142,23 @@
 		"rFN": 0,
 		"uCM": 0
 		},
-	"\/content\/blog\/changing-my-ways.html": {
+	"\/content\/blog\/changing-my-ways.es.md": {
 		"cB": 0,
-		"ft": 8192,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
 		"oA": 0,
-		"oAP": "\/content\/blog\/changing-my-ways.html",
-		"oF": 0
+		"oAP": "\/content\/blog\/changing-my-ways.es.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
 		},
 	"\/content\/blog\/changing-my-ways.md": {
 		"cB": 0,
@@ -184,13 +195,6 @@
 		"pME": 1,
 		"rFN": 0,
 		"uCM": 0
-		},
-	"\/content\/blog\/inherit-fortune.html": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/content\/blog\/inherit-fortune.html",
-		"oF": 0
 		},
 	"\/content\/blog\/inherit-fortune.md": {
 		"cB": 0,
