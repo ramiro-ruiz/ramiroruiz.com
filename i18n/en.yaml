@@ -7,6 +7,9 @@
 - id: hash
   translation: "#"
 
+- id: home-url
+  translation: "/"  
+
 - id: share
   translation: "Share"
 

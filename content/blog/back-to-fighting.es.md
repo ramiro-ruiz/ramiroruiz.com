@@ -23,13 +23,13 @@ A veces mi respuesta cambia dependiendo de la persona o la situación, hace 10 a
 
 Muchas personas aconsejan a elegir una cosa y quedarse con esa etiqueta, pero no puedo, sé que tarde o temprano voy a tener que hacerlo de alguna manera, ya que no veo muchos peleadores en sus cuarentas y estoy seguro de que será difícil, pero es por eso que estoy disfrutando de mi cuerpo tanto como puedo.
 
-La llamada para el combate llegó en un momento perfecto, estaba en Florida ayudando a mi amiga y peleadora del UFC Jessica Aguilar para su próximo compromiso. Así que estaba teniendo excelentes entrenamientos en American Top Team de 2 a 3 veces al día mientras trabajaba de forma remota. Si estás lo suficientemente organizado, si se puede tener un trabajo de tiempo completo. No digo que sea fácil, pero es factible.
+La llamada para el combate llegó en un momento perfecto, estaba en Florida ayudando a mi amiga y peleadora del UFC [Jessica Aguilar](https://en.wikipedia.org/wiki/Jessica_Aguilar) para su próximo compromiso. Así que estaba teniendo excelentes entrenamientos en American Top Team de 2 a 3 veces al día mientras trabajaba de forma remota. Si estás lo suficientemente organizado, si se puede tener un trabajo de tiempo completo. No digo que sea fácil, pero es factible.
 
-Después de aceptar que la pelea tuve otras 2 semanas ahí en American Top Team, volví a Monterrey por 2 semanas de entrenamiento y mi última semana a Houston con mi segunda familia en 4oz. Fight Club. Me sentía listo para regresar.
+Después de aceptar que la pelea tuve otras 2 semanas ahí en American Top Team, volví a Monterrey por 2 semanas de entrenamiento y mi última semana a Houston con mi segunda familia en [4oz. Fight Club](https://www.facebook.com/4ozFightClub/). Me sentía listo para regresar.
 
 No voy a mentir, me sentía mucho más nervioso de veces pasadas. Me preocupaba un poco ese “Ring Rust” del que tanto se habla. Mi condición también, ya que no pasó mucho tiempo desde que empecé a entrenar de nuevo después de tener el período de inactividad más largo de mi vida.
 
-Pero la pelea era para LFA (Legacy Fighting Alliance), la mejor organización de MMA que no se llame UFC o Bellator. Así que sabía que era una oportunidad increíble que tenía que aprovechar al máximo.
+Pero la pelea era para [LFA (Legacy Fighting Alliance)](https://lfafighting.com/), la mejor organización de MMA que no se llame UFC o Bellator. Así que sabía que era una oportunidad increíble que tenía que aprovechar al máximo.
 
 Una hora antes de que comenzara el evento, fui a sentir la jaula, me subí y visualicé la pelea. Ahí fue cuando todo volvió de nuevo, al caminar para tener una idea de las dimensiones, la textura de la lona en mis pies, el sonido que hace la reja cuando empujo mi espalda contra ella, las luces encima de mi.
 Simplemente se sintió bien, que pertenezco aquí.

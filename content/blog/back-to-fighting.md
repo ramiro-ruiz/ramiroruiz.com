@@ -23,13 +23,13 @@ Sometimes my response changes depending on the asker or the situation, when I wa
 
 Most people advise to choose one thing ride with that label but I just can’t, I know sooner than later I will have to in a way, as you don’t see many middle-aged fighters and I’m sure it will be hard but that’s why I’m trying to enjoy my body as much I can.
 
-The call arrived at a perfect moment, I was in Florida helping my friend and UFC fighter Jessica Aguilar for her upcoming fight. So I was having great workouts 2 to 3 times a day while working remotely. If you’re organized enough you can still have a full-time job. I’m not saying is easy but it is doable.
+The call arrived at a perfect moment, I was in Florida helping my friend and UFC fighter [Jessica Aguilar](https://en.wikipedia.org/wiki/Jessica_Aguilar) for her upcoming fight. So I was having great workouts 2 to 3 times a day while working remotely. If you’re organized enough you can still have a full-time job. I’m not saying is easy but it is doable.
 
-After I accept the fight had another 2 weeks there, went back to Monterrey for 2 weeks of training there and my last week to Houston with my second family 4oz. Fight Club. I felt ready to go again.
+After I accept the fight had another 2 weeks there, went back to Monterrey for 2 weeks of training there and my last week to Houston with my second family [4oz. Fight Club](https://www.facebook.com/4ozFightClub/). I felt ready to go again.
 
 I’m not gonna lie, I end up feeling way more nervous than I used to. I kinda get worried about that ring rust everyone talks about. My conditioning too as it wasn’t long since I started training again after my longest inactivity period.
 
-But the fight was for LFA (Legacy Fighting Alliance), the best MMA organization not named UFC or Bellator. So I knew it was an amazing opportunity that I had to make the most of.
+But the fight was for [LFA (Legacy Fighting Alliance)](https://lfafighting.com/), the best MMA organization not named UFC or Bellator. So I knew it was an amazing opportunity that I had to make the most of.
 
 An hour before the event started, I went to feel the cage, step in there and visualize the fight. That’s when everything came back, by walking around to get a sense of the dimensions, the texture of the mat in my feet, the sound the grid makes when I push my back against it, the lights on top of me.
 It just felted good, that I belong here.

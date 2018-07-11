@@ -5,7 +5,10 @@
   translation: "Acerca"
 
 - id: hash
-  translation: "es/#"
+  translation: "/es/#"
+
+- id: home-url
+  translation: "/es"
 
 - id: share
   translation: "Comparte"
