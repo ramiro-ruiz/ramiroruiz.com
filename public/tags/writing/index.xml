@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Ramiro Ruiz, designer</title>
+    <link>https://ramiroruiz.com/tags/writing/</link>
+    <description>Recent content in Writing on Ramiro Ruiz, designer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Dec 2017 08:20:23 -0600</lastBuildDate>
+    
+	<atom:link href="https://ramiroruiz.com/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resuming</title>
+      <link>https://ramiroruiz.com/blog/resuming/</link>
+      <pubDate>Wed, 27 Dec 2017 08:20:23 -0600</pubDate>
+      
+      <guid>https://ramiroruiz.com/blog/resuming/</guid>
+      <description>On my birthday 5 years and 6 months ago on September 9, 2012, I wrote this:
+ Hi there, well after so many years being part of the web passive community, today in my birthday I finally decided to make the change and start sharing the little I know and the many questions I ask myself constantly. Maybe I’m starting a bit late but I think I&amp;rsquo;ll take positive things from this instead of not doing it, besides I&amp;rsquo;m a little tired of being one more behind the monitor, of not having my own voice on the web and staying in my area of comfort in a relatively comfortable and stable job.</description>
+    </item>
+    
+  </channel>
+</rss>

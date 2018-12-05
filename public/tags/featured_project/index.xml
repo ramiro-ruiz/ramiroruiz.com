@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Featured_project on Ramiro Ruiz, designer</title>
+    <link>https://ramiroruiz.com/tags/featured_project/</link>
+    <description>Recent content in Featured_project on Ramiro Ruiz, designer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 Dec 2017 20:18:21 -0600</lastBuildDate>
+    
+	<atom:link href="https://ramiroruiz.com/tags/featured_project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Games IHG</title>
+      <link>https://ramiroruiz.com/work/games-ihg/</link>
+      <pubDate>Sun, 31 Dec 2017 20:18:21 -0600</pubDate>
+      
+      <guid>https://ramiroruiz.com/work/games-ihg/</guid>
+      <description>I was contacted by the design agency V09 to help them create a new digital solution for their client. I also been helping IHG for different design projects for the last 5 years. I know them very well, I’ve been in their offices many times and that familiarity from both sides helped to have a smooth process.
+V09 had some ideas but they were not sure if they were possible, they wanted a personalized game but the budget didn’t allow them to consider developing a native app/game.</description>
+    </item>
+    
+  </channel>
+</rss>

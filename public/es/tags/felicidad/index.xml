@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Felicidad on Ramiro Ruiz, diseñador</title>
+    <link>https://ramiroruiz.com/es/tags/felicidad/</link>
+    <description>Recent content in Felicidad on Ramiro Ruiz, diseñador</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Feb 2018 10:33:33 -0600</lastBuildDate>
+    
+	<atom:link href="https://ramiroruiz.com/es/tags/felicidad/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fortuna heredada</title>
+      <link>https://ramiroruiz.com/es/blog/fortuna-heredada/</link>
+      <pubDate>Mon, 12 Feb 2018 10:33:33 -0600</pubDate>
+      
+      <guid>https://ramiroruiz.com/es/blog/fortuna-heredada/</guid>
+      <description>Hace un par de meses mi padre estuvo en el hospital por 3 semanas, y como en muchos lugares del mundo, la atención médica es muy cara, por lo que tiene un seguro social que le brinda atención médica pero a un precio. Los hospitales están llenos, pocos lugares para sentarse, poca información y ni siquiera voy a hablar sobre los baños.
+Verás a personas de ingresos medios a bajos en esos lugares, porque no tienen otra opción.</description>
+    </item>
+    
+  </channel>
+</rss>
