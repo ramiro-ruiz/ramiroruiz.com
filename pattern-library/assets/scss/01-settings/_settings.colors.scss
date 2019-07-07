@@ -2,6 +2,9 @@
   #COLORS
 \*------------------------------------*/
 
-//brand colors
+//Brand colors
 $color-brand-primary:     hsl(0, 100%, 71%);
 $color-brand-secondary:   #000;
+
+//Link color
+$color-links:  $color-brand-primary;
