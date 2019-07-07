@@ -1,0 +1,15 @@
+/*------------------------------------*\
+  #LINKS
+\*------------------------------------*/
+
+/**
+ * Default styles for simple hyperlinks.
+ */
+
+a {
+  color: $color-links;
+
+  @include hocus() {
+    text-decoration: underline;
+  }
+}
