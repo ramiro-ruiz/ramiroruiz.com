@@ -1,0 +1,30 @@
+.c-primary-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: rem(70px);
+}
+
+  .c-primary-nav__home {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 30%;
+    text-align: center;
+  }
+
+  .c-primary-nav__list {
+    display: flex;
+    width: 100%;
+  }
+    .c-primary-nav__item {
+
+      &:nth-child(2) {
+        margin-right: auto;
+      }
+    }
+      .c-primary-nav__link {
+        padding: rem(8px);
+        text-decoration: none;
+      }
