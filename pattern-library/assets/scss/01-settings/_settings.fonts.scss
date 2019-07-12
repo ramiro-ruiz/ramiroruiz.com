@@ -1,0 +1,46 @@
+/* Load the variable font */
+@font-face {
+	font-family: 'Public Sans VF';
+	src: url('../fonts/PublicSans-Roman-VF.ttf') format('truetype'); // PENDING - convert to WOFF2
+  font-weight: 1 999; // default: 92
+	font-display: fallback;
+}
+
+// Italic
+@font-face {
+	font-family: 'Public Sans VF';
+  src: url('../fonts/PublicSans-Italic-VF.ttf') format('truetype'); // PENDING - convert to WOFF2
+  font-weight: 1 999; // default: 92
+  font-style: italic;
+	font-display: fallback; /* has nothing to do with the fact that this is the fallback font */
+}
+
+
+/* Load the static fonts as a fallback */
+@font-face {
+	font-family: 'Public Sans';
+	src: url('../fonts/PublicSans-Thin.woff2') format('woff2');
+  font-weight: 200;
+	font-display: fallback; /* has nothing to do with the fact that this is the fallback font */
+}
+
+@font-face {
+	font-family: 'Public Sans';
+	src: url('../fonts/PublicSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+	font-display: fallback; /* has nothing to do with the fact that this is the fallback font */
+}
+
+@font-face {
+	font-family: 'Public Sans';
+	src: url('../fonts/PublicSans-Italic.woff2') format('woff2');
+  font-style: italic;
+	font-display: fallback; /* has nothing to do with the fact that this is the fallback font */
+}
+
+@font-face {
+	font-family: 'Public Sans';
+	src: url('../fonts/PublicSans-Black.woff2') format('woff2');
+  font-weight: 700;
+	font-display: fallback; /* has nothing to do with the fact that this is the fallback font */
+}
