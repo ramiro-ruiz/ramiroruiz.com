@@ -1,0 +1,101 @@
+.c-nav--primary {
+  display: flex;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  height: rem(88);
+
+  &::after {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: rem(50);
+    background-color: $color-brand-primary;
+    content: '';
+  }
+
+  @media only screen and (min-width: rem(450)) {
+    position: relative;
+    height: auto;
+    justify-content: space-between;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+  .c-nav--primary__home {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: $nav-primary__height;
+    margin: 0 auto;
+    text-align: center;
+
+    @media only screen and (min-width: rem(450)) {
+      position: static;
+      width: auto;
+      margin: 0;
+    }
+  }
+
+    .c-nav--primary__home__link {
+      display: block;
+      padding: rem(16) rem(16) rem(32);
+      border-radius: 50%;
+      background-color: $color-brand-primary;
+
+      @media only screen and (min-width: rem(450)) {
+        background-color: transparent;
+        padding: rem(16);
+      }
+    }
+
+  .c-nav--primary__list {
+    display: flex;
+    width: 100%;
+    padding: 0 rem(8);
+    background-color: $color-brand-primary;
+
+    @media only screen and (min-width: rem(450)) {
+      width: auto;
+    }
+  }
+    .c-nav--primary__item {
+
+      &:nth-child(2) {
+        margin-right: auto;
+
+        @media only screen and (min-width: rem(450)) {
+          margin-right: 0;
+        }
+      }
+    }
+      .c-nav--primary__link {
+        display: inline-block;
+        padding: rem(12) 2vw;
+        color: #1D1D1E;
+        font-size: rem(12);
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+        opacity: .8;
+        transition: $global-transition;
+
+        @include hocus() {
+          transform: translateY(rem(-.5));
+          text-decoration: none;
+          opacity: 1;
+        }
+
+        &:active {
+          transform: translateY(rem(.5));
+        }
+      }

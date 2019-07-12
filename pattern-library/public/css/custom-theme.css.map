@@ -1,0 +1,1 @@
+{"version":3,"sources":["custom-theme/_preview-bg.scss"],"names":[],"mappings":"AAAA,SACE,4CAA6C","file":"custom-theme.css","sourcesContent":[".Preview {\n  background-image: url(../imgs/devices-bg.svg);\n}\n"]}
