@@ -1,0 +1,7 @@
+body {
+  font-family: "Public Sans", sans-serif;
+
+  @supports (font-variation-settings: normal) {
+    font-family: "Public Sans VF", sans-serif;
+  }
+}
