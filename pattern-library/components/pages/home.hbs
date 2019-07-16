@@ -1,5 +1,16 @@
-{{render '@navigation'}}
-{{render '@hola'}}
-<p class="lead">
-  I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little about me, my work, articles, thoughts, photos, and things I’m interested in.
-</p>
+<section class="o-container">
+  {{render '@navigation'}}
+  {{render '@hola'}}
+  <p class="o-lead">
+    I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little about me, my work, articles, thoughts, photos, and things I’m interested in.
+  </p>
+</section>
+
+<section class="o-container">
+  <h2>Work</h2>
+  <a href="#" class="c-project-list__link">
+    <h3 class="c-project-list__title">{{projectName}}</h3>
+    <img class="c-project-list__img" src="{{#if imgSRC }}{{imgSRC}}{{else}}https://via.placeholder.com/1280x720/{{/if}}" alt="{{imgAlt}}">
+  </a>
+</section>
+{{> '@lists--projects'}}

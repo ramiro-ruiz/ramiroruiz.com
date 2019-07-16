@@ -1,0 +1,17 @@
+title: Home page
+
+status: wip
+
+context:
+  projectName: Inblic
+  imgAlt: Placeholder image
+
+  project:
+    - projectName: RTS Design
+      imgAlt: Placeholder image
+
+    - projectName: TCA Design
+      imgAlt: Placeholder image
+
+    - projectName: IHG Games
+      imgAlt: Placeholder image
