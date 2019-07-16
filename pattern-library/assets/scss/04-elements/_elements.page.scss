@@ -10,9 +10,14 @@
  $nav-primary__height: rem(88);
 
 body {
-  padding: rem(32) rem(32) $nav-primary__height + 1.25;
+  padding-bottom: $nav-primary__height + 1.25;
+
+  font-family: "Public Sans", sans-serif;
+  @supports (font-variation-settings: normal) {
+    font-family: "Public Sans VF", sans-serif;
+  }
 
   @media only screen and (min-width: rem(450)) {
-    padding: rem(32) rem(32);
+    padding-bottom: 0;
   }
 }
