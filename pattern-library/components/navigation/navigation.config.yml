@@ -1,1 +1,10 @@
 title: Primary Navigation
+
+status: wip
+
+context:
+  listItem:
+    - Work
+    - About
+    - Blog
+    - Notes
