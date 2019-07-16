@@ -1,0 +1,12 @@
+title: List
+
+variants:
+  - name: default
+    label: Posts
+    status: wip
+
+  - name: projects
+    context:
+      project:
+        - projectName: RTS Design
+          imgAlt: Placeholder image

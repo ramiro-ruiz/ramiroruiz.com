@@ -1,0 +1,10 @@
+<ul class="c-project-list o-list-bare">
+  {{#each project}}
+  <li class="c-project-list__item">
+    <a class="c-project-list__link" href="#">
+    <h3 class="c-project-list__title">{{projectName}}</h3>
+    <img class="c-project-list__img" src="{{#if imgSRC }}{{imgSRC}}{{else}}https://via.placeholder.com/1280x720/{{/if}}" alt="{{imgAlt}}">
+    </a>
+  </li>
+  {{/each}}
+</ul>
