@@ -10,3 +10,25 @@ variants:
       project:
         - projectName: RTS Design
           imgAlt: Placeholder image
+
+  - name: stream
+    context:
+      stream:
+        - streamSpan: 'grid-column: span 3'
+          streamContent: Companies that think their problems can be solved with more managers. Are up to a rude awakening.
+        - streamImage: https://via.placeholder.com/200
+          streamSpan: 'grid-column: span 3'
+        - streamSpan: 'grid-column: span 6'
+          streamContent: "Meaning without markup: Accessibility Object Model. Hidde gives an in-depth explanation of the Accessibility Object Model, coming soon to browsers near you."
+        - streamSpan: 'grid-column: span 3; grid-row: span 2'
+          streamImage: https://via.placeholder.com/200
+        - streamSpan: 'grid-row: span 2'
+          streamContent: Companies that think their problems can be solved with more managers. Are up to a rude awakening.
+        - streamImage: https://via.placeholder.com/200
+        - streamSpan: 'grid-column: span 2; grid-row: span 2'
+        - streamContent: 'Meaning without markup: Accessibility Object Model.'
+        - streamSpan: 'grid-column: span 2; grid-row: span 3'
+          streamImage: https://via.placeholder.com/200
+        - ten
+        - streamSpan: 'grid-column: span 2; grid-row: span 2'
+        - twelve

@@ -1,0 +1,10 @@
+<ul class="o-stream-list o-list-bare">
+  {{#each stream}}
+  <li class="o-stream-list__item" {{#if streamSpan}}style="{{streamSpan}};"{{/if}}>
+    <a class="o-stream-list__link" href="#">
+      {{streamContent}}
+      {{#if streamImage}}<img src="{{streamImage}}" />{{/if}}
+    </a>
+  </li>
+  {{/each}}
+</ul>

@@ -2,14 +2,23 @@
   display: flex;
   overflow: auto;
   scroll-snap-type: x mandatory;
+  padding-bottom: rem(24);
 }
   .c-project-list__item {
-    min-width: 50vw;
-    margin-left: rem(16);
+    margin-left: rem(24);
     scroll-snap-align: center;
+
+    &:last-child {
+
+      .c-project-list__link,
+      .c-project-list__text {
+        margin-right: rem(24);
+      }
+    }
   }
 
     .c-project-list__link {
+      min-width: 60vw;
       position: relative;
       display: block;
       text-decoration: none;
@@ -23,3 +32,24 @@
         padding: rem(8) rem(16) rem(8) rem(8);
         background-color: #fff;
       }
+
+
+.o-stream-list {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: rem(8);
+
+  @media only screen and (min-width: rem(420)) {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.o-stream-list__link {
+  display: block;
+  background-color: pink;
+  min-width: 5vh;
+  width: 100%;
+  min-height: 5vh;
+  height: 100%;
+}

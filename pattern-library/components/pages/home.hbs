@@ -12,5 +12,18 @@
     <h3 class="c-project-list__title">{{projectName}}</h3>
     <img class="c-project-list__img" src="{{#if imgSRC }}{{imgSRC}}{{else}}https://via.placeholder.com/1280x720/{{/if}}" alt="{{imgAlt}}">
   </a>
+  <p class="c-project-list__text">Website redesign and new brand image for the technology company Inblic.</p>
 </section>
 {{> '@lists--projects'}}
+
+<section class="o-container">
+  <h2>Blog</h2>
+  {{render '@featured-post'}}
+
+  {{render '@post-list'}}
+</section>
+
+<section class="o-container">
+  <h2 style="margin-bottom: 8px">Stream</h2>
+  {{render '@lists--stream'}}
+</section>
