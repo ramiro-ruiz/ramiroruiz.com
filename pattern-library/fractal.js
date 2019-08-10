@@ -48,7 +48,7 @@ const myCustomisedTheme = mandelbrot({
     "nav": ["docs", "components"], // show docs above components in the sidebar
     "styles": [
        "default",
-       "/css/custom-theme.css"
+       "/fractal/custom-theme.css"
    ]// any other theme configuration values here
 });
 

@@ -15,6 +15,7 @@ const plumber      = require('gulp-plumber');
 const notify       = require('gulp-notify');
 const path         = require('path');
 
+// Copiles CSS for pattern library components
 function scss(done) {
     return gulp.src('assets/scss/**/*.scss')
     .pipe(customPlumber('Error running Sass'))
@@ -23,15 +24,42 @@ function scss(done) {
     .pipe(sass()) // compile SCSS to CSS
     .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
     .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-    .pipe(gulp.dest('public/css'));
+    .pipe(gulp.dest('public/css', '../static'));
+    done();
+};
+
+// Copiles CSS in hugo folder to use in the site
+function scssHugo(done) {
+    return gulp.src('assets/scss/**/*.scss')
+    .pipe(customPlumber('Error running Sass'))
+    .pipe(sassGlob())
+    .pipe(sourcemaps.init()) // initialize sourcemaps first
+    .pipe(sass()) // compile SCSS to CSS
+    .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
+    .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+    .pipe(gulp.dest('../static/css'));
+    done();
+};
+
+// Copiles CSS for the fractal theme
+function scssFractal(done) {
+    return gulp.src('assets/fractal/**/*.scss')
+    .pipe(customPlumber('Error running Sass'))
+    .pipe(sassGlob())
+    .pipe(sourcemaps.init()) // initialize sourcemaps first
+    .pipe(sass()) // compile SCSS to CSS
+    .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
+    .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+    .pipe(gulp.dest('public/fractal'));
     done();
 };
 
 function watch(done) {
    gulp.watch([
         'components/**/*.scss',
-        'assets/scss/**/*.scss'
-        ], gulp.series(scss));
+        'assets/scss/**/*.scss',
+        'assets/fractal/**/*.scss'
+      ], gulp.series(scssHugo, scss, scssFractal));
     done();
 };
 
@@ -55,4 +83,4 @@ function fractal_start(done) {
     done();
 };
 
-gulp.task('default', gulp.series(fractal_start, scss, watch));
+gulp.task('default', gulp.series(fractal_start, scss, scssHugo, scssFractal, watch));
