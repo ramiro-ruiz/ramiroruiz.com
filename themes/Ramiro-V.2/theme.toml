@@ -1,12 +1,12 @@
 # theme.toml template for a Hugo theme
 
-name = "Ramiro V.1"
+name = "Ramiro V.2"
 description = "My personal Theme"
-homepage = "http://ramiroruiz.com/"
+homepage = "https://ramiroruiz.com/"
 tags = []
 features = []
 min_version = "0.24.1"
 
 [author]
   name = "Ramiro Ruiz"
-  homepage = "http://ramiroruiz.com/"
+  homepage = "https://ramiroruiz.com/"
