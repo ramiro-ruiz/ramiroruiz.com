@@ -19,7 +19,7 @@ weight = 140
 
 [params]
   description = "Personal homepage of Ramiro Ruiz, designer."
-  myintro = '<p class="o-lead">I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little about me, my work, articles, thoughts, photos, and things I’m interested in.</p>'
+  myintro = '<p class="o-lead">I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little about me, my work, writings, thoughts, photos, and things I’m interested in.</p>'
   goals ='ok'
 [languages]
 [languages.en]
