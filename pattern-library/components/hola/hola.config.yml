@@ -1,3 +1,6 @@
 title: Hola! block
 
 status: wip
+
+context:
+  notes: Hola component
