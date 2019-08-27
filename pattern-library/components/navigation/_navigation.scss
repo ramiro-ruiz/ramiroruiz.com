@@ -1,12 +1,13 @@
 .c-nav--primary {
   display: flex;
+  z-index: 10;
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
   align-items: center;
   height: rem(88);
-  z-index: 10;
+  padding-bottom: env(safe-area-inset-bottom); // iPhone X
 
   &::after {
     z-index: -1;
@@ -22,8 +23,8 @@
 
   @media only screen and (min-width: rem(450)) {
     position: relative;
-    height: auto;
     justify-content: space-between;
+    height: auto;
 
     &::after {
       content: none;
@@ -32,32 +33,26 @@
 }
 
   .c-nav--primary__home {
+    display: block;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
     width: $nav-primary__height;
     margin: 0 auto;
+    padding: var(--space-unit) var(--space-unit) var(--space-lg);
+    border-radius: 50%;
+    background-color: $color-brand-primary;
     text-align: center;
 
     @media only screen and (min-width: rem(450)) {
       position: static;
       width: auto;
       margin: 0;
+      padding: var(--space-unit);
+      background-color: transparent;
     }
   }
-
-    .c-nav--primary__home__link {
-      display: block;
-      padding: rem(16) rem(16) rem(32);
-      border-radius: 50%;
-      background-color: $color-brand-primary;
-
-      @media only screen and (min-width: rem(450)) {
-        background-color: transparent;
-        padding: rem(16);
-      }
-    }
 
   .c-nav--primary__list {
     display: flex;

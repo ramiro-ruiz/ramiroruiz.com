@@ -2,17 +2,17 @@
   display: flex;
   overflow: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: rem(24);
+  padding-bottom: var(--space-md);
 }
   .c-project-list__item {
-    margin-left: rem(24);
+    margin-left: var(--space-unit);
     scroll-snap-align: center;
 
     &:last-child {
 
       .c-project-list__link,
       .c-project-list__text {
-        margin-right: rem(24);
+        margin-right: var(--space-unit);
       }
     }
   }
@@ -29,12 +29,12 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        padding: rem(8) rem(16) rem(8) rem(8);
+        padding: rem(8) var(--space-unit) rem(8) rem(8);
         background-color: #fff;
       }
 
 
-.o-stream-list {
+.c-stream-list {
   display: grid;
   grid-auto-flow: dense;
   grid-template-columns: repeat(6, 1fr);
@@ -45,7 +45,7 @@
   }
 }
 
-.o-stream-list__link {
+.c-stream-list__link {
   display: block;
   background-color: pink;
   min-width: 5vh;

@@ -15,9 +15,9 @@
   }
 
   .c-hola__svg {
-    margin: rem(-5) rem(-5) rem(16);
+    margin: rem(-5) rem(-5) var(--space-unit);
     width: 100%;
-    font-size: rem(32px);
+    font-size: var(--space-lg);
 
     @media only screen and (min-width: rem(420)) {
       display: none;
