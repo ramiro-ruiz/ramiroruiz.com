@@ -1,20 +1,59 @@
 {{ partial "header.html" . }}
-      <main>
-        <h2 class="c-hola" lang="es">
-            <strong class="c-hola__text">Hola!</strong>
-            <svg class="c-hola__svg" viewBox="0 0 55 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true">
-            <text class="c-hola__ho" x="0" y="23">Ho<tspan class="c-hola__la" textLength="42.3" x="0" y="49">la</tspan></text>
-            <g class="c-hola__!" transform="scale(0.17) translate(262 7)">
-              <path x="10" d="M3.59033 218.685V282H53.6726V218.685H3.59033Z"></path>
-              <path d="M3.93232 209.092L0.700684 0.91861H56.5616L53.33 209.092H3.93232Z"></path>
-            </g>
-          </svg>
-        </h2>
+      <main class="o-stack--lg">
+        <section class="o-container o-stack--sm">
+          {{ partial "components/hola.html" . }}
+          {{ .Site.Params.myintro | safeHTML }}
+        </section>
 
-        {{ .Site.Params.myintro | safeHTML }}
+        <section class="o-stack">
+          <div class="o-container o-stack">
+            <h2>{{ i18n "work" }}</h2>
+            <div class="o-stack--sm">{{ range .Site.Taxonomies.tags.featured_project }}
+              <a class="c-project-list__link" href="{{ .Page.Permalink }}">
+                <h3 class="c-project-list__title">{{ .Page.Title }}</h3>
+                <img class="c-project-list__img" src="{{ .Site.BaseURL }}/i/work/{{ with .Params.post_image }}{{ . }}{{ end }}" alt="{{ .Page.Title }}">
+              </a>
+              {{ with .Params.excerpt }}<p class="c-project-list__text">{{ . }}</p>{{ end }}
+            </div>{{ end }}
+          </div>
 
+          <ul class="c-project-list o-list-bare">{{ range .Site.Taxonomies.tags.project }}
+            <li class="c-project-list__item o-stack--sm">
+               <a class="c-project-list__link" href="{{ .Page.Permalink }}">
+                 <h3 class="c-project-list__title">{{ .Page.Title }}</h3>
+                 <img class="c-project-list__img" src="{{ .Site.BaseURL }}/i/work/{{ with .Params.post_image }}{{ . }}{{ end }}" alt="{{ .Page.Title }}">
+               </a>
+               {{ with .Params.excerpt }}<p class="c-project-list__text">{{ . }}</p>{{ end }}
+            </li>{{ end }}
+          </ul>
+        </section>
+
+        <section class="o-container o-stack">
+          <h2>Blog</h2> {{ range first 1 (where .Data.Pages "Type" "blog") }}
+          <article class="o-stack--sm">
+            <header class="o-stack--xs">
+              <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
+              <div>
+                <time class="o-vr-separator" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> <span>{{ i18n "readingTime" .ReadingTime }}</span>
+              </div>
+            </header>
+            {{ with .Params.excerpt }}<p class="excerpt">{{ . }}</p>{{ end }}
+          </article>{{ end }}
+          <ul class="c-posts-list o-stack--sm o-list-bare">{{ range first 3 ( after 1 (where .Data.Pages "Type" "blog")) }}
+            <li class="c-posts-list__item o-stack--xs">
+              <h3 class="c-posts-list__title"><a class="c-posts-list__link" href="{{.Permalink}}">{{.Title}}</a></h3>
+              <div>
+                <time class="o-vr-separator" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> <span>{{ i18n "readingTime" .ReadingTime }}</span>
+              </div>
+            </li>{{ end }}
+          </ul>
+        </section>
       </main>
-      <footer>
+      <aside class="o-container o-stack">
+        <h2>Stream</h2>
+
+      </aside>
+      <footer class="o-container">
         <a href="mailto:xyox@ramiroxruiz.xcom?subject=Website Contact" onmouseover="this.href=this.href.replace(/x/g,'');" title="Contact" class="contact"><svg aria-hidden="true" width="41" height="26" viewBox="0 0 41 26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M13.5 12L2 3.7 3.3 2l18 12.6L38.6 2 40 3.8l-12 8.6 11 10-1.4 1.6-11.4-10.3-4.3 3c-.5.4-1 .4-1.4 0l-5.2-3.5L3.4 24 2 22.4 13.5 12zm24-9H3.7c-.5 0-1 .3-1 .8v18.6c0 .5.5 1 1 1h33.6c.5 0 1-.5 1-1V3.8c0-.5-.5-1-1-1zm0-2.4c1.7 0 3 1.4 3 3.2v18.6c0 1.8-1.3 3.2-3 3.2H3.7C2 25.6.6 24.2.6 22.4V3.8C.6 2 2 .6 3.8.6h33.6z" id="a"/></defs><use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/></svg></a>
         <p class="copy">&copy; 2010 &ndash; 2018 Ramiro Ruiz</p>
       </footer>
