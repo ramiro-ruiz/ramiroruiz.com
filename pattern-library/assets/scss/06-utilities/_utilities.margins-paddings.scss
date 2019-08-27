@@ -1,0 +1,50 @@
+// Margins and paddings helpers
+
+$spacers: (
+  0: (
+    x:   0,
+    y:   0
+  ),
+  1: (
+    x:   (calc(var(--space-unit) * 0.5)),
+    y:   (calc(var(--space-unit) * 0.5))
+  ),
+  2: (
+    x:   var(--space-unit),
+    y:   var(--space-unit)
+  ),
+  3: (
+    x:   (calc(var(--space-unit) * 1.5)),
+    y:   (calc(var(--space-unit) * 1.5))
+  ),
+  4: (
+    x:   (calc(var(--space-unit) * 3)),
+    y:   (calc(var(--space-unit) * 3))
+  ),
+  5: (
+    x:   (calc(var(--space-unit) * 4)),
+    y:   (calc(var(--space-unit) * 4))
+  )
+);
+
+@mixin margins-paddings() {
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $lengths in $spacers {
+        $length-x:   map-get($lengths, x);
+        $length-y:   map-get($lengths, y);
+
+        .u-#{$abbrev}-#{$size} { #{$prop}: $length-y $length-x !important; } // a = All sides
+        .u-#{$abbrev}-auto { #{$prop}: auto !important; } // a = All sides auto
+        .u-#{$abbrev}y-#{$size} { #{$prop}: $length-y 0 !important; } // y axis = top and bottom
+        .u-#{$abbrev}x-#{$size} { #{$prop}: 0 $length-x !important; } // x axis = right and left
+        .u-#{$abbrev}y-auto { #{$prop}: auto 0 !important; } // y axis = top and bottom auto
+        .u-#{$abbrev}x-auto { #{$prop}: 0 auto !important; } // x axis = right and left auto
+        .u-#{$abbrev}t-#{$size} { #{$prop}-top:    $length-y !important; }
+        .u-#{$abbrev}r-#{$size} { #{$prop}-right:  $length-x !important; }
+        .u-#{$abbrev}b-#{$size} { #{$prop}-bottom: $length-y !important; }
+        .u-#{$abbrev}l-#{$size} { #{$prop}-left:   $length-x !important; }
+      }
+    }
+}
+
+@include margins-paddings;

@@ -1,0 +1,16 @@
+$width-base: 10%;
+
+$width-map: (
+  auto: auto,
+  10: $width-base,
+  25: $width-base * 2.5,
+  50: $width-base * 5,
+  75: $width-base * 7.5,
+  100: $width-base * 10
+);
+
+@each $size, $width in $width-map {
+  .u-width--#{$size} {
+    width: $width !important;
+  }
+}
