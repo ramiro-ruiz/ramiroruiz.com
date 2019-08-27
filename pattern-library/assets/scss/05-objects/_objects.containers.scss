@@ -4,9 +4,8 @@
 
 .o-container {
   max-width: rem(1280px);
-  padding-right: rem(16);
-  padding-left:  rem(16);
+  padding-right: var(--space-unit);
+  padding-left:  var(--space-unit);
   margin-right: auto;
   margin-left:  auto;
-  margin-bottom: rem(24);
 }
