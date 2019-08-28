@@ -14,6 +14,9 @@
     <meta name="msapplication-TileColor" content="#F36A6A">
     <meta name="theme-color" content="#ffffff">
 
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}{{ end -}}
+
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/main.css" />
   </head>
   <body class="{{ if .IsHome}}home {{end}}{{ .Lang }}">
