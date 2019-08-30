@@ -30,20 +30,20 @@
 
         <section class="o-container o-stack">
           <h2>Blog</h2> {{ range first 1 (where .Data.Pages "Type" "blog") }}
-          <article class="o-stack--sm">
+          <article class="o-stack--sm h-entry">
             <header class="o-stack--xs">
-              <h3><a href="{{.Permalink}}">{{.Title}}</a></h3>
+              <h3 class="p-name"><a class="u-url" href="{{.Permalink}}">{{.Title}}</a></h3>
               <div>
-                <time class="o-vr-separator" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> <span>{{ i18n "readingTime" .ReadingTime }}</span>
+                <time class="dt-published o-vr-separator" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> <span>{{ i18n "readingTime" .ReadingTime }}</span>
               </div>
             </header>
-            {{ with .Params.excerpt }}<p class="excerpt">{{ . }}</p>{{ end }}
+            {{ with .Params.excerpt }}<p class="excerpt p-summary">{{ . }}</p>{{ end }}
           </article>{{ end }}
           <ul class="c-posts-list o-stack--sm o-list-bare">{{ range first 3 ( after 1 (where .Data.Pages "Type" "blog")) }}
             <li class="c-posts-list__item o-stack--xs">
-              <h3 class="c-posts-list__title"><a class="c-posts-list__link" href="{{.Permalink}}">{{.Title}}</a></h3>
+              <h3 class="c-posts-list__title p-name"><a class="c-posts-list__link u-url" href="{{.Permalink}}">{{.Title}}</a></h3>
               <div>
-                <time class="o-vr-separator" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> <span>{{ i18n "readingTime" .ReadingTime }}</span>
+                <time class="dt-published o-vr-separator" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> <span>{{ i18n "readingTime" .ReadingTime }}</span>
               </div>
             </li>{{ end }}
           </ul>
