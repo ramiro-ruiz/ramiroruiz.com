@@ -38,7 +38,7 @@ exports.handler = async function (event, context) {
   octokit.authenticate({
     type: 'basic',
     username: event.headers['gh_user'],
-    password: event.headers['gh_pass'],
+    password: event.headers['gh_pass']
   });
 
   const result = await octokit.repos.createFile({
