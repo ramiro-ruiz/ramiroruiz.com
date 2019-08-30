@@ -16,6 +16,21 @@
     <meta name="msapplication-TileColor" content="#F36A6A">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="https://twitter.com/ramiroruiz" rel="me">
+    <link href="https://instagram.com/ramiroruiz" rel="me">
+    <link href="https://github.com/ramiro-ruiz" rel="me">
+    <link rel="me" href="mailto:yo@ramiroruiz.com" rel="me">
+
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="micropub" href="{{ .Site.BaseURL }}/micropub">
+    <link rel="webmention" href="https://webmention.io/ramiroruiz.com/webmention" />
+    <link rel="pingback" href="https://webmention.io/ramiroruiz.com/xmlrpc" />
+
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700,900|Titillium+Web:200i,400,900" rel="stylesheet">{{ if eq .Params.section "post"}}
     <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">{{end}}{{ if .Params.post_bg }}

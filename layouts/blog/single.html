@@ -1,11 +1,11 @@
 {{ partial "header.html" . }}
 <main>
-  <article class="post">
+  <article class="h-entry post">
     <header>
-      <h1>{{ .Title }}</h1>
-      <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> | <span class="readtime">{{ i18n "readingTime" .ReadingTime }}</span>
+      <h1 class="p-name">{{ .Title }}</h1>
+      <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time> | <span class="readtime">{{ i18n "readingTime" .ReadingTime }}</span>
     </header>
-    <section class="content">
+    <section class="content e-content">
       {{ .Content }}
       {{ if .Params.photo_name }}
       <small><svg xmlns="http://www.w3.org/2000/svg" style="height:14px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:#414141;" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg>
