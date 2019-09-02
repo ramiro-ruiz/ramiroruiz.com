@@ -50,7 +50,7 @@ exports.handler = async function (event, context) {
     path: `content/blog/${year}/${month}/${slug}.md`,
     message: `Publish ${slug}.md`,
     content: Buffer.from(md, 'utf8').toString('base64'),
-    branch: 'version-2'
+    branch: 'master'
   });
 
   return {
