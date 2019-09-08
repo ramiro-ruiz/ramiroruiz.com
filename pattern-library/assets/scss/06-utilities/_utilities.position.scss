@@ -1,6 +1,0 @@
-///Position
-@each $position in (fixed, relative, absolute, static) {
-  .u-p--#{$position} {
-    position: ($position) !important;
-  }
-}
