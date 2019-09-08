@@ -21,10 +21,9 @@ links:
     - types: [like-of]
       link: {{ likeOf }}
 {% endif %}
-syndicationLinks:
+syndication_links:
 {% for link in syndicateTo %}
     - {{ link }}
 {% endfor %}
 ---
-
 {{ content | safe }}
