@@ -11,6 +11,13 @@
       {{ end }}
     </section>
     <section class="post-meta">
+      {{ if .Params.weather }}{{ .Params.weather }}{{ end }}
+      {{ if .Params.tweet_id }}
+        <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.Params.tweet_id}}">Like</a>
+        <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.Params.tweet_id}}">Retweet</a>
+        <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.Params.tweet_id}}">Reply</a>
+        <p><a rel="syndication" class="u-syndication" href="https://twitter.com/ramiroruiz/status/{{.Params.tweet_id}}" title="This post was syndicated to Twitter">Syndication</a></p>
+      {{ end }}
       <p>{{ if eq .Lang "es" }}Publicado en {{ else }}Published in {{ end }}<a class="cat-single" href="{{ "categories/" | relURL }}{{ .Params.categories }}">{{ .Params.categories }}</a>  Tags: {{ if .Params.tags }}{{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }}</p>
     </section>
   </article>
