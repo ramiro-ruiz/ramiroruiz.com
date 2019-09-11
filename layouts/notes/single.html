@@ -18,7 +18,7 @@
         <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.Params.tweet_id}}">Reply</a>
         <p><a rel="syndication" class="u-syndication" href="https://twitter.com/ramiroruiz/status/{{.Params.tweet_id}}" title="This post was syndicated to Twitter">Syndication</a></p>
       {{ end }}
-      <p>{{ if eq .Lang "es" }}Publicado en {{ else }}Published in {{ end }}{{ range .Params.categories }}<a class="cat-single" href="{{ "categories/" | relURL }}{{ .Params.categories }}">{{ .Params.categories }}</a>  Tags: {{ if .Params.tags }}{{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }}</p>
+      <p>{{ if eq .Lang "es" }}Publicado en {{ else }}Published in {{ end }}<a class="cat-single" href="{{ "categories/" | relURL }}{{ .Params.categories }}">{{ .Params.categories }}</a>  Tags: {{ if .Params.tags }}{{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }}</p>
     </div>
   </article>
 </main>
