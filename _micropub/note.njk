@@ -1,5 +1,9 @@
 ---
 date: {{ published }}
+
+{% if category %}
+categories: {{ category }}
+{% endif %}
 links:
 {% if mentionOf %}
     - types: [mention-of]

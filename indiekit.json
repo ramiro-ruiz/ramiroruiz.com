@@ -1,4 +1,7 @@
 {
+  "categories": {
+    "url": "_micropub/categories.json"
+  },
   "syndicate-to": [{
     "uid": "https://brid.gy/publish/twitter",
     "name": "@ramiroruiz on Twitter"
@@ -16,7 +19,7 @@
     "note": {
       "template": "_micropub/note.njk",
       "post": {
-        "path": "content/notes/{{ published | date('X') }}.md",
+        "path": "content/notes/{{ published | date('yy') }}/{{ published | date('MMddHHmmss') }}.md",
         "url": "notes/{{ published | date('X') }}"
       }
     },
