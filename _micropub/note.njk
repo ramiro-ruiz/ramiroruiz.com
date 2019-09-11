@@ -2,12 +2,8 @@
 date: {{ published }}
 
 location: {{ location }}
-{% if category %}
-tags:
-{% for categoryItem in category %}
-    - {{ categoryItem }}
-{% endfor %}
-{% endif %}
+tags: {{ category }}
+
 links:
 {% if mentionOf %}
     - types: [mention-of]
