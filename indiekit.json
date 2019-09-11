@@ -16,8 +16,8 @@
     "note": {
       "template": "_micropub/note.njk",
       "post": {
-        "path": "content/notes/{{ published | date('yy/MM-dd-mm') }}.md",
-        "url": "notes/{{ published | date('MM-dd-mm') }}"
+        "path": "content/notes/{{ published | date('yy/MM-dd') }}.md",
+        "url": "notes/{{ published | date('MM-dd') }}"
       }
     },
     "photo": {
