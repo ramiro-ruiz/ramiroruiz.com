@@ -2,7 +2,10 @@
 date: {{ published }}
 
 location: {{ location }}
-tags: {{ category }}
+tags:
+{% for tag in category %}
+    - {{ tag }}
+{% endfor %}
 
 links:
 {% if mentionOf %}
