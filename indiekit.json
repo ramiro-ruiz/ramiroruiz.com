@@ -1,7 +1,4 @@
 {
-  "categories": {
-    "url": "_micropub/categories.json"
-  },
   "syndicate-to": [{
     "uid": "https://brid.gy/publish/twitter",
     "name": "@ramiroruiz on Twitter"
