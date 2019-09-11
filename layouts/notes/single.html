@@ -2,15 +2,16 @@
 <main>
   <article class="h-entry post">
     <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time>
-    <section class="p-name p-content">
+    <div class="p-name p-content">
       {{ .Content }}
         {{ if .Params.syndication_links }}
         {{ range .Params.syndication_links }}
           <a href="{{ . }}"></a>
         {{ end }}
       {{ end }}
-    </section>
-    <section class="post-meta">
+    </div>
+    <div class="post-meta">
+      {{ if .Params.weather }}{{ .Params.weather }}{{ end }}
       {{ if .Params.tweet_id }}
         <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.Params.tweet_id}}">Like</a>
         <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.Params.tweet_id}}">Retweet</a>
@@ -18,7 +19,7 @@
         <p><a rel="syndication" class="u-syndication" href="https://twitter.com/ramiroruiz/status/{{.Params.tweet_id}}" title="This post was syndicated to Twitter">Syndication</a></p>
       {{ end }}
       <p>{{ if eq .Lang "es" }}Publicado en {{ else }}Published in {{ end }}<a class="cat-single" href="{{ "categories/" | relURL }}{{ .Params.categories }}">{{ .Params.categories }}</a>  Tags: {{ if .Params.tags }}{{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }}</p>
-    </section>
+    </div>
   </article>
 </main>
 {{ partial "single-footer.html" . }}
