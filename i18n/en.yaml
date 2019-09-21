@@ -8,7 +8,7 @@
   translation: "#"
 
 - id: home-url
-  translation: "/"  
+  translation: "/"
 
 - id: share
   translation: "Share"
@@ -56,3 +56,9 @@
 
 - id: photoby
   translation: "Background photo by"
+
+- id: also-twitter
+  translation: "Also on twitter"
+
+- id: syndicated-twitter
+  translation: "This post was syndicated to Twitter"
