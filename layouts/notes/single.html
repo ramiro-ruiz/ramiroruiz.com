@@ -42,5 +42,8 @@
       {{ if .Params.tags }}<p>Tags: {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</p>{{ end }}
     </div>
   </article>
+  <div class="webmentions">
+    {{ partial "webmentions.html" . }}
+  </div>
 </main>
 {{ partial "single-footer.html" . }}

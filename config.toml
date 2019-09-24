@@ -17,10 +17,18 @@ weight = 100
 name  = "categories"
 weight = 140
 
-[params]
+[Params]
   description = "Personal homepage of Ramiro Ruiz, designer."
   myintro = '<h1>Ramiro Ruiz <span class="job">is a designer</span> <span class="location">from Monterrey, N.L. Mexico</span></h1> <p>I work with startups and small businesses, helping them create remarkable experiences. After ten years working and learning from different design fields. I’m now focused on Digital Products and Branding projects.</p> <p>As a non-stop learner that loves challenges, Martial Arts is my other passion. I’ve been training and competing for fifteen years.</p>'
   goals ='ok'
+
+  [Params.indieweb] # https://gitlab.com/kaushalmodi/hugo-theme-refined
+    domain = "https://ramiroruiz.com/" # must end with a slash
+    # webring = "🏔🐴🎑" # Get your IndieWeb Webring ID from https://xn--sr8hvo.ws
+    [Params.indieweb.webmention]
+      endpoint = "https://webmention.io/" # must end with a slash
+      account = "ramiroruiz.com"
+
 [languages]
 [languages.en]
 languageName = "English"
