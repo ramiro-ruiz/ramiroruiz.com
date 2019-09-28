@@ -4,7 +4,6 @@ theme = "Ramiro-V.1"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 enableRobotsTXT = true
-disableFastRender = true
 
 [related]
 threshold = 80

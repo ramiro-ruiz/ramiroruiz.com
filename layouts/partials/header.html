@@ -6,6 +6,7 @@
     <meta name="google-site-verification" content="F5-SDKSprV6OsKlI6BZ-JNUOEYkm8EMVRQwoSz7NYl8" />
     <title>{{ .Title }}</title>
     <meta charset="utf-8" />
+    <link rel="canonical" href="{{ .Permalink }}">
     {{ if .IsHome }}{{ partial "meta-home.html" . }}{{ else if .IsPage }}{{ partial "meta-page.html" . }}{{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
