@@ -4,7 +4,7 @@
 <html lang="{{ .Lang }}" {{ if .IsHome }}{{ else }}{{ if eq .Params.section "project"}} class="project-single single"{{ else }}class="post-single single"{{end}}{{end}}>
   <head>
     <meta name="google-site-verification" content="F5-SDKSprV6OsKlI6BZ-JNUOEYkm8EMVRQwoSz7NYl8" />
-    <title>{{ .Title }}</title>
+    <title>{{if eq .Type "notes"}}{{if eq .Kind "page"}}{{.Date.Format "Jan 2 2006"}} - {{ i18n "notes" }}{{else}}{{ i18n "notes" }}{{end}}{{else}}{{ .Title }}{{end}}</title>
     <meta charset="utf-8" />
     <link rel="canonical" href="{{ .Permalink }}">
     {{ if .IsHome }}{{ partial "meta-home.html" . }}{{ else if .IsPage }}{{ partial "meta-page.html" . }}{{ end }}
