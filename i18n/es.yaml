@@ -61,4 +61,7 @@
   translation: "También en twitter"
 
 - id: syndicated-twitter
-  translation: "Esta publicación fue sindicada a Twitter"  
+  translation: "Esta publicación fue sindicada a Twitter"
+
+- id: notes
+  translation: "Notas"

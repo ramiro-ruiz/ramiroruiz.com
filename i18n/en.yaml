@@ -62,3 +62,6 @@
 
 - id: syndicated-twitter
   translation: "This post was syndicated to Twitter"
+
+- id: notes
+  translation: "Notes"
