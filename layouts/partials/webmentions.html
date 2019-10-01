@@ -6,7 +6,8 @@
          concat the .domain and .RelPermalink instead of directly using the .Permalink -->
     <!-- {{ $domain := .domain | strings.TrimRight "/" }}
     {{ $domain = printf "https://ramiroruiz.com%s" $.RelPermalink }} -->
-    {{ $domain := "https://ramiroruiz.com" }} <!-- Hard-code the domain during testing on localhost, branches -->
+    <!-- {{ $domain := "https://ramiroruiz.com" }} --><!-- Hard-code the domain during testing on localhost, branches -->
+    {{ $domain := .domain | strings.TrimRight "/" }}
 
     {{ with .webmention }}
         {{ $.Scratch.Set "__wm_target_links" (slice (printf "target[]=%s%s" $domain $page.RelPermalink)) }}
