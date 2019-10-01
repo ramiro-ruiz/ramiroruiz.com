@@ -42,3 +42,11 @@ description = "Página personal de Ramiro Ruiz, diseñador."
 about_menu = "Acerca"
 work_menu = "Trabajo"
 myintro = '<h1>Ramiro Ruiz <span class="job">es un diseñador</span> <span class="location">de Monterrey, N.L. Mexico</span></h1><p>Trabajo con startups y pequeñas empresas, ayudándolas a crear grandes experiencias. Diez años trabajando y aprendiendo en diferentes campos de diseño. Ahora enfocado en proyectos de marca y productos digitales.</p> <p>Fanático en aprender y de desafíos, las artes marciales son mi otra pasión. He entrenando y competido durante quince años.</p>'
+
+[caches]
+[caches.getjson]
+dir = ":cacheDir/:project"
+maxAge = 0
+[caches.getcsv]
+dir = ":cacheDir/:project"
+maxAge = 0
