@@ -1,5 +1,5 @@
 node_modules
 .DS_Store
-public/.DS_Store
-pattern-library/
-.DS_Store
+/public
+/pattern-library
+.env

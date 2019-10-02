@@ -1,0 +1,40 @@
+{
+  "syndicate-to": [{
+    "uid": "https://brid.gy/publish/twitter",
+    "name": "@ramiroruiz on Twitter"
+  }, {
+    "uid": "https://micro.blog/ramiroruiz",
+    "name": "@ramiroruiz on Micro.blog"
+  }],
+  "post-types": {
+    "bookmark": {
+      "post": {
+        "path": "content/bookmarks/{{ published | date('yyyy-MM-dd') }}-{{ slug }}.md",
+        "url": "bookmarks/{{ published | date('yyyy/MM') }}/{{ slug }}"
+      }
+    },
+    "note": {
+      "template": "_micropub/note.njk",
+      "post": {
+        "path": "content/notes/{{ published | date('yy') }}/{{ published | date('MMddHHmmss') }}.md",
+        "url": "notes/{{ published | date('yy') }}/{{ published | date('MMddHHmmss') }}"
+      }
+    },
+    "photo": {
+      "post": {
+        "path": "content/photos/{{ published | date('X') }}.md",
+        "url": "photos/{{ published | date('X') }}"
+      },
+      "media": {
+        "path": "static/i/photos/{{ filedate | date('X') }}.{{ fileext }}",
+        "url": "i/photos/{{ filedate | date('X') }}.{{ fileext }}"
+      }
+    },
+    "reply": {
+      "post": {
+        "path": "content/replies/{{ published | date('X') }}.md",
+        "url": "replies/{{ published | date('X') }}"
+      }
+    }
+  }
+}

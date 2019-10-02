@@ -1,0 +1,57 @@
+{{ partial "header.html" . }}
+<main>
+  <style>
+    /* WIP styles for notes */
+    .h-entry {padding:32px 0 16px !important;}
+      .h-entry:hover {opacity:1;}
+    .note-meta {font-size:14px;color:#666;}
+      .p-author {display: none;}
+    .note-footer {margin-bottom:24px;padding-bottom:8px;border-bottom:1px solid rgba(0,0,0,.2);}
+      .tweet-meta, .u-syndication {display:flex; align-items:center;}
+        .tweet-meta a:first-child {padding-left:0;}
+          .twitter-icon {fill:#38A1F3;height:16px;}
+        .tweet-meta a {padding:0 8px; font-size: 14px;}
+
+    @media only screen and (max-width: 829px) {
+      .h-entry {padding:16px !important;margin: 15vh 6vw !important;background-color: #ffffff8a;}
+      main {min-height:70vh;}
+    }
+  </style>
+  <article class="post">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <section class="content archives">
+      <ul>
+        {{ range .Data.Pages }}
+        <li>
+          <a href="{{.Permalink}}" title="View note" class="note h-entry">
+            <div class="note-meta">
+              <span class="h-card p-author">Ramiro Ruiz</span>
+              <strong><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time></strong>
+              {{ if .Params.weather }}<span class="weather"> - {{ .Params.weather }}</span>{{ end }}
+            </div>
+            <div class="note__content">
+              <div class="e-content p-name p-content markdown">
+                {{ .Content }}
+              </div>
+            </div>
+            <div class="note-footer">
+              {{ if .Params.tweet_id }}
+              <div class="tweet-meta">
+                <a rel="syndication" class="u-syndication" href="https://twitter.com/ramiroruiz/status/{{.Params.tweet_id}}" title="{{ i18n "syndicated-twitter" }}"><svg class="twitter-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.Params.tweet_id}}">Reply</a>
+                <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.Params.tweet_id}}">Like</a>
+                <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.Params.tweet_id}}">Retweet</a>
+              </div>
+              {{ end }}
+              {{ if .Params.tags }}<p>Tags: {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</p>{{ end }}
+            </div>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </section>
+  </article>
+</main>
+{{ partial "archive-footer.html" . }}

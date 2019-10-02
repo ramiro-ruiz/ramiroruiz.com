@@ -56,3 +56,12 @@
 
 - id: photoby
   translation: "Foto de fondo por"
+
+- id: also-twitter
+  translation: "También en twitter"
+
+- id: syndicated-twitter
+  translation: "Esta publicación fue sindicada a Twitter"
+
+- id: notes
+  translation: "Notas"
