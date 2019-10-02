@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+<main>
+  <article class="post">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <section class="content archives">
+      <ul>
+        {{ range .Data.Pages }}
+        <li>
+            <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+        </li>
+    {{ end }}
+      </ul>
+    </section>
+  </article>
+</main>
+{{ partial "archive-footer.html" . }}
