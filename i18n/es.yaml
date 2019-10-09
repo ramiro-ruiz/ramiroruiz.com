@@ -65,3 +65,6 @@
 
 - id: notes
   translation: "Notas"
+
+- id: tags
+  translation: "Etiqueta"
