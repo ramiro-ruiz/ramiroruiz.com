@@ -32,20 +32,21 @@
       main {min-height:70vh;}
     }
   </style>
-  <section class="post">
+  <article class="post">
     <header>
       <h1>{{ .Title }}</h1>
     </header>
     <section class="content archives">
+      <ul>
         {{ range .Data.Pages }}
-        <article class="note-item note h-entry">
+        <li class="note-item note h-entry">
             <div class="note-meta">
               <span class="h-card p-author">Ramiro Ruiz</span>
               <strong><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time></strong>
               {{ if .Params.weather }}<span class="weather"> - {{ .Params.weather }}</span>{{ end }}
             </div>
             <div class="note__content">
-              <div class="e-content p-name e-content markdown">
+              <div class="e-content p-name p-content markdown">
                 {{ .Content }}
               </div>
             </div>
@@ -70,9 +71,10 @@
                 {{ end }}
             </div>
             <a href="{{.Permalink}}" title="View note" class="note-link"><span class="u-hidden-visually">View Note</span></a>
-        </article>
+        </li>
         {{ end }}
+      </ul>
     </section>
-  </section>
+  </article>
 </main>
 {{ partial "archive-footer.html" . }}

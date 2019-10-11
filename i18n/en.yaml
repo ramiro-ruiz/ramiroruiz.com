@@ -66,5 +66,17 @@
 - id: notes
   translation: "Notes"
 
+- id: photos
+  translation: "Photos"
+
+- id: replies
+  translation: "Replies"
+
 - id: tags
   translation: "Tag"
+
+- id: reply-to
+  translation: "Replying to"
+
+- id: tweet-from
+  translation: "a tweet from"

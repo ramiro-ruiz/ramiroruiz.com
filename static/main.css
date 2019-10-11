@@ -511,7 +511,7 @@ a {
           border-top: 1px solid #999;
         }
           .indie-content {
-            right: 236px;
+            left: 504px;
             top: 0;
             padding: 6px 16px;
             background-color: #FF6B6B;
@@ -528,6 +528,9 @@ a {
             .indie-content > a {
               color: #fff;
               line-height: 1;
+            }
+            .indie-content > a + a {
+            	margin-left: 8px;
             }
           .contact{
             display: flex;
@@ -1502,14 +1505,14 @@ html{
       opacity: .35;
     }
     /* Content frames */
-    main::before, main::after, .swiper-slide::before, .single main article::before, .swiper-slide:after, .single main article::after{
+    main::before, main::after, .swiper-slide::before, .single main .post::before, .swiper-slide:after, .single main .post::after{
         content:"";
         position:absolute;
         background:rgba(255,255,255,.7);
         z-index: 10;
     }
-    .swiper-slide:before, .single main article::before {top:0; left:0; width:100%; height:.5rem;}
-    .swiper-slide:after, .single main article::after {bottom:0; left:0; width:100%; height:.5rem;}
+    .swiper-slide:before, .single main .post::before {top:0; left:0; width:100%; height:.5rem;}
+    .swiper-slide:after, .single main .post::after {bottom:0; left:0; width:100%; height:.5rem;}
     main:before {top:.5rem; bottom:.5rem; left:0; width:.5rem;}
     main:after{top:.5rem; bottom:.5rem; right:0; width:.5rem;}
     .swiper-container{
@@ -1874,6 +1877,7 @@ html{
           .case .content .content-text{grid-column: 2/4; margin-top: 3rem;border: none; padding: 0; margin: 3rem 0 0;}
           .case .content p {font-size: 1.5rem; line-height: 1.4; padding: 0; margin: 1.5rem 1.5rem 1.5rem 0;}
             .single .content img{display: block; grid-column: 1/4; max-width: 100%; margin: 0; position: relative; z-index: 99;}
+            .single .content.archives img {position: static;}
         .single article footer{background-color: #fff; padding: 1rem 1.5rem 0; margin: 0; text-align: center; display: block; position: static; height: auto;}
         .single article footer > h3, .recent h4{font-family:'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif; font-weight: 900; font-size: 2rem; color: #414141; position: relative;}
         .single article footer > h3::before,
@@ -1982,12 +1986,14 @@ html{
 
           /*-------Post Single--------*/
           .post-single h1{
-            margin: 0 -1.5rem 1rem;
+            margin: 0;
+            grid-column: 1/-1;
             font-size: 4rem;
           }
           .post-single header time{font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif; font-weight: 900;}
           .post-single header .readtime{opacity: .7;}
           .post-single section.content{display: block; margin: 0; padding-bottom: 1rem;}
+          .post-single .content.archives {margin: 0 2rem;}
           .post-single .content p{font-size: 1.5rem; line-height: 1.4; margin: 1.5rem 0;}
             .post-single .content p:first-child{margin-top: 1rem;}
               .post-single article footer{padding: 0 1.5rem; margin: 0 -1.5rem;}
