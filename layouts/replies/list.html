@@ -48,6 +48,11 @@
             <div class="note__content">
               <div class="e-content p-name p-content markdown">
                 {{ .Content }}
+                {{ if .Params.photos }}
+                  {{ range .Params.photos }}
+                  <img class="u-photo" src="{{ .source }}" alt="{{.alt}}">
+                  {{ end }}
+                {{ end }}
               </div>
             </div>
             <div class="note-footer">

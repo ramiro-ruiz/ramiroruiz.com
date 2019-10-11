@@ -44,12 +44,12 @@
   </div>
   <div class="content-area has-context">
         <div class="e-content p-name">
+          {{ .Content }}
           {{ if .Params.photos }}
             {{ range .Params.photos }}
             <img class="u-photo" src="{{ .source }}" alt="{{.alt}}">
             {{ end }}
           {{ end }}
-          {{ .Content }}
           {{ if .Params.syndication_links }}
             {{ range .Params.syndication_links }}
             <a href="{{ . }}"></a>

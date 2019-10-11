@@ -23,6 +23,11 @@
       {{ if .Params.weather }}<span class="weather"> - {{ .Params.weather }}</span>{{ end }}
     </div>
     <div class="p-name p-content">
+      {{ if .Params.photos }}
+        {{ range .Params.photos }}
+        <img class="u-photo" src="{{ .source }}" alt="{{.alt}}">
+        {{ end }}
+      {{ end }}
       {{ .Content }}
         {{ if .Params.syndication_links }}
         {{ range .Params.syndication_links }}

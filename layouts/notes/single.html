@@ -29,6 +29,11 @@
     </div>
     <div class="p-name p-content">
       {{ .Content }}
+      {{ if .Params.photos }}
+        {{ range .Params.photos }}
+        <img class="u-photo" src="{{ .source }}" alt="{{.alt}}">
+        {{ end }}
+      {{ end }}
         {{ if .Params.syndication_links }}
         {{ range .Params.syndication_links }}
           <a href="{{ . }}"></a>

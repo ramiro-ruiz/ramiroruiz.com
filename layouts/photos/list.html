@@ -11,6 +11,7 @@
         .tweet-meta a:first-child {padding-left:0;}
           .twitter-icon {fill:#38A1F3;height:16px;}
         .tweet-meta a {padding:0 8px; font-size: 14px;}
+      .single .content img {position:static;}  
 
     .u-hidden-visually {
       border: 0 !important;
@@ -46,6 +47,11 @@
             </div>
             <div class="note__content">
               <div class="e-content p-name e-content markdown">
+                {{ if .Params.photos }}
+                  {{ range .Params.photos }}
+                  <img class="u-photo" src="{{ .source }}" alt="{{.alt}}">
+                  {{ end }}
+                {{ end }}
                 {{ .Content }}
               </div>
             </div>
