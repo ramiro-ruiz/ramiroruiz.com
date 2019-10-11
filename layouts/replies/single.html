@@ -40,7 +40,7 @@
         <a class="p-name u-url author_url" href="{{ .Params.context_author_url }}">{{ .Params.context_author_name }}</a>
       </span>
       <a href="{{ .Params.context_url }}" class="u-url"><time class="dt-published" datetime="{{ .Params.context_date }}">{{ .Params.context_date_friendly  }}</time></a>
-      <div class="post-text e-content p-name ">{{ .Params.context }}</div>
+      <div class="post-text e-content p-name ">{{ .Params.context }}{{ if .Params.context_link }} <a href="{{ .Params.context_link }}">{{ .Params.context_link }}</a>{{ end }}</div>
   </div>
   <div class="content-area has-context">
         <div class="e-content p-name">
