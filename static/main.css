@@ -524,12 +524,15 @@ a {
             animation: intro-contact 2.2s;
           }
             .indie-content > a {
-              color: #fff;
+              color: rgba(255,255,255,.5);
               line-height: 1;
               padding: 8px 16px;
               background-color: #414141;
               display: inline-block;
             }
+            	.indie-content > a:hover {
+            		color: rgba(255,255,255,1);	
+            	}
             .indie-content > a + a {
             	margin-left: 0;
             }
