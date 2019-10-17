@@ -511,26 +511,27 @@ a {
           border-top: 1px solid #999;
         }
           .indie-content {
-            left: 504px;
+            left: 0;
             top: 0;
-            padding: 6px 16px;
-            background-color: #FF6B6B;
-            height: auto;
-            font-family: sans-serif;
+            font-family: Lato, -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', sans-serif;
             flex-basis: 100%;
-            font-size: 12px;
+            font-size: 10px;
             text-transform: uppercase;
             font-weight: 200;
             letter-spacing: 1px;
             z-index: 10;
             line-height: 1;
+            animation: intro-contact 2.2s;
           }
             .indie-content > a {
               color: #fff;
               line-height: 1;
+              padding: 8px 16px;
+              background-color: #414141;
+              display: inline-block;
             }
             .indie-content > a + a {
-            	margin-left: 8px;
+            	margin-left: 0;
             }
           .contact{
             display: flex;
@@ -987,7 +988,7 @@ a {
             /*-------Post Single--------*/
             .post-single article header{display: block;}
             .post-single h1{
-              margin: 0 -1rem 1rem;
+              margin: 0 0 1rem;
               font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif;
               font-weight: 900;
               text-transform: uppercase;
