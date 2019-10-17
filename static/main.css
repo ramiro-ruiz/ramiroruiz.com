@@ -1509,7 +1509,7 @@ html{
       opacity: .35;
     }
     /* Content frames */
-    main::before, main::after, .swiper-slide::before, .single main .post::before, .swiper-slide:after, .single main .post::after{
+    main::before, main::after, .swiper-slide::before, .single main > .post::before, .swiper-slide:after, .single main > .post::after{
         content:"";
         position:absolute;
         background:rgba(255,255,255,.7);
