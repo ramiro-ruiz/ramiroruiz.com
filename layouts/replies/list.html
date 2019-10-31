@@ -40,10 +40,10 @@
   </style>
   <section class="post">
     <header>
-      <h1>{{ .Title }}</h1>
+      <h1>{{ i18n "replies" }}</h1>
     </header>
     <section class="content archives">
-        {{ range .Data.Pages }}
+        {{ range .Paginator.Pages}}
         <article class="h-entry post">
           <h3>
             {{ i18n "reply-to" }}
@@ -82,6 +82,7 @@
           <a href="{{.Permalink}}" title="View reply" class="note-link"><span class="u-hidden-visually">View Note</span></a>
         </article>
         {{ end }}
+        {{ partial "paginator.html" . }}
     </section>
   </section>
 </main>

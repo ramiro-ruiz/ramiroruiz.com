@@ -35,10 +35,10 @@
   </style>
   <section class="post">
     <header>
-      <h1>{{ .Title }}</h1>
+      <h1>{{ i18n "photos" }}</h1>
     </header>
     <section class="content archives">
-        {{ range .Data.Pages }}
+        {{ range .Paginator.Pages}}
         <article class="note-item note h-entry">
             <div class="note-meta">
               <span class="h-card p-author">Ramiro Ruiz</span>
@@ -73,6 +73,7 @@
             <a href="{{.Permalink}}" title="View note" class="note-link"><span class="u-hidden-visually">View Note</span></a>
         </article>
         {{ end }}
+        {{ partial "paginator.html" . }}
     </section>
   </section>
 </main>
