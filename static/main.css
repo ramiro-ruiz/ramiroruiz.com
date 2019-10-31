@@ -1001,6 +1001,10 @@ a {
               padding: 3rem 1.5rem;
               font-size: 3rem;
             }
+
+            .post-single h1.p-name{
+	            margin: 0 -1rem;
+	          }
             .post-single header time{font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif; font-weight: 900;}
             .post-single header .readtime{opacity: .7;}
             .post-single section.content{display: block; margin: 0; padding-bottom: 1rem;}
@@ -1509,14 +1513,14 @@ html{
       opacity: .35;
     }
     /* Content frames */
-    main::before, main::after, .swiper-slide::before, .single main > .post::before, .swiper-slide:after, .single main > .post::after{
+    main::before, main::after, .swiper-slide::before, .single main > .post::before, .case::before, .swiper-slide:after, .single main > .post::after, .case::after{
         content:"";
         position:absolute;
         background:rgba(255,255,255,.7);
         z-index: 10;
     }
-    .swiper-slide:before, .single main .post::before {top:0; left:0; width:100%; height:.5rem;}
-    .swiper-slide:after, .single main .post::after {bottom:0; left:0; width:100%; height:.5rem;}
+    .swiper-slide:before, .single main .post::before, .case::before {top:0; left:0; width:100%; height:.5rem;}
+    .swiper-slide:after, .single main .post::after, .case::after {bottom:0; left:0; width:100%; height:.5rem;}
     main:before {top:.5rem; bottom:.5rem; left:0; width:.5rem;}
     main:after{top:.5rem; bottom:.5rem; right:0; width:.5rem;}
     .swiper-container{
@@ -1994,6 +1998,9 @@ html{
             grid-column: 1/-1;
             font-size: 4rem;
           }
+          .post-single h1.p-name{
+            margin: 0 -1.5rem;
+          }
           .post-single header time{font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, 'San Francisco', Impact, 'Helvetica Neue', sans-serif; font-weight: 900;}
           .post-single header .readtime{opacity: .7;}
           .post-single section.content{display: block; margin: 0; padding-bottom: 1rem;}
@@ -2084,6 +2091,7 @@ html{font-size: 26px;}
 }
 
 
+.paginator { display: flex; justify-content: space-between; }
 
 
 /* Animations
