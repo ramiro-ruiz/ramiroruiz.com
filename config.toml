@@ -54,3 +54,6 @@ maxAge = 0
 [sitemap]
   ChangeFreq = "daily"
   Priority = "1"
+
+[permalinks]
+  #notes = "/:year/:month/:day/"
