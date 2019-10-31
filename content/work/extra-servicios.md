@@ -9,7 +9,6 @@ tags: "project"
 post_image: "extraservicios.jpg"
 post_color: "#465159"
 type_work: "Branding, UI/UX"
-weight: "4"
 
 client: "Extra Servicios is a new company servicing hotels and enterprises covering professional cleaning and private security."
 problem: "Struggling with getting new clients to trust them without any kind of branding or website, they want to present themselves in a way that can help them look as a serious and professional company. "

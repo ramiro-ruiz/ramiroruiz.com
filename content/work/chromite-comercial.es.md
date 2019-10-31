@@ -9,7 +9,6 @@ tags: "project"
 post_image: "chromite.jpg"
 post_color: "#114A36"
 type_work: "Branding, UI/UX, WordPress, WooCommerce"
-weight: "2"
 
 client: "Chromite es una empresa dedicada y comprometida con el mercado de autopartes en México. Produciendo y exportando productos por más de 25 años."
 problem: "Han estado utilizando la misma imagen desde el comienzo, por lo que su diseño lucía obsoleto y también necesitaban otra forma de mostrar todo su inventario, ya que los catálogos impresos son lentos y complicados de compartir."

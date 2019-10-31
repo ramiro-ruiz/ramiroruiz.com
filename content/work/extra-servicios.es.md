@@ -9,7 +9,6 @@ tags: "project"
 post_image: "extraservicios.jpg"
 post_color: "#465159"
 type_work: "Branding, UI/UX"
-weight: "4"
 
 client: "Extra Servicios es una nueva compañía que trabaja con hoteles y empresas, ayudándoles a cubrir limpieza profesional y la seguridad privada."
 problem: "Batallando en obtener nuevos clientes que confíen en ellos sin ningún tipo de imagen o presencia, por lo que quieren presentarse de una manera que les ayude a lucir serios y profesionales."

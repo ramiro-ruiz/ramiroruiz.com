@@ -9,7 +9,6 @@ tags: "project"
 post_image: "chromite.jpg"
 post_color: "#114A36"
 type_work: "Branding, UI/UX, WordPress, WooCommerce"
-weight: "2"
 
 client: "Chromite is a company dedicated and committed to the auto-parts market in Mexico. Producing and exporting products for more than 25 years."
 problem: "They've been using the same image since the beginning so their design looked outdated and they also needed another way to show all their inventory as printing catalogs are slow and outdated."

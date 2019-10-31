@@ -9,7 +9,6 @@ tags: "project"
 post_image: "RIM.jpg"
 post_color: "#57404A"
 type_work: "Branding, UI/UX"
-weight: "3"
 
 client: "Recicladora Industrial Monterrey es una empresa de reciclaje centrada en la creación de caucho a partir de neumáticos. Buscando ser ampliamente conocido en el estado y expandirse a todo el país con su nuevo enfoque para el negocio del reciclaje."
 problem: "Crear una imagen que los ayude a establecerse como un competidor fuerte y serio en un mercado lleno de empresas grandes y con mucha experiencia."

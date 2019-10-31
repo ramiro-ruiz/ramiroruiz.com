@@ -9,7 +9,6 @@ tags: "project"
 post_image: "RIM.jpg"
 post_color: "#57404A"
 type_work: "Branding, UI/UX"
-weight: "3"
 
 client: "Recicladora Industrial Monterrey is a recycling company focused on creating rubber from tires. Seeking to be widely known in the state and expand to the whole country with their new approach to the recycling business."
 problem: "Creating an image that helps them establish as a strong and serious competitor in the market full of big and older companies."

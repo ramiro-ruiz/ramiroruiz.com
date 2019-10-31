@@ -7,7 +7,6 @@ excerpt: "Working together with V09, we create a flexible and entertaining web p
 tags: [featured_project]
 post_image: "IHG-games.jpg"
 type_work: "UX, Development, Mobile"
-weight: "1"
 
 client: "IHG is a global organization with a broad portfolio of hotel brands including InterContinental ® Hotels, Holiday Inn® Hotels, Holiday Inn Express®, Staybridge Suites® and Candlewood Suites®, Kimpton® Hotels, HUALUXE® Hotels and Resorts, Crowne Plaza ® hotels, Hotel Indigo®, EVEN hotels, with more than 5,000 hotels in nearly 100 countries."
 problem: "As a way to gave back to their guest IHG hotels regularly delivers games, puzzles and promotions aimed to their guest children in fun ways.
