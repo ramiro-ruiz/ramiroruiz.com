@@ -31,7 +31,7 @@
       <description>
         {{ if .Params.photos }}
           {{ range .Params.photos }}
-        {{ printf "<![CDATA[<img src=\"%s\" width=\"500\" alt=\"%s\"/>]]>" (.source) (.alt) }}
+        {{ printf "<![CDATA[<img src=\"%s\" width=\"500\" alt=\"%s\"/>]]>" (.source) (.alt) | safeHTML }}
           {{ end }}
         {{ end }}
         {{ .Content | html }}
