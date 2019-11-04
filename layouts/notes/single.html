@@ -49,7 +49,7 @@
         <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.Params.tweet_id}}">Retweet</a>
       </div>
       {{ end }}
-      {{ if .Params.tags }}<p>Tags: {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</p>{{ end }}
+      {{ if .Params.tags }}<p>Tags: {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</p>{{ end }}
     </div>
   </article>
   <div class="webmentions">
