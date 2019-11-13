@@ -22,7 +22,7 @@
       <strong><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time></strong>
       {{ if .Params.weather }}<span class="weather"> - {{ .Params.weather }}</span>{{ end }}
     </div>
-    <div class="p-name p-content">
+    <div class="p-name e-content">
       {{ if .Params.videos }}
         {{ range .Params.videos }}
         <video class="u-video" controls="controls" poster="{{ .poster }}" src="{{ .source }}">
