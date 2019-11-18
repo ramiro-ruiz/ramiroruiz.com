@@ -76,7 +76,10 @@
   translation: "Etiqueta"
 
 - id: reply-to
-  translation: "Respondiendo a"
+  translation: "Respondiendo a un post en"
+
+- id: reply-to-tweet
+  translation: "Respondiendo a un tweet:"
 
 - id: tweet-from
   translation: "un tweet de"

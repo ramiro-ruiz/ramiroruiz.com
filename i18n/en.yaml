@@ -76,7 +76,10 @@
   translation: "Tag"
 
 - id: reply-to
-  translation: "Replying to"
+  translation: "Replying to a post on"
+
+- id: reply-to-tweet
+  translation: "Replying to a tweet:"
 
 - id: tweet-from
   translation: "a tweet from"
