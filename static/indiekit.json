@@ -9,21 +9,21 @@
   "post-types": {
     "bookmark": {
       "post": {
-        "path": "content/bookmarks/{{ published | date('yyyy-MM-dd') }}-{{ slug }}.md",
-        "url": "bookmarks/{{ published | date('yyyy/MM') }}/{{ slug }}"
+        "path": "content/links/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}.md",
+        "url": "links/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}"
       }
     },
     "note": {
       "template": "_micropub/note.njk",
       "post": {
-        "path": "content/notes/{{ published | date('yyyy') }}/{{ published | date('MMddHHmmss') }}.md",
-        "url": "notes/{{ published | date('yyyy') }}/{{ published | date('MMddHHmmss') }}"
+        "path": "content/notes/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}.md",
+        "url": "notes/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}"
       }
     },
     "photo": {
       "post": {
-        "path": "content/photos/{{ published | date('X') }}.md",
-        "url": "photos/{{ published | date('X') }}"
+        "path": "content/photos/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
+        "url": "photos/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
       },
       "media": {
         "path": "static/i/photos/{{ filedate | date('X') }}.{{ fileext }}",
@@ -32,8 +32,8 @@
     },
     "reply": {
       "post": {
-        "path": "content/replies/{{ published | date('X') }}.md",
-        "url": "replies/{{ published | date('X') }}"
+        "path": "content/replies/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
+        "url": "replies/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
       }
     }
   }
