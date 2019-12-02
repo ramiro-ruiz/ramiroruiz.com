@@ -27,7 +27,7 @@
       {{ if .Params.weather }}<span class="weather"> - {{ .Params.weather }}</span>{{ end }}
     </div>
     <div class="p-name e-content">
-      <p class="p-summary"><span class="heart">🖤</span> {{ i18n "liked" }} <a class="u-like-of" href="{{ .Params.like-of }}">{{ .Params.like-of }}</a></p>
+      <p class="p-summary"><span class="heart">🖤</span> {{ i18n "liked" }} <a class="u-like-of" href="{{ .Params.like_of }}">{{ .Params.like_of }}</a></p>
         {{ if .Params.syndication_links }}
         {{ range .Params.syndication_links }}
           <a href="{{ . }}"></a>
