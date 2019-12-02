@@ -5,13 +5,13 @@
   <head>
     <meta name="google-site-verification" content="F5-SDKSprV6OsKlI6BZ-JNUOEYkm8EMVRQwoSz7NYl8" />
     <title>
-      {{if eq .Type "notes"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "notes" }}{{end}}{{end}}
-      {{if eq .Type "replies"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "replies" }}{{end}}{{end}}
-      {{if eq .Type "photos"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "photos" }}{{end}}{{end}}
-      {{if eq .Type "videos"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}Videos{{end}}{{end}}
-      {{if eq .Type "likes"}}{{if eq .Kind "page"}}{{ i18n "liked" }} {{ .Params.like_of }} | Ramiro Ruiz{{else}}{{ i18n "likes" }}{{end}}{{end}}
+      {{if eq .Type "notes"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "notes" }} | Ramiro Ruiz{{end}}{{end}}
+      {{if eq .Type "replies"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "replies" }} | Ramiro Ruiz{{end}}{{end}}
+      {{if eq .Type "photos"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "photos" }} | Ramiro Ruiz{{end}}{{end}}
+      {{if eq .Type "videos"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}Videos | Ramiro Ruiz{{end}}{{end}}
+      {{if eq .Type "likes"}}{{if eq .Kind "page"}}{{ i18n "liked" }} {{ .Params.like_of }} | Ramiro Ruiz{{else}}{{ i18n "likes" }} | Ramiro Ruiz{{end}}{{end}}
 
-      {{if (or (eq .Type "notes") (eq .Type "replies") (eq .Type "photos"))}}{{else}}{{ .Title }}{{end}}
+      {{if (or (eq .Type "notes") (eq .Type "replies") (eq .Type "photos") (eq .Type "videos") (eq .Type "likes"))}}{{else}}{{ .Title }}{{end}}
     </title>
     <meta charset="utf-8" />
     <link rel="canonical" href="{{ .Permalink }}">

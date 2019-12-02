@@ -51,7 +51,14 @@
             </div>
             <div class="note__content">
               <div class="e-content p-name e-content">
-                <p class="p-summary"><span class="heart">&#x1F5A4;&#xFE0E;</span> {{ i18n "liked" }} <a class="u-like-of" href="{{ .Params.like_of }}">{{ .Params.like_of }}</a></p>
+                <p class="p-summary">
+                  <span class="heart">🖤</span> {{ i18n "liked" }}
+                  {{ if .Params.tweet_author }}
+                    <a class="u-like-of" href="{{ .Params.like_of }}">a tweet</a> by <a href="https://twitter.com/{{.Params.tweet_author}}">{{.Params.tweet_author}}</a>
+                  {{else}}
+                    <a class="u-like-of" href="{{ .Params.like_of }}">{{ .Params.like_of }}</a>
+                  {{ end }}
+                </p>
               </div>
             </div>
             <div class="note-footer">
