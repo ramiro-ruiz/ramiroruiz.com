@@ -55,16 +55,7 @@
               </div>
             </div>
             <div class="note-footer">
-              {{ $taxo := "tags" }} <!-- Use the plural form here -->
-                {{ with .Param $taxo }}
-                    <strong>{{ i18n "tags" }}{{ if gt (len .) 1 }}s{{ end }}:</strong>
-                    {{ range $index, $tag := . }}
-                        {{- if gt $index 0 }}, {{ end -}}
-                        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $tag) -}}
-                            <a href="{{ .Permalink }}">{{ $tag }}</a>
-                        {{- end -}}
-                    {{- end -}}
-                {{ end }}
+              {{ if .Params.tags }}<span><strong>Tags:</strong> {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "tags/" | absLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}</span>{{ end }}
             </div>
             <a href="{{.Permalink}}" title="View note" class="note-link"><span class="u-hidden-visually">View Note</span></a>
         </article>

@@ -8,6 +8,8 @@
       {{if eq .Type "notes"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "notes" }}{{end}}{{end}}
       {{if eq .Type "replies"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "replies" }}{{end}}{{end}}
       {{if eq .Type "photos"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}{{ i18n "photos" }}{{end}}{{end}}
+      {{if eq .Type "videos"}}{{if eq .Kind "page"}}{{ .Summary }} | Ramiro Ruiz{{else}}Videos{{end}}{{end}}
+      {{if eq .Type "likes"}}{{if eq .Kind "page"}}{{ i18n "liked" }} {{ .Params.like_of }} | Ramiro Ruiz{{else}}{{ i18n "likes" }}{{end}}{{end}}
 
       {{if (or (eq .Type "notes") (eq .Type "replies") (eq .Type "photos"))}}{{else}}{{ .Title }}{{end}}
     </title>
