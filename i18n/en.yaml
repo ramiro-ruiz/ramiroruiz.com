@@ -72,6 +72,12 @@
 - id: replies
   translation: "Replies"
 
+- id: likes
+  translation: "Likes"
+
+- id: liked
+  translation: "Liked"
+
 - id: tags
   translation: "Tag"
 

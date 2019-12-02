@@ -72,6 +72,12 @@
 - id: replies
   translation: "Respuestas"
 
+- id: likes
+  translation: "Favoritos"
+
+- id: liked
+  translation: "Me gusto"       
+
 - id: tags
   translation: "Etiqueta"
 
