@@ -1,0 +1,11 @@
+---
+date: {{ published }}
+
+like_of: {{ likeOf }}
+
+syndication_links:
+{% for link in syndicateTo %}
+    - {{ link }}
+{% endfor %}
+---
+{{ content | safe }}

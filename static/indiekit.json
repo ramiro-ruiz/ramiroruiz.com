@@ -9,21 +9,21 @@
   "post-types": {
     "bookmark": {
       "post": {
-        "path": "content/links/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}.md",
-        "url": "links/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}"
+        "path": "content/links/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss') }}.md",
+        "url": "links/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss') }}"
       }
     },
     "note": {
       "template": "static/indiekit-templates/note.njk",
       "post": {
-        "path": "content/notes/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}.md",
-        "url": "notes/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss') }}"
+        "path": "content/notes/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss') }}.md",
+        "url": "notes/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss') }}"
       }
     },
     "photo": {
       "post": {
-        "path": "content/photos/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
-        "url": "photos/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
+        "path": "content/photos/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
+        "url": "photos/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
       },
       "media": {
         "path": "static/i/photos/{{ filedate | date('X') }}.{{ fileext }}",
@@ -32,14 +32,15 @@
     },
     "reply": {
       "post": {
-        "path": "content/replies/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
-        "url": "replies/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
+        "path": "content/replies/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
+        "url": "replies/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
       }
     },
     "like": {
+      "template": "static/indiekit-templates/like.njk"
       "post": {
-        "path": "content/likes/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
-        "url": "likes/{{ published | date('YYYY/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
+        "path": "content/likes/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
+        "url": "likes/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
       }
     }
   }
