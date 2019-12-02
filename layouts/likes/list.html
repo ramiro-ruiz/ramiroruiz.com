@@ -26,6 +26,10 @@
       width: 1px !important;
     }
 
+    .heart {
+      font-family: u1f400;
+    }
+
     .note-link {position:absolute;top:0;left:0;right:0;bottom:0;display:block;}
 
     @media only screen and (max-width: 829px) {
@@ -47,7 +51,7 @@
             </div>
             <div class="note__content">
               <div class="e-content p-name e-content">
-                <span style="font-family: u1f400;">🖤</span> {{ i18n "liked" }} <a href="{{ .Params.like-of }}">{{ .Params.like-of }}</a>
+                <p class="p-summary"><span class="heart">🖤</span> {{ i18n "liked" }} <a class="u-like-of" href="{{ .Params.like-of }}">{{ .Params.like-of }}</a></p>
               </div>
             </div>
             <div class="note-footer">
