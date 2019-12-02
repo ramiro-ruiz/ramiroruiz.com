@@ -37,7 +37,7 @@
       }
     },
     "like": {
-      "template": "static/indiekit-templates/like.njk"
+      "template": "static/indiekit-templates/like.njk",
       "post": {
         "path": "content/likes/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}.md",
         "url": "likes/{{ published | date('yyyy/MM/dd') }}/{{ published | date('HH-mm-ss')}}"
