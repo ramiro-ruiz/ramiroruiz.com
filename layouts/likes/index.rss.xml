@@ -29,6 +29,15 @@
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <description>
+        {{ if .Params.like_of }} <span class="heart">🖤</span> {{ i18n "liked" }}
+          {{ if .Params.tweet_author }}
+            <a class="u-like-of" href="{{ .Params.like_of }}">a tweet</a> by <a href="https://twitter.com/{{.Params.tweet_author}}">{{.Params.tweet_author}}</a>
+          {{else if .Params.ig_post}}
+          <a class="u-like-of" href="{{ .Params.like_of }}">an instagram post</a>
+          {{else}}
+            the post: <a class="u-like-of" href="{{ .Params.like_of }}">{{ .Params.like_of }}</a>
+          {{ end }}
+        {{ end }}
         {{ if .Params.photos }}
           {{ range .Params.photos }}
         {{ printf "<![CDATA[<img src=\"%s\" width=\"500\" alt=\"%s\"/>]]>" (.source) (.alt) | safeHTML }}

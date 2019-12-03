@@ -38,14 +38,12 @@
     <link rel="webmention" href="https://webmention.io/ramiroruiz.com/webmention" />
     <link rel="pingback" href="https://webmention.io/ramiroruiz.com/xmlrpc" />
 
-    {{ range .AlternativeOutputFormats -}}
-      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
-
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="All posts of Ramiro Ruiz, designer" />
     <link rel="alternate" type="application/rss+xml" href="/blog/index.xml" title="Blog of Ramiro Ruiz, designer" />
     <link rel="alternate" type="application/rss+xml" href="/notes/index.xml" title="Notes of Ramiro Ruiz, designer" />
     <link rel="alternate" type="application/rss+xml" href="/photos/index.xml" title="Photos of Ramiro Ruiz, designer" />
     <link rel="alternate" type="application/rss+xml" href="/replies/index.xml" title="Replies of Ramiro Ruiz, designer" />
+    <link rel="alternate" type="application/rss+xml" href="/likes/index.xml" title="Likes of Ramiro Ruiz, designer" />
 
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700,900|Titillium+Web:200i,400,900" rel="stylesheet">{{ if eq .Params.section "post"}}
