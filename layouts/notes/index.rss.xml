@@ -50,7 +50,7 @@
         {{ end }}
 
         <div class="e-content">{{ .Content | html }}</div>
-        ]]>
+        ]]&gt;
       </description>
       <guid>{{ .Permalink }}</guid>
     </item>

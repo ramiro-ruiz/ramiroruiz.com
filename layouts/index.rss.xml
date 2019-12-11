@@ -42,7 +42,7 @@
         {{ end }}
 
         <div class="e-content">{{ .Content | html }}</div>
-        ]]>
+        ]]&gt;
       </description>
     </item>
     {{ end }}
