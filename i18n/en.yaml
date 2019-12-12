@@ -84,6 +84,9 @@
 - id: reply-to
   translation: "Replying to a post on"
 
+- id: a-reply
+  translation: "Replying to"
+
 - id: reply-to-tweet
   translation: "Replying to a tweet:"
 

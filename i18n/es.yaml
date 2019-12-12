@@ -76,13 +76,16 @@
   translation: "Favoritos"
 
 - id: liked
-  translation: "Me gusto"       
+  translation: "Me gusto"
 
 - id: tags
   translation: "Etiqueta"
 
 - id: reply-to
   translation: "Respondiendo a un post en"
+
+- id: a-reply
+  translation: "Respondiendo a"
 
 - id: reply-to-tweet
   translation: "Respondiendo a un tweet:"
