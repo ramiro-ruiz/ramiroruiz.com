@@ -29,9 +29,17 @@
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
       <description>{{ printf "<![CDATA[" | safeHTML}}
+        <div class="p-name e-content">
         {{ if .Params.photos }}
           {{ range .Params.photos }}
         {{ printf "<img src=\"%s\" width=\"500\" alt=\"%s\"/>" (.source) (.alt) | safeHTML }}
+          {{ end }}
+        {{ end }}
+        {{ if .Params.videos }}
+          {{ range .Params.videos }}
+          <video class="u-video" controls="controls" poster="{{ .poster }}" src="{{ .source }}">
+            {{.alt}}
+          </video>
           {{ end }}
         {{ end }}
 
@@ -49,7 +57,8 @@
           <p>{{ i18n "a-reply" }} <a class="p-name u-in-reply-to" href="{{ .Params.context_url }}">{{ .Params.context_url }}</a></p>
         {{ end }}
 
-        <div class="e-content">{{ .Content | safeHTML }}</div>
+        {{ .Content | safeHTML }}
+        </div>
         ]]>
       </description>
       <guid>{{ .Permalink }}</guid>
