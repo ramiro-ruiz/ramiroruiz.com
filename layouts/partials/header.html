@@ -45,6 +45,8 @@
     <link rel="alternate" type="application/rss+xml" href="/replies/index.xml" title="Replies of Ramiro Ruiz, designer" />
     <link rel="alternate" type="application/rss+xml" href="/likes/index.xml" title="Likes of Ramiro Ruiz, designer" />
 
+    {{ if .IsHome }}<link rel="feed" href="/twitter-feed">{{end}}
+
     <link rel="stylesheet" href="{{ .Site.BaseURL }}/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:300,700,900|Titillium+Web:200i,400,900" rel="stylesheet">{{ if eq .Params.section "post"}}
     <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">{{end}}{{ if .Params.post_bg }}
