@@ -42,7 +42,8 @@
       <h1>{{ i18n "likes" }}</h1>
     </header>
     <section class="content archives">
-        {{ range .Paginator.Pages}}
+      {{ $paginator := .Paginate (where .Site.Pages "Type" "likes") }}
+      {{ range $paginator.Pages }}
         <article class="note-item note h-entry">
             <div class="note-meta">
               <span class="h-card p-author">Ramiro Ruiz</span>
