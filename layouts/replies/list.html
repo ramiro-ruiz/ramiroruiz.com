@@ -43,7 +43,8 @@
       <h1>{{ i18n "replies" }}</h1>
     </header>
     <section class="content archives">
-        {{ range .Paginator.Pages}}
+      {{ $paginator := .Paginate (where .Site.Pages "Type" "replies") }}
+      {{ range $paginator.Pages }}
         <article class="h-entry post">
           {{ if .Params.context_author_name }}
           <h3>

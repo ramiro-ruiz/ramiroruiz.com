@@ -38,7 +38,8 @@
       <h1>Videos</h1>
     </header>
     <section class="content archives">
-        {{ range .Paginator.Pages}}
+      {{ $paginator := .Paginate (where .Site.Pages "Type" "videos") }}
+      {{ range $paginator.Pages }}
         <article class="note-item note h-entry">
             <div class="note-meta">
               <span class="h-card p-author">Ramiro Ruiz</span>
