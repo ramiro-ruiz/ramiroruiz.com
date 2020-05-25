@@ -63,3 +63,12 @@ maxAge = 0
 
 [permalinks]
   #notes = "/:year/:month/:day/"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  notes = "notes"
+  replies = "replies"
+  photos = "photos"
+  videos = "videos"
+  likes = "likes"
