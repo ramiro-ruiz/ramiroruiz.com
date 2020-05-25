@@ -20,6 +20,7 @@ weight = 140
 home = [ "HTML", "RSS"]
 section = [ "HTML", "RSS"]
 taxonomy = [ "HTML", "RSS"]
+type = [ "HTML", "RSS"]
 
 
 [Params]
@@ -67,8 +68,4 @@ maxAge = 0
 [taxonomies]
   category = "categories"
   tag = "tags"
-  notes = "notes"
-  replies = "replies"
-  photos = "photos"
-  videos = "videos"
-  likes = "likes"
+  type = "type"
