@@ -84,7 +84,7 @@
       <h1>{{ .Title }}</h1>
     </header>
     <section class="content h-feed">
-      {{ range where (where .Site.AllPages.ByPublishDate.Reverse "Type" "!=" "likes") "Type" "!=" "page" }}
+      {{ range where (where .Site.Pages.ByPublishDate.Reverse "Type" "!=" "likes") "Type" "!=" "page" }}
       {{ if .Params.tweet_id }}
       
       <article class="note-item note h-entry">

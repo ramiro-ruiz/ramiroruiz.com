@@ -92,3 +92,9 @@
 
 - id: tweet-from
   translation: "un tweet de"
+
+- id: twitter
+  translation: "ramiroruiz_ES"
+
+- id: webmentionurl
+  translation: "ramiroruiz.com_es_"  
