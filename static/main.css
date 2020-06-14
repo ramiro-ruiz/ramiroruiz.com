@@ -534,7 +534,7 @@ a {
             .indie-content > a {
               color: rgba(255,255,255,.5);
               line-height: 1;
-              padding: 8px 16px;
+              padding: 6px 8px;
               background-color: #414141;
               display: inline-block;
             }
@@ -542,7 +542,7 @@ a {
             		color: rgba(255,255,255,1);	
             	}
             .indie-content > a + a {
-            	margin-left: 0;
+            	border-left: 1px solid #565656;
             }
           .contact{
             display: flex;
