@@ -48,7 +48,10 @@
         {{ if .Params.context_url }}
           <p>{{ i18n "a-reply" }} <a class="p-name u-in-reply-to" href="{{ .Params.context_url }}">{{ .Params.context_url }}</a></p>
         {{ end }}
-
+        
+        {{ if .Params.link_title }}
+        <h1><a href="{{.Params.link_url}}">{{.Params.link_title}}</a></h1>
+        {{ end }}
         {{ .Content | safeHTML }}
         </div>
         ]]>
