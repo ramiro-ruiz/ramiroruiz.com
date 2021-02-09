@@ -38,7 +38,7 @@
   </h3>
   <div class="h-cite u-in-reply-to repost-content context">
       <span class="author p-author h-card">
-        <img class="u-photo" src="https://twitter-avatar.now.sh/{{ .Params.context_author }}" alt="{{ .Params.context_author_name }}" width="48">
+        <img class="u-photo" src="{{ .Params.avatar }}" alt="{{ .Params.context_author_name }}" width="48">
         <a class="p-name u-url author_url" href="{{ .Params.context_author_url }}">{{ .Params.context_author_name }}</a>
       </span>
       <a href="{{ .Params.context_url }}" class="u-url"><time class="dt-published" datetime="{{ .Params.context_date }}">{{ .Params.context_date_friendly  }}</time></a>
