@@ -19,7 +19,6 @@ weight = 140
 [outputs]
 home = [ "HTML", "RSS"]
 section = [ "HTML", "RSS"]
-taxonomy = [ "HTML", "RSS"]
 type = [ "HTML", "RSS"]
 
 
