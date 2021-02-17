@@ -42,14 +42,14 @@
         <a class="p-name u-url author_url" href="{{ .Params.context_author_url }}">{{ .Params.context_author_name }}</a>
       </span>
       <a href="{{ .Params.context_url }}" class="u-url"><time class="dt-published" datetime="{{ .Params.context_date }}">{{ .Params.context_date_friendly  }}</time></a>
-      <div class="post-text e-content p-name ">{{ .Params.context | safeHTML | truncate 277 }}</div>
+      <div class="post-text e-content p-name ">{{ .Params.context | safeHTML }}</div>
   </div>
   {{else}}
   <div class="h-cite u-in-reply-to repost-content">
   <h3>
     {{ i18n "reply-to" }} <a class="u-url" href="{{ .Params.context_url }}">{{ .Params.context_site }}</a>
   </h3>
-      <div class="post-text e-content p-name context context-post">{{ .Params.context | safeHTML | truncate 277 }}</div>
+      <div class="post-text e-content p-name context context-post">{{ .Params.context | safeHTML }}</div>
   </div>
   {{ end }}
   <div class="content-area has-context">
