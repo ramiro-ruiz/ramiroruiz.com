@@ -68,3 +68,6 @@ maxAge = 0
   category = "categories"
   tag = "tags"
   type = "type"
+
+[markup.goldmark.renderer]
+  hardWraps = true
