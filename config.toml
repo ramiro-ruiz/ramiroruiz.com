@@ -61,9 +61,6 @@ maxAge = 0
   ChangeFreq = "daily"
   Priority = "1"
 
-[permalinks]
-  #notes = "/:year/:month/:day/"
-
 [taxonomies]
   category = "categories"
   tag = "tags"
