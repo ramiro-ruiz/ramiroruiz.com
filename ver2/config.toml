@@ -9,6 +9,7 @@ pluralizeListTitles = false
 pygmentsUseClasses = true
 pygmentsCodeFences = true
 disablePathToLower = true
+enableGitInfo = true
 
 # Needed for mermaid shortcodes
 [markup]
@@ -18,3 +19,7 @@ disablePathToLower = true
   [markup.tableOfContents]
     startLevel = 1
     endLevel = 9
+
+[params]
+  # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
+  geekdocMenuBundle = true    

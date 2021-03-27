@@ -1,0 +1,15 @@
+main:
+  - name: Usage
+    icon: "gdoc_notification"
+    ref: "/usage"
+    sub:
+      - name: Menus
+        ref: "/usage/menus"
+  - name: Personal content
+    sub:
+      - name: Notes
+        external: true
+        ref: "https://ramiroruiz.com/notes"
+      - name: Replies
+        external: true
+        ref: "https://ramiroruiz.com/replies"  
