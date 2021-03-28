@@ -1,7 +1,11 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Personal design system"
-theme = "hugo-geekdoc"
+theme = "blank"
+
+#Design system config
+#contentDir = "content/_ds"
+#theme = "geekdoc"
 
 pluralizeListTitles = false
 
