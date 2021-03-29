@@ -1,70 +1,29 @@
-baseURL = "https://ramiroruiz.com"
-title = "Ramiro Ruiz, designer"
-theme = "Ramiro-V.1"
+baseURL = "http://example.org/"
 languageCode = "en-us"
-defaultContentLanguage = "en"
-enableRobotsTXT = true
+title = "Personal design system"
+theme = "blank"
 
-[related]
-threshold = 80
-includeNewer = true
-toLower = false
-[[related.indices]]
-name  = "tags"
-weight = 100
-[[related.indices]]
-name  = "categories"
-weight = 140
+#Design system config
+#contentDir = "content/_ds"
+#theme = "geekdoc"
 
-[outputs]
-home = [ "HTML", "RSS"]
-section = [ "HTML", "RSS"]
-type = [ "HTML", "RSS"]
+pluralizeListTitles = false
 
+# Geekdoc required configuration
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+enableGitInfo = true
 
-[Params]
-  description = "Personal homepage of Ramiro Ruiz, designer."
-  myintro = '<h1>Ramiro Ruiz <span class="job">is a designer</span> <span class="location">from Monterrey, N.L. Mexico</span></h1> <p>I work with startups and small businesses, helping them create remarkable experiences. After ten years working and learning from different design fields. I’m now focused on Digital Products and Branding projects.</p> <p>As a non-stop learner that loves challenges, Martial Arts is my other passion. I’ve been training and competing for fifteen years.</p>'
-  goals ='ok'
+# Needed for mermaid shortcodes
+[markup]
+  [markup.goldmark.renderer]
+    # Needed for mermaid shortcode
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
 
-  [Params.indieweb] # https://gitlab.com/kaushalmodi/hugo-theme-refined
-    domain = "https://ramiroruiz.com/" # must end with a slash
-    # webring = "🏔🐴🎑" # Get your IndieWeb Webring ID from https://xn--sr8hvo.ws
-    [Params.indieweb.webmention]
-      endpoint = "https://webmention.io/" # must end with a slash
-      account = "ramiroruiz.com"
-
-[languages]
-[languages.en]
-languageName = "English"
-weight = 1
-title = "Ramiro Ruiz, designer"
-
-[languages.es]
-languageName = "Español"
-weight = 2
-title = "Ramiro Ruiz, diseñador"
-description = "Página personal de Ramiro Ruiz, diseñador."
-about_menu = "Acerca"
-work_menu = "Trabajo"
-myintro = '<h1>Ramiro Ruiz <span class="job">es un diseñador</span> <span class="location">de Monterrey, N.L. Mexico</span></h1><p>Trabajo con startups y pequeñas empresas, ayudándolas a crear grandes experiencias. Diez años trabajando y aprendiendo en diferentes campos de diseño. Ahora enfocado en proyectos de marca y productos digitales.</p> <p>Fanático en aprender y de desafíos, las artes marciales son mi otra pasión. He entrenando y competido durante quince años.</p>'
-
-[caches]
-[caches.getjson]
-dir = ":cacheDir/:project"
-maxAge = 0
-[caches.getcsv]
-dir = ":cacheDir/:project"
-maxAge = 0
-
-[sitemap]
-  ChangeFreq = "daily"
-  Priority = "1"
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-  type = "type"
-
-[markup.goldmark.renderer]
-  hardWraps = true
+[params]
+  # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
+  geekdocMenuBundle = true    
