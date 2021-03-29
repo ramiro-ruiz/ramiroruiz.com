@@ -1,12 +1,16 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "Personal design system"
+defaultContentLanguage = "en"
+title = "Ramiro Ruiz, Designer"
 theme = "blank"
 
 #Design system config
+#title = "Personal design system"
 #contentDir = "content/_ds"
 #theme = "geekdoc"
 
+
+enableRobotsTXT = true
 pluralizeListTitles = false
 
 # Geekdoc required configuration

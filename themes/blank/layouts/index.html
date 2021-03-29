@@ -5,6 +5,29 @@
 			{{ .Render "summary" }}
 		{{ end }}
 		{{ partial "pagination.html" . }}
+		{{ range first 6 (where .Site.Pages "Type" "notes") }}
+			{{.Title}}
+		{{ end }}
+		
+		{{ range .Site.Taxonomies.tags.featured_project }}
+		{{.Title}}
+		{{end}}
+
+		<div>
+			{{ range (.Site.RegularPages.GroupByDate "2006") }}
+                  <ul class="archive-list">
+                      {{ range first 3 (where .Pages "Type" "notes") }}
+                          <li>
+							  {{ .Render "summary" }}
+							  <a href="{{ .RelPermalink }}">
+								{{ .Date.Format "02.01.2006 15:04" }}
+							</a>
+                          </li>
+                      {{ end }}
+                  </ul>
+              {{ end }}
+		</div>
+		
 	</main>
 {{ partial "sidebar.html" . }}
 {{ end }}
