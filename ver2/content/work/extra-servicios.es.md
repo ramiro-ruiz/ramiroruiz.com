@@ -1,7 +1,7 @@
 ---
 title: "Extra Servicios"
 date: 2017-12-30T02:30:38-06:00
-draft: false
+draft: true
 section: "project"
 slug: ""
 excerpt: "Extra Servicios es una nueva compañía que trabaja con hoteles y empresas, ayudándoles a cubrir limpieza profesional y la seguridad privada. Buscaban un aspecto profesional para la compañía, que mantenga un equilibrio que represente sus dos diferentes áreas de servicios."
