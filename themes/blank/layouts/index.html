@@ -1,33 +1,40 @@
 {{ define "main" }}
 	<main>
-		{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-		{{ range $paginator.Pages }}
-			{{ .Render "summary" }}
-		{{ end }}
-		{{ partial "pagination.html" . }}
-		{{ range first 6 (where .Site.Pages "Type" "notes") }}
-			{{.Title}}
-		{{ end }}
-		
-		{{ range .Site.Taxonomies.tags.featured_project }}
-		{{.Title}}
-		{{end}}
-
-		<div>
-			{{ range (.Site.RegularPages.GroupByDate "2006") }}
-                  <ul class="archive-list">
-                      {{ range first 3 (where .Pages "Type" "notes") }}
-                          <li>
-							  {{ .Render "summary" }}
-							  <a href="{{ .RelPermalink }}">
-								{{ .Date.Format "02.01.2006 15:04" }}
-							</a>
-                          </li>
-                      {{ end }}
-                  </ul>
-              {{ end }}
-		</div>
+		<p>I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little about me, my work, writings, thoughts, photos, and things I’m interested in.</p>
+		<section>
+			<h1>Work</h1>
+			<ul>
+				{{ range first 4 (where .Site.RegularPages "Type" "work") }}
+					<li>{{.Title}}</li>
+				{{ end }}
+			</ul>
+		</section>
+		<hr/>
+		<section>
+			<h1>Blog</h1>
+			<ul>
+				{{ range first 4 (where .Site.RegularPages "Type" "blog") }}
+					<li>
+						<h2><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
+						{{ .Summary }}
+					</li>
+				{{ end }}
+			</ul>
+		</section>
+		<hr/>
+		<section>
+			<h1>Activity</h1>
+			<ul>
+				{{ range first 6 (where .Site.Pages "Type" "in" (slice "photos" "videos" "replies" "notes")) }}
+					<li>
+						<p>{{ .Summary }}</p>
+						<a href="{{ .RelPermalink }}">
+							<strong><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time></strong>
+						</a>
+					</li>
+				{{ end }}
+			</ul>
+		</section>
 		
 	</main>
-{{ partial "sidebar.html" . }}
 {{ end }}

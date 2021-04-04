@@ -4,30 +4,17 @@ defaultContentLanguage = "en"
 title = "Ramiro Ruiz, Designer"
 theme = "blank"
 
-#Design system config
-#title = "Personal design system"
-#contentDir = "content/_ds"
-#theme = "geekdoc"
+[languages]
+[languages.en]
+languageName = "English"
+weight = 1
+title = "Ramiro Ruiz, designer"
 
+[languages.es]
+languageName = "Español"
+weight = 2
+title = "Ramiro Ruiz, diseñador"
+description = "Página personal de Ramiro Ruiz, diseñador."
 
 enableRobotsTXT = true
 pluralizeListTitles = false
-
-# Geekdoc required configuration
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-disablePathToLower = true
-enableGitInfo = true
-
-# Needed for mermaid shortcodes
-[markup]
-  [markup.goldmark.renderer]
-    # Needed for mermaid shortcode
-    unsafe = true
-  [markup.tableOfContents]
-    startLevel = 1
-    endLevel = 9
-
-[params]
-  # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
-  geekdocMenuBundle = true    
