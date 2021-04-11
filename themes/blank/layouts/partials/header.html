@@ -1,12 +1,19 @@
-<header>
-	<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-	{{ with .Site.Menus.main }}
-	<nav>
-		<ul>
-			{{ range . }}
-			<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-			{{ end }}
-		</ul>
-	</nav>
-	{{ end }}
+<header class="c-header">
+	<div class="c-header__content o-container">
+		<a class="c-logo" href="{{ .Site.BaseURL }}">
+			<svg class="c-logo__svg">
+				<use href="#logo"></use>
+			</svg>
+		</a>
+		{{ with .Site.Menus.main }}
+		<nav>
+			<ul>
+				{{ range . }}
+				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+				{{ end }}
+			</ul>
+		</nav>
+		{{ end }}
+		<p class="c-header__intro">I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little about me, my work, writings, thoughts, photos, and things I’m interested in.</p>
+	</div>
 </header>

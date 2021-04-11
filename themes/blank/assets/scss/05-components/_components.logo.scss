@@ -1,0 +1,8 @@
+.c-logo,
+.c-logo:visited {
+    color: var(--color-logo, #000);
+}
+    .c-logo__svg {
+        height: 2rem;
+        width: 2rem;
+    }

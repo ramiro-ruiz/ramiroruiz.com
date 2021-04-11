@@ -1,5 +1,19 @@
-body {
-    p {
-        color: rgb(35, 60, 80);
-    }
-}
+/*---------- 01 Settings  ----------*/
+// @import "01-settings/settings.colors";
+// @import "01-settings/settings.globals";
+@import "01-settings/settings.spacing";
+@import "01-settings/settings.typography";
+
+/*---------- 02 Tools  ----------*/
+@import "02-tools/tools.functions";
+
+/*---------- 03 Generic  ----------*/
+@import "03-generic/generic.reset";
+
+
+/*---------- 04 Objects  ----------*/
+@import "04-objects/objects.containers";
+
+/*---------- 05 Components  ----------*/
+@import "05-components/components.logo";
+@import "05-components/components.header";
