@@ -10,7 +10,7 @@
   {{ $ref = relref $ . }}
 {{ end }}
 
-<button class="gdoc-button{{ with .Get "class" }} {{ . }}{{ end }}">
+<button class="gdoc-button otro{{ with .Get "class" }} {{ . }}{{ end }}">
 <a {{ with $ref }} href="{{.}}" {{ end }} {{ with $target }} target="{{.}}" {{ end }} class="gdoc-button__link">
   {{ $.Inner }}
 </a>

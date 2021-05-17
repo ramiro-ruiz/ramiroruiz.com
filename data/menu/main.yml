@@ -1,10 +1,14 @@
 main:
-  - name: Usage
-    icon: "gdoc_notification"
-    ref: "/usage"
+  - name: Visual styles
+    #icon: "gdoc_notification"
+    #ref: "/usage"
     sub:
-      - name: Menus
-        ref: "/usage/menus"
+      - name: Colors
+        ref: "/visual-styles/colors"
+  - name: Components
+    sub:
+      - name: Hola
+        ref: "/components/hola"
   - name: Personal content
     sub:
       - name: Notes
@@ -12,4 +16,4 @@ main:
         ref: "https://ramiroruiz.com/notes"
       - name: Replies
         external: true
-        ref: "https://ramiroruiz.com/replies"  
+        ref: "https://ramiroruiz.com/replies"
