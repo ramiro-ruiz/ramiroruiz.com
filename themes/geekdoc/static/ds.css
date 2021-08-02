@@ -1,3 +1,9 @@
 :root {
   --color-dark: #1d1d1e;
+  --color-grey-100: #F5F5F5;
+  --color-grey-500: #999999;
+}
+
+.partial-shortcode {
+  max-width: 300px;
 }

@@ -1,3 +1,3 @@
 My Hello component
 
-{{< class="hola" partial "hola.html" >}}
+{{< partial "hola.html" >}}

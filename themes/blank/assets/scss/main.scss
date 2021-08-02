@@ -2,13 +2,14 @@
 // @import "01-settings/settings.colors";
 // @import "01-settings/settings.globals";
 @import "01-settings/settings.spacing";
-@import "01-settings/settings.typography";
 
 /*---------- 02 Tools  ----------*/
+@import "02-tools/tools.fonts";
 @import "02-tools/tools.functions";
 
 /*---------- 03 Generic  ----------*/
 @import "03-generic/generic.reset";
+@import "03-generic/generic.typography";
 
 
 /*---------- 04 Objects  ----------*/

@@ -1282,3 +1282,7 @@ img {
 :root {
   --color-dark: #1d1d1e;
 }
+
+.partial-shortcode {
+  max-width: 300px;
+}
