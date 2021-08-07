@@ -2,7 +2,8 @@
 <html lang='{{ .Site.LanguageCode | default "en-us" }}'>
 	{{ partial "head.html" . }}
 <body>
-	{{ partial "header" . }}
+	{{ partial "components/nav" . }}
+	{{ partial "components/home-intro.html" . }}
 	{{ block "main" . }}{{ end }}
 	{{ partial "footer" . }}
 	{{ partial "svg-sprite" .}}

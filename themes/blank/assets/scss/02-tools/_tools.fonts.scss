@@ -38,3 +38,21 @@
 	font-style: normal;
   font-weight: 100 900;
 }
+
+:root {
+  // font family
+    --font-headings: "Work Sans", system-ui,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --font-body: "Zodiak-Variable";
+  
+    // font size
+    --text-base-size: 1em; // body font-size
+    --text-scale-ratio: 1.2; // multiplier used to generate the type scale values 👇
+    
+    // line-height
+    --body-line-height: 1.4;
+    --heading-line-height: 1.2;
+    
+  
+    // unit - don't modify unless you want to change the typography unit (e.g., from Em to Rem units)
+    --text-unit: 1em; // if not Em units → --text-unit: var(--text-base-size);
+}

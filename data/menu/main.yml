@@ -7,8 +7,18 @@ main:
         ref: "/visual-styles/colors"
   - name: Components
     sub:
-      - name: Hola
+      - name: Buttons
+        ref: "/shortcodes/buttons"
+      - name: Hola!
         ref: "/components/hola"
+      - name: Home intro
+        ref: "/shortcodes/home-intro"
+      - name: Lead intro
+        ref: "/shortcodes/lead-intro"
+      - name: Logo
+        ref: "/components/logo"
+      - name: Navigation
+        ref: "/components/nav"
   - name: Personal content
     sub:
       - name: Notes

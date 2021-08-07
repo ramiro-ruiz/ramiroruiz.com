@@ -117,13 +117,13 @@ select {
     scroll-behavior: auto !important; } }
 
 :root {
-  --font-primary: "Work Sans", system-ui,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-headings: "Work Sans", system-ui,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --font-body: "Zodiak-Variable", Georgia, sans-serif;
   --text-base-size: 1em;
   --text-scale-ratio: 1.2;
   --body-line-height: 1.4;
   --heading-line-height: 1.2;
-  --font-primary-capital-letter: 1;
+  --font-headings-capital-letter: 1;
   --text-unit: 1em; }
 
 :root, * {
@@ -140,11 +140,11 @@ body {
   font-family: var(--font-body); }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-primary);
+  font-family: var(--font-headings);
   font-weight: 700; }
 
-.font-primary {
-  font-family: var(--font-primary); }
+.font-headings {
+  font-family: var(--font-headings); }
 
 /*---------- 04 Objects  ----------*/
 .o-container {
@@ -168,5 +168,50 @@ h1, h2, h3, h4 {
 
 .c-header__intro {
   font-size: var(--text-md); }
+
+.c-btn {
+  display: inline-block;
+  min-width: 3.75rem;
+  min-height: 2.25rem;
+  padding: var(--space-xs) var(--space-unit);
+  transition: var(--global-transition--fast);
+  border: 0.0625rem solid var(--color-grey-200);
+  border-radius: var(--space-xl);
+  background: var(--color-btn-background);
+  color: var(--color-grey-800);
+  font: inherit;
+  font-size: 0.875rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 0.0625rem solid #C4CDD5;
+  outline: none !important;
+  box-shadow: none !important; }
+  .c-btn:hover, .c-btn:focus {
+    border: 0.0625rem solid var(--color-grey-400);
+    background: var(--color-btn-background-hover);
+    color: var(--color-grey-900);
+    text-decoration: none; }
+  .c-btn:focus {
+    outline: 0.125rem dotted transparent;
+    outline-offset: 0.125rem;
+    box-shadow: 0 0 0 0.125rem var(--color-white), 0 0 0.1875rem 0.3125rem var(--color-brand-tertiary-200); }
+  .c-btn::first-letter {
+    text-transform: uppercase; }
+  .c-btn[disabled] {
+    background: var(--color-btn-disabled-background);
+    color: var(--color-grey-400);
+    cursor: not-allowed; }
+    .c-btn.is-active[disabled], .c-btn[disabled]:active, .c-btn[disabled]:hover, .c-btn[disabled]:focus {
+      box-shadow: none;
+      transform: none;
+      background: var(--color-btn-disabled-background);
+      color: var(--color-grey-200);
+      border: 0.0625rem solid var(--color-grey-200); }
+  .c-btn.active {
+    border: 0.0625rem solid var(--color-active);
+    color: var(--color-white);
+    background: var(--color-active); }
 
 /*# sourceMappingURL=styles.css.map */

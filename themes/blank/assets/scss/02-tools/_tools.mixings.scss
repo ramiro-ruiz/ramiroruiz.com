@@ -1,0 +1,25 @@
+///*------------------------------------*\
+//    #MIXINS
+//\*------------------------------------*/
+
+// Global mixins available to the entire project. Define file-specific
+// mixins inside the file to which they relate.
+
+
+// Generate `:hover` and `:focus` styles in one go.
+@mixin hocus() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+// Generate `.is-active, `:hover` and `:focus` styles in one go.
+@mixin acthocus() {
+  &.is-active,
+  &:active,
+  &:hover,
+  &:focus {
+    @content;
+  }
+}

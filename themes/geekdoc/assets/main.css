@@ -765,13 +765,12 @@ img {
 .gdoc-markdown strong {
   font-weight: bolder
 }
-.gdoc-markdown a,
 .gdoc-markdown__link {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   line-height: 1em
 }
-.gdoc-markdown a:hover,
+
 .gdoc-markdown__link:hover {
   text-decoration: underline
 }
@@ -1269,8 +1268,4 @@ img {
 }
 .gdoc-mermaid {
   font-family: "Liberation Sans",sans-serif
-}
-
-.partial-shortcode {
-  max-width: 300px;
 }

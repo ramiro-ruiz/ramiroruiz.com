@@ -1,0 +1,65 @@
+.c-btn {
+    display: inline-block;
+    min-width: rem(60);
+    min-height: rem(36);
+    padding: var(--space-xs) var(--space-unit);
+    transition: var(--global-transition--fast);
+    border: rem(1.5) solid rgba(0,0,0,.75);
+    border-radius: var(--space-xxxxs);
+    background: var(--color-btn-background);
+    color: var(--color-btn);
+    font-family: var(--font-headings);
+    font-size: rem(14);
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
+
+    @include hocus() {
+      background: var(--color-dark);
+      color: var(--color-white);
+      text-decoration: none;
+    }
+
+    &:focus {
+      // box-shadow is invisible in Windows high-contrast mode, so we need to add a transparent outline, which actually does show up in high-contrast mode.
+      outline: rem(2) dotted transparent;
+      outline-offset: rem(2);
+      // Adds a white border around the button, along with a blue glow. The white and blue have a color contrast ratio of at least 3:1, which means this will work against any background color.
+      box-shadow: 0 0 0 rem(2) var(--color-white), 0 0 rem(3) rem(5) var(--color-brand-tertiary-200);
+    }
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &[disabled] {
+      opacity: .5;
+      cursor: not-allowed;
+
+      @include acthocus() {
+        box-shadow: none;
+        transform: none;
+        background: var(--color-btn-disabled-background);
+        color: var(--color-grey-200);
+        border: .0625rem solid var(--color-grey-200);
+      }
+    }
+    
+  &.c-btn--link {
+    color: var(--color-dark);
+    text-decoration: none;
+    border: rem(1.5) solid rgba(0,0,0,.75);
+    line-height: 1.2;
+  
+    @include hocus() {
+      background: var(--color-dark);
+      color: var(--color-white);
+      text-decoration: none;
+    }
+  }
+}

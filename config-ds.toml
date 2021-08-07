@@ -24,4 +24,4 @@ enableGitInfo = true
 
 [params]
   # (Optional, default false) Render menu from data file im 'data/menu/main.yaml'.
-  geekdocMenuBundle = true    
+  geekdocMenuBundle = true

@@ -1,3 +1,12 @@
+---
+title: "Hola!"
+---
 My Hello component
 
-{{< partial "hola.html" >}}
+<div class="partial-shortcode">
+{{< partial "components/hola.html" >}}
+</div>
+
+```tpl
+{{</* partial "components/hola.html" */>}}
+```

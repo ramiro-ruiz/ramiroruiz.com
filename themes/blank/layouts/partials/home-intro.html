@@ -1,0 +1,21 @@
+<header class="c-header">
+	<div class="c-header__content o-container">
+		<a class="c-logo" href="{{ .Site.BaseURL }}">
+			<svg class="c-logo__svg">
+				<use href="#logo"></use>
+			</svg>
+		</a>
+		{{ with .Site.Menus.main }}
+		<nav>
+			<ul>
+				{{ range . }}
+				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+				{{ end }}
+			</ul>
+		</nav>
+		{{ end }}
+		<p class="o-lead-intro">
+			I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little <a href="/about">about me</a>, <a href="/work">my work</a>, <a href="/blog">writings</a>, <a href="/notes">thoughts</a>, <a href="/photos">photos</a>, and <a href="/links">things</a> I’m interested in.
+		</p>
+	</div>
+</header>
