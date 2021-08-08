@@ -1,0 +1,19 @@
+.o-page {
+    min-height: 100vh;
+
+    &.o-container {
+        padding-top: var(--space-lg);
+        padding-bottom: var(--space-lg);
+    }
+    
+    .c-nav {
+        position: fixed;
+        left: 0; right: 0;
+        bottom: 0;
+        width: 100%;
+    
+        @include respond-above(sm) {
+            position: static;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.o-stack > * + * {
+  margin-top: var(--space-lg);
+}
+
+  .o-stack--lg > * + * {
+    margin-top: var(--space-xl);
+  }
+
+  .o-stack--xl > * + * {
+    margin-top: rem(80);
+  }
+
+  @include respond-above(sm) {
+      .o-stack--xl\@md  > * + * {
+        margin-top: rem(80);
+      }
+  }
+
+  .o-stack--sm > * + * {
+    margin-top: var(--space-unit);
+  }
+
+  .o-stack--xs > * + * {
+    margin-top: var(--space-xs);
+  }
+
+.o-stack__horizontal > * + * {
+  margin-left: var(--space-lg);
+}
+
+  .o-stack__horizontal--sm > * + * {
+    margin-left: var(--space-unit);
+  }
+
+  .o-stack__horizontal--xs > * + * {
+    margin-left: var(--space-xs);
+  }
+  

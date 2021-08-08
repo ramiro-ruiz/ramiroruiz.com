@@ -13,8 +13,10 @@
 @import "03-generic/generic.links";
 
 /*---------- 04 Objects  ----------*/
+@import "04-objects/objects.pages";
 @import "04-objects/objects.containers";
 @import "04-objects/objects.type";
+@import "04-objects/objects.stack";
 
 /*---------- 05 Components  ----------*/
 @import "05-components/components.logo";
@@ -22,3 +24,4 @@
 @import "05-components/components.buttons";
 @import "05-components/components.home-intro";
 @import "05-components/components.nav";
+@import "05-components/components.section-heading";

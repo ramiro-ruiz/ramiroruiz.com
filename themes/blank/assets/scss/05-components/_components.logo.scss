@@ -1,8 +1,7 @@
-.c-logo,
-.c-logo:visited {
-    color: var(--color-logo, #000);
-}
-    .c-logo__svg {
-        height: 2rem;
-        width: 2rem;
+.c-logo__svg {
+    width: 2rem;
+
+    @include respond-above(sm) {
+        width: rem(40);
     }
+}

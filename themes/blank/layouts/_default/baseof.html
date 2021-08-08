@@ -2,10 +2,12 @@
 <html lang='{{ .Site.LanguageCode | default "en-us" }}'>
 	{{ partial "head.html" . }}
 <body>
-	{{ partial "components/nav" . }}
-	{{ partial "components/home-intro.html" . }}
-	{{ block "main" . }}{{ end }}
-	{{ partial "footer" . }}
+	<div class="o-page o-container o-stack--xl@md">
+		{{ partial "components/nav" . }}
+		{{ partial "components/home-intro.html" . }}
+		{{ block "main" . }}{{ end }}
+		{{ partial "footer" . }}
+	</div>
 	{{ partial "svg-sprite" .}}
 </body>
 </html>

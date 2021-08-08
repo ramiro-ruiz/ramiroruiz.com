@@ -1,0 +1,20 @@
+.c-section-heading {
+    position: relative;
+    display: inline-block;
+    padding: var(--space-unit) var(--space-unit) var(--space-unit) 0;
+    background: var(--color-grey-200);
+    font-size: rem(48);
+    font-weight: 900;
+    text-transform: uppercase;
+
+    &::before {
+        content: '';
+        background: var(--color-grey-200);
+        position: absolute;
+        height: 100%;
+        width: 100vw;
+        left: -100vw;
+        top: 0;
+        z-index: -1;
+    }
+}

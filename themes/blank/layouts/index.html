@@ -1,16 +1,15 @@
 {{ define "main" }}
-	<main class="o-container">
-		<section>
+	<main class="o-stack--xl">
+		<!-- <section>
 			<h1>Work</h1>
 			<ul>
 				{{ range first 4 (where .Site.RegularPages "Type" "work") }}
 					<li>{{.Title}}</li>
 				{{ end }}
 			</ul>
-		</section>
-		<hr/>
+		</section> -->
 		<section>
-			<h1>Blog</h1>
+			{{ partial "components/section-heading.html" (dict "text" "Blog") }}
 			<ul>
 				{{ range first 4 (where .Site.RegularPages "Type" "blog") }}
 					<li>
@@ -20,9 +19,8 @@
 				{{ end }}
 			</ul>
 		</section>
-		<hr/>
 		<section>
-			<h1>Activity</h1>
+			{{ partial "components/section-heading.html" (dict "text" "Notes") }}
 			<ul>
 				{{ range first 6 (where .Site.Pages "Type" "in" (slice "photos" "videos" "replies" "notes")) }}
 					<li>
