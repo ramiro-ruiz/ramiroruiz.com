@@ -13,12 +13,17 @@
     -webkit-backdrop-filter: blur(1rem);
     backdrop-filter: blur(1rem);
 
-    @media (prefers-color-scheme: dark) {
-        --glass-lightness: 0%;
-    }
+    // @media (prefers-color-scheme: dark) {
+    //     --glass-lightness: 0%;
+    // }
 
     @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
         background: hsla(0, 0%, var(--glass-lightness), .97);
+    }
+
+    @media (max-width: 374px) {
+        padding-left: var(--space-xs);
+        padding-right: var(--space-xs);
     }
 
     @include respond-above(sm) {
@@ -58,22 +63,30 @@
         }
 
         &.c-nav__logo {
-            padding: 0;
+            padding: 0 var(--space-xs);
         }
 
         &:disabled,
         &[disabled] {
             text-decoration: line-through;
-            color: var(--color-grey-500);
+            color: var(--color-grey-400);
+            cursor: progress;
+        }
+
+        @media (max-width: 374px) {
+            padding-left: var(--space-xs);
+            padding-right: var(--space-xs);
         }
 
         @include respond-above(sm) {
 
             & {
                 font-size: rem(14);
+                font-weight: 500;
             }
             
             &.c-nav__logo {
+                padding: 0;
                 margin-right: auto;
                 order: 1;
             }

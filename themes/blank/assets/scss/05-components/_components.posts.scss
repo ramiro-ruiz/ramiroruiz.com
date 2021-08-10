@@ -1,0 +1,17 @@
+.c-posts__item-title {
+    font-family: var(--font-body);
+    font-size: em(24);
+    font-weight: 900;
+}
+
+.c-posts__item-meta {
+    font-family: var(--font-headings);
+    text-transform: uppercase;
+    letter-spacing: em(1);
+    font-weight: 300;
+    font-size: em(14);
+}
+
+.c-posts__item-summary {
+    font-size: em(18);
+}

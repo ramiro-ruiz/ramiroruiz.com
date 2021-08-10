@@ -10,6 +10,18 @@
     letter-spacing: initial;
     margin: initial;
     
+    @media (min-width: 767px)  {
+        font-size: calc(2vw + .625rem);
+    }
+
+    @media (min-width: 880px)  {
+        font-size: calc(2vw + .75rem);
+    }
+
+    @media (min-width: 992px)  {
+        font-size: calc(2vw + .875rem);
+    }
+    
     @include respond-above(lg) {
         font-size: em(42);
     }

@@ -1,9 +1,27 @@
 .o-stack > * + * {
   margin-top: var(--space-lg);
 }
+  
+  .o-stack--xxs > * + * {
+    margin-top: var(--space-xxxs);
+  }
 
+  .o-stack--xs > * + * {
+    margin-top: var(--space-xs);
+  }
+
+  .o-stack--sm > * + * {
+    margin-top: var(--space-unit);
+  }
+  
   .o-stack--lg > * + * {
     margin-top: var(--space-xl);
+
+    @include respond-above(sm) {
+      .o-stack--lg\@md  > * + * {
+        margin-top: rem(80);
+      }
+  }
   }
 
   .o-stack--xl > * + * {
@@ -16,13 +34,6 @@
       }
   }
 
-  .o-stack--sm > * + * {
-    margin-top: var(--space-unit);
-  }
-
-  .o-stack--xs > * + * {
-    margin-top: var(--space-xs);
-  }
 
 .o-stack__horizontal > * + * {
   margin-left: var(--space-lg);

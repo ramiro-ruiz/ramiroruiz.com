@@ -8,16 +8,25 @@
 				{{ end }}
 			</ul>
 		</section> -->
-		<section>
+		<section class="c-posts o-stack">
 			{{ partial "components/section-heading.html" (dict "text" "Blog") }}
-			<ul>
+			<div class="c-posts__list o-stack--lg">
 				{{ range first 4 (where .Site.RegularPages "Type" "blog") }}
-					<li>
-						<h2><a href="{{ .RelPermalink }}">{{.Title}}</a></h2>
-						{{ .Summary }}
-					</li>
+					<article class="c-posts__item o-stack--sm">
+						<div class="o-stack--xs">
+							<header class="o-stack--xxs">
+								<h1 class="c-posts__item-title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+								<div class="c-posts__item-meta">
+									<time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time>
+									• {{ .ReadingTime }} min
+								</div>
+							</header>
+							<p class="c-posts__item-summary">{{ .Summary }}</p>
+						</div>
+						<a class="c-btn c-btn--link" href="{{ .RelPermalink }}">Continue reading →</a>
+					</article>
 				{{ end }}
-			</ul>
+			</div>
 		</section>
 		<section>
 			{{ partial "components/section-heading.html" (dict "text" "Notes") }}

@@ -2,7 +2,7 @@
 <html lang='{{ .Site.LanguageCode | default "en-us" }}'>
 	{{ partial "head.html" . }}
 <body>
-	<div class="o-page o-container o-stack--xl@md">
+	<div class="o-page o-container o-stack--lg o-stack--xl@md">
 		{{ partial "components/nav" . }}
 		{{ partial "components/home-intro.html" . }}
 		{{ block "main" . }}{{ end }}
