@@ -1,7 +1,19 @@
-title: Post item
+title: List item
 context:
-  post-item: yes
-  entry-title: My post title
-  entry-date: Dec 31 2019
-  entry-reading: 6
-  entry-summary: Last week, after almost 2 years without fighting. Past months full of problems, life-changing events, inactivity and a long recovery from an injury; I entered the cage again.
+  label: default
+variants:
+    - name: default
+      label: Blog entry
+      context:
+        post-item: yes
+        entry-title: My post title
+        entry-date: Dec 31 2019
+        entry-reading: 6
+        entry-summary: Last week, after almost 2 years without fighting. Past months full of problems, life-changing events, inactivity and a long recovery from an injury; I entered the cage again.
+    - name: like
+      label: like note
+      context:
+        like: yes
+        note-text: |
+          Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
+        note-date: Mar 24 2021

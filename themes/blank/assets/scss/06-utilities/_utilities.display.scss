@@ -1,0 +1,7 @@
+///Display
+$displays: none, block, inline-block, inline, flex, inline-flex, grid;
+@each $display in ($displays) {
+  .u-d-#{$display} {
+    display: ($display) !important;
+  }
+}
