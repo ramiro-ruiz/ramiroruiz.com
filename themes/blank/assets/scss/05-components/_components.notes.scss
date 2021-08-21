@@ -2,31 +2,43 @@
     display: inline-block;
     position: relative;
     padding: 8px;
-
-    &::before {
-        content: '';
-        width: var(--space-unit);
-        height: var(--space-unit);
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-color: var(--color-grey-200);
-        border-radius: 50%;
-        box-shadow: 0 0 0 var(--space-xxxs) var(--color-white);
-    }
-
-    &::after {
-        content: '';
-        width: 8px;
-        height: 7px;
-        background-image: url("data:image/svg+xml,%3Csvg width='8' height='7' viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.38313 0.734408C7.18765 0.546084 6.95556 0.396692 6.70011 0.294767C6.44466 0.192842 6.17086 0.140381 5.89435 0.140381C5.61784 0.140381 5.34404 0.192842 5.08859 0.294767C4.83315 0.396692 4.60105 0.546084 4.40558 0.734408L3.9999 1.12506L3.59422 0.734408C3.19937 0.354185 2.66384 0.140578 2.10544 0.140578C1.54705 0.140578 1.01152 0.354185 0.61667 0.734408C0.221823 1.11463 4.16039e-09 1.63032 0 2.16804C-4.16039e-09 2.70576 0.221823 3.22145 0.61667 3.60168L1.02235 3.99233L3.9999 6.8596L6.97744 3.99233L7.38313 3.60168C7.57869 3.41344 7.73383 3.18994 7.83968 2.94396C7.94552 2.69797 8 2.43431 8 2.16804C8 1.90177 7.94552 1.63811 7.83968 1.39213C7.73383 1.14614 7.57869 0.922644 7.38313 0.734408Z' fill='%233C3C3C'/%3E%3C/svg%3E%0A");        position: absolute;
-        left: 4px;
-        top: 5px;
-    }
 }
 
     .c-note__content {
-        border: rem(1) solid;
         padding: rem(12) var(--space-unit);
+        border: rem(1) solid;
         border-radius: var(--space-xxxxs);
+    }
+
+        .c-note--like__content-text {
+            font-family: var(--font-sans);
+        }
+
+    .c-note__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--space-unit);
+        height: var(--space-unit);
+        margin: 0;
+        box-shadow: 0 0 0 var(--space-xxxs) var(--color-white);
+        color: var(--color-grey-300);
+    }
+
+    .c-note__date {
+        color: var(--color-grey-600);
+        font-family: var(--font-sans);
+        font-size: rem(12);
+        letter-spacing: rem(.5);
+        text-transform: uppercase;
+        text-underline-offset: var(--space-xxxs);
+        text-decoration-thickness: rem(1);
+        text-decoration-color: var(--color-grey-400);
+
+        &:hover {
+            color: var(--color-grey-900);
+            text-shadow: none;
+            text-decoration-thickness: rem(2);
+            text-decoration-color: var(--color-dark);
+        }
     }

@@ -11,9 +11,9 @@ variants:
         entry-reading: 6
         entry-summary: Last week, after almost 2 years without fighting. Past months full of problems, life-changing events, inactivity and a long recovery from an injury; I entered the cage again.
     - name: like
-      label: like note
+      label: Like note
       context:
-        like: yes
+        note-type: like
         note-text: |
           Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
         note-date: Mar 24 2021

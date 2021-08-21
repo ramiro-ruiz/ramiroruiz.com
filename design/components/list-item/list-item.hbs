@@ -15,14 +15,17 @@
     <a class="c-btn c-btn--link" href="/blog/2019/12/31/update-and-review-of-2019/">Continue reading →</a>
 </article>
 {{ else }}
-<article class="c-note {{#if like}}c-note--like{{/if}} o-stack--xs">
+<article class="c-note c-note--{{note-type}} o-stack--xxs">
     <div class="c-note__content">
-        <p class="c-note__content-text {{#if like}}c-note--like__content-text{{/if}}">
+        <p class="c-note__content-text c-note--{{note-type}}__content-text">
             {{{ note-text }}}
         </p>
     </div>
     <a href="#" class="c-note__date u-d-inline-block">
         <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ note-date }}</time>
     </a>
+    <svg class="c-note__icon" aria-hidden="true">
+        <use href="#note-{{note-type}}"></use>
+    </svg>
 </article>
 {{/if}}

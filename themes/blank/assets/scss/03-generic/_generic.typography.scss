@@ -11,13 +11,10 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-serif);
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-headings);
+  font-family: var(--font-sans);
   font-weight: 700;
 }
-
-// font family
-.font-headings { font-family: var(--font-headings); }
