@@ -1,0 +1,21 @@
+{{#if post-item }}
+<article class="c-posts__item o-stack--sm">
+    <div class="o-stack--xs">
+        <header class="o-stack--xxs">
+            <h1 class="c-posts__item-title"><a href="#">{{ entry-title}}</a></h1>
+            <div class="c-posts__item-meta">
+                <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ entry-date }}</time>
+                • {{ entry-reading }} min
+            </div>
+        </header>
+        <p class="c-posts__item-summary">
+            {{ entry-summary }}
+        </p>
+    </div>
+    <a class="c-btn c-btn--link" href="/blog/2019/12/31/update-and-review-of-2019/">Continue reading →</a>
+</article>
+{{ else }}
+<article>
+    <h4>Another items</h4>
+</article>
+{{/if}}

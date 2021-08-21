@@ -1,3 +1,9 @@
+.c-posts__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    grid-gap: var(--space-xl);
+}
+
 .c-posts__item-title {
     font-family: var(--font-body);
     font-size: em(24);

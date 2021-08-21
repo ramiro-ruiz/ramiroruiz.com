@@ -1,0 +1,12 @@
+<div class="o-page o-container o-stack--lg o-stack--xl@md">
+    {{ render '@nav' }}
+    {{ render '@home-intro' }}
+    <main class="o-stack--xl">
+        {{#each section }}
+        <section class="o-stack">
+            {{> '@section-heading' }}
+            {{> '@post-list' }}
+        </section>
+        {{/each}}
+    </main>
+</div>

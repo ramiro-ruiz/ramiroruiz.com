@@ -1,0 +1,24 @@
+title: Homepage
+context:
+    section:
+        - section-heading: Blog
+          post-items: yes
+          post:
+            - post-item: yes
+              entry-title: Back to Fighting
+              entry-date: Dec 31 2019
+              entry-reading: 6
+              entry-summary: Last week, after almost 2 years without fighting. Past months full of problems, life-changing events, inactivity and a long recovery from an injury; I entered the cage again.
+            - post-item: yes
+              entry-title: Changing my ways
+              entry-date: May 6 2018
+              entry-reading: 4
+              entry-summary: A couple months ago, Frank Chimero, a great designer that I’d admired for a long time, wrote about the pain to re-learn many things in the web to keep yourself updated to the latest practices and trends.
+
+            - post-item: yes
+              entry-title: New website
+              entry-date: Apr 2 2018
+              entry-reading: 3
+              entry-summary: This morning I launched my new website. I used to be one of those designers that never reserved time for my brand, only working for clients and never on myself. What a surprise.
+
+        - section-heading: Notes

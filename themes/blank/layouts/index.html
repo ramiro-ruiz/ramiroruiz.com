@@ -10,8 +10,8 @@
 		</section> -->
 		<section class="c-posts o-stack">
 			{{ partial "components/section-heading.html" (dict "text" "Blog") }}
-			<div class="c-posts__list o-stack--lg">
-				{{ range first 4 (where .Site.RegularPages "Type" "blog") }}
+			<div class="c-posts__list">
+				{{ range first 3 (where .Site.RegularPages "Type" "blog") }}
 					<article class="c-posts__item o-stack--sm">
 						<div class="o-stack--xs">
 							<header class="o-stack--xxs">
@@ -31,12 +31,25 @@
 		<section>
 			{{ partial "components/section-heading.html" (dict "text" "Notes") }}
 			<ul>
-				{{ range first 6 (where .Site.Pages "Type" "in" (slice "photos" "videos" "replies" "notes")) }}
+				{{ range first 6 (where .Site.Pages "Type" "in" (slice "photos" "videos" "replies" "notes" "links" "likes")) }}
 					<li>
-						<p>{{ .Summary }}</p>
-						<a href="{{ .RelPermalink }}">
-							<strong><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time></strong>
-						</a>
+						{{ if or .Title .Content }}
+							<p>{{ .Summary }}</p>
+							{{ else }}
+							{{ if .Params.tweet_author }}
+								<span class="heart">🖤</span> {{ i18n "liked" }}
+								a <a class="u-like-of" href="{{ .Params.like_of }}">tweet</a> by <a href="https://twitter.com/{{.Params.tweet_author}}">{{.Params.tweet_author}}</a>
+								{{else if .Params.ig_post}}
+								an <a class="u-like-of" href="{{ .Params.like_of }}">instagram post</a>
+								{{else}}
+								the post: <a class="u-like-of" href="{{ .Params.like_of }}">{{ .Params.like_of }}</a>
+							{{ end }}
+						{{ end }}
+						<p>
+							<a href="{{ .RelPermalink }}">
+								<strong><time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">{{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}</time></strong>
+							</a>
+						</p>
 					</li>
 				{{ end }}
 			</ul>
