@@ -31,6 +31,11 @@
         font-size: rem(12);
         letter-spacing: rem(.5);
         text-transform: uppercase;
+    }
+
+    .c-note__date,
+    .c-note--reply__context-author-name,
+    .c-note--reply__context-date {
         text-underline-offset: var(--space-xxxs);
         text-decoration-thickness: rem(1);
         text-decoration-color: var(--color-grey-400);
@@ -42,3 +47,38 @@
             text-decoration-color: var(--color-dark);
         }
     }
+
+    .c-note--reply__context {
+        position: relative;
+        padding-left: var(--space-lg);
+        font-family: var(--font-sans);
+        padding-bottom: var(--space-xs);
+        border-bottom: rem(1.5) solid var(--color-grey-300);
+    }
+        .c-note--reply__label {
+            font-weight: 500;
+            font-size: rem(14);
+        }
+
+        .c-note--reply__context-author {
+            
+            &::after {
+                content: '·';
+            }
+        }
+
+            .c-note--reply__context-avatar {
+                border-radius: 50%;
+                height: var(--space-md);
+                width: var(--space-md);
+                position: absolute;
+                left: 0;
+                top: var(--space-xxs);
+            }
+
+            .c-note--reply__context-author-name,
+            .c-note--reply__context-date,
+            .c-note--reply__context-text {
+                color: var(--color-grey-600);
+                font-size: rem(14);
+            }

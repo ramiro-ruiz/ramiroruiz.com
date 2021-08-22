@@ -17,3 +17,23 @@ variants:
         note-text: |
           Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
         note-date: Mar 24 2021
+    - name: note
+      label: Note
+      context:
+        note-type: text
+        note-text: |
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+        note-date: Mar 24 2021
+    - name: reply
+      label: Reply
+      context:
+        reply: yes
+        context-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        context-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+        context-author: Ramiro Ruiz
+        context-author-url: https://twitter.com/ramiroruiz
+        context-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+        note-type: reply
+        note-text: |
+          Wow this is an amazing take, it makes me think a lot about that angle.
+        note-date: Mar 24 2021

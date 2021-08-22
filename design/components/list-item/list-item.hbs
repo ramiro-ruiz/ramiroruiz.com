@@ -1,5 +1,5 @@
 {{#if post-item }}
-<article class="c-posts__item o-stack--sm">
+<article class="h-entry c-posts__item o-stack--sm">
     <div class="o-stack--xs">
         <header class="o-stack--xxs">
             <h1 class="c-posts__item-title"><a href="#">{{ entry-title}}</a></h1>
@@ -15,8 +15,27 @@
     <a class="c-btn c-btn--link" href="/blog/2019/12/31/update-and-review-of-2019/">Continue reading →</a>
 </article>
 {{ else }}
-<article class="c-note c-note--{{note-type}} o-stack--xxs">
-    <div class="c-note__content">
+<article class="h-entry c-note c-note--{{note-type}} o-stack--xxs">
+    <div class="c-note__content o-stack--xs">
+    {{#if reply }}
+        <div class="c-note--reply__context-wrapper o-stack-xxs">
+            <h4 class="c-note--reply__label">
+                Replied to
+            </h4>
+            <div class="c-note--reply__context h-cite u-in-reply-to o-stack--xxs">
+                <header>
+                    <span class="c-note--reply__context-author p-author h-card">
+                        <img class="c-note--reply__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
+                        <a class="c-note--reply__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
+                    </span>
+                    <a href="{{context-url}}" class="c-note--reply__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
+                </header>
+                <div class="c-note--reply__context-text post-text e-content">
+                    {{context-text}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
         <p class="c-note__content-text c-note--{{note-type}}__content-text">
             {{{ note-text }}}
         </p>
