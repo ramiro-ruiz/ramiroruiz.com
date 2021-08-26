@@ -2,6 +2,25 @@
     display: inline-block;
     position: relative;
     padding: 8px;
+    max-width: rem(400);
+}
+
+.c-note--repost {
+
+    .c-note__context-author-name,
+    .c-note__context-date,
+    .c-note__context-text {
+        color: var(--color-dark);
+    }
+
+    .c-note__context {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .c-note__context-avatar {
+        top: var(--space-sm);
+    }
 }
 
     .c-note__content {
@@ -12,6 +31,14 @@
 
         .c-note--like__content-text {
             font-family: var(--font-sans);
+        }
+
+        .c-note__content-text {
+
+            & + .c-note__context-wrapper {
+                border-top: rem(1.5) solid var(--color-grey-300);
+                padding-top: var(--space-xs);
+            }
         }
 
     .c-note__icon {
@@ -34,8 +61,8 @@
     }
 
     .c-note__date,
-    .c-note--reply__context-author-name,
-    .c-note--reply__context-date {
+    .c-note__context-author-name,
+    .c-note__context-date {
         text-underline-offset: var(--space-xxxs);
         text-decoration-thickness: rem(1);
         text-decoration-color: var(--color-grey-400);
@@ -48,26 +75,30 @@
         }
     }
 
-    .c-note--reply__context {
+    .c-note__context {
         position: relative;
         padding-left: var(--space-lg);
         font-family: var(--font-sans);
         padding-bottom: var(--space-xs);
         border-bottom: rem(1.5) solid var(--color-grey-300);
     }
-        .c-note--reply__label {
+        .c-note__context-heading {
             font-weight: 500;
             font-size: rem(14);
+
+            &.c-note--link__context-heading {
+                font-size: var(--space-unit);
+            }
         }
 
-        .c-note--reply__context-author {
+        .c-note__context-author {
             
             &::after {
                 content: '·';
             }
         }
 
-            .c-note--reply__context-avatar {
+            .c-note__context-avatar {
                 border-radius: 50%;
                 height: var(--space-md);
                 width: var(--space-md);
@@ -76,9 +107,19 @@
                 top: var(--space-xxs);
             }
 
-            .c-note--reply__context-author-name,
-            .c-note--reply__context-date,
-            .c-note--reply__context-text {
+            .c-note__context-author-name,
+            .c-note__context-date,
+            .c-note__context-text {
                 color: var(--color-grey-600);
                 font-size: rem(14);
             }
+
+    .c-note--photo__img {
+        border-radius: rem(1);
+        max-width: 100%;
+    }
+
+    .c-note--video__item {
+        max-width: 100%;
+    }
+    

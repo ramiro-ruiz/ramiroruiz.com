@@ -25,4 +25,19 @@
     @include respond-above(lg) {
         font-size: em(42);
     }
+
+    a {
+        color: var(--color-dark);
+        text-decoration: underline;
+        text-underline-offset: var(--space-xxxs);
+        text-decoration-thickness: rem(2);
+        text-decoration-color: var(--color-grey-400);
+
+        &:hover {
+            color: var(--color-grey-700);
+            text-shadow: rem(1) 0 rem(2) var(--color-grey-300);
+            text-decoration-thickness: rem(3);
+            text-decoration-color: var(--color-dark);
+        }
+    }
 }

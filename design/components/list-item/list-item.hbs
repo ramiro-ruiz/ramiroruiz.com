@@ -18,27 +18,67 @@
 <article class="h-entry c-note c-note--{{note-type}} o-stack--xxs">
     <div class="c-note__content o-stack--xs">
     {{#if reply }}
-        <div class="c-note--reply__context-wrapper o-stack-xxs">
-            <h4 class="c-note--reply__label">
+        <div class="c-note__context-wrapper">
+            <h4 class="c-note__context-heading">
                 Replied to
             </h4>
-            <div class="c-note--reply__context h-cite u-in-reply-to o-stack--xxs">
+            <div class="c-note__context h-cite u-in-reply-to o-stack--xxs">
                 <header>
-                    <span class="c-note--reply__context-author p-author h-card">
-                        <img class="c-note--reply__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
-                        <a class="c-note--reply__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
+                    <span class="c-note__context-author p-author h-card">
+                        <img class="c-note__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
+                        <a class="c-note__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
                     </span>
-                    <a href="{{context-url}}" class="c-note--reply__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
+                    <a href="{{context-url}}" class="c-note__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
                 </header>
-                <div class="c-note--reply__context-text post-text e-content">
+                <div class="c-note__context-text post-text e-content">
                     {{context-text}}
                 </div>
             </div>
         </div>
     {{/if}}
+    {{#if link }}
+        <div class="c-note__context-wrapper o-stack--xxs">
+            <h1 class="c-note__context-heading c-note--link__context-heading">
+                <a href="{{ context-url }}">
+                    {{ link-title }}
+                </a>
+            </h1>
+            <div class="c-note__context h-cite">
+                <div class="c-note__context-text post-text e-content">
+                    {{context-text}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+    {{#if photo }}
+        <img class="u-photo c-note--photo__img" src="{{photo-url}}" alt="{{photo-alt}}">
+    {{/if}}
+    {{#if video }}
+        <video class="u-video c-note--video__item" controls="controls" poster="{{ vide-poster }}" src="{{ video-url }}">
+          {{video-alt}}
+        </video>
+    {{/if}}
+    {{#if note-text }}
         <p class="c-note__content-text c-note--{{note-type}}__content-text">
             {{{ note-text }}}
         </p>
+    {{/if}}
+    {{#if repost }}
+        <div class="c-note__context-wrapper">
+            <div class="c-note__context h-cite u-in-reply-to o-stack--xxs">
+                <header>
+                    <span class="c-note__context-author p-author h-card">
+                        <img class="c-note__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
+                        <a class="c-note__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
+                    </span>
+                    <a href="{{context-url}}" class="c-note__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
+                </header>
+                <div class="c-note__context-text post-text e-content">
+                    {{context-text}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
     </div>
     <a href="#" class="c-note__date u-d-inline-block">
         <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ note-date }}</time>
