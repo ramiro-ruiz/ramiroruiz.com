@@ -17,10 +17,6 @@
         padding-bottom: 0;
         border-bottom: 0;
     }
-
-    .c-note__context-avatar {
-        top: var(--space-sm);
-    }
 }
 
     .c-note__content {
@@ -58,6 +54,7 @@
         font-size: rem(12);
         letter-spacing: rem(.5);
         text-transform: uppercase;
+        font-weight: 300;
     }
 
     .c-note__date,
@@ -73,6 +70,14 @@
             text-decoration-thickness: rem(2);
             text-decoration-color: var(--color-dark);
         }
+    }
+
+    .c-note__context-author-name {
+        font-weight: 500;
+    }
+
+    .c-note__context-date {
+        font-weight: 300;
     }
 
     .c-note__context {

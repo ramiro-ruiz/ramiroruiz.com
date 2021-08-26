@@ -21,12 +21,13 @@
 * 'wght' (range from 100.0 to 900.0)
 
 */
+// url('../fonts/Zodiak-Variable.woff2') format('woff2'),
 
 @font-face {
   font-family: 'Zodiak-Variable';
-  src: url('../fonts/Zodiak-Variable.woff2') format('woff2'),
-       url('../fonts/Zodiak-Variable.woff') format('woff'),
-       url('../fonts/Zodiak-Variable.ttf') format('truetype');
+  src: url('http://localhost:1313/fonts/Zodiak-Variable.woff2') format('woff2'),
+       url('http://localhost:1313/fonts/Zodiak-Variable.woff') format('woff'),
+       url('http://localhost:1313/fonts/Zodiak-Variable.ttf') format('truetype');
        font-weight: 100 900;
        font-display: swap;
        font-style: normal;
@@ -34,7 +35,7 @@
 
 @font-face {
 	font-family:'Work Sans';
-  src: url('../fonts/WorkSans[wght].woff2') format('woff2');
+  src: url('http://localhost:1313/fonts/WorkSans[wght].woff2') format('woff2');
 	font-style: normal;
   font-weight: 100 900;
 }
