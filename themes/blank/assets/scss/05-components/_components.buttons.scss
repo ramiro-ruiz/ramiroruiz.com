@@ -63,4 +63,10 @@
       text-shadow: none;
     }
   }
+
+  &.c-btn--primary-light {
+    background: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+  }
 }

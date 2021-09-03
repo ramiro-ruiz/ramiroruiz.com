@@ -4,20 +4,21 @@
     grid-gap: var(--space-xl);
 }
 
-.c-posts__item-title {
-    font-family: var(--font-serif);
-    font-size: em(24);
-    font-weight: 900;
-}
+    .c-posts__item-title {
+        font-family: var(--font-serif);
+        font-size: em(26);
+        font-weight: 900;
+    }
 
-.c-posts__item-meta {
-    font-family: var(--font-sans);
-    text-transform: uppercase;
-    letter-spacing: em(1);
-    font-weight: 300;
-    font-size: em(14);
-}
+    .c-posts__item-meta {
+        font-family: var(--font-sans);
+        text-transform: uppercase;
+        letter-spacing: em(1);
+        font-weight: 300;
+        font-size: em(14);
+    }
 
-.c-posts__item-summary {
-    font-size: em(18);
-}
+    .c-posts__item-summary {
+        font-size: em(21);
+        font-weight: 350;
+    }

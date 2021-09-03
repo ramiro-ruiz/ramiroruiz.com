@@ -1,11 +1,19 @@
 .c-section-heading {
+    display: flex;
+    align-items: center;
+}
+
+.c-section-heading__link {
     position: relative;
     display: inline-block;
     padding: var(--space-unit) var(--space-unit) var(--space-unit) 0;
     background: var(--color-grey-200);
+    border-radius: 0 var(--space-xxxxs) var(--space-xxxxs) 0;
     font-size: rem(48);
     font-weight: 900;
     text-transform: uppercase;
+    text-decoration: none;
+    transition: none;
 
     &::before {
         content: '';
@@ -17,4 +25,26 @@
         top: 0;
         z-index: -1;
     }
+
+    @include hocus() {
+        background: var(--color-dark);
+        color: var(--color-grey-200);
+
+        &::before {
+            background: var(--color-dark);
+        }
+
+        + .c-section-heading__desc {
+            display: inline-block;
+        }
+    }
 }
+
+    .c-section-heading__desc {
+        display: none;
+        margin-left: var(--space-lg);
+        font-weight: 400;
+        font-size: rem(14);
+        text-transform: uppercase;
+        letter-spacing: rem(1);
+    }

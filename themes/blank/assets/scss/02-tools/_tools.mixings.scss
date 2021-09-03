@@ -23,3 +23,11 @@
     @content;
   }
 }
+
+// Grid item to span all columns
+@mixin span-all-columns() {
+   flex-basis: 100%;
+   grid-column: 1/-1;
+   max-width: 100%;
+   width: 100%;
+}

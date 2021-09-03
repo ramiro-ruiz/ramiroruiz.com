@@ -1,0 +1,10 @@
+.c-footer {
+    background-color: var(--color-dark);
+    padding-top: rem(88);
+    padding-bottom: rem(64);
+    color: var(--color-white);
+
+    .o-grid > * + * {
+        text-align: right;
+    }
+}

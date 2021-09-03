@@ -83,6 +83,12 @@
             & {
                 font-size: rem(14);
                 font-weight: 500;
+                
+                @include hocus() {
+                    &:not([disabled]) {
+                        text-decoration: underline;
+                    }
+                }
             }
             
             &.c-nav__logo {

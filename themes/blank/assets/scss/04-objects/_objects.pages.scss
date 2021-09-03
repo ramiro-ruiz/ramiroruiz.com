@@ -4,6 +4,11 @@
     &.o-container {
         padding-top: var(--space-lg);
         padding-bottom: var(--space-lg);
+        
+        @include respond-above(md) {
+            padding-top: var(--space-xl);
+            padding-bottom: var(--space-xxl);
+         }
     }
     
     .c-nav {

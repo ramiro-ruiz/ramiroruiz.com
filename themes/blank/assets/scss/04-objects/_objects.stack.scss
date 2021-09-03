@@ -28,9 +28,13 @@
     margin-top: rem(80);
   }
 
-  @include respond-above(sm) {
-      .o-stack--xl\@md  > * + * {
-        margin-top: rem(80);
+  .o-stack--xxl > * + * {
+    margin-top: var(--space-xxxl);
+  }
+
+  @include respond-above(md) {
+      .o-stack--xxl\@md  > * + * {
+        margin-top: var(--space-xxxl);
       }
   }
 

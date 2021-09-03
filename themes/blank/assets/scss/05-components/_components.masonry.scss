@@ -1,0 +1,21 @@
+.c-masonry-list {
+    column-count: 0;
+    column-gap: var(--space-xs);
+
+    @include respond-above(xs) {
+        column-count: 2;
+    }
+
+    @include respond-above(md) {
+        column-count: 3;
+    }
+}
+
+    .c-masonry-list__item {
+        position: relative;
+        padding: var(--space-xs) var(--space-xs) var(--space-unit);
+
+        @include respond-above(xs) {
+            display: inline-block;
+        }
+    }

@@ -2,12 +2,15 @@
 @import "01-settings/settings.globals";
 @import "01-settings/settings.colors";
 @import "01-settings/settings.spacing";
+@import "01-settings/settings.breakpoints";
 
 /*---------- 02 Tools  ----------*/
 @import "02-tools/tools.fonts";
 @import "02-tools/tools.functions";
 @import "02-tools/tools.mixings";
+@import "02-tools/tools.breakpoints";
 @import "02-tools/tools.mediaqueries";
+@import "02-tools/tools.mediaqueries-old";
 
 /*---------- 03 Generic  ----------*/
 @import "03-generic/generic.reset";
@@ -16,9 +19,11 @@
 
 /*---------- 04 Objects  ----------*/
 @import "04-objects/objects.pages";
-@import "04-objects/objects.containers";
 @import "04-objects/objects.type";
 @import "04-objects/objects.stack";
+@import "04-objects/objects.grid";
+@import "04-objects/objects.grid-item";
+@import "04-objects/objects.containers";
 
 /*---------- 05 Components  ----------*/
 @import "05-components/components.logo";
@@ -28,7 +33,10 @@
 @import "05-components/components.nav";
 @import "05-components/components.section-heading";
 @import "05-components/components.posts";
+@import "05-components/components.masonry";
 @import "05-components/components.notes";
+@import "05-components/components.footer";
 
 /*---------- 06 Utilities  ----------*/
 @import "06-utilities/utilities.display";
+@import "06-utilities/utilities.margins-paddings";
