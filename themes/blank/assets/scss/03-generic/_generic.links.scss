@@ -1,14 +1,39 @@
 a {
   color: currentColor;
-  text-decoration: underline;
-  text-underline-offset: var(--space-xxxs);
-  text-decoration-thickness: rem(1.5);
-  text-decoration-color: var(--color-grey-400);
   transition: var(--global-transition);
 
-  &:hover {
+  &:not(.o-link__text):not(.c-btn) {
+    text-decoration: underline;
+    text-underline-offset: var(--space-xxxs);
+    text-decoration-thickness: rem(1.5);
+    text-decoration-color: var(--color-grey-400);
+
+    @include hocus {
+      text-decoration-thickness: rem(2);
+      text-decoration-color: var(--color-dark);
+    }
+  }
+
+  @include hocus {
     color: var(--color-grey-800);
-    text-decoration-thickness: rem(2);
-    text-decoration-color: var(--color-dark);
   }
 }
+
+  .o-link__text {
+    text-decoration: none;
+
+    > span {
+      color: currentColor;
+      text-decoration: underline;
+      text-underline-offset: var(--space-xxxs);
+      text-decoration-thickness: rem(1.5);
+      text-decoration-color: var(--color-grey-400);
+      transition: var(--global-transition);
+
+      @include hocus() {
+        color: var(--color-grey-800);
+        text-decoration-thickness: rem(2);
+        text-decoration-color: var(--color-dark);
+      }
+    }
+  }

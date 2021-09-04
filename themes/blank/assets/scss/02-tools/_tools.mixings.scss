@@ -5,6 +5,121 @@
 // Global mixins available to the entire project. Define file-specific
 // mixins inside the file to which they relate.
 
+//* -------------------------------------------------------------------------- */
+// Font families
+@mixin font-serif {
+    font-family: var(--font-serif);
+}
+
+@mixin font-sans {
+    font-family: var(--font-sans);
+}
+
+// Type presets
+@mixin lead-serif-1 {
+  @include font-serif;
+  font-size: em(30);
+  font-weight: 420;
+  letter-spacing: initial;
+  line-height: 1.3;
+
+  @media (min-width: 767px)  {
+      font-size: calc(2vw + .625rem);
+  }
+
+  @media (min-width: 880px)  {
+      font-size: calc(2vw + .75rem);
+  }
+
+  @media (min-width: 992px)  {
+      font-size: calc(2vw + .875rem);
+  }
+  
+  @include respond-above(lg) {
+      font-size: em(42);
+  }
+}
+
+@mixin heading-serif--post-title {
+    @include font-serif;
+    font-size: em(88);
+    font-weight: 900;
+}
+
+@mixin body-serif-1 {
+    @include font-serif;
+    font-size: em(26);
+}
+
+@mixin body-serif-2 {
+    @include font-serif;
+    font-size: em(23);
+}
+
+@mixin body-serif-3 {
+    @include font-serif;
+    font-size: em(20);
+}
+
+@mixin body-serif-4 {
+    @include font-serif;
+    font-size: em(18);
+}
+
+@mixin body-serif-5 {
+    @include font-serif;
+    font-size: em(16);
+}
+
+@mixin body-serif-6 {
+    @include font-serif;
+    font-size: em(14);
+}
+
+@mixin body-serif-7 {
+    @include font-serif;
+    font-size: em(13);
+}
+
+@mixin body-sans-1 {
+    @include font-sans;
+    font-size: em(26);
+}
+
+@mixin body-sans-2 {
+    @include font-sans;
+    font-size: em(23);
+}
+
+@mixin body-sans-3 {
+    @include font-sans;
+    font-size: em(20);
+}
+
+@mixin body-sans-4 {
+    @include font-sans;
+    font-size: em(18);
+}
+
+@mixin body-sans-5 {
+    @include font-sans;
+    font-size: em(16);
+}
+
+@mixin body-sans-6 {
+    @include font-sans;
+    font-size: em(14);
+}
+
+@mixin body-sans-7 {
+    @include font-sans;
+    font-size: em(13);
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+
 
 // Generate `:hover` and `:focus` styles in one go.
 @mixin hocus() {
@@ -26,8 +141,8 @@
 
 // Grid item to span all columns
 @mixin span-all-columns() {
-   flex-basis: 100%;
    grid-column: 1/-1;
-   max-width: 100%;
+   flex-basis: 100%;
    width: 100%;
+   max-width: 100%;
 }

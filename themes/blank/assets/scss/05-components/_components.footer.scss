@@ -1,10 +1,72 @@
 .c-footer {
-    background-color: var(--color-dark);
     padding-top: rem(88);
     padding-bottom: rem(64);
+    background-color: var(--color-dark);
     color: var(--color-white);
+    @include font-sans;
+    font-weight: 250;
 
-    .o-grid > * + * {
-        text-align: right;
+    .o-grid {
+        align-items: flex-end;
+
+        > * + * {
+            text-align: right;
+        }
+    }
+
+    a:not(.c-btn),
+    .o-link__text span {
+        text-decoration-color: var(--color-dark-500);
+       
+        @include hocus() {
+            color: var(--color-white);
+            text-decoration-color: var(--color-white);
+        }
     }
 }
+
+    .c-footer__lang  {
+
+        .o-icon {
+            opacity: .8;
+        }
+
+        @include hocus {
+
+            .o-icon {
+                opacity: 1;
+            }
+        }
+    }
+
+    .c-footer__text {
+        @include body-sans-4;
+    }
+
+    .c-footer__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--space-md);
+        height: var(--space-md);
+        margin: 0 rem(2);
+        padding: rem(4);
+        background: var(--color-dark-800);
+        border-radius: rem(2);
+
+        .o-icon {
+            opacity: .8;
+        }
+
+        @include hocus {
+            & {
+                transform: translateY(rem(-1));
+                background: var(--color-dark-700);
+                color: var(--color-white)
+            }
+
+            .o-icon {
+                opacity: 1;
+            }  
+        }
+    }

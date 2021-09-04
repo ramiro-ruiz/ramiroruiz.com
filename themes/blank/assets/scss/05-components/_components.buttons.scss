@@ -64,9 +64,22 @@
     }
   }
 
-  &.c-btn--primary-light {
+  &.c-btn--sm {
+    font-weight: 300;
+    line-height: 1.4;
+    min-height: auto;
+    border-width: rem(1);
+    padding: var(--space-xxxs) var(--space-unit);
+  }
+
+  &.c-btn--light {
     background: transparent;
     color: var(--color-white);
     border-color: var(--color-white);
+
+    @include hocus() {
+      background: var(--color-white);
+      color: var(--color-dark)
+    }
   }
 }

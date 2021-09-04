@@ -1,4 +1,7 @@
-title: Section heading
+title: Footer
 context:
-    section-heading: This is the section title
-    section-desc: Go to this section
+    social-account:
+        - social: twitter
+        - social: linkedin
+        - social: instagram
+        - social: dribbble

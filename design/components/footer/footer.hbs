@@ -1,8 +1,13 @@
 <section class="c-footer">
     <div class="o-container o-grid o-grid--auto--xl">
         <div class="o-stack--sm">
-            <a href="/es" lang="es" class="o-type-body-4 u-d-block">Español</a>
-            <div>
+            <a href="/es" lang="es" class="c-footer__lang o-link__text u-d-inline-flex u-align-items-center">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-lang"></use>
+                </svg>
+                <span>Español</span>
+            </a>
+            <div class="c-footer__text">
                 <p>Designed & coded with ♥️ in Monterrey, Mexico.</p>
                 <p>© 2010 – 2021 <a href="#" class="u-ml-1">Colophon</a></p>
             </div>
@@ -10,14 +15,14 @@
         <div class="o-stack--sm">
             <div class="c-footer__social">
                 {{#each social-account }}
-                <a href="#" class="c-footer__social-link">
-                    <svg class="" aria-hidden="true">
+                <a href="#" class="c-footer__social-link" title="{{social}}">
+                    <svg class="o-icon" aria-hidden="true">
                         <use href="#social-{{social}}"></use>
                     </svg>
                 </a>
                 {{/each}}
             </div>
-            <a href="mailto:yo@ramiroruiz" class="c-btn c-btn--primary c-btn--primary-light">
+            <a href="mailto:yo@ramiroruiz" class="c-btn c-btn--sm c-btn--light">
                 Email me
             </a>
         </div>
