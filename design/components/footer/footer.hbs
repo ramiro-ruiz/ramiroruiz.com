@@ -1,6 +1,6 @@
 <section class="c-footer">
-    <div class="o-container o-grid o-grid--auto--xl">
-        <div class="o-stack--sm">
+    <div class="o-container o-grid">
+        <div class="o-stack--sm o-grid__span-col--8@sm">
             <a href="/es" lang="es" class="c-footer__lang o-link__text u-d-inline-flex u-align-items-center">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
                     <use href="#icon-lang"></use>
@@ -8,11 +8,15 @@
                 <span>Español</span>
             </a>
             <div class="c-footer__text">
-                <p>Designed & coded with ♥️ in Monterrey, Mexico.</p>
+                <p>Designed & coded with
+                    <svg class="o-icon u-mx-1" aria-hidden="true">
+                        <use href="#icon-like"></use>
+                    </svg>
+                    in Monterrey, Mexico.</p>
                 <p>© 2010 – 2021 <a href="#" class="u-ml-1">Colophon</a></p>
             </div>
         </div>
-        <div class="o-stack--sm">
+        <div class="o-stack--sm o-grid__span-col--4@sm">
             <div class="c-footer__social">
                 {{#each social-account }}
                 <a href="#" class="c-footer__social-link" title="{{social}}">

@@ -1,20 +1,14 @@
 a {
   color: currentColor;
   transition: var(--global-transition);
-
-  &:not(.o-link__text):not(.c-btn) {
-    text-decoration: underline;
-    text-underline-offset: var(--space-xxxs);
-    text-decoration-thickness: rem(1.5);
-    text-decoration-color: var(--color-grey-400);
-
-    @include hocus {
-      text-decoration-thickness: rem(2);
-      text-decoration-color: var(--color-dark);
-    }
-  }
+  text-decoration: underline;
+  text-underline-offset: var(--space-xxxs);
+  text-decoration-thickness: rem(1.5);
+  text-decoration-color: var(--color-grey-400);
 
   @include hocus {
+    text-decoration-thickness: rem(2);
+    text-decoration-color: var(--color-dark);
     color: var(--color-grey-800);
   }
 }
