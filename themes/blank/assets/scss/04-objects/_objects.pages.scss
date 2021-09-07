@@ -1,20 +1,18 @@
 .o-page {
+    position: relative;
+    z-index: 1;
     min-height: 100vh;
+    padding-top: var(--space-md);
+    background-color: var(--color-white);
 
-    &.o-container {
-        padding-top: var(--space-lg);
-        padding-bottom: var(--space-lg);
-        
-        @include respond-above(md) {
-            padding-top: var(--space-xl);
-            padding-bottom: var(--space-xxl);
-         }
-    }
+    @include respond-above(lg) {
+        padding-top: var(--space-xl);
+     }
     
     .c-nav {
-        position: fixed;
-        left: 0; right: 0;
+        position: fixed; right: 0;
         bottom: 0;
+        left: 0;
         width: 100%;
     
         @include respond-above(sm) {

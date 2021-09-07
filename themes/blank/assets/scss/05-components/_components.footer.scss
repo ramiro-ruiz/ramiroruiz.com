@@ -59,7 +59,11 @@
     }
 
     .c-footer__text {
-        @include body-sans-4;
+        @include body-sans-5;
+        
+        @include respond-above(xs) {
+            @include body-sans-4;
+        }
         
         > p:first-child {
             display: flex;

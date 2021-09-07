@@ -33,10 +33,13 @@
 @import "05-components/components.home-intro";
 @import "05-components/components.nav";
 @import "05-components/components.section-heading";
-@import "05-components/components.posts";
+@import "05-components/components.post-list";
+@import "05-components/components.post";
 @import "05-components/components.masonry";
 @import "05-components/components.notes";
 @import "05-components/components.footer";
+@import "05-components/components.tag";
+@import "05-components/components.post-meta";
 
 /*---------- 06 Utilities  ----------*/
 @import "06-utilities/utilities.display";

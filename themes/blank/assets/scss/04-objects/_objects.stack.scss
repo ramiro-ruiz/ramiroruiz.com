@@ -17,7 +17,7 @@
   .o-stack--lg > * + * {
     margin-top: var(--space-xl);
 
-    @include respond-above(sm) {
+    @include respond-above(md) {
       .o-stack--lg\@md  > * + * {
         margin-top: rem(80);
       }

@@ -1,0 +1,5 @@
+title: Post meta
+context:
+  meta-type:
+    - post-meta: weather
+      weather: 73.82°F

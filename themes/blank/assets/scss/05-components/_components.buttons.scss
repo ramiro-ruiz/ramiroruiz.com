@@ -82,4 +82,15 @@
       color: var(--color-dark)
     }
   }
+
+  &.c-btn--subtle {
+    border: 0;
+    font-weight: 400;
+    background: var(--color-grey-100);
+
+    @include hocus {
+      background: var(--color-grey-200);
+      color: var(--color-dark);
+    }
+  }
 }

@@ -18,7 +18,8 @@
 // Type presets
 @mixin lead-serif-1 {
   @include font-serif;
-  font-size: em(30);
+  font-size: rem(30);
+  font-size: calc(2vw + .6rem);
   font-weight: 420;
   letter-spacing: initial;
   line-height: 1.3;
@@ -35,85 +36,85 @@
       font-size: calc(2vw + .875rem);
   }
   
-  @include respond-above(lg) {
-      font-size: em(42);
+  @include respond-above(xl) {
+      font-size: rem(42);
   }
 }
 
 @mixin heading-serif--post-title {
     @include font-serif;
-    font-size: em(88);
+    font-size: rem(88);
     font-weight: 900;
 }
 
 @mixin body-serif-1 {
     @include font-serif;
-    font-size: em(26);
+    font-size: rem(26);
 }
 
 @mixin body-serif-2 {
     @include font-serif;
-    font-size: em(23);
+    font-size: rem(23);
 }
 
 @mixin body-serif-3 {
     @include font-serif;
-    font-size: em(20);
+    font-size: rem(20);
 }
 
 @mixin body-serif-4 {
     @include font-serif;
-    font-size: em(18);
+    font-size: rem(18);
 }
 
 @mixin body-serif-5 {
     @include font-serif;
-    font-size: em(16);
+    font-size: rem(16);
 }
 
 @mixin body-serif-6 {
     @include font-serif;
-    font-size: em(14);
+    font-size: rem(14);
 }
 
 @mixin body-serif-7 {
     @include font-serif;
-    font-size: em(13);
+    font-size: rem(13);
 }
 
 @mixin body-sans-1 {
     @include font-sans;
-    font-size: em(26);
+    font-size: rem(26);
 }
 
 @mixin body-sans-2 {
     @include font-sans;
-    font-size: em(23);
+    font-size: rem(23);
 }
 
 @mixin body-sans-3 {
     @include font-sans;
-    font-size: em(20);
+    font-size: rem(20);
 }
 
 @mixin body-sans-4 {
     @include font-sans;
-    font-size: em(18);
+    font-size: rem(18);
 }
 
 @mixin body-sans-5 {
     @include font-sans;
-    font-size: em(16);
+    font-size: rem(16);
 }
 
 @mixin body-sans-6 {
     @include font-sans;
-    font-size: em(14);
+    font-size: rem(14);
 }
 
 @mixin body-sans-7 {
     @include font-sans;
-    font-size: em(13);
+    font-size: rem(13);
 }
 
 

@@ -1,0 +1,67 @@
+<div class="h-entry c-post o-stack">
+    <div class="c-post__meta c-post__meta--date">
+        <h1 class="c-post__meta-item c-post__meta-item--date">
+            {{render '@post-meta'}}
+        </h1>
+    </div>
+    <div class="c-post__content e-content p-name o-stack--xs">
+        <p>The last 7 days I’ve progressed more in the redesign of my personal website than the last 2 years where I kind of started.</p>
+        <p>I wanted big blocks of time. It didn’t work. The excuse, lack of time.</p>
+        <p>Now I’m doing a MVP redesign and work on it everyday even when I only have 15min.</p>
+    </div>
+    <div class="c-post__meta o-stack--xxs">
+        {{> '@post-meta'}}
+        <div class="c-post__meta-item c-post__meta-item--tags u-mt-2">
+            {{#each tag-item}}
+                {{> '@tag'}}
+            {{/each}}
+        </div>
+    </div>
+    <footer class="c-post__footer">
+        <div class="c-post__interactions">
+            <span class="c-post__interactions-item">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-like"></use>
+                </svg>
+                4
+            </span>
+            <span class="c-post__interactions-item">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-like"></use>
+                </svg>
+                2
+            </span>
+            <span class="c-post__interactions-item">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-like"></use>
+                </svg>
+                1
+            </span>
+        </div>
+        <div class="c-post__actions">
+            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-reply"></use>
+                </svg>
+                Reply
+            </a>
+            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-repost"></use>
+                </svg>
+                Retweet
+            </a>
+            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-like"></use>
+                </svg>
+                Like
+            </a>
+            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+                <svg class="o-icon" aria-hidden="true">
+                    <use href="#social-twitter"></use>
+                </svg>
+            </a>
+        </div>
+    </footer>
+</div>
