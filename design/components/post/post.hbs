@@ -4,10 +4,41 @@
             {{render '@post-meta'}}
         </h1>
     </div>
-    <div class="c-post__content e-content p-name o-stack--xs">
-        <p>The last 7 days I’ve progressed more in the redesign of my personal website than the last 2 years where I kind of started.</p>
-        <p>I wanted big blocks of time. It didn’t work. The excuse, lack of time.</p>
-        <p>Now I’m doing a MVP redesign and work on it everyday even when I only have 15min.</p>
+    <div class="c-post__content e-content p-name o-stack--sm">
+        {{#if link}}
+        <div class="c-post__context h-cite o-stack--xs">
+            <h1 class="c-post__context-heading c-post__context-heading--link">
+                <a href="{{ context-url }}">
+                    {{ link-title }}
+                </a>
+            </h1>
+            <div class="c-post__context-content c-post__context-text post-text e-content">
+                {{context-text}}
+            </div>
+        </div>
+        {{/if}}
+        {{#if reply}}
+        <div class="c-post__context h-cite o-stack--xxs">
+            <h4 class="c-post__context-heading">
+                Replied to
+            </h4>
+            <div class="c-post__context-content h-cite u-in-reply-to o-stack--xs">
+                <header class="c-post__context-header">
+                    <span class="c-post__context-author p-author h-card">
+                        <img class="c-post__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
+                        <a class="c-post__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
+                    </span>
+                    <a href="{{context-url}}" class="c-post__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
+                </header>
+                <div class="c-post__context-text post-text e-content">
+                    {{context-text}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+        <div class="o-stack--xs">
+            {{{note-text}}}
+        </div>
     </div>
     <div class="c-post__meta o-stack--xxs">
         {{> '@post-meta'}}
@@ -17,27 +48,35 @@
             {{/each}}
         </div>
     </div>
+    {{#if footer}}
     <footer class="c-post__footer">
         <div class="c-post__interactions">
+            {{#if likes}}
             <span class="c-post__interactions-item">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
                     <use href="#icon-like"></use>
                 </svg>
-                4
+                {{likes}}
             </span>
+            {{/if}}
+            {{#if comments}}
+            <span class="c-post__interactions-item">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-responses"></use>
+                </svg>
+                {{comments}}
+            </span>
+            {{/if}}
+            {{#if reposts}}
             <span class="c-post__interactions-item">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
                     <use href="#icon-like"></use>
                 </svg>
-                2
+                {{reposts}}
             </span>
-            <span class="c-post__interactions-item">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
-                    <use href="#icon-like"></use>
-                </svg>
-                1
-            </span>
+            {{/if}}
         </div>
+        {{#if post-actions}}
         <div class="c-post__actions">
             <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
@@ -63,5 +102,7 @@
                 </svg>
             </a>
         </div>
+        {{/if}}
     </footer>
+    {{/if}}
 </div>

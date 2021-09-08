@@ -5,7 +5,15 @@ variants:
     - name: default
       label: Note
       context:
+        post-actions: yes
+        footer: yes
+        note-text: |
+          <p>The last 7 days I’ve progressed more in the redesign of my personal website than the last 2 years where I kind of started.</p>
+          <p>I wanted big blocks of time. It didn’t work. The excuse, lack of time.</p>
+          <p>Now I’m doing a MVP redesign and work on it everyday even when I only have 15min.</p>
         meta-type:
+        - post-meta: weather
+          weather: 73.82°F
         - meta-link: yes
           post-meta: responses
           responses: 7
@@ -19,16 +27,25 @@ variants:
         - tag: Personal site
         - tag: Redesign
         - tag: Progression
+        likes: 4
+        comments: 2
+        reposts: 1
     - name: like
       label: Like
       context:
-        note-type: like
+        footer: yes
         note-text: |
           Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
-        note-date: Mar 24 2021
+        meta-type:
+        - meta-link: yes
+          post-meta: responses
+          responses: 2
+        comments: 2
     - name: link
       label: Link
       context:
+        footer: yes
+        post-actions: yes
         link: yes
         note-type: link
         context-url: https://leportella.com/why-have-a-blog.html
@@ -36,18 +53,29 @@ variants:
         context-text: Having your independent blog is an excellent way to share what you think in a decentralized way, independent of any major company that may add a paywall to it.
         note-text: |
           Never get tired of this kind of posts, they’re so inspiring.
-        note-date: Mar 24 2021
-    - name: note
-      label: Note
-      context:
-        note-type: text
-        note-text: |
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
-        note-date: Mar 24 2021
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 3
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        - meta-link: yes
+          post-meta: lang
+          lang: Español
+        tag-item:
+        - tag: Indieweb
+        - tag: Blogs
+        likes: 2
+        comments: 1
     - name: reply
       label: Reply
       context:
         reply: yes
+        footer: yes
+        post-actions: yes
         context-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
         context-url: https://twitter.com/ramiroruiz/status/1355129784175620098
         context-author: Ramiro Ruiz
@@ -56,7 +84,19 @@ variants:
         note-type: reply
         note-text: |
           Wow this is an amazing take, it makes me think a lot about that angle.
-        note-date: Mar 24 2021
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 5
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        tag-item:
+        - tag: Design take
+        likes: 4
+        comments: 1
     - name: repost (quoting)
       label: Repost (quoting)
       context:
