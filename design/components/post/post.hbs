@@ -1,4 +1,4 @@
-<div class="h-entry c-post o-stack--sm">
+<div class="h-entry c-post o-stack--sm o-stack@md">
     <div class="c-post__meta c-post__meta--date">
         <h1 class="c-post__meta-item c-post__meta-item--date">
             {{render '@post-meta'}}
@@ -12,7 +12,7 @@
                     {{ link-title }}
                 </a>
             </h1>
-            <div class="c-post__context-content c-post__context-text post-text e-content">
+            <div class="c-post__context-content c-post__context-content--link c-post__context-text post-text e-content">
                 {{context-text}}
             </div>
         </div>
@@ -36,13 +36,39 @@
             </div>
         </div>
         {{/if}}
-        <div class="o-stack--xs">
+        {{#if photo }}
+            <img class="u-photo c-note--photo__img" src="{{photo-url}}" alt="{{photo-alt}}">
+        {{/if}}
+        {{#if video }}
+            <video class="u-video c-note--video__item" controls="controls" poster="{{ vide-poster }}" src="{{ video-url }}">
+            {{video-alt}}
+            </video>
+        {{/if}}
+        {{#if note-text}}
+        <div class="c-post__text o-stack--sm">
             {{{note-text}}}
         </div>
+        {{/if}}
+        {{#if repost}}
+        <div class="c-post__context c-post__context--repost h-cite o-stack--xxs">
+            <div class="c-post__context-content h-cite u-in-reply-to o-stack--xs">
+                <header class="c-post__context-header">
+                    <span class="c-post__context-author p-author h-card">
+                        <img class="c-post__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
+                        <a class="c-post__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
+                    </span>
+                    <a href="{{context-url}}" class="c-post__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
+                </header>
+                <div class="c-post__context-text post-text e-content">
+                    {{context-text}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
     </div>
-    <div class="c-post__meta o-stack--xxs">
+    <div class="c-post__meta o-stack--xxs@md">
         {{> '@post-meta'}}
-        <div class="c-post__meta-item c-post__meta-item--tags u-mt-2">
+        <div class="c-post__meta-item c-post__meta-item--tags">
             {{#each tag-item}}
                 {{> '@tag'}}
             {{/each}}
@@ -78,25 +104,25 @@
         </div>
         {{#if post-actions}}
         <div class="c-post__actions">
-            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+            <a href="#" class="c-btn c-btn--subtle c-btn--icon">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
                     <use href="#icon-reply"></use>
                 </svg>
                 Reply
             </a>
-            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+            <a href="#" class="c-btn c-btn--subtle c-btn--icon">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
                     <use href="#icon-repost"></use>
                 </svg>
                 Retweet
             </a>
-            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+            <a href="#" class="c-btn c-btn--subtle c-btn--icon">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
                     <use href="#icon-like"></use>
                 </svg>
                 Like
             </a>
-            <a href="#" class="c-btn c-btn--subtle u-d-flex u-align-items-center">
+            <a href="#" class="c-btn c-btn--subtle c-btn--icon">
                 <svg class="o-icon" aria-hidden="true">
                     <use href="#social-twitter"></use>
                 </svg>

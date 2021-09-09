@@ -6,5 +6,12 @@
 
     @include respond-above(sm) {
         padding: 0 var(--space-md);
-     }
+    }
 }
+
+    .o-container--main {
+        
+        @include respond-below(sm) {
+            margin-top: 0;
+        }
+    }

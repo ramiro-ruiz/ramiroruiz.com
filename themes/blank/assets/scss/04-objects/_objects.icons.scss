@@ -2,7 +2,7 @@
     display: inline-block;
     width: var(--space-unit);
     height: var(--space-unit);
-    opacity: .85;
+    opacity: .65;
 
     @include hocus {
         opacity: 1;

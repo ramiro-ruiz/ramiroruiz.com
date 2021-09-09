@@ -1,7 +1,7 @@
 .o-stack > * + * {
   margin-top: var(--space-lg);
 }
-  
+
   .o-stack--xxs > * + * {
     margin-top: var(--space-xxxs);
   }
@@ -16,12 +16,6 @@
   
   .o-stack--lg > * + * {
     margin-top: var(--space-xl);
-
-    @include respond-above(md) {
-      .o-stack--lg\@md  > * + * {
-        margin-top: rem(80);
-      }
-  }
   }
 
   .o-stack--xl > * + * {
@@ -32,10 +26,25 @@
     margin-top: var(--space-xxxl);
   }
 
+  
+  //Responsive stack classes
   @include respond-above(md) {
-      .o-stack--xxl\@md  > * + * {
-        margin-top: var(--space-xxxl);
-      }
+
+    .o-stack--xxs\@md  > * + * {
+      margin-top: var(--space-xxxs);
+    }
+
+    .o-stack\@md  > * + * {
+      margin-top: var(--space-lg);
+    }
+
+    .o-stack--lg\@md  > * + * {
+      margin-top: var(--space-xl);
+    }
+
+    .o-stack--xxl\@md  > * + * {
+      margin-top: var(--space-xxxl);
+    }
   }
 
 

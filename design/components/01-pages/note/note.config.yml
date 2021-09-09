@@ -1,4 +1,4 @@
-title: Post
+title: Note page
 context:
   label: default
 variants:
@@ -39,8 +39,8 @@ variants:
         meta-type:
         - meta-link: yes
           post-meta: responses
-          responses: 1
-        comments: 1
+          responses: 2
+        comments: 2
     - name: link
       label: Link
       context:

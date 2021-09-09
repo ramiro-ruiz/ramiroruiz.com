@@ -1,8 +1,9 @@
 .c-tag {
     @include body-sans-5;
+    font-weight: 350;
 
     &::before {
         content: '#';
-        color: var(--color-grey-400);
+        color: var(--color-grey-500);
     }
 }
