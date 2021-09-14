@@ -1,0 +1,21 @@
+.c-avatar-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-left: var(--space-xs);
+    padding: 0;
+}
+    .c-avatar-list__item {
+        margin-left: calc(var(--space-xs) * -1);
+        transition: var(--global-transition);
+        list-style: none;
+
+        &:hover:not(:first-child) {
+            margin-left: calc(var(--space-xxxs) * -1);
+        }
+
+        .c-avatar {
+            border: rem(.5) solid var(--color-grey-400);
+            box-shadow: 0 0 0 rem(1.5) var(--color-white),
+        }
+    }

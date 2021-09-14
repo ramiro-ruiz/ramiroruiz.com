@@ -22,18 +22,7 @@
             <h4 class="c-post__context-heading">
                 Replied to
             </h4>
-            <div class="c-post__context-content h-cite u-in-reply-to o-stack--xs">
-                <header class="c-post__context-header">
-                    <span class="c-post__context-author p-author h-card">
-                        <img class="c-post__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
-                        <a class="c-post__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
-                    </span>
-                    <a href="{{context-url}}" class="c-post__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
-                </header>
-                <div class="c-post__context-text post-text e-content">
-                    {{context-text}}
-                </div>
-            </div>
+            {{> @user-post}}
         </div>
         {{/if}}
         {{#if photo }}
@@ -51,18 +40,7 @@
         {{/if}}
         {{#if repost}}
         <div class="c-post__context c-post__context--repost h-cite o-stack--xxs">
-            <div class="c-post__context-content h-cite u-in-reply-to o-stack--xs">
-                <header class="c-post__context-header">
-                    <span class="c-post__context-author p-author h-card">
-                        <img class="c-post__context-avatar u-photo" src="{{context-avatar}}" alt="Author avatar" width="48">
-                        <a class="c-post__context-author-name p-name u-url author_url" href="{{context-author-url}}">{{context-author}}</a>
-                    </span>
-                    <a href="{{context-url}}" class="c-post__context-date u-url"><time class="dt-published" datetime="2021-06-14T18:27:27Z">Jun 14, 2021 at 6:27 p.m.</time></a>
-                </header>
-                <div class="c-post__context-text post-text e-content">
-                    {{context-text}}
-                </div>
-            </div>
+            {{> @user-post}}
         </div>
         {{/if}}
     </div>
@@ -76,7 +54,7 @@
     </div>
     {{#if footer}}
     <footer class="c-post__footer">
-        <div class="c-post__interactions">
+        {{!-- <div class="c-post__interactions">
             {{#if likes}}
             <span class="c-post__interactions-item">
                 <svg class="o-icon u-mr-1" aria-hidden="true">
@@ -101,7 +79,7 @@
                 {{reposts}}
             </span>
             {{/if}}
-        </div>
+        </div> --}}
         {{#if post-actions}}
         <div class="c-post__actions">
             <a href="#" class="c-btn c-btn--subtle c-btn--icon">
@@ -128,6 +106,18 @@
                 </svg>
             </a>
         </div>
+        {{/if}}
+        {{#if reaction}}
+        <div class="c-post__reactions">
+            {{#each reaction}}
+            <div class="c-post__reactions__{{#if likes}}likes{{/if}}{{#if reposts}}reposts{{/if}}">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-{{#if likes}}like{{/if}}{{#if reposts}}repost{{/if}}"></use>
+                </svg>
+                {{> @avatar-list}}
+            </div>
+            {{/each}}
+            </div>
         {{/if}}
     </footer>
     {{/if}}
