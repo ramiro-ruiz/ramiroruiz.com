@@ -39,6 +39,19 @@ variants:
           - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
         likes: 4
         comments: 2
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
         reposts: 1
     - name: like
       label: Like
@@ -51,6 +64,13 @@ variants:
           post-meta: responses
           responses: 1
         comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
     - name: link
       label: Link
       context:
@@ -85,6 +105,13 @@ variants:
             - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
         likes: 2
         comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
     - name: reply
       label: Reply
       context:
@@ -121,6 +148,13 @@ variants:
             - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
         likes: 4
         comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
     - name: repost (quoting)
       label: Repost (quoting)
       context:
@@ -155,6 +189,13 @@ variants:
             - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
         likes: 4
         comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
     - name: repost
       label: Repost
       context:
@@ -211,7 +252,14 @@ variants:
             - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
             - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
             - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
-        comments: 2
+        comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
     - name: video
       label: Video
       context:
@@ -241,3 +289,10 @@ variants:
             - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
             - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
         comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg

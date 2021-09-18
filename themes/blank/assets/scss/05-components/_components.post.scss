@@ -74,7 +74,7 @@
         
     .c-post__content {
         @include body-serif-2;
-        font-weight: 350;
+        font-weight: 380;
         
         @include respond-above(md) {
             @include body-serif-1;
@@ -87,17 +87,11 @@
     }
 
     .c-post__footer {
-        display: flex;
-        flex-wrap: wrap;
         width: 100%;
         grid-column: 2;
         align-items: center;
         justify-content: space-between;
         padding: 0;
-
-        > * {
-            margin: var(--space-unit) 0;
-        }
     }
 
     .c-post__content,
@@ -113,14 +107,18 @@
     
         .c-post__actions {
             @include body-sans-5;
-            display: flex;
-            align-items: center; 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) auto;
+            grid-gap: var(--space-unit);
+            align-items: center;
+            padding: var(--space-unit) 0;
+            border-top: rem(1) solid var(--color-grey-200);
+            border-bottom: rem(1) solid var(--color-grey-200);
             color: var(--color-grey-800);
-            order: 2;
 
             @include respond-below(md) {
                 width: 100%;
-                order: inherit;
+                grid-gap: var(--space-xs);
             }
             
             > .c-btn {
@@ -139,19 +137,6 @@
                     width: auto;
                     min-height: auto;
                     padding: var(--space-xs) var(--space-xxs);
-                    //background-color: transparent;
-                }
-
-                & + .c-btn {
-                    margin-left: var(--space-xs);
-
-                    @include respond-below(md) {
-                        margin-left: var(--space-unit);
-                    }
-
-                    @media (max-width: 350px) {
-                        margin-left: var(--space-xs);  
-                    }
                 }
             }
         }
@@ -171,6 +156,16 @@
                 }
             }
         }
+
+            .c-post__reactions-comments {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+            }
+                .c-post__reactions-comments-number {
+                    @include body-sans-2;
+                    font-weight: 250;
+                }
             
             .c-post__context {
                 border-bottom: rem(1.5) solid var(--color-grey-300);

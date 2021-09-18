@@ -28,3 +28,8 @@
         }
     }
 }
+
+.o-heading--md {
+    @include body-sans-3;
+    font-weight: 550;
+}

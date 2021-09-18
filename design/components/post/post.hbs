@@ -1,4 +1,4 @@
-<div class="h-entry c-post o-stack--sm o-stack@md">
+<div class="h-entry c-post o-stack o-stack--lg@md">
     <div class="c-post__meta c-post__meta--date">
         <h1 class="c-post__meta-item c-post__meta-item--date">
             {{render '@post-meta'}}
@@ -53,7 +53,7 @@
         </div>
     </div>
     {{#if footer}}
-    <footer class="c-post__footer">
+    <footer class="c-post__footer o-stack--sm o-stack@md">
         {{!-- <div class="c-post__interactions">
             {{#if likes}}
             <span class="c-post__interactions-item">
@@ -80,6 +80,28 @@
             </span>
             {{/if}}
         </div> --}}
+        {{#if reaction}}
+        <div class="c-post__reactions">
+            {{#each reaction}}
+            <div class="c-post__reactions-{{#if likes}}likes{{/if}}{{#if reposts}}reposts{{/if}}">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-{{#if likes}}like{{/if}}{{#if reposts}}repost{{/if}}"></use>
+                </svg>
+                {{> @avatar-list}}
+            </div>
+            {{/each}}
+            {{#if comments}}
+            <div class="c-post__reactions-comments">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-comments"></use>
+                </svg>
+                <span class="c-post__reactions-comments-number">
+                    {{comments}}
+                </span>
+            </div>
+            {{/if}}
+        </div>
+        {{/if}}
         {{#if post-actions}}
         <div class="c-post__actions">
             <a href="#" class="c-btn c-btn--subtle c-btn--icon">
@@ -107,17 +129,11 @@
             </a>
         </div>
         {{/if}}
-        {{#if reaction}}
-        <div class="c-post__reactions">
-            {{#each reaction}}
-            <div class="c-post__reactions__{{#if likes}}likes{{/if}}{{#if reposts}}reposts{{/if}}">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
-                    <use href="#icon-{{#if likes}}like{{/if}}{{#if reposts}}repost{{/if}}"></use>
-                </svg>
-                {{> @avatar-list}}
-            </div>
-            {{/each}}
-            </div>
+        {{#if comments}}
+        <section class="o-stack--sm">
+            <h2 class="o-heading--md">Replies</h2>
+            {{> @comments}}
+        </section>
         {{/if}}
     </footer>
     {{/if}}
