@@ -52,23 +52,27 @@ variants:
         - name: reply
           label: Reply
           reply: yes
-          context-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
-          context-url: https://twitter.com/ramiroruiz/status/1355129784175620098
-          context-author: Ramiro Ruiz
-          context-author-url: https://twitter.com/ramiroruiz
-          context-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
           note-type: reply
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          avatar-size: sm
           note-text: |
             Wow this is an amazing take, it makes me think a lot about that angle.
           note-date: Mar 24 2021
         - name: repost (quoting)
           label: Repost (quoting)
           repost: yes
-          context-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
-          context-url: https://twitter.com/ramiroruiz/status/1355129784175620098
-          context-author: Ramiro Ruiz
-          context-author-url: https://twitter.com/ramiroruiz
-          context-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          avatar-size: sm
           note-type: repost
           note-text: |
             I couldn't say it better!
@@ -76,11 +80,13 @@ variants:
         - name: repost
           label: Repost
           repost: yes
-          context-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
-          context-url: https://twitter.com/ramiroruiz/status/1355129784175620098
-          context-author: Ramiro Ruiz
-          context-author-url: https://twitter.com/ramiroruiz
-          context-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          avatar-size: sm
           note-type: repost
           note-date: Mar 24 2021
         - name: photo

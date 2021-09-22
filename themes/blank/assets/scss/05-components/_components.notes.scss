@@ -1,16 +1,3 @@
-.c-note--repost {
-
-    .c-note__context-author-name,
-    .c-note__context-date,
-    .c-note__context-text {
-        color: var(--color-dark);
-    }
-
-    .c-note__context {
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
-}
 
     .c-note__content {
         padding: rem(12) var(--space-unit);
@@ -31,6 +18,16 @@
             & + .c-note__context-wrapper {
                 border-top: rem(1.5) solid var(--color-grey-300);
                 padding-top: var(--space-xs);
+            }
+        }
+
+        .c-note__context-wrapper {
+            border-bottom: rem(1.5) solid var(--color-grey-300);
+            padding-bottom: var(--space-unit);
+
+            .c-note--repost & {
+                border-bottom: 0;
+                padding-bottom: 0;
             }
         }
 
@@ -69,21 +66,25 @@
         }
     }
 
-    .c-note__context-author-name {
-        font-weight: 500;
+    .c-note {
+
+        &:not(.c-note--repost) .c-user-post {
+            color: var(--color-grey-600);
+        }
+
+        .c-user-post {
+            padding-left: var(--space-lg);
+        }
+       
+        .c-user-post__header {
+            font-size: rem(14);
+        }
+
+        .c-user-post__text {
+            font-size: rem(16);
+        }
     }
 
-    .c-note__context-date {
-        font-weight: 300;
-    }
-
-    .c-note__context {
-        position: relative;
-        padding-left: var(--space-lg);
-        font-family: var(--font-sans);
-        padding-bottom: var(--space-xs);
-        border-bottom: rem(1.5) solid var(--color-grey-300);
-    }
         .c-note__context-heading {
             font-weight: 500;
             font-size: rem(14);
@@ -92,29 +93,16 @@
                 font-size: var(--space-unit);
             }
         }
+    
 
-        .c-note__context-author {
-            
-            &::after {
-                content: '·';
-            }
+    .c-note--link {
+
+        .c-note__context {
+            padding-left: var(--space-unit);
+            color: var(--color-grey-600);
+            font-family: var(--font-sans);
         }
-
-            .c-note__context-avatar {
-                border-radius: 50%;
-                height: var(--space-md);
-                width: var(--space-md);
-                position: absolute;
-                left: 0;
-                top: var(--space-xxs);
-            }
-
-            .c-note__context-author-name,
-            .c-note__context-date,
-            .c-note__context-text {
-                color: var(--color-grey-600);
-                font-size: rem(14);
-            }
+    }
 
     .c-note--photo__img {
         border-radius: rem(1);
