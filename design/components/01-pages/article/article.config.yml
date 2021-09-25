@@ -1,0 +1,298 @@
+title: Note page
+context:
+  label: default
+variants:
+    - name: default
+      label: Note
+      context:
+        post-actions: yes
+        footer: yes
+        note-text: |
+          <p>The last 7 days I’ve progressed more in the redesign of my personal website than the last 2 years where I kind of started.</p>
+          <p>I wanted big blocks of time. It didn’t work. The excuse, lack of time.</p>
+          <p>Now I’m doing a MVP redesign and work on it everyday even when I only have 15min.</p>
+        meta-type:
+        - meta-link: yes
+          post-meta: lang
+          lang: Español
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        - meta-link: yes
+          post-meta: responses
+          responses: 7
+        tag-item:
+        - tag: Personal site
+        - tag: Redesign
+        - tag: Progression
+        reaction:
+        - likes: 4
+          avatar-item:
+          - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+          - avatar-src: https://media.ramiroruiz.com/avatars/clauruizw/1304858610250526722/b90Aclz-_bigger.jpg
+        - reposts: 1
+          avatar-item:
+          - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        likes: 4
+        comments: 2
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        reposts: 1
+    - name: like
+      label: Like
+      context:
+        footer: yes
+        note-text: |
+          Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
+        meta-type:
+        - meta-link: yes
+          post-meta: responses
+          responses: 1
+        comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+    - name: link
+      label: Link
+      context:
+        footer: yes
+        post-actions: yes
+        link: yes
+        note-type: link
+        context-url: https://leportella.com/why-have-a-blog.html
+        link-title: Why you should have a blog (and write in it) | Leticia Portella
+        context-text: Having your independent blog is an excellent way to share what you think in a decentralized way, independent of any major company that may add a paywall to it.
+        note-text: |
+          Never get tired of this kind of posts, they’re so inspiring.
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 3
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        - meta-link: yes
+          post-meta: lang
+          lang: Español
+        tag-item:
+        - tag: Indieweb
+        - tag: Blogs
+        reaction:
+        - likes: 2
+          avatar-item:
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        likes: 2
+        comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+    - name: reply
+      label: Reply
+      context:
+        reply: yes
+        footer: yes
+        post-actions: yes
+        post-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+        post-author: Ramiro Ruiz
+        post-author-url: https://twitter.com/ramiroruiz
+        post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+        avatar-classes: c-user-post__avatar u-photo
+        avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        avatar-size: lg
+        note-text: |
+          Wow this is an amazing take, it makes me think a lot about that angle.
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 5
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        tag-item:
+        - tag: Design take
+        reaction:
+        - likes: 4
+          avatar-item:
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        likes: 4
+        comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+    - name: repost (quoting)
+      label: Repost (quoting)
+      context:
+        repost: yes
+        footer: yes
+        post-actions: yes
+        post-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+        post-author: Ramiro Ruiz
+        post-author-url: https://twitter.com/ramiroruiz
+        post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+        avatar-classes: c-user-post__avatar u-photo
+        avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        avatar-size: lg
+        note-text: |
+          Wow this is an amazing take, it makes me think a lot about that angle.
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 5
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        reaction:
+        - likes: 4
+          avatar-item:
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        likes: 4
+        comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+    - name: repost
+      label: Repost
+      context:
+        repost: yes
+        footer: yes
+        post-actions: yes
+        post-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+        post-author: Ramiro Ruiz
+        post-author-url: https://twitter.com/ramiroruiz
+        post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+        avatar-classes: c-user-post__avatar u-photo
+        avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+        avatar-size: lg
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 2
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        reaction:
+        - likes: 4
+          avatar-item:
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        likes: 2
+    - name: photo
+      label: Photo
+      context:
+        photo: yes
+        footer: yes
+        post-actions: yes
+        photo-url: https://media.ramiroruiz.com/uploads/photos/2019/12/29/09-29-22/writing-at-the-couch-with-my-sleeping-kid.jpeg
+        photo-alt: Writing at the couch with my sleeping kid
+        note-text: |
+          ♥️ these days.
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 6
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        likes: 4
+        reaction:
+        - likes: 4
+          avatar-item:
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+    - name: video
+      label: Video
+      context:
+        video: yes
+        footer: yes
+        post-actions: yes
+        video-poster: https://media.ramiroruiz.com/uploads/videos/2020/02/18/13-10-38/poster.jpg
+        video-url: https://media.ramiroruiz.com/uploads/videos/2020/02/18/13-10-38/light-sparring-session.mp4
+        video-alt: Light sparring session
+        note-type: video
+        note-text: |
+          What a fun session of light sparring this morning at <a href="https://instagram.com/downtown.dojo">@downtown.dojo</a> I surely missed them.
+          <em>I Cut the parts where I get hit</em> 😆
+        meta-type:
+        - post-meta: weather
+          weather: 73.82°F
+        - meta-link: yes
+          post-meta: responses
+          responses: 3
+        - meta-link: yes
+          post-meta: location
+          location: 51° N, 0° E
+        likes: 2
+        reaction:
+        - likes: 4
+          avatar-item:
+            - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+            - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+        comments: 1
+        comment-items:
+        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Karla Leija
+          post-author-url: https://twitter.com/karlaleija1
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
