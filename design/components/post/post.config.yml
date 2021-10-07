@@ -12,6 +12,8 @@ variants:
           <p>I wanted big blocks of time. It didn’t work. The excuse, lack of time.</p>
           <p>Now I’m doing a MVP redesign and work on it everyday even when I only have 15min.</p>
         meta-type:
+        - post-meta: time
+          weather: 8:39pm
         - meta-link: yes
           post-meta: lang
           lang: Español

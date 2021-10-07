@@ -4,20 +4,72 @@
         display: grid;
         grid-column-gap: var(--space-lg);
         grid-template-columns: minmax(rem(140), 1fr) 3fr 1fr;
-        grid-template-rows: var(--space-md) 1fr;
+        //grid-template-rows: var(--space-md) 1fr;
         padding-bottom: rem(120);
     }
+
+    > .c-post-title {
+        margin-bottom: var(--space-xs);
+
+        @include respond-above(md) {
+            margin-bottom: var(--space-lg);
+        }
+
+        @include respond-above(lg) {
+            margin-bottom: var(--space-xl);
+        }
+    }
 }
+
+    .c-post-title {
+        grid-column: 1/-1;
+        grid-row: 1;
+        @include heading-serif-3;
+
+        @include respond-above(sm) {
+            @include heading-serif-2;
+        }
+
+        @include respond-above(md) {
+            @include heading-serif-1;
+        }
+
+        @include respond-above(lg) {
+            @include heading-serif--post-title;
+        }
+
+        & + .c-post__meta {
+            margin-top: 0;
+        }
+
+        & ~ .c-post__meta {
+            grid-row: 2;
+        }
+
+        & + .c-post__meta + .c-post__content {
+            grid-row: 2/4;
+        }
+    }
+
+    .c-post__meta-item--date {
+        @include respond-below(md) {
+            grid-column: 1/-1;
+        }
+    }
 
     .c-post__meta {
         grid-column: 1;
         grid-row: 1;
-        display: grid;
-
+        
         @include respond-below(md) {
+            display: grid;
             grid-template-columns: rem(150) 1fr;
             grid-column-gap: var(--space-xs);
             grid-row-gap: var(--space-xs);
+        }
+
+        @include respond-above(md) {
+            margin-top: 0;
         }
 
         @media (max-width: 350px) {
@@ -58,7 +110,7 @@
 
             @include respond-above(md) {
                 & {
-                    margin-top: var(--space-md);
+                    margin-top: rem(26);
                 }
 
                 .c-post__meta-item--tags {
@@ -73,11 +125,11 @@
         }
         
     .c-post__content {
-        @include body-serif-2;
-        font-weight: 380;
+        @include body-serif-3;
+        font-weight: 350;
         
         @include respond-above(md) {
-            @include body-serif-1;
+            @include body-serif-2;
             position: relative;
             top: rem(-4);
             grid-column: 2;
@@ -92,6 +144,10 @@
         align-items: center;
         justify-content: space-between;
         padding: 0;
+
+        @include respond-above(md) {
+            margin-top: var(--space-xxl);
+        }
     }
 
     .c-post__content,
@@ -148,7 +204,7 @@
                 display: flex;
 
                 .o-icon {
-                    height: var(--space-lg);
+                    height: var(--space-md);
                 }
 
                 & + * {
@@ -163,7 +219,7 @@
                 margin-left: auto;
             }
                 .c-post__reactions-comments-number {
-                    @include body-sans-2;
+                    @include body-sans-4;
                     font-weight: 250;
                 }
             

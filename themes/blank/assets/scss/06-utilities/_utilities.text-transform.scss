@@ -1,0 +1,7 @@
+///Text transforms
+$transforms: initial, uppercase, capitalize, lowercase;
+@each $transform in ($transforms) {
+  .u-text-transform--#{$transform} {
+    text-transform: ($transform) !important;
+  }
+}

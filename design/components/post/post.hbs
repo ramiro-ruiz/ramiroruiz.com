@@ -1,8 +1,29 @@
-<div class="h-entry c-post o-stack o-stack--lg@md">
+<div class="h-entry c-post o-stack">
+    {{#if note-text}}
+    {{else}}
+    <h1 class="c-post-title">
+        {{post-title}}
+    </h1>
+    {{/if}}
     <div class="c-post__meta c-post__meta--date">
-        <h1 class="c-post__meta-item c-post__meta-item--date">
+        <{{#if note-text}}h1{{else}}div{{/if}} class="c-post__meta-item c-post__meta-item--date {{#if note-text}}{{else}}c-post__meta-header--article{{/if}}">
+            {{#if note-text}}
             {{render '@post-meta'}}
-        </h1>
+            {{else}}
+            <div class="c-post-meta c-post-meta--calendar">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-calendar"></use>
+                </svg>
+                <span>May 6 2020</span>
+            </div>
+            <div class="c-post-meta c-post-meta--read">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-read"></use>
+                </svg>
+                <span>4 min read</span>
+            </div>
+            {{/if}}
+        </{{#if note-text}}h1{{else}}div{{/if}}>
     </div>
     <div class="c-post__content e-content p-name o-stack--sm">
         {{#if link}}
@@ -34,8 +55,13 @@
             </video>
         {{/if}}
         {{#if note-text}}
-        <div class="c-post__text o-stack--sm">
+        <div class="c-post__text o-stack">
             {{{note-text}}}
+        </div>
+        {{/if}}
+        {{#if post-text}}
+        <div class="c-post__text o-stack o-stack--lg@md">
+            {{{post-text}}}
         </div>
         {{/if}}
         {{#if repost}}
@@ -53,33 +79,7 @@
         </div>
     </div>
     {{#if footer}}
-    <footer class="c-post__footer o-stack--sm o-stack@md">
-        {{!-- <div class="c-post__interactions">
-            {{#if likes}}
-            <span class="c-post__interactions-item">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
-                    <use href="#icon-like"></use>
-                </svg>
-                {{likes}}
-            </span>
-            {{/if}}
-            {{#if comments}}
-            <span class="c-post__interactions-item">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
-                    <use href="#icon-responses"></use>
-                </svg>
-                {{comments}}
-            </span>
-            {{/if}}
-            {{#if reposts}}
-            <span class="c-post__interactions-item">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
-                    <use href="#icon-like"></use>
-                </svg>
-                {{reposts}}
-            </span>
-            {{/if}}
-        </div> --}}
+    <footer class="c-post__footer o-stack--sm">
         {{#if reaction}}
         <div class="c-post__reactions">
             {{#each reaction}}
@@ -129,12 +129,12 @@
             </a>
         </div>
         {{/if}}
-        {{#if comments}}
-        <section class="o-stack--sm">
-            <h2 class="o-heading--md">Replies</h2>
-            {{> @comments}}
-        </section>
-        {{/if}}
     </footer>
+    {{/if}}
+    {{#if comments}}
+    <section class="c-comments__section o-stack--sm">
+        <h2 class="o-heading--md">Replies</h2>
+        {{> @comments}}
+    </section>
     {{/if}}
 </div>

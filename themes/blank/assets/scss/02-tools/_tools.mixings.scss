@@ -45,6 +45,28 @@
     @include font-serif;
     font-size: rem(88);
     font-weight: 900;
+    line-height: 1.2;
+}
+
+@mixin heading-serif-1 {
+    @include font-serif;
+    font-size: rem(72);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+@mixin heading-serif-2 {
+    @include font-serif;
+    font-size: rem(64);
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+@mixin heading-serif-3 {
+    @include font-serif;
+    font-size: rem(48);
+    font-weight: 900;
+    line-height: 1.15;
 }
 
 @mixin body-serif-1 {

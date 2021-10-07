@@ -5,3 +5,39 @@
     align-items: center;
     text-transform: capitalize;
 }
+
+.c-post__meta-item--date__time {
+    text-transform: initial;
+
+    @include respond-above(md) {
+        display: none;
+    }
+}
+
+    .c-post-meta--time,
+    .c-post-meta--read {
+
+        @include respond-below(md) {
+            display: none;
+        }
+    }
+
+.c-post__meta-header--article {
+
+    @include respond-below(md) {
+        display: flex;
+    }
+
+    .c-post-meta--read {
+        display: flex;
+
+        @include respond-above(md) { 
+            display: none;
+        }
+    }
+
+    > * + * {
+        margin-left: var(--space-md);
+    }
+
+}

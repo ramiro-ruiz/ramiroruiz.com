@@ -2,16 +2,10 @@
     font-family: var(--font-sans);
 }
 
-.o-heading--post-title {
-    @include heading-serif--post-title;
-}
-
 .o-lead-intro {
     font-family: var(--font-serif);
     margin: initial;
     @include lead-serif-1;
-    
-    
 
     a {
         color: var(--color-dark);

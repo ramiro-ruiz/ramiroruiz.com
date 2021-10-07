@@ -28,8 +28,13 @@
             {{#if weather}}
                 {{weather}}
             {{/if}}
+
+            {{#if read}}
+                <span class="u-text-transform--initial">{{read}}</span>
+            {{/if}}
+
             {{#if date}}
-                {{date}}
+                <span>{{date}} <span class="c-post__meta-item--date__time">at {{ post-time }}</span></span>
             {{/if}}
         </div>
     {{/if}}
