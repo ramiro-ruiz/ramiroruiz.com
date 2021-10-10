@@ -57,7 +57,7 @@
 
 @mixin heading-serif-2 {
     @include font-serif;
-    font-size: rem(64);
+    font-size: rem(56);
     font-weight: 900;
     line-height: 1.2;
 }
@@ -139,6 +139,11 @@
     font-size: rem(13);
 }
 
+@mixin quote {
+    @include font-sans;
+    font-weight: 900;
+    font-size: rem(28);
+}
 
 
 /* -------------------------------------------------------------------------- */

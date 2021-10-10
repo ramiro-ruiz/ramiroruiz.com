@@ -33,6 +33,7 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  overflow-x: hidden;
   background-color: var(--color-dark);
   color: var(--color-dark);
   line-height: 1.5;

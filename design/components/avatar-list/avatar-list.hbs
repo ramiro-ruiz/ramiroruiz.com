@@ -1,7 +1,7 @@
 <ul class="c-avatar-list">
     {{#each avatar-item}}
     <li class="c-avatar-list__item" style="z-index: calc(90 - {{@index}});">
-        {{> @avatar}}
+        <a href="#">{{> @avatar}}</a>
     </li>
     {{/each}}
 </ul>

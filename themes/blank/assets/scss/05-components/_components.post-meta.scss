@@ -9,7 +9,7 @@
 .c-post__meta-item--date__time {
     text-transform: initial;
 
-    @include respond-above(md) {
+    @include respond-above(sm) {
         display: none;
     }
 }
@@ -17,21 +17,21 @@
     .c-post-meta--time,
     .c-post-meta--read {
 
-        @include respond-below(md) {
+        @include respond-below(sm) {
             display: none;
         }
     }
 
 .c-post__meta-header--article {
 
-    @include respond-below(md) {
+    @include respond-below(sm) {
         display: flex;
     }
 
     .c-post-meta--read {
         display: flex;
 
-        @include respond-above(md) { 
+        @include respond-above(sm) { 
             display: none;
         }
     }
