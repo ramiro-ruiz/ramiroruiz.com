@@ -1,6 +1,6 @@
 .c-masonry-list {
     column-count: 0;
-    column-gap: var(--space-xs);
+    column-gap: var(--space-sm);
 
     @include respond-above(xs) {
         column-count: 2;
@@ -13,7 +13,7 @@
 
     .c-masonry-list__item {
         position: relative;
-        padding: var(--space-xs) var(--space-xs) var(--space-unit);
+        padding: var(--space-xs) var(--space-xs) var(--space-md);
 
         @include respond-above(xs) {
             display: inline-block;

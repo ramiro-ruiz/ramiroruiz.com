@@ -4,8 +4,18 @@
         <header class="o-stack--xxs">
             <h1 class="c-posts__item-title"><a href="#">{{ entry-title}}</a></h1>
             <div class="c-posts__item-meta">
-                <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ entry-date }}</time>
-                • {{ entry-reading }} min
+                <span class="u-d-inline-flex u-align-items-center">
+                    <svg class="o-icon" aria-hidden="true">
+                        <use href="#icon-calendar"></use>
+                    </svg>
+                    <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ entry-date }}</time>
+                </span>
+                <span class="u-d-inline-flex u-align-items-center u-ml-2">
+                    <svg class="o-icon" aria-hidden="true">
+                        <use href="#icon-read"></use>
+                    </svg>
+                    {{ entry-reading }} min
+                </span>
             </div>
         </header>
         <p class="c-posts__item-summary">

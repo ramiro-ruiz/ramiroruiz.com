@@ -41,14 +41,11 @@
         box-shadow: 0 0 0 var(--space-xxxs) var(--color-white);
         color: var(--color-grey-300);
     }
-
+    
     .c-note__date {
         color: var(--color-grey-600);
-        font-family: var(--font-sans);
-        font-size: rem(12);
-        letter-spacing: rem(.5);
-        text-transform: uppercase;
-        font-weight: 300;
+        @include body-sans-7;
+        font-weight: 350;
     }
 
     .c-note__date,
@@ -111,8 +108,4 @@
 
     .c-note--video__item {
         max-width: 100%;
-    }
-    
-    .c-note__date {
-        display: block;
     }

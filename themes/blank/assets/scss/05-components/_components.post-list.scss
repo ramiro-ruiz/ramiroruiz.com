@@ -12,10 +12,13 @@
 
     .c-posts__item-meta {
         font-family: var(--font-sans);
-        text-transform: uppercase;
-        letter-spacing: em(1);
-        font-weight: 300;
-        font-size: em(14);
+        font-weight: 350;
+        display: flex;
+        align-items: center;
+
+        .o-icon {
+            margin-right: var(--space-xxxs);
+        }
     }
 
     .c-posts__item-summary {
