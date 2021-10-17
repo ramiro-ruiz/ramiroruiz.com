@@ -3,6 +3,7 @@
 @import "01-settings/settings.colors";
 @import "01-settings/settings.spacing";
 @import "01-settings/settings.breakpoints";
+@import "01-settings/settings.grid-widths";
 
 /*---------- 02 Tools  ----------*/
 @import "02-tools/tools.fonts";
@@ -27,6 +28,7 @@
 @import "04-objects/objects.containers";
 @import "04-objects/objects.figures";
 @import "04-objects/objects.images";
+@import "04-objects/objects.article-grid";
 
 /*---------- 05 Components  ----------*/
 @import "05-components/components.logo";

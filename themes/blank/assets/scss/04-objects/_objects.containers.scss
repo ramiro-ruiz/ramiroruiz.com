@@ -7,6 +7,10 @@
     @include respond-above(sm) {
         padding: 0 var(--space-md);
     }
+
+    @media (min-width: 1460px) {
+        padding: 0;
+    }
 }
 
     .o-container--main {

@@ -3,8 +3,8 @@
     @include respond-above(sm) {
         display: grid;
         grid-column-gap: var(--space-lg);
-        grid-template-columns: minmax(rem(140), 1fr) 3fr 1fr;
-        //grid-template-rows: var(--space-md) 1fr;
+        //grid-template-columns: minmax(rem(140), 1fr) 3fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
         padding-bottom: rem(120);
     }
 
