@@ -7,7 +7,7 @@ context:
     <p>Last week, after almost 2 years without fighting. Past months full of problems, life-changing events, inactivity and a long recovery from an injury; I entered the cage again.</p>
     <p>While I got to focus more on my design career and I even thought for a moment that it may be time to hang the gloves. As time pass I didn’t feel like myself and wasn’t happy with this version of me, I realize that a daily training regime and most importantly… High-level challenges. Make me a better person.</p>
     <p>After 15 years, training and competing has become natural to me, I’ve been having a hard time trying to label myself. I always have troubles answering a regular and often question like “What do you do?”</p>
-    <figure class="o-figure o-pull--out o-pull-left">
+    <figure class="o-figure o-pull o-pull--left">
       <img class="o-img" src="https://images.unsplash.com/photo-1620594687062-6b809c24448a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80" alt="Image test" loading="lazy" />
       <figcaption class="o-figure__caption">
         Photo by <a href="https://unsplash.com/photos/nVkfdWpI3Ck">Jhoy Gonzalez</a>
@@ -15,14 +15,14 @@ context:
     </figure>
     <p>Sometimes my response changes depending on the asker or the situation, when I was starting I would say I’m a graphic designer, that changed to web designer and fighter on the side, then to pro fighter and design on the side, later all the recent UI/UX, IX, Product designer craziness. Most of the times I kept the fighting thing to myself.</p>
     <p>Most people advise to choose one thing ride with that label but I just can’t, I know sooner than later I will have to in a way, as you don’t see many middle-aged fighters and I’m sure it will be hard but that’s why I’m trying to enjoy my body as much I can.</p>
-    <figure class="o-figure o-pull--inside o-pull-left">
+    <figure class="o-figure o-pull--inset o-pull--left">
       <img class="o-img" src="https://images.unsplash.com/photo-1620594687062-6b809c24448a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80" alt="Image test" loading="lazy" />
       <figcaption class="o-figure__caption">
         Photo by <a href="https://unsplash.com/photos/nVkfdWpI3Ck">Jhoy Gonzalez</a>
       </figcaption>
     </figure>
     <p>The call arrived at a perfect moment, I was in Florida helping my friend and UFC fighter <a href="https://en.wikipedia.org/wiki/Jessica_Aguilar">Jessica Aguilar</a> for her upcoming fight. So I was having great workouts 2 to 3 times a day while working remotely. If you’re organized enough you can still have a full-time job. I’m not saying is easy but it is doable.</p>
-    <figure class="o-figure o-figure--ful">
+    <figure class="o-figure o-pull--full-bleed">
       <img class="o-img" src="https://images.unsplash.com/photo-1620594687062-6b809c24448a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2670&q=80" alt="Image test" loading="lazy" />
       <figcaption class="o-figure__caption">
         Photo by <a href="https://unsplash.com/photos/nVkfdWpI3Ck">Jhoy Gonzalez</a>
@@ -31,7 +31,7 @@ context:
     <p>After I accept the fight had another 2 weeks there, went back to Monterrey for 2 weeks of training there and my last week to Houston with my second family <a href="https://www.facebook.com/4ozFightClub/">4oz. Fight Club</a>. I felt ready to go again.</p>
     <p>I’m not gonna lie, I end up feeling way more nervous than I used to. I kinda get worried about that ring rust everyone talks about. My conditioning too as it wasn’t long since I started training again after my longest inactivity period.</p>
     <p>But the fight was for <a href="https://lfafighting.com/">LFA (Legacy Fighting Alliance)</a>, the best MMA organization not named UFC or Bellator. So I knew it was an amazing opportunity that I had to make the most of.</p>
-    <figure class="o-figure o-figure--quote o-pull--inside-sm o-pull-left">
+    <figure class="o-figure o-figure--quote o-pull--inset-sm o-pull--left">
       <blockquote>A ship is safe in a harbor, but that is not what ships are built for.</blockquote>
       <figcaption class="o-figure__caption">
         <cite>John Shedd</cite>
@@ -39,7 +39,7 @@ context:
     </figure>
     <p>An hour before the event started, I went to feel the cage, step in there and visualize the fight. That’s when everything came back, by walking around to get a sense of the dimensions, the texture of the mat in my feet, the sound the grid makes when I push my back against it, the lights on top of me.<br>It just felted good, that I belong here.</p>
     <p>When it was time, I made the walk without any doubts in my mind. I was excited and happy to be there, being part of this with a great challenge in front of me.</p>
-    <figure class="o-figure o-figure--quote o-pull--inside-sm o-pull-right">
+    <figure class="o-figure o-figure--quote o-pull--inset-sm o-pull--right">
       <blockquote>Merely believing you deserve something doesn’t make it a reality… but believing you don’t deserve something.</blockquote>
     </figure>
     <p>I won, it went to a decision. First 2 rounds were mine then I guess that inactivity hit me as I got really tired but also credit to my opponent who pushed the pace and went there trying to get that finish which I’m thankful for, it was a great test.</p>

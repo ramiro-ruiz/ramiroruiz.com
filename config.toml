@@ -4,7 +4,6 @@ defaultContentLanguage = "en"
 title = "Ramiro Ruiz, Designer"
 theme = "blank"
 summaryLength = "20"
-#contentDir = "content/_ds"
 
 [languages]
 [languages.en]
