@@ -1,4 +1,4 @@
-<div class="h-entry c-post o-stack">
+<article class="h-entry c-post o-stack">
     {{#if note-text}}
     {{else}}
     <h1 class="c-post-title">
@@ -78,6 +78,8 @@
             {{/each}}
         </div>
     </div>
+</article>
+<section class="c-post__reactions-wrapper o-stack">
     {{#if footer}}
     <footer class="c-post__footer o-stack--sm">
         {{#if reaction}}
@@ -137,4 +139,4 @@
         {{> @comments}}
     </section>
     {{/if}}
-</div>
+</section>

@@ -6,6 +6,7 @@
 
         .c-note--like & {
             display: inline-block;
+            align-self: start;
         }
     }
 
@@ -64,6 +65,8 @@
     }
 
     .c-note {
+        display: flex;
+        flex-direction: column;
 
         &:not(.c-note--repost) .c-user-post {
             color: var(--color-grey-600);

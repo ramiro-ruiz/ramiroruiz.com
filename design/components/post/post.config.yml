@@ -59,6 +59,7 @@ variants:
       label: Like
       context:
         footer: yes
+        post-actions: yes
         note-text: |
           Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
         meta-type:
