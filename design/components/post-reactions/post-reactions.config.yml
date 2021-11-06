@@ -1,0 +1,31 @@
+title: Post
+context:
+  label: default
+  post-actions: yes
+  footer: yes
+  reaction:
+  - likes: 4
+    avatar-item:
+    - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+    - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+    - avatar-src: https://media.ramiroruiz.com/avatars/clauruizw/1304858610250526722/b90Aclz-_bigger.jpg
+  - reposts: 1
+    avatar-item:
+    - avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+    - avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+  likes: 4
+  comments: 2
+  comment-items:
+  - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+    post-author: Ramiro Ruiz
+    post-author-url: https://twitter.com/ramiroruiz
+    post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+    avatar-classes: c-user-post__avatar u-photo
+    avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+  - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+    post-author: Karla Leija
+    post-author-url: https://twitter.com/karlaleija1
+    post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+    avatar-classes: c-user-post__avatar u-photo
+    avatar-src: https://media.ramiroruiz.com/avatars/karlaleija1/442898714273648641/FZ49joLu_bigger.jpeg
+  reposts: 1

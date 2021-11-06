@@ -59,22 +59,8 @@ variants:
       label: Like
       context:
         footer: yes
-        post-actions: yes
         note-text: |
           Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
-        meta-type:
-        - meta-link: yes
-          post-meta: responses
-          responses: 1
-        reaction: yes
-        comments: 1
-        comment-items:
-        - post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
-          post-author: Ramiro Ruiz
-          post-author-url: https://twitter.com/ramiroruiz
-          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
-          avatar-classes: c-user-post__avatar u-photo
-          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
     - name: link
       label: Link
       context:
