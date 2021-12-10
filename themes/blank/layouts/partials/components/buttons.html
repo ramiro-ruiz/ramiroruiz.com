@@ -1,0 +1,3 @@
+{{ with .href }}<a{{ else }}<button{{ end }} {{ with .href }}href="{{.}}"{{ end }} class="c-btn{{ with .href }} c-btn--link{{ end }}{{ with .class }} {{ . }}{{ end }}">
+    {{with .text}}{{.}}{{end}}
+{{ with .href }}</a{{ else }}</button{{ end }}>

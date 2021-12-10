@@ -1,0 +1,13 @@
+<img class="c-avatar{{with .size}} c-avatar--{{.}}{{end}}" height="32" width="32" src="{{with .Params.avatar}}{{.}}{{else}}https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png{{end}}" alt="{{with .Params.context_author_name}}{{.}} avatar{{else}}Author avatar{{end}}">
+<div class="c-user-post h-cite u-in-reply-to o-stack--xxs">
+    <header class="c-user-post__header">
+        <span class="c-user-post__author p-author h-card">
+            {{ partial "components/avatar.html" (dict "classes" "c-user-post__avatar u-photo") }}
+            <a class="c-user-post__author-name p-name u-url author_url" href="{{ .Params.context_author_url }}">{{ .Params.context_author_name }}</a>
+        </span>
+        <a href="{{.Params.context_url}}" class="c-user-post__date u-url"><time class="dt-published" datetime="{{.Params.context_date}}">{{.Params.context_date_friendly}}</time></a>
+    </header>
+    <div class="c-user-post__text post-text e-content">
+        {{.Params.context}}
+    </div>
+</div>
