@@ -37,20 +37,20 @@
 		<section class="o-stack">
 			{{ partial "components/section-heading.html" (dict "text" "Notes" "link" "notes" "desc" "See all notes") }}
 			<div class="c-masonry-list">
-			{{ range first 16 (where .Site.Pages "Type" "in" (slice "photos" "videos" "replies" "notes" "links" "likes")) }}
+			{{ range first 16 (where .Site.Pages "Type" "in" (slice "photos" "links" "replies" "notes" "likes" "videos")) }}
 				<!-- Defining type name classes -->
 				{{ $type := "text" }}
 				{{ if eq .Type "likes" }}
 					{{ $type = "like" }}
 
 					{{ else if eq .Type "links" }}
-					{{ $type = "link" }}
+						{{ $type = "link" }}
 					{{ else if eq .Type "replies" }}
-					{{ $type = "reply" }}
+						{{ $type = "reply" }}
 					{{ else if eq .Type "photos" }}
-					{{ $type = "photo" }}
+						{{ $type = "photo" }}
 					{{ else if eq .Type "videos" }}
-					{{ $type = "video" }}
+						{{ $type = "video" }}
 				{{end}}
 				<article class="h-entry">
 					<div class="c-note c-note--{{$type}} c-masonry-list__item o-stack--xxs">
@@ -68,27 +68,43 @@
 								"context" .Params.context
 							)}}
 						{{ end }}
-						{{with eq .Type "links" }}
-							{{partial "components/notes/links.html"}}
-						{{end}}
-						{{with eq .Type "photos" }}
-							{{partial "components/notes/photo.html"}}
-						{{end}}
-						{{with eq .Type "videos" }}
-							{{partial "components/notes/video.html"}}
-						{{end}}
 						{{if eq .Type "links" }}
-							<p class="c-note__content-text c-note--{{$type}}__content-text">
-						{{else if eq .Type "likes" }}
-								{{partial "components/notes/like.html"
+							{{partial "components/notes/link.html"
+							(dict
+							"link_url" .Params.link_url
+							"link_title" .Params.link_title
+							)}}
+						{{end}}
+						{{if eq .Type "photos" }}
+							{{ range first 1 .Params.photos }}
+								{{partial "components/notes/photo.html"
 								(dict
-								"like_of" .Params.like_of
-								"tweet_author" .Params.tweet_author
-								"ig_post" .Params.ig_post
+								"source" .source
+								"alt" .alt
 								)}}
+							{{ end }}
+						{{end}}
+						{{if eq .Type "videos" }}
+							{{ range first 1 .Params.videos }}
+								{{partial "components/notes/video.html"
+								(dict
+								"source" .source
+								"alt" .alt
+								"poster" .poster
+								)}}
+							{{ end }}
+						{{end}}
+						{{if eq .Type "likes" }}
+							{{partial "components/notes/like.html"
+							(dict
+							"like_of" .Params.like_of
+							"tweet_author" .Params.tweet_author
+							"ig_post" .Params.ig_post
+							)}}
 						{{else}}
-								{{ .Content }}
-							</p>
+							<div class="c-note__content-text c-note--{{$type}}__content-text">
+								{{ .Content | safeHTML}}
+							</div>
 						{{end}}
 						{{with eq .Type "reposts" }}
 							{{partial "components/notes/repost.html"}}
