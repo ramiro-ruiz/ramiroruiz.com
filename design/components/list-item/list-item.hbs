@@ -71,8 +71,10 @@
     <a href="#" class="c-note__date">
         <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ note-date }}</time>
     </a>
-    <svg class="c-note__icon" aria-hidden="true">
-        <use href="#note-{{note-type}}"></use>
-    </svg>
+    <a class="c-note__icon" href="{{note-type}}">
+        <svg class="c-note__icon" aria-hidden="true">
+            <use href="#note-{{note-type}}"></use>
+        </svg>
+    </a>
 </article>
 {{/if}}

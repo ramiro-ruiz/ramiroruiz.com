@@ -47,6 +47,7 @@
         color: var(--color-grey-600);
         @include body-sans-7;
         font-weight: 350;
+        width: max-content;
     }
 
     .c-note__date,

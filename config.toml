@@ -10,12 +10,18 @@ summaryLength = "20"
 languageName = "English"
 weight = 1
 title = "Ramiro Ruiz, designer"
+description= "Personal site of Ramiro Ruiz, designer."
 
 [languages.es]
 languageName = "Español"
 weight = 2
 title = "Ramiro Ruiz, diseñador"
-description = "Página personal de Ramiro Ruiz, diseñador."
+description = "Sitio personal de Ramiro Ruiz, diseñador."
+
+[outputs]
+home = [ "HTML", "RSS"]
+section = [ "HTML", "RSS"]
+type = [ "HTML", "RSS"]
 
 enableRobotsTXT = true
 pluralizeListTitles = false

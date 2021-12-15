@@ -9,10 +9,15 @@
     @include respond-above(md) {
         column-count: 3;
     }
+
+    > * {
+        break-inside: avoid;
+    }
 }
 
     .c-masonry-list__item {
         position: relative;
+        break-inside: avoid;
         padding: var(--space-xs) var(--space-xs) var(--space-md);
 
         @include respond-above(xs) {
