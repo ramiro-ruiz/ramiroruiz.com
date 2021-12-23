@@ -1,1 +1,3 @@
-<img class="u-photo c-note--photo__img" src="{{ .source }}" alt="{{ .alt }}">
+{{ range first 1 .Params.photos }}
+    <img class="u-photo c-note--photo__img" src="{{ .source }}" alt="{{ .alt }}">
+{{ end }}

@@ -1,4 +1,82 @@
 {{ define "main" }}
-	{{ .Content }}
-{{ partial "sidebar.html" . }}
+	<main class="o-container--main o-stack--xl o-stack--xxl@md">
+		<article class="h-entry c-post o-stack">
+			{{- if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
+				<div class="c-post__meta c-post__meta--date">
+                    <h1 class="c-post__meta-item c-post__meta-item--date">
+                        <div class="c-post-meta c-post-meta--calendar">
+                            <svg class="o-icon u-mr-1" aria-hidden="true">
+                                <use href="#icon-calendar"></use>
+                            </svg>
+
+                            <span>
+								{{ if eq .Lang "es" }}
+									{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}
+									{{ else }}
+									{{.Date.Format "Jan 2 2006"}}
+								{{ end }}
+								<span class="c-post__meta-item--date__time">at {{ .Date | time.Format ":time_short" }}</span></span>
+                        </div>
+                    </h1>
+                </div>
+				<div class="c-post__content e-content p-name o-stack--sm">
+                    <div class="c-post__text o-stack">
+                        {{ .Content }}
+                    </div>
+                </div>
+				<div class="c-post__meta o-stack--xxs@md">
+                    <div class="c-post-meta c-post-meta--time">
+                        <svg class="o-icon u-mr-1" aria-hidden="true">
+                            <use href="#icon-time"></use>
+                        </svg>
+                        {{ .Date | time.Format ":time_short" }}
+                    </div>
+					{{ if .IsTranslated }}
+						{{ range $i, $e := .Translations }}
+							{{ if $i }},{{ end }}
+							<div class="c-post-meta c-post-meta--lang">
+								<svg class="o-icon u-mr-1" aria-hidden="true">
+									<use href="#icon-lang"></use>
+								</svg>
+								<a class="c-post-meta__link" href="{{ .Permalink }}" rel="alternate" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+									{{ $e.Language.LanguageName }}
+								</a>
+							</div>
+						{{ end }}
+					{{ end }}
+					{{- with .Params.weather}}
+						<div class="c-post-meta c-post-meta--weather">
+							<svg class="o-icon u-mr-1" aria-hidden="true">
+								<use href="#icon-weather"></use>
+							</svg>
+							{{ . }}
+						</div>
+					{{ end -}}
+					{{- with .Params.location-dms}}
+                    <div class="c-post-meta c-post-meta--location">
+                        <svg class="o-icon u-mr-1" aria-hidden="true">
+                            <use href="#icon-location"></use>
+                        </svg>
+                        <a class="c-post-meta__link p-location h-geo" href="#">
+                            {{ . }}
+                        </a>
+                    </div>
+					{{ end -}}
+                    <div class="c-post-meta c-post-meta--responses">
+                        <svg class="o-icon u-mr-1" aria-hidden="true">
+                            <use href="#icon-responses"></use>
+                        </svg>
+                        <a class="c-post-meta__link" href="#responses">
+                            7 responses
+                        </a>
+                    </div>
+                    <div class="c-post__meta-item c-post__meta-item--tags">
+                        <a class="c-tag" href="#">Personal site</a> <a class="c-tag" href="#">Redesign</a> <a class="c-tag" href="#">Progression</a>
+                    </div>
+                </div>
+			{{ else }}
+				{{ .Content }}
+			{{ end -}}
+		</article>
+	</main>
 {{ end }}

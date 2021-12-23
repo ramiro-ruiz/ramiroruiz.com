@@ -1,3 +1,5 @@
-<video class="u-video c-note--video__item" controls="controls" poster="{{ .poster }}" src="{{ .source }}">
-    {{.alt}}
-</video>
+{{ range first 1 .Params.videos }}
+    <video class="u-video c-note--video__item" controls="controls" poster="{{ .poster }}" src="{{ .source }}">
+        {{.alt}}
+    </video>
+{{end}}

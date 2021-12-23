@@ -1,5 +1,7 @@
 .o-page {
     position: relative;
+    display: flex;
+    flex-direction: column;
     z-index: 1;
     min-height: 100vh;
     padding-top: var(--space-md);

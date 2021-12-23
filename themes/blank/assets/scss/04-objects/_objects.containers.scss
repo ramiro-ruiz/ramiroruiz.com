@@ -1,11 +1,13 @@
 .o-container {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    flex: 1;
     max-width: rem(1440);
-    padding: 0 var(--space-unit);
+    padding: 0 var(--space-md);
 
     @include respond-above(sm) {
-        padding: 0 var(--space-md);
+        padding: 0 var(--space-lg);
     }
 
     @media (min-width: 1460px) {

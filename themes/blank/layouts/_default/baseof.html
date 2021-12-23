@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang='{{ .Site.LanguageCode | default "en-us" }}'>
-	{{ partial "head.html" . }}
+	{{- partial "head.html" . -}}
 <body>
 	<div class="o-page o-stack--xl o-stack--xxl@md">
 		<div class="o-container o-stack--lg o-stack--xxl@md">
-			{{ partial "components/nav" . }}
-			{{ partial "components/home-intro.html" . }}
-			{{ block "home-main" . }}{{ end }}
+			{{- partial "components/nav" . -}}
+			{{- block "main" . }}{{- end }}
 		</div>
-		{{ partial "footer" . }}
+		{{- partial "footer" . -}}
 	</div>
-	{{ partial "svg-sprite" .}}
+	{{- partial "svg-sprite" . -}}
 </body>
 </html>

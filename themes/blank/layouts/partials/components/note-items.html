@@ -1,0 +1,54 @@
+{{ range first 16 (where .Site.Pages "Type" "in" (slice "photos" "links" "replies" "notes" "likes" "videos")) }}
+    <!-- Defining type name classes -->
+    {{ $type := "text" }}
+    {{ if eq .Type "likes" }}
+        {{ $type = "like" }}
+
+        {{ else if eq .Type "links" }}
+            {{ $type = "link" }}
+        {{ else if eq .Type "replies" }}
+            {{ $type = "reply" }}
+        {{ else if eq .Type "photos" }}
+            {{ $type = "photo" }}
+        {{ else if eq .Type "videos" }}
+            {{ $type = "video" }}
+    {{end}}
+    <article class="h-entry">
+        <div class="c-note c-note--{{$type}} c-masonry-list__item o-stack--xxs">
+            <div class="c-note__content o-stack--xs">
+            {{ if eq .Type "replies"}}
+                {{- partial "components/notes/reply.html" . -}}
+            {{ end }}
+            {{if eq .Type "links" }}
+                {{- partial "components/notes/link.html" . -}}
+            {{end}}
+            {{if eq .Type "photos" }}
+                {{- partial "components/notes/photo.html" . -}}
+            {{end}}
+            {{if eq .Type "videos" }}
+                {{- partial "components/notes/video.html" . -}}
+            {{end}}
+            {{if eq .Type "likes" }}
+                {{- partial "components/notes/like.html" . -}}
+            {{else}}
+                <div class="c-note__content-text c-note--{{$type}}__content-text">
+                    {{ .Content | safeHTML}}
+                </div>
+            {{end}}
+            {{with eq .Type "reposts" }}
+                {{- partial "components/notes/repost.html" -}}
+            {{end}}
+            </div>
+            <a href="{{ .RelPermalink }}" class="c-note__date">
+                <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
+                    {{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}
+                </time>
+            </a>
+            <a class="c-note__icon" href="{{ .Type }}">
+                <svg class="c-note__icon" aria-hidden="true">
+                    <use href="#note-{{$type}}"></use>
+                </svg>
+            </a>
+        </div>
+    </article>
+{{ end }}

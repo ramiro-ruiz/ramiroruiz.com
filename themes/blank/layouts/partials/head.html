@@ -2,9 +2,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>{{ .Title }}</title>
-	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+	<title>
+		{{- partial "page-title.html" . -}}
+	</title>
 	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+	<meta name="description" content="
+    {{- if .Page.Description -}}
+    	{{ . }}
+	{{- else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
+		{{ .Summary }}
+    {{- else -}}
+    	{{ .Site.Params.description }}
+    {{- end -}}">
 
 	{{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 	{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }}
