@@ -15,13 +15,17 @@
 									{{ else }}
 									{{.Date.Format "Jan 2 2006"}}
 								{{ end }}
-								<span class="c-post__meta-item--date__time">at {{ .Date | time.Format ":time_short" }}</span></span>
+								<span class="c-post__meta-item--date__time">at {{ .Date.Format "3:04 PM" }}</span></span>
                         </div>
                     </h1>
                 </div>
 				<div class="c-post__content e-content p-name o-stack--sm">
                     <div class="c-post__text o-stack">
-                        {{ .Content }}
+						{{- if eq .Type "likes"}}
+							{{- partial "components/notes/like.html" . -}}
+						{{ else }}
+                        	{{ .Content }}
+						{{ end -}}
                     </div>
                 </div>
 				<div class="c-post__meta o-stack--xxs@md">
@@ -29,7 +33,7 @@
                         <svg class="o-icon u-mr-1" aria-hidden="true">
                             <use href="#icon-time"></use>
                         </svg>
-                        {{ .Date | time.Format ":time_short" }}
+                        {{ .Date.Format "3:04 PM" }}
                     </div>
 					{{ if .IsTranslated }}
 						{{ range $i, $e := .Translations }}
@@ -52,7 +56,7 @@
 							{{ . }}
 						</div>
 					{{ end -}}
-					{{- with .Params.location-dms}}
+					{{- with .Params.location_dms}}
                     <div class="c-post-meta c-post-meta--location">
                         <svg class="o-icon u-mr-1" aria-hidden="true">
                             <use href="#icon-location"></use>
@@ -70,9 +74,13 @@
                             7 responses
                         </a>
                     </div>
-                    <div class="c-post__meta-item c-post__meta-item--tags">
-                        <a class="c-tag" href="#">Personal site</a> <a class="c-tag" href="#">Redesign</a> <a class="c-tag" href="#">Progression</a>
-                    </div>
+					{{- if .Params.tags }}
+						<div class="c-post__meta-item c-post__meta-item--tags">
+							{{ range .Params.tags }}
+								<a class="c-tag"​ href="​/tags/{{ . | urlize }}"​>{{ . }}</a>
+							{{ end }}
+						</div>
+					{{ end -}}
                 </div>
 			{{ else }}
 				{{ .Content }}
