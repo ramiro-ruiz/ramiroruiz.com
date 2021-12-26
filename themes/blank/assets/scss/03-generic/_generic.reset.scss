@@ -34,14 +34,10 @@ html:focus-within {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--color-dark);
+  background-color: var(--color-white);
   color: var(--color-dark);
   line-height: 1.5;
   text-rendering: optimizeLegibility;
-
-  > * {
-    background-color: var(--color-white);
-  }
 }
 
 /* A elements that don't have a class get default styles */

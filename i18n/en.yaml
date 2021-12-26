@@ -66,14 +66,29 @@
 - id: notes
   translation: "Notes"
 
+- id: note
+  translation: "Note"
+
 - id: photos
   translation: "Photos"
+
+- id: photo
+  translation: "Photo"
+
+- id: link
+  translation: "Link"
 
 - id: replies
   translation: "Replies"
 
+- id: reply
+  translation: "Reply"
+
 - id: likes
   translation: "Likes"
+
+- id: like
+  translation: "Like"
 
 - id: liked
   translation: "Liked"
@@ -95,6 +110,6 @@
 
 - id: twitter
   translation: "ramiroruiz"
- 
+
 - id: webmentionurl
-  translation: "ramiroruiz.com"  
+  translation: "ramiroruiz.com"

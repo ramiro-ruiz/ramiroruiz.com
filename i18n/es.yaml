@@ -66,14 +66,29 @@
 - id: notes
   translation: "Notas"
 
+- id: note
+  translation: "Nota"
+
 - id: photos
   translation: "Fotos"
+
+- id: photo
+  translation: "Foto"
+
+- id: link
+  translation: "Enlace"
 
 - id: replies
   translation: "Respuestas"
 
+- id: reply
+  translation: "Respuesta"
+
 - id: likes
   translation: "Favoritos"
+
+- id: like
+  translation: "Me gusta"
 
 - id: liked
   translation: "Me gusto"

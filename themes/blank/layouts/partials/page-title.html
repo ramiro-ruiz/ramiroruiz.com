@@ -1,11 +1,25 @@
 {{- if .Page.IsHome -}}
     {{ .Site.Title }}
-{{ else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
-    {{ if eq .Lang "es" }}
-        {{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}
+{{- else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" -}}
+    {{ $title_type := i18n "note" }}
+    {{- if eq .Type "likes" }}
+        {{ $title_type = i18n "like" }}
+
+        {{- else if eq .Type "links" -}}
+            {{ $title_type = i18n "link"  }}
+        {{ else if eq .Type "replies" }}
+            {{ $title_type = i18n "reply"  }}
+        {{ else if eq .Type "photos" }}
+            {{ $title_type = i18n "photo"  }}
+        {{ else if eq .Type "videos" }}
+            {{ $title_type = "Video" }}
+    {{ end -}}
+    {{ $title_type}}
+    {{- if eq .Lang "es" }}
+        en {{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}
         {{ else }}
-        {{.Date.Format "Jan 2 2006"}}
-    {{ end }} – {{ .Site.Title }}
+        on {{.Date.Format "Jan 2 2006"}}
+    {{- end }} – {{ .Site.Title }}
 {{ else }}
     {{ .Title }} – {{ .Site.Title }}
 {{ end -}}

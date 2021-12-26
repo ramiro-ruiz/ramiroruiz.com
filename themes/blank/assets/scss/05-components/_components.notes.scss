@@ -30,6 +30,11 @@
                 padding-bottom: 0;
                 border-bottom: 0;
             }
+
+            .c-user-post {
+                padding-left: rem(52);
+                color: var(--color-grey-600);
+            }
         }
 
     .c-note__icon {
@@ -87,8 +92,12 @@
     }
 
         .c-note__context-heading {
-            font-size: rem(14);
+            font-size: rem(16);
             font-weight: 500;
+
+            .c-masonry-list__item & {
+                font-size: rem(14);
+            }
 
             &.c-note--link__context-heading {
                 font-size: var(--space-unit);
