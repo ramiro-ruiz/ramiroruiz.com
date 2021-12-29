@@ -90,12 +90,12 @@
 							</div>
 						{{ end }}
 					{{ end }}
-					{{- with .Params.weather}}
-						<div class="c-post-meta c-post-meta--weather">
+					{{- if .Params.weather}}
+						<div title="{{ .Params.weather_summary }}" class="c-post-meta c-post-meta--weather">
 							<svg class="o-icon u-mr-1" aria-hidden="true">
-								<use href="#icon-weather"></use>
+								<use href="#icon-weather-{{ .Params.weather_icon }}"></use>
 							</svg>
-							{{ . }}
+							{{ .Params.weather }}
 						</div>
 					{{ end -}}
 					{{- if .Params.location_dms}}
