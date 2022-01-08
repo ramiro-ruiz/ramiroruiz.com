@@ -66,6 +66,12 @@
 - id: notes
   translation: "Notes"
 
+- id: see_all_notes
+  translation: "See all notes"
+
+- id: see_all_posts
+  translation: "See all posts"
+
 - id: note
   translation: "Note"
 

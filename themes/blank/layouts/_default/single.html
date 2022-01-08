@@ -1,24 +1,38 @@
 {{ define "main" }}
 	<main class="o-container--main o-stack--xl o-stack--xxl@md">
 		<article class="h-entry c-post o-stack">
-			{{- if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
+			{{ $blog_param := .Params.section }}
+			{{ $blog_param_type := "post"}}
+			{{ $blog_item := eq $blog_param $blog_param_type}}
+				{{- if $blog_item -}}
+				<h1 class="c-post-title">
+                    {{.Title}}
+                </h1>
+				{{- end -}}
 				<div class="c-post__meta c-post__meta--date">
-                    <h1 class="c-post__meta-item c-post__meta-item--date">
-                        <div class="c-post-meta c-post-meta--calendar">
-                            <svg class="o-icon u-mr-1" aria-hidden="true">
-                                <use href="#icon-calendar"></use>
+					{{ if $blog_item }}<div{{else}}<h1{{end}} class="c-post__meta-item c-post__meta-item--date{{- if $blog_item}} c-post__meta-header--article{{end}}">
+						<div class="c-post-meta c-post-meta--calendar">
+							<svg class="o-icon u-mr-1" aria-hidden="true">
+								<use href="#icon-calendar"></use>
                             </svg>
-
                             <span>
 								{{ if eq .Lang "es" }}
-									{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}
-									{{ else }}
-									{{.Date.Format "Jan 2 2006"}}
+								{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}
+								{{ else }}
+								{{.Date.Format "Jan 2 2006"}}
 								{{ end }}
 								<span class="c-post__meta-item--date__time">at {{ .Date.Format "3:04 PM" }}</span></span>
+						</div>
+						{{- if $blog_item -}}
+						<div class="c-post-meta c-post-meta--read">
+                            <svg class="o-icon u-mr-1" aria-hidden="true">
+                                <use href="#icon-read"></use>
+                            </svg>
+                            <span>{{ .ReadingTime }} min read</span>
                         </div>
-                    </h1>
-                </div>
+						{{- end -}}
+					{{ if $blog_item }}</div{{else}}</h1{{end}}>
+				</div>
 				<!-- Defining type name classes -->
 				{{ $type := "text" }}
 				{{ if eq .Type "likes" }}
@@ -33,7 +47,7 @@
 					{{ else if eq .Type "videos" }}
 						{{ $type = "video" }}
 				{{end}}
-				<div class="c-post__content {{- if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }} c-note--{{$type}} {{end}}e-content p-name o-stack--sm">
+				<div class="c-post__content{{ if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }} c-note--{{$type}} {{end}} e-content p-name o-stack--sm">
 					{{ if eq .Type "replies"}}
 						{{- partial "components/notes/reply.html"
 							(dict
@@ -120,9 +134,6 @@
 						</div>
 					{{ end -}}
                 </div>
-			{{ else }}
-				{{ .Content }}
-			{{ end -}}
 		</article>
 		{{- if eq .Type "photos" "links" "replies" "notes" "videos" }}
 			{{ $.Scratch.Set "tweet_id" .Params.tweet_id }}

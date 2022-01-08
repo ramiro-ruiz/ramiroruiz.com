@@ -1,4 +1,4 @@
 <h1 class="c-section-heading">
-    <a class="c-section-heading__link" href="{{with .link}}{{.}}{{end}}">{{with .text}}{{.}}{{end}}</a>
-    <span class="c-section-heading__desc">{{with .desc}}{{.}}{{end}}</span>
+    <a class="c-section-heading__link" href="{{ if .notes }}{{i18n "notes"}}{{ else if .blog }}Blog{{end}}">{{ if .notes }}{{i18n "notes"}}{{ else if .blog }}Blog{{end}}</a>
+    <span class="c-section-heading__desc">{{ if .notes }}{{i18n "see_all_notes"}}{{ else if .blog }}{{i18n "see_all_posts"}}{{end}}</span>
 </h1>

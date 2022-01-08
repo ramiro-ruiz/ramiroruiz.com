@@ -2,7 +2,7 @@
 	{{- partial "components/home-intro.html" . -}}
 	<main class="o-stack--xl o-stack--xxl@md">
 		<section class="o-stack">
-			{{ partial "components/section-heading.html" (dict "text" "Blog" "link" "/blog" "desc" "See all posts") }}
+			{{ partial "components/section-heading.html" (dict "blog" "yes") }}
 			<div class="c-posts__list">
 				{{ range first 3 (where .Site.RegularPages "Type" "blog") }}
 					<article class="h-entry c-posts__item o-stack">
@@ -36,7 +36,7 @@
 			</div>
 		</section>
 		<section class="o-stack">
-			{{ partial "components/section-heading.html" (dict "text" "Notes" "link" "notes" "desc" "See all notes") }}
+			{{ partial "components/section-heading.html" (dict "notes" "yes") }}
 			<div class="c-masonry-list">
 				{{- partial "components/note-items.html" . -}}
 			</div>
