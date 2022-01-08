@@ -5,6 +5,13 @@ title = "Ramiro Ruiz, Designer"
 theme = "blank"
 summaryLength = "20"
 
+[Params.indieweb] # https://gitlab.com/kaushalmodi/hugo-theme-refined
+    domain = "https://ramiroruiz.com/" # must end with a slash
+    # webring = "🏔🐴🎑" # Get your IndieWeb Webring ID from https://xn--sr8hvo.ws
+    [Params.indieweb.webmention]
+      endpoint = "https://webmention.io/" # must end with a slash
+      account = "ramiroruiz.com"
+
 [languages]
 [languages.en]
 languageName = "English"

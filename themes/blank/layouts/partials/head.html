@@ -18,7 +18,7 @@
 	<meta name="theme-color" content="#1e1e1f">
 
 	{{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-	{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | fingerprint }}
+	{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }} <!--| fingerprint -->
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 	{{ with .OutputFormats.Get "RSS" -}}

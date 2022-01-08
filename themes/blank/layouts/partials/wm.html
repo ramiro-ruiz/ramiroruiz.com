@@ -1,0 +1,30 @@
+<!-- https://github.com/aaronpk/webmention.io#api -->
+<!-- https://github.com/aaronpk/webmention.io#find-links-of-a-specific-type-to-a-specific-page -->
+{{ $page := . }}
+<!-- The webmentions would anyways never be received on localhost, so manually
+                            concat the .domain and .RelPermalink instead of directly using the .Permalink -->
+{{ with site.Params.indieweb }}
+    {{ $domain := .domain | strings.TrimRight "/" }}
+    {{ with .webmention }}
+        {{ $.Scratch.Set "__wm_target_links" (slice (printf "target[]=%s%s" $domain $page.RelPermalink)) }}
+        <!-- https://github.com/aaronpk/webmention.io#find-links-to-multiple-pages
+            Check for Webmentions sent to aliases too. -->
+        {{ range $page.Params.aliases }}
+            <!-- Assume Hugo uglyURLs to be disabled.
+                So put the trailing "/" after the alias if not already there. -->
+            {{ $alias := . | replaceRE "[^/]$" "${0}/" }}
+            {{ $.Scratch.Add "__wm_target_links" (printf "target[]=%s%s" $domain $alias) }}
+        {{ end }}
+        {{ $wm_targets := delimit ($.Scratch.Get "__wm_target_links") "&" }}
+        {{ $num_mentions_max := 200 }}
+        <!-- Example:
+            curl "https://webmention.io/api/mentions?target=<INSERT-URL-HERE>&per-page=200&page=0"
+        -->
+        {{ $webmentions_rcv := getJSON (printf "https://webmention.io/api/mentions?target=%s%s" $domain $page.RelPermalink ) }}
+        <!-- {{ $webmentions_rcv := getJSON (printf "%sapi/mentions?%s&per-page=%d&page=0" .endpoint $wm_targets $num_mentions_max) }} -->
+        {{ $.Scratch.Set "webmentions_rcv" $webmentions_rcv }}
+
+        {{ $webmentions_number := len $webmentions_rcv.links }}
+        {{ $.Scratch.Set "webmentions_number" $webmentions_number }}
+    {{- end }}
+{{- end }}

@@ -335,5 +335,6 @@
             display: grid;
             grid-template-columns: 1fr 2fr 1fr;
             padding-bottom: rem(120);
+            grid-column-gap: var(--space-lg);
         }
     }

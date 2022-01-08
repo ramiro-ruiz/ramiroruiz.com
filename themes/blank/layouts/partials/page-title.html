@@ -14,12 +14,11 @@
         {{ else if eq .Type "videos" }}
             {{ $title_type = "Video" }}
     {{ end -}}
-    {{ $title_type}}
+    {{ $title_type }}
     {{- if eq .Lang "es" }}
         en {{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}
-        {{ else }}
-        on {{.Date.Format "Jan 2 2006"}}
-    {{- end }} – {{ .Site.Title }}
+        {{ else }} on {{.Date.Format "Jan 2 2006"}}
+    {{- end }} – {{ .Site.Title -}}
 {{ else }}
     {{ .Title }} – {{ .Site.Title }}
-{{ end -}}
+{{- end -}}

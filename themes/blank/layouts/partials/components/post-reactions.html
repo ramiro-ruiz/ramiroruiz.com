@@ -1,0 +1,128 @@
+<section id="responses" class="c-post__reactions-wrapper o-stack">
+    {{ $webmentions_rcv := .Scratch.Get "webmentions_rcv" }}
+    {{ with $webmentions_rcv.links }}
+    <footer class="c-post__footer o-stack--sm">
+        <!-- Reset number first -->
+        {{ $.Scratch.Set "__like_cnt" 0 }}
+        {{ $.Scratch.Set "__repost_cnt" 0 }}
+        {{ $.Scratch.Set "__reply_cnt" 0 }}
+        {{ $.Scratch.Set "__all__cnt" 0 }}
+
+        {{ range . }}
+            {{ $wm := . }}
+            {{ $activity := (index $wm "activity") }}
+            {{ $activity_type := (index $activity "type") }}
+            {{ $.Scratch.Set "activity_type" $activity_type }}
+
+            {{ $verified := (index $wm "verified") }}
+
+            {{ if (eq $activity_type "reply") }}
+                {{ $.Scratch.Add "__reply_cnt" 1 }}
+            {{ else if (eq $activity_type "like") }}
+                {{ $.Scratch.Add "__like_cnt" 1 }}
+            {{ else if (eq $activity_type "repost") }}
+                {{ $.Scratch.Add "__repost_cnt" 1 }}
+            {{ else }}
+                {{ $activity }}
+            {{ end }}
+        {{ end }} <!-- ends the range within "with $webmentions_rcv.links" -->
+        <div class="c-post__reactions">
+            {{ if (ge ($.Scratch.Get "__like_cnt") 1) }}
+            <div class="c-post__reactions-likes">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-like"></use>
+                </svg>
+                {{ partial "components/avatar-list" (dict "page" . "type" "like") }}
+            </div>
+            {{ end }}
+            {{ if (ge ($.Scratch.Get "__repost_cnt") 1) }}
+            <div class="c-post__reactions-reposts">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-repost"></use>
+                </svg>
+                {{ partial "components/avatar-list" (dict "page" . "type" "repost") }}
+            </div>
+            {{ end }}
+            {{ if (ge ($.Scratch.Get "__reply_cnt") 1) }}
+            <div class="c-post__reactions-comments">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-comments"></use>
+                </svg>
+                <span class="c-post__reactions-comments-number">
+                    {{ $.Scratch.Get "__reply_cnt" }}
+                </span>
+            </div>
+            {{end}}
+        </div>
+        {{ $tweet_id := $.Scratch.Get "tweet_id" }}
+        {{ with $tweet_id }}
+        <div class="c-post__actions">
+            <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-reply"></use>
+                </svg>
+                Reply
+            </a>
+            <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-repost"></use>
+                </svg>
+                Retweet
+            </a>
+            <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon u-mr-1" aria-hidden="true">
+                    <use href="#icon-like"></use>
+                </svg>
+                Like
+            </a>
+            <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon" aria-hidden="true">
+                    <use href="#social-twitter"></use>
+                </svg>
+            </a>
+        </div>
+        {{ end }}
+    </footer>
+    {{ if (ge ($.Scratch.Get "__reply_cnt") 1) }}
+    <section class="c-comments__section o-stack--sm">
+        <h2 class="o-heading--md">Replies</h2>
+        <ul class="c-comments o-stack o-stack--lg@md">
+        {{ range . }}
+            {{ $activity := (index . "activity") }}
+            {{ $activity_type := (index $activity "type") }}
+            {{ if (eq $activity_type "reply") }}
+                {{ $data := (index . "data") }}
+                {{ $mention_url := (index $data "url") }}
+                {{ $mention_content := (index $data "content") }}
+                {{ with (index $data "published") }}
+                    {{ $.Scratch.Set "__published_date" ((time .).Local | dateFormat "Mon Jan 2, 2006") }}
+                {{ end }}
+                {{ with (index . "verified_date") }} <!-- Webmention received date -->
+                    {{ $.Scratch.Set "__verified_date" ((time .).Local | dateFormat "Mon Jan 2, 2006 3:04 PM") }}
+                {{ end }}
+                {{ $author_obj := (index $data "author") }}
+                {{ with $author_obj }}
+                    {{ $author_name := (index . "name") }}
+                    {{ $author_photo := (index . "photo") }}
+                    {{ $author_url := (index . "url") }}
+                    <li class="c-comments__item">
+                        <div class="c-user-post h-cite u-in-reply-to o-stack--xxs">
+                            <header class="c-user-post__header">
+                                <span class="c-user-post__author p-author h-card">
+                                    <img class="c-avatar c-user-post__avatar u-photo" height="32" width="32" src="{{$author_photo}}" alt="{{$author_name}}"> <a class="c-user-post__author-name p-name u-url author_url" href="{{$author_url}}">{{$author_name}}</a>
+                                </span>
+                                <a href="{{$mention_url}}" class="c-user-post__date u-url"><time class="dt-published" datetime="{{(index $data "published")}}">{{$.Scratch.Get "__verified_date" }}</time></a>
+                            </header>
+                            <div class="c-user-post__text post-text e-content">
+                                {{ $mention_content | safeHTML }}
+                            </div>
+                        </div>
+                    </li>
+                {{end}}
+            {{end}}
+        {{end}}
+        </ul>
+    </section>
+        {{end}}
+    {{ end }}
+</section>

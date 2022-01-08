@@ -108,14 +108,10 @@
                         </a>
                     </div>
 					{{ end -}}
-                    <div class="c-post-meta c-post-meta--responses">
-                        <svg class="o-icon u-mr-1" aria-hidden="true">
-                            <use href="#icon-responses"></use>
-                        </svg>
-                        <a class="c-post-meta__link" href="#responses">
-                            7 responses
-                        </a>
-                    </div>
+					{{- if eq .Type "photos" "links" "replies" "notes" "videos" }}
+						{{- partial "wm" . -}}
+						{{- partial "sidebar-responses" . -}}
+					{{- end }}
 					{{- if .Params.tags }}
 						<div class="c-post__meta-item c-post__meta-item--tags">
 							{{ range .Params.tags }}
@@ -128,5 +124,9 @@
 				{{ .Content }}
 			{{ end -}}
 		</article>
+		{{- if eq .Type "photos" "links" "replies" "notes" "videos" }}
+			{{ $.Scratch.Set "tweet_id" .Params.tweet_id }}
+			{{- partial "components/post-reactions" . -}}
+		{{- end }}
 	</main>
 {{ end }}
