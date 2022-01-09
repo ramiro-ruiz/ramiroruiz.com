@@ -1,6 +1,6 @@
+{{ $webmentions_rcv := .Scratch.Get "webmentions_rcv" }}
+{{ with $webmentions_rcv.links }}
 <section id="responses" class="c-post__reactions-wrapper o-stack">
-    {{ $webmentions_rcv := .Scratch.Get "webmentions_rcv" }}
-    {{ with $webmentions_rcv.links }}
     <footer class="c-post__footer o-stack--sm">
         <!-- Reset number first -->
         {{ $.Scratch.Set "__like_cnt" 0 }}
@@ -123,6 +123,6 @@
         {{end}}
         </ul>
     </section>
-        {{end}}
-    {{ end }}
 </section>
+    {{end}}
+{{ end }}

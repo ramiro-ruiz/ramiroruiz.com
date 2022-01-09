@@ -4,6 +4,7 @@
 			{{ $blog_param := .Params.section }}
 			{{ $blog_param_type := "post"}}
 			{{ $blog_item := eq $blog_param $blog_param_type}}
+			{{ $.Scratch.Set "blog_item" $blog_item }}
 				{{- if $blog_item -}}
 				<h1 class="c-post-title">
                     {{.Title}}
@@ -24,12 +25,7 @@
 								<span class="c-post__meta-item--date__time">at {{ .Date.Format "3:04 PM" }}</span></span>
 						</div>
 						{{- if $blog_item -}}
-						<div class="c-post-meta c-post-meta--read">
-                            <svg class="o-icon u-mr-1" aria-hidden="true">
-                                <use href="#icon-read"></use>
-                            </svg>
-                            <span>{{ .ReadingTime }} min read</span>
-                        </div>
+							{{ partial "components/meta-read" . }}
 						{{- end -}}
 					{{ if $blog_item }}</div{{else}}</h1{{end}}>
 				</div>
@@ -84,60 +80,9 @@
 						{{ end -}}
                     </div>
                 </div>
-				<div class="c-post__meta o-stack--xxs@md">
-                    <div class="c-post-meta c-post-meta--time">
-                        <svg class="o-icon u-mr-1" aria-hidden="true">
-                            <use href="#icon-time"></use>
-                        </svg>
-                        {{ .Date.Format "3:04 PM" }}
-                    </div>
-					{{ if .IsTranslated }}
-						{{ range $i, $e := .Translations }}
-							{{ if $i }},{{ end }}
-							<div class="c-post-meta c-post-meta--lang">
-								<svg class="o-icon u-mr-1" aria-hidden="true">
-									<use href="#icon-lang"></use>
-								</svg>
-								<a class="c-post-meta__link" href="{{ .Permalink }}" rel="alternate" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
-									{{ $e.Language.LanguageName }}
-								</a>
-							</div>
-						{{ end }}
-					{{ end }}
-					{{- if .Params.weather}}
-						<div title="{{ .Params.weather_summary }}" class="c-post-meta c-post-meta--weather">
-							<svg class="o-icon u-mr-1" aria-hidden="true">
-								<use href="#icon-weather-{{ .Params.weather_icon }}"></use>
-							</svg>
-							{{ .Params.weather }}
-						</div>
-					{{ end -}}
-					{{- if .Params.location_dms}}
-                    <div class="c-post-meta c-post-meta--location">
-                        <svg class="o-icon u-mr-1" aria-hidden="true">
-                            <use href="#icon-location"></use>
-                        </svg>
-                        <a class="c-post-meta__link p-location h-geo" href="https://www.openstreetmap.org/#map=15/{{.Params.lat}}/{{.Params.long}}">
-                            {{ .Params.location_dms }}
-                        </a>
-                    </div>
-					{{ end -}}
-					{{- if eq .Type "photos" "links" "replies" "notes" "videos" }}
-						{{- partial "wm" . -}}
-						{{- partial "sidebar-responses" . -}}
-					{{- end }}
-					{{- if .Params.tags }}
-						<div class="c-post__meta-item c-post__meta-item--tags">
-							{{ range .Params.tags }}
-								<a class="c-tag"​ href="​/tags/{{ . | urlize }}"​>{{ . }}</a>
-							{{ end }}
-						</div>
-					{{ end -}}
-                </div>
+				{{ partial "components/post-meta" . }}
 		</article>
-		{{- if eq .Type "photos" "links" "replies" "notes" "videos" }}
-			{{ $.Scratch.Set "tweet_id" .Params.tweet_id }}
-			{{- partial "components/post-reactions" . -}}
-		{{- end }}
+		{{ $.Scratch.Set "tweet_id" .Params.tweet_id }}
+		{{- partial "components/post-reactions" . -}}
 	</main>
 {{ end }}
