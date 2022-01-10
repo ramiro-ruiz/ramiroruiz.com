@@ -66,6 +66,9 @@
 - id: notes
   translation: "Notes"
 
+- id: notes_url
+  translation: "notes"
+
 - id: see_all_notes
   translation: "See all notes"
 
