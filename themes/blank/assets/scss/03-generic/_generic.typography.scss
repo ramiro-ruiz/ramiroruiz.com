@@ -18,3 +18,19 @@ h1, h2, h3, h4 {
   font-family: var(--font-sans);
   font-weight: 700;
 }
+
+.o-stack.c-post__text {
+
+  p + h2,
+  p + h3,
+  p + h4 {
+    margin-top: rem(56);
+  }
+
+  h2 + p,
+  h3 + p,
+  h4 + p {
+    margin-top: var(--space-unit);
+  }
+  
+}

@@ -3,7 +3,7 @@
     align-items: center;
 }
 
-.c-section-heading__link {
+.c-section-heading__text {
     position: relative;
     display: inline-block;
     padding: var(--space-unit) var(--space-unit) var(--space-unit) 0;
@@ -11,7 +11,6 @@
     border-radius: 0 var(--space-xxxxs) var(--space-xxxxs) 0;
     font-size: rem(48);
     font-weight: 900;
-    text-transform: uppercase;
     text-decoration: none;
     transition: none;
 
@@ -21,12 +20,14 @@
         position: absolute;
         height: 100%;
         width: 100vw;
-        left: -100vw;
+        left: -99.5vw;
         top: 0;
         z-index: -1;
     }
 
-    @include hocus() {
+    &.is-current,
+    &:hover,
+    &:focus {
         background: var(--color-dark);
         color: var(--color-grey-200);
 
@@ -37,6 +38,16 @@
         + .c-section-heading__desc {
             display: inline-block;
         }
+    }
+}   
+
+.c-section-heading__text--tag {
+    display: flex;
+    flex-direction: row-reverse;
+    
+    &::after {
+        content: '#';
+        color: var(--color-grey-500);
     }
 }
 

@@ -44,10 +44,10 @@
         {{- partial "wm" . -}}
         {{- partial "sidebar-responses" . -}}
     {{- end }}
-    {{- if .Params.tags }}
+    {{- with .Params.tags }}
         <div class="c-post__meta-item c-post__meta-item--tags">
-            {{ range .Params.tags }}
-                <a class="c-tag"​ href="​/tags/{{ . | urlize }}"​>{{ . }}</a>
+            {{ range . }}
+                <a class="c-tag"​ href="{{ "/tags/" | relLangURL}}{{ . | urlize }}"​>{{ . }}</a>
             {{ end }}
         </div>
     {{ end -}}

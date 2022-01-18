@@ -1,16 +1,22 @@
 {{ define "main" }}
-	<main>
-		{{ if or .Title .Content }}
-		<div>
-			{{ with .Title }}<h1>{{ . }}</h1>{{ end }}
-			{{ with .Content }}<div>{{ . }}</div>{{ end }}
-		</div>
+{{ $isTag := ""}}
+{{ if in (.Permalink | string) "/tags/" }}
+	{{ $isTag = "yes"}}
+{{ end }}
+<main class="o-container--main o-stack--xl">
+	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title "isTag" $isTag) }}
+	<div class="o-container o-container--list o-stack--xl u-px-0">
+		{{ if in (.Permalink | string) "/not" }}
+			{{ $paginator := .Paginate (where .Site.Pages "Type" "in" (slice "photos" "links" "notes" "replies" "videos")) 20 }}
+			{{ range $paginator.Pages }}
+				{{ partial "components/note-items.html" . }}
+			{{end}}
+		{{else}}
+			{{ range .RegularPages }}
+				{{ partial "components/list-entry" . }}
+			{{ end }}
 		{{ end }}
-
-		{{ range .Paginator.Pages }}
-			{{ .Render "summary" }}
-		{{ end }}
-		{{ partial "pagination.html" . }}
-	</main>
-{{ partial "sidebar.html" . }}
+		{{ template "_internal/pagination.html" . }}
+	</div>
+</main>
 {{ end }}

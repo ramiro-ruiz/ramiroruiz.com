@@ -1,4 +1,4 @@
 <h1 class="c-section-heading">
-    <a class="c-section-heading__link" href="#">{{ section-heading }}</a>
+    <{{#if section-heading-current }}strong{{else}}a{{/if}} class="c-section-heading__link{{#if section-heading-current }} is-current{{/if}}" {{#if section-heading-current }}{{else}}href="#"{{/if}}>{{ section-heading }}</{{#if section-heading-current }}strong{{else}}a{{/if}}>
     <span class="c-section-heading__desc">{{ section-desc }}</span>
 </h1>

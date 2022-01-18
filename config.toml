@@ -1,7 +1,7 @@
-baseURL = "http://example.org/"
+baseURL = "https://ramiroruiz.com/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = 'Ramiro Ruiz, Designer'
+title = 'Ramiro Ruiz Designer'
 theme = "blank"
 summaryLength = "20"
 

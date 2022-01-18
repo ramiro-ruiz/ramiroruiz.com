@@ -6,7 +6,7 @@ section: "post"
 url: "2019/12/31/blog/quick-update-and-review-of-2019"
 
 excerpt: "A lot of things have been going on this year, and I feel bad by keeping this blog so abandoned. There’s  many changes on my site though, and way more activity but more on that later. As my last blog post is about my return to fighting I start with those updates."
-tags: ["personal", "review", "indieweb", "website", "learning"]
+tags: ["Personal", "Review", "Indieweb", "Website", "Learning"]
 categories: "Review"
 post_color: "#50d890"
 post_image: ""
