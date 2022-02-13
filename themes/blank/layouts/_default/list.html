@@ -11,11 +11,21 @@
 			{{ range $paginator.Pages }}
 				{{ partial "components/note-items.html" . }}
 			{{end}}
+		{{ else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
+			{{ range .Paginator.Pages }}
+				{{ partial "components/note-items.html" . }}
+			{{end}}
 		{{else}}
-			{{ range .RegularPages }}
-				{{ partial "components/list-entry" . }}
+			{{ range .Paginator.Pages }}
+				{{ if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
+					{{ partial "components/note-items.html" . }}
+				{{ else }}
+					{{ partial "components/list-entry" . }}
+				{{ end }}
 			{{ end }}
 		{{ end }}
+		{{ $paginator := .Paginate (where .Site.Pages "Type" "replies") }}
+
 		{{ template "_internal/pagination.html" . }}
 	</div>
 </main>

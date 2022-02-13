@@ -1,7 +1,8 @@
 ---
 title: Notas
 url: notas
+slug: notas
 aliases:
 - /es/notes/
-layout: list
+page_type: notes
 ---

@@ -1,5 +1,5 @@
 ---
 title: Notes
 url: notes
-layout: list
+page_type: notes
 ---

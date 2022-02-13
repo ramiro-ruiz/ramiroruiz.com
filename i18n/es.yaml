@@ -67,7 +67,7 @@
   translation: "Notas"
 
 - id: notes_url
-  translation: "notas"
+  translation: "todas-las-notas"
 
 - id: see_all_notes
   translation: "Ver todas las notas"

@@ -1,0 +1,17 @@
+<main class="o-container--main o-stack--xl">
+	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title) }}
+	<div class="o-container o-container--list o-stack--xl u-px-0">
+        {{ if .Params.all_notes }}
+            {{ $paginator := .Paginate (where .Site.Pages "Type" "in" (slice "photos" "links" "notes" "replies" "videos")) 20 }}
+            {{ range $paginator.Pages }}
+                {{ partial "components/note-items.html" . }}
+            {{end}}
+        {{else}}
+            {{ $paginator := .Paginate (where .Site.Pages "Type" .Params.page_type) 20 }}
+            {{ range $paginator.Pages }}
+                {{ partial "components/note-items.html" . }}
+            {{end}}
+        {{ end }}
+		{{ template "_internal/pagination.html" . }}
+	</div>
+</main>

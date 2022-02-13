@@ -17,11 +17,33 @@ summaryLength = "20"
 languageName = "English"
 weight = 1
 description= "Personal site of Ramiro Ruiz, designer."
+[languages.en.menu]
+  [[languages.en.menu.nav]]
+    name = "About"
+    identifier = "about"
+    url = "about"
+    weight = 1
+  [[languages.en.menu.nav]]
+    name = "Blog"
+    identifier = "blog"
+    url = "/blog/"
+    weight = 2
 
 [languages.es]
 languageName = "Español"
 weight = 2
 description = "Sitio personal de Ramiro Ruiz, diseñador."
+[languages.es.menu]
+  [[languages.es.menu.nav]]
+    name = "Acerca"
+    identifier = "about"
+    url = "acerca"
+    weight = 1
+  [[languages.es.menu.nav]]
+    name = "Blog"
+    identifier = "blog"
+    url = "/blog/"
+    weight = 2
 
 [outputs]
 home = [ "HTML", "RSS"]

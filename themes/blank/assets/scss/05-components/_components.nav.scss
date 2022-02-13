@@ -41,6 +41,7 @@
         text-transform: uppercase;
         letter-spacing: rem(.5);
         text-decoration: none;
+        text-underline-offset: var(--space-xxs);
 
         &:nth-child(1) {
             order: 3;
@@ -60,6 +61,12 @@
 
         &:nth-child(5) {
             order: 5;
+        }
+
+        &.is-active {
+            text-decoration: underline; 
+            text-decoration-thickness: rem(2);
+            text-decoration-color: var(--color-dark);
         }
 
         &.c-nav__logo {
@@ -87,6 +94,7 @@
                 @include hocus() {
                     &:not([disabled]) {
                         text-decoration: underline;
+                        text-decoration-thickness: rem(1.5);
                     }
                 }
             }
