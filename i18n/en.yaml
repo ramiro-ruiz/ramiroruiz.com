@@ -114,11 +114,20 @@
 - id: reply-to-tweet
   translation: "Replying to a tweet:"
 
-- id: tweet-from
-  translation: "a tweet from"
+- id: a-tweet
+  translation: "a tweet</a> by"
 
 - id: twitter
   translation: "ramiroruiz"
 
 - id: webmentionurl
   translation: "ramiroruiz.com"
+
+- id: colophon
+  translation: "Colophon"
+
+- id: footer-text
+  translation: '<p>Designed & coded with <svg class="o-icon u-mx-1" aria-hidden="true"><use href="#icon-like"></use></svg> in Mty. Mexico.</p>'
+
+- id: email-me
+  translation: "Email me"

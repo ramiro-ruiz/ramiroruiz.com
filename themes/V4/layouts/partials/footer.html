@@ -13,13 +13,8 @@
 				{{ end }}
 			{{ end }}
             <div class="c-footer__text">
-                <p>Designed & coded with
-                    <svg class="o-icon u-mx-1" aria-hidden="true">
-                        <use href="#icon-like"></use>
-                    </svg>
-                    in Mty. Mexico.
-                </p>
-                <p>© 2010 – {{ now.Year }} <a href="#" class="u-ml-1">Colophon</a></p>
+                {{i18n "footer-text" | safeHTML}}
+                <p>© 2010 – {{ now.Year }} <a href="{{ "/colophon" | relLangURL }}" class="u-ml-1">{{i18n "colophon"}}</a></p>
             </div>
         </div>
         <div class="o-stack--sm o-grid__span-col--4@sm">
@@ -46,7 +41,7 @@
                 </a>
             </div>
             <a href="mailto:yo@ramiroruiz" class="c-btn c-btn--sm c-btn--light">
-                Email me
+                {{ i18n "email-me" }}
             </a>
         </div>
     </div>

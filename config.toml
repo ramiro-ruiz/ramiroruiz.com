@@ -1,8 +1,8 @@
 baseURL = "https://ramiroruiz.com/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = 'Ramiro Ruiz Designer'
-theme = "blank"
+title = 'Ramiro Ruiz, Designer'
+theme = "V4"
 summaryLength = "20"
 
 [Params.indieweb] # https://gitlab.com/kaushalmodi/hugo-theme-refined
@@ -17,6 +17,8 @@ summaryLength = "20"
 languageName = "English"
 weight = 1
 description= "Personal site of Ramiro Ruiz, designer."
+leadIntro = 'I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Here you’ll find a little <a href="/about">about me</a>, some of my <a href="/notes">thoughts</a>, <a href="/likes">likes</a>, <a href="/replies">replies</a> and <a href="/links">links</a> I find interesting.'
+
 [languages.en.menu]
   [[languages.en.menu.nav]]
     name = "About"
@@ -32,7 +34,10 @@ description= "Personal site of Ramiro Ruiz, designer."
 [languages.es]
 languageName = "Español"
 weight = 2
+title = 'Ramiro Ruiz, Diseñador'
 description = "Sitio personal de Ramiro Ruiz, diseñador."
+
+leadIntro = 'Soy Ramiro, diseñador & constructor digital de Monterrey, México. Aquí encontrarás un poco <a href="/es/acerca">sobre mí</a>, así como mis <a href="/es/todas-las-notas">notas</a>, <a href="/es/likes">favoritos</a>, <a href="/es/respuestas">respuestas</a> y <a href="/es/links">links</a> que me interesan.'
 [languages.es.menu]
   [[languages.es.menu.nav]]
     name = "Acerca"

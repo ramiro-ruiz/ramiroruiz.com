@@ -1,5 +1,5 @@
 <nav class="c-nav">
-    <a class="c-nav__item c-nav__logo" href="/">{{ partial "components/logo.html" . }}</a>
+    <a class="c-nav__item c-nav__logo" href="{{"/" | relLangURL}}">{{ partial "components/logo.html" . }}</a>
     <a disabled class="c-nav__item" title="WIP">Work</a>
     {{ $current := . }}
     {{ $in_note := "" }}

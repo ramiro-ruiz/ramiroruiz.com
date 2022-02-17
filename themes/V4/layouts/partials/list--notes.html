@@ -2,12 +2,12 @@
 	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title) }}
 	<div class="o-container o-container--list o-stack--xl u-px-0">
         {{ if .Params.all_notes }}
-            {{ $paginator := .Paginate (where .Site.Pages "Type" "in" (slice "photos" "links" "notes" "replies" "videos")) 20 }}
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "photos" "links" "notes" "replies" "videos")) 20 }}
             {{ range $paginator.Pages }}
                 {{ partial "components/note-items.html" . }}
             {{end}}
         {{else}}
-            {{ $paginator := .Paginate (where .Site.Pages "Type" .Params.page_type) 20 }}
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" .Params.page_type) 20 }}
             {{ range $paginator.Pages }}
                 {{ partial "components/note-items.html" . }}
             {{end}}

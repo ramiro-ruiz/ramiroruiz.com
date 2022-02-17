@@ -1,0 +1,12 @@
+{{ define "main" }}
+{{ $isTag := ""}}
+{{ if in (.Permalink | string) "/tags/" }}
+	{{ $isTag = "yes"}}
+{{ end }}
+<main class="o-container--main o-stack--xl">
+	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title "isTag" $isTag) }}
+	<div class="o-container o-stack">
+		{{ .Content }}
+	</div>
+</main>
+{{ end }}

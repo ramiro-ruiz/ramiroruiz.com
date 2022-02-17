@@ -1,5 +1,7 @@
 {{- if .Page.IsHome -}}
     {{ .Site.Title }}
+{{- else if .Params.page_type -}}
+    {{ .Title }} – {{ .Site.Title }}
 {{- else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" -}}
     {{ $title_type := i18n "note" }}
     {{- if eq .Type "likes" }}

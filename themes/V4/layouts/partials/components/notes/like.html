@@ -1,7 +1,6 @@
 {{ i18n "liked" }}
 {{ if .Params.tweet_author }}
-<a class="u-like-of" href="{{ .Params.like_of }}">a tweet</a> by <a
-    href="https://twitter.com/{{.Params.tweet_author}}">{{.Params.tweet_author}}</a>
+<a class="u-like-of" href="{{ .Params.like_of }}">{{i18n "a-tweet" | safeHTML}} <a href="https://twitter.com/{{.Params.tweet_author}}">{{.Params.tweet_author}}</a>
 {{else if .Params.ig_post}}
     <a class="u-like-of" href="{{ .Params.like_of }}">an instagram post</a>
     {{else}}
