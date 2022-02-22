@@ -31,6 +31,10 @@
 
 @include respond-above(sm) {
 
+  .o-stack--0\@sm  > * + * {
+    margin-top: 0;
+  }
+  
   .o-stack--xxs\@sm  > * + * {
     margin-top: var(--space-xxxs);
   }

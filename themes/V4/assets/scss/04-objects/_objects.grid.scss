@@ -243,3 +243,30 @@ $gap-sizes: (gap--0, 0) (gap, var(--space-unit)) (gap--s, var(--space-xs)) (gap-
     }
   }
 }
+
+.o-grid-page {
+
+  @include respond-above(sm) {
+    display: grid;
+    grid-column-gap: var(--space-lg);
+    grid-template-columns: 1fr 2fr 1fr;
+
+  }
+  
+  > * {
+    @include respond-above(sm) {      
+      grid-column: 2/4;
+    }
+        
+    @include respond-above(lg) {
+      grid-column: 2;
+    }
+  }
+  
+  .o-content {
+
+    @include respond-above(sm) {      
+      @include body-serif-2;
+    }
+  }
+}

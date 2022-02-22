@@ -5,8 +5,10 @@
 {{ end }}
 <main class="o-container--main o-stack--xl">
 	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title "isTag" $isTag) }}
-	<div class="o-container o-stack">
-		{{ .Content }}
+	<div class="o-grid-page">
+		<div class="o-stack o-content">
+			{{ .Content | safeHTML }}
+		</div>
 	</div>
 </main>
 {{ end }}

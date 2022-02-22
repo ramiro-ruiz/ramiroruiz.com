@@ -1,6 +1,6 @@
 {{ define "main" }}
 	<main class="o-container--main o-stack--xl o-stack--xxl@md">
-		<article class="h-entry c-post o-stack">
+		<article class="h-entry o-grid-page o-stack">
 			{{ $blog_param := .Params.section }}
 			{{ $blog_param_type := "post"}}
 			{{ $blog_item := eq $blog_param $blog_param_type}}
@@ -72,7 +72,7 @@
 					{{if eq .Type "videos" }}
 						{{- partial "components/notes/video.html" . -}}
 					{{end}}
-                    <div class="c-post__text o-stack">
+                    <div class="o-content o-stack">
 						{{- if eq .Type "likes"}}
 							{{- partial "components/notes/like.html" . -}}
 						{{ else }}

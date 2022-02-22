@@ -74,7 +74,7 @@ Another one that is almost finished is a web app for a Kiosk that is connected t
 ## This website
 While I have abandoned this blog a lot, I’ve been working on this site little by little, [indiefying](https://indieweb.org/) it by taking ownership of my content. At the moment I now own my [tweets](https://twitter.com/ramiroruiz) in the [notes](https://ramiroruiz.com/notes) page, and so my [replies](https://ramiroruiz.com/replies), [photos](https://ramiroruiz.com/photos), [videos](https://ramiroruiz.com/videos) and [likes](https://ramiroruiz.com/likes).
 
-I have also been working on a new design as the actual one starts to look broken as is not as flexible and ready for the new indie web type posts that I’ve been publishing. I have big plans for the new look and I’m building a pattern library for this website to make it easier to improve and tweak in the upcoming years.
+I have also been working on a new design as the actual one starts to look broken as is not as flexible and ready for the new IndieWeb type posts that I’ve been publishing. I have big plans for the new look and I’m building a pattern library for this website to make it easier to improve and tweak in the upcoming years.
 
 When I finish the first phase of the redesign I will make easier to publish content so I can write and share more, have a lot of good things planned. Side projects, meetups, etc.
 

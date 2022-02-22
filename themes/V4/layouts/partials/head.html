@@ -24,4 +24,7 @@
 	{{ with .OutputFormats.Get "RSS" -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
+
+	<!-- UMAMI analytics -->
+	<script async defer data-website-id="3aca1e76-688b-4639-8841-25bdb3df605c" src="https://umami-production-3613.up.railway.app/umami.js"></script>
 </head>

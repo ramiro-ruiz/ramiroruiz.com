@@ -1,10 +1,4 @@
-.c-post {
-
-    @include respond-above(sm) {
-        display: grid;
-        grid-column-gap: var(--space-lg);
-        grid-template-columns: 1fr 2fr 1fr;
-    }
+.o-grid-page {
 
     > .c-post-title {
         margin-bottom: var(--space-xs);
@@ -134,11 +128,9 @@
         }
         
     .c-post__content {
-        @include body-serif-3;
         position: relative;
         z-index: 5;
         -webkit-transform: translate3d(0,0,0);
-        font-weight: 350;
         
         @include respond-above(sm) {
             @include body-serif-2;
@@ -255,7 +247,7 @@
                 }
 
                 .c-user-post,
-                .c-post__text + .c-post__context--repost .c-user-post {
+                .o-content + .c-post__context--repost .c-user-post {
                    padding-left: rem(52);
                    color: var(--color-grey-600);
                 }
@@ -269,7 +261,7 @@
                 }
             }
          
-            .c-post__text {
+            .o-content {
 
                 p {
                     max-width: var(--global-max-text-width);

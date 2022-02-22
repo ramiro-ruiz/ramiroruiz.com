@@ -6,10 +6,9 @@
 .c-section-heading__text {
     position: relative;
     display: inline-block;
-    padding: var(--space-unit) var(--space-unit) var(--space-unit) 0;
+    padding: var(--space-unit) var(--space-lg) var(--space-unit) 0;
     background: var(--color-grey-200);
     border-radius: 0 var(--space-xxxxs) var(--space-xxxxs) 0;
-    font-size: rem(48);
     font-weight: 900;
     text-decoration: none;
     transition: none;

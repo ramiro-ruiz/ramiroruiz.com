@@ -27,3 +27,13 @@
     @include body-sans-3;
     font-weight: 550;
 }
+
+.o-content {
+    @include body-serif-3;
+    font-weight: 350;
+
+    > p {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+}

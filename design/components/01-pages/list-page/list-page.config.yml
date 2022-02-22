@@ -2,7 +2,7 @@ title: List page
 context:
   section-heading: Blog
   section-heading-current: yes
-  container-classes: o-container o-container--list o-stack--xl u-px-0
+  container-classes: o-grid-page o-stack--lg
   item:
     - post-item: yes
       entry-title: Back to Fighting
