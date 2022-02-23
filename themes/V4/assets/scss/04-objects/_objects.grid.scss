@@ -262,11 +262,4 @@ $gap-sizes: (gap--0, 0) (gap, var(--space-unit)) (gap--s, var(--space-xs)) (gap-
       grid-column: 2;
     }
   }
-  
-  .o-content {
-
-    @include respond-above(sm) {      
-      @include body-serif-2;
-    }
-  }
 }

@@ -1,6 +1,6 @@
-<main class="o-container--main o-stack--xl">
+<main class="o-container--main o-stack o-stack--xl@sm">
 	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title) }}
-	<div class="o-grid-page o-stack--lg">
+	<div class="o-grid-page o-stack o-stack--lg@sm">
         {{ if .Params.all_notes }}
             {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "photos" "links" "notes" "replies" "videos")) 20 }}
             {{ range $paginator.Pages }}

@@ -3,10 +3,10 @@
 {{ if in (.Permalink | string) "/tags/" }}
 	{{ $isTag = "yes"}}
 {{ end }}
-<main class="o-container--main o-stack--xl">
+<main class="o-container--main o-stack o-stack--xl@sm">
 	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title "isTag" $isTag) }}
 	<div class="o-grid-page">
-		<div class="o-stack o-content">
+		<div class="o-content o-stack">
 			{{ .Content | safeHTML }}
 		</div>
 	</div>

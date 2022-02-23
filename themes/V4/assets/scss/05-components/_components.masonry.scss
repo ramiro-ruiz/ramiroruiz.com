@@ -13,12 +13,16 @@
     > * {
         break-inside: avoid;
     }
+
+    .c-masonry-list__item { 
+        padding: var(--space-xs) var(--space-xs) var(--space-md);
+    }
 }
 
     .c-masonry-list__item {
         position: relative;
         break-inside: avoid;
-        padding: var(--space-xs) var(--space-xs) var(--space-md);
+        padding: var(--space-xs);
 
         @include respond-above(xs) {
             display: inline-block;

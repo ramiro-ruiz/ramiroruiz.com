@@ -1,0 +1,7 @@
+{{ if .IsNamedParams }}
+
+{{ else }}
+<div class="{{ with .Get 0 }}o-pull o-pull--{{ . }}{{ end }}">
+    {{ .Inner | markdownify }}
+</div>
+{{ end }}

@@ -1,5 +1,5 @@
 ---
-title: "Quick update and review of 2019"
+title: "Update and review of 2019"
 date: 2019-12-31T10:32:14-05:00
 draft: false
 section: "post"

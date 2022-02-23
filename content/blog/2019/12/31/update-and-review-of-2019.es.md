@@ -1,5 +1,5 @@
 ---
-title: "Actualización y retrospectiva del 2019"
+title: "Retrospectiva del 2019"
 date: 2019-12-31T10:32:14-05:00
 draft: false
 section: "post"

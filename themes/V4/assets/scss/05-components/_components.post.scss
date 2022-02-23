@@ -20,14 +20,14 @@
     .c-post-title {
         grid-column: 1/-1;
         grid-row: 1;
-        @include heading-serif-3;
+        @include heading-serif-4;
 
         @include respond-above(sm) {
-            @include heading-serif-2;
+            @include heading-serif-3;
         }
 
         @include respond-above(md) {
-            @include heading-serif-1;
+            @include heading-serif-2;
         }
 
         @include respond-above(lg) {
@@ -133,7 +133,6 @@
         -webkit-transform: translate3d(0,0,0);
         
         @include respond-above(sm) {
-            @include body-serif-2;
             top: rem(-4);
             grid-column: 2/4;
             grid-row: 1/3;

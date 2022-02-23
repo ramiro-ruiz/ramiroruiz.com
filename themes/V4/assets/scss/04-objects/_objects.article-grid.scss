@@ -114,3 +114,17 @@
     //width: calc(100% + (var(--w-art-col-4) * 2) + (var(--space-lg) * 2));
   }
 }
+
+.o-content [class^="o-pull"]:first-child {
+
+  @include respond-above(sm) {
+    margin-top: var(--space-xs);
+  }
+
+  + * {
+
+    @include respond-above(sm) {
+      margin-top: 0 !important;
+    }
+  }
+}

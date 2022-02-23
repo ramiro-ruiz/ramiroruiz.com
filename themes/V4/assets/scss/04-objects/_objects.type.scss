@@ -28,12 +28,45 @@
     font-weight: 550;
 }
 
-.o-content {
-    @include body-serif-3;
-    font-weight: 350;
+.o-f-weight--400 {
+    font-weight: 400;
+}
 
+.o-f-weight--500 {
+    font-weight: 500;
+}
+
+.o-f-weight--600 {
+    font-weight: 600;
+}
+
+.o-f-weight--700 {
+    font-weight: 700;
+}
+
+.o-content {
+    
     > p {
         overflow-wrap: break-word;
         word-break: break-word;
+        @include body-serif-3;
+        font-weight: 380;
+
+        @include respond-above(xs) {
+            @include body-serif-2;
+            font-weight: 350;
+        }
+    }
+
+    a {
+        font-weight: 450;
+    }
+
+    li {
+        @include body-serif-3;
+
+        & + li {
+            margin-top: var(--space-xs);
+        }
     }
 }

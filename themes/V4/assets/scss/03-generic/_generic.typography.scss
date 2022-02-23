@@ -20,8 +20,22 @@ h1, h2, h3, h4 {
 }
 
 /* -- Type scale -- */
-h1 { font-size: 4.209rem;}
-h2 {font-size: 2.369rem;}
+h1 {
+  font-size: 3.2rem;
+  
+  @include respond-above(xs) {
+    font-size: 4.209rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+
+  @include respond-above(xs) {
+    font-size: 2.369rem;
+  }
+}
+
 h3 {font-size: 1.777rem;}
 
 
@@ -35,13 +49,19 @@ h3 {font-size: 1.777rem;}
 
   h2 + p,
   h3 + p,
-  h4 + p,
-  p + ul  {
+  h4 + p  {
     margin-top: var(--space-xs);
   }
 
+  p + ul {
+    margin-top: var(--space-unit);
+  }
+
   h2:not(:first-child), h3, h4 {
-    margin-top: var(--space-xxl);
+
+    @include respond-above(md) {
+      margin-top: var(--space-xxl);
+    }
   }
   
 }
