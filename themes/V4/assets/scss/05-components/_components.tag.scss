@@ -7,3 +7,20 @@
         color: var(--color-grey-500);
     }
 }
+
+.c-tag-list {
+    margin-top: var(--space-lg);
+
+    @include respond-above(sm) {      
+      margin-top: 0;
+    }
+
+    @include respond-above(lg) {
+        padding-right: var(--space-unit);
+    }
+}
+
+.c-tag-list__item {
+    display: inline-block;
+    margin: var(--space-xxs);
+}

@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "best-resource-to-learn-UI-UX"
 excerpt: "Design is a discipline in constant evolution, the foundations and fundamentals will always be important but the implementation, channels, trends, and people change. So you have to be in constant movement and learning. When you add that the design is aimed at the web or digital products, the speed…"
-tags: ["UI / UX", "learning", "resources"]
+tags: ["UI / UX", "Learning", "Resources"]
 categories: "design"
 post_color: ""
 post_image: "ui-ux.jpg"

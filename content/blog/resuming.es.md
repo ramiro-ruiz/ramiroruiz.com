@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "reanudando"
 excerpt: "Es increíble la cantidad de cosas que comenzamos y abandonamos, la mayoría de las veces encontramos excusas como tiempo, dinero, compromisos, etc. Cuando trabajas en algo sin una clara fecha límite, es un gran desafío terminar. Hace tiempo era muy raro escuchar la palabra procastinar…"
-tags: ["empezando", "procastinación","escribir"]
+tags: ["Empezando", "Procastinación","Escribir"]
 categories: "personal"
 post_color: ""
 post_image: "resuming.gif"

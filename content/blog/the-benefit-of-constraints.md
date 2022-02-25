@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: ""
 excerpt: "When I was starting as a designer I regularly complain about restriction, feeling that I needed complete freedom to release my creativity. I was young and didn’t fear the blank canvas, I would immediately start throwing and moving stuff around but all my results didn’t had any real…"
-tags: ["constraints", "creativity"]
+tags: ["Constraints", "Creativity"]
 categories: "design"
 post_color: ""
 post_image: "constraints.jpg"

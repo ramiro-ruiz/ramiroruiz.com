@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "nuevo-sitio"
 excerpt: "Esta mañana lancé mi nuevo sitio web. Solía ​​ser uno de esos diseñadores que nunca reservaba tiempo para mi branding, solo trabajaba para clientes y nunca para mí. Como resultado, nunca me he sentido realmente orgulloso de mi sitio. Quería velocidad con el contenido principal en una página."
-tags: ["diseño", "CSS", "hugo", "static site", "netlify"]
+tags: ["Diseño", "CSS", "Hugo", "Static site", "Netlify"]
 categories: "diseño"
 post_color: ""
 post_image: "new-website.jpg"

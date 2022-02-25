@@ -5,28 +5,25 @@
 {{ end }}
 <main class="o-container--main o-stack--xl">
 	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title "isTag" $isTag) }}
-	<div class="o-grid-page o-stack--lg">
-		{{ if in (.Permalink | string) "/not" }}
-			{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "photos" "links" "notes" "replies" "videos")) 20 }}
-			{{ range $paginator.Pages }}
-				{{ partial "components/note-items.html" . }}
-			{{end}}
-		{{ else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
-			{{ range .Paginator.Pages }}
-				{{ partial "components/note-items.html" . }}
-			{{end}}
-		{{else}}
-			{{ range .Paginator.Pages }}
-				{{ if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
-					{{ partial "components/note-items.html" . }}
-				{{ else }}
-					{{ partial "components/list-entry" . }}
-				{{ end }}
-			{{ end }}
-		{{ end }}
-		{{ $paginator := .Paginate (where .Site.Pages "Type" "replies") }}
+	<div class="o-grid-page o-stack o-stack--lg@md">
+		<div class="o-grid-page--list">
+			{{ if in (.Permalink | string) "/tags/" }}
 
-		{{ template "_internal/pagination.html" . }}
+			{{ else }}
+				{{ partial "components/tag-list.html" . }}
+			{{ end }}
+			<div class="o-stack o-stack--lg@lg">
+				{{ range .Paginator.Pages }}
+					{{ if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
+						{{ partial "components/note-items.html" . }}
+					{{ else }}
+						{{ partial "components/list-entry" . }}
+					{{ end }}
+				{{ end }}
+				{{ template "_internal/pagination.html" . }}
+			</div>
+		</div>
+
 	</div>
 </main>
 {{ end }}

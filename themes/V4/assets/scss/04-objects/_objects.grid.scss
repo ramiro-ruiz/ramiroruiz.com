@@ -263,3 +263,11 @@ $gap-sizes: (gap--0, 0) (gap, var(--space-unit)) (gap--s, var(--space-xs)) (gap-
     }
   }
 }
+
+  .o-grid-page--list {
+    
+    @include respond-below(sm) {      
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }

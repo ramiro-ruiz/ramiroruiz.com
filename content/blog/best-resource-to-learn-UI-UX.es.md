@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "el-mejor-recurso-para-aprender-UI-UX"
 excerpt: "El diseño es una disciplina en constante evolución, las bases y fundamentos siempre serán importantes pero la implementación, tendencias y personas cambian. Por lo que se tiene que estar en constante movimiento y aprendizaje. Cuando a esto le añades que es diseño dirigido a web o productos digitales…"
-tags: ["UI / UX", "aprender", "recursos"]
+tags: ["UI / UX", "Aprender", "Recursos"]
 categories: "diseño"
 post_color: ""
 post_image: "ui-ux.jpg"

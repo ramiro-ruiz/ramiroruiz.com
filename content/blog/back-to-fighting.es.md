@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "regresando-a-pelear"
 excerpt: "La semana pasada, después de casi 2 años sin luchar. Unos meses llenos de problemas, eventos que cambiaron mi vida, inactividad y una larga recuperación de una lesión; Entré a la jaula de nuevo. Fuí afortunado que la llamada para el combate no pudo haber llegado en un mejor momento."
-tags: ["personal", "artes marciales", "pasiones", "regresos", "MMA"]
+tags: ["Personal", "Artes marciales", "Pasiones", "Regresos", "MMA"]
 categories: "Peleas"
 post_color: ""
 post_image: "back-to-fighting.jpg"

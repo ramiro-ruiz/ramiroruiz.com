@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "juega-con-fuego"
 excerpt: "Fue en un fin de semana muy esperado, donde salimos a Cuatrocienegas para convivir en familia. Todo había estado excelente, un fin de semana maravilloso que solo faltaba conocer la mina de mármol antes de irnos y regresarnos a casa, estando ahí me dieron una ganas de subirme a la piedra mas alta…"
-tags: ["accidentes", "familia", "lección aprendida"]
+tags: ["Accidentes", "Familia", "Lección aprendida"]
 categories: "personal"
 post_color: ""
 post_image: "play-with-fire.jpg"

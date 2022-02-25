@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: ""
 excerpt: "Last week, after almost 2 years without fighting. Past months full of problems, life-changing events, inactivity and a long recovery from an injury; I entered the cage again. The call arrived at a perfect moment, I was in Florida helping my friend Jessica Aguilar for her upcoming fight."
-tags: ["personal", "martial arts", "passions", "comebacks", "MMA"]
+tags: ["Personal", "Martial arts", "Passions", "Comebacks", "MMA"]
 categories: "Fighting"
 post_color: ""
 post_image: "back-to-fighting.jpg"

@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: ""
 excerpt: "Nowadays I’ve been making things that I learned you should never do, the cleaner the markup the better. No extra classes when you know your way on selectors and semantically structures. Now is all about components and scalability, while it took me some time to adapt and shift my way of thinking."
-tags: ["learning", "web", "design" , "best practices"]
+tags: ["Learning", "Web", "Design" , "Best practices"]
 categories: "development"
 post_color: ""
 post_image: "changing-my-ways.jpg"

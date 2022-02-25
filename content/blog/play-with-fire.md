@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: ""
 excerpt: "It was a long-awaited weekend, where we went to Cuatrocienegas to have a great time with the family. Everything was excellent and wonderful,  we finished going to the main places, only one place left before returning home. Being there I just had this urge to climb the highest stone…"
-tags: ["accidents", "family", "lesson learned"]
+tags: ["Accidents", "Family", "Lesson learned"]
 categories: "personal"
 post_color: ""
 post_image: "play-with-fire.jpg"
