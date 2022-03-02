@@ -36,8 +36,18 @@ body {
   overflow-x: hidden;
   background-color: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.45;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
+}
+
+/* Greyscale emojis */
+p {
+  filter: grayscale(1);
+  transition: var(--global-transition);
+
+  &:hover {
+      filter: grayscale(.2);;
+  }
 }
 
 /* A elements that don't have a class get default styles */
