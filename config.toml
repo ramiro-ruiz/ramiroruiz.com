@@ -4,6 +4,8 @@ defaultContentLanguage = "en"
 title = 'Ramiro Ruiz, Designer'
 theme = "V4"
 summaryLength = "20"
+enableRobotsTXT = true
+pluralizeListTitles = false
 
 [Params.indieweb] # https://gitlab.com/kaushalmodi/hugo-theme-refined
     domain = "https://ramiroruiz.com/" # must end with a slash
@@ -58,9 +60,6 @@ leadIntro = 'Soy Ramiro, diseñador & constructor digital de Monterrey, México.
 home = [ "HTML", "RSS"]
 section = [ "HTML", "RSS"]
 type = [ "HTML", "RSS"]
-
-enableRobotsTXT = true
-pluralizeListTitles = false
 
 [sitemap]
   ChangeFreq = "daily"
