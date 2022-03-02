@@ -4,7 +4,7 @@ type: about
 custom_style: about
 ---
 
-I’m a designer and serial challenge taker with {{< exp-years >}} years of experience in brand and product design, as a happily curious person I'm always looking to learn or find new ways to improve things.
+I’m a designer and serial challenge taker with over {{< exp-years >}} years of experience in brand and product design, as a happily curious person I'm always looking to learn or find new ways to improve things.
 
 Currently, I’m working as a product designer and in any design-related tasks as the one-person design team at the fast-growing startup **Guidewheel**.
 

@@ -21,6 +21,8 @@
     }
 
     .c-custom--about__img {
+        border-radius: var(--space-xxxxs);
+        overflow: hidden;
         margin-bottom: var(--space-lg);
         
         @include respond-above(sm) {

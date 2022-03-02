@@ -142,7 +142,7 @@
   translation: "Contacto"
 
 - id: contact-email
-  translation: 'No dudes en ponerte en <a href="mailto:yo@ramiroruiz.com?subject=Contacto%del%20website">contacto</a> para cualquier cosa. get in touch.'
+  translation: 'No dudes en ponerte en <a href="mailto:yo@ramiroruiz.com?subject=Contacto%del%20website">contacto</a> para cualquier cosa.'
 
 - id: recent_tags
   translation: "Tags recientes"
