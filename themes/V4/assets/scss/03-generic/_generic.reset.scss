@@ -34,8 +34,8 @@ html:focus-within {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--color-white);
-  color: var(--color-dark);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.45;
   text-rendering: optimizeLegibility;
 }
@@ -73,4 +73,9 @@ select {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
+}
+
+::selection {
+  background-color: var(--color-text-400);
+  color: var(--color-text-100);
 }

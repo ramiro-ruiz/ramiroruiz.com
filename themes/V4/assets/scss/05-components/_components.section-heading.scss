@@ -7,7 +7,7 @@
     position: relative;
     display: inline-block;
     padding: var(--space-unit) var(--space-lg) var(--space-unit) 0;
-    background: var(--color-grey-200);
+    background: var( --color-text-200);
     border-radius: 0 var(--space-xxxxs) var(--space-xxxxs) 0;
     font-weight: 900;
     line-height: 1;
@@ -16,7 +16,7 @@
 
     &::before {
         content: '';
-        background: var(--color-grey-200);
+        background: var( --color-text-200);
         position: absolute;
         height: 100%;
         width: 100vw;
@@ -28,11 +28,11 @@
     &.is-current,
     &:hover,
     &:focus {
-        background: var(--color-dark);
-        color: var(--color-grey-200);
+        background: var(--color-text);
+        color: var( --color-text-200);
 
         &::before {
-            background: var(--color-dark);
+            background: var(--color-text);
         }
 
         + .c-section-heading__desc {

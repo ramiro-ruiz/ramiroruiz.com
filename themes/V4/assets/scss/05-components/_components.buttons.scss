@@ -4,7 +4,7 @@
     min-height: rem(36);
     padding: var(--space-xs) var(--space-unit);
     transition: var(--global-transition--fast);
-    border: rem(1.5) solid rgba(0,0,0,.75);
+    border: rem(1.5) solid var(--color-btn-border);
     border-radius: var(--space-xxxxs);
     background: var(--color-btn-background);
     color: var(--color-btn);
@@ -20,8 +20,8 @@
     box-shadow: none !important;
 
     @include hocus() {
-      background: var(--color-dark);
-      color: var(--color-white);
+      background: var(--color-text);
+      color: var(--color-bg);
       text-decoration: none;
     }
 
@@ -30,7 +30,7 @@
       outline: rem(2) dotted transparent;
       outline-offset: rem(2);
       // Adds a white border around the button, along with a blue glow. The white and blue have a color contrast ratio of at least 3:1, which means this will work against any background color.
-      box-shadow: 0 0 0 rem(2) var(--color-white), 0 0 rem(3) rem(5) var(--color-brand-tertiary-200);
+      box-shadow: 0 0 0 rem(2) var(--color-bg), 0 0 rem(3) rem(5) var(--color-brand-tertiary-200);
     }
 
     &::first-letter {
@@ -45,20 +45,20 @@
         box-shadow: none;
         transform: none;
         background: var(--color-btn-disabled-background);
-        color: var(--color-grey-200);
-        border: .0625rem solid var(--color-grey-200);
+        color: var( --color-text-200);
+        border: .0625rem solid var( --color-text-200);
       }
     }
     
   &.c-btn--link {
-    color: var(--color-dark);
+    color: var(--color-text);
     text-decoration: none;
     border: rem(1.5) solid rgba(0,0,0,.75);
     line-height: 1.2;
   
     @include hocus() {
-      background: var(--color-dark);
-      color: var(--color-white);
+      background: var(--color-text);
+      color: var(--color-bg);
       text-decoration: none;
       text-shadow: none;
     }
@@ -74,23 +74,23 @@
 
   &.c-btn--light {
     background: transparent;
-    color: var(--color-white);
-    border-color: var(--color-white);
+    color: var(--color-bg);
+    border-color: var(--color-bg);
 
     @include hocus() {
-      background: var(--color-white);
-      color: var(--color-dark)
+      background: var(--color-bg);
+      color: var(--color-text)
     }
   }
 
   &.c-btn--subtle {
     border: 0;
     font-weight: 400;
-    background: var(--color-grey-100);
+    background: var(--color-text-100);
 
     @include hocus {
-      background: var(--color-grey-200);
-      color: var(--color-dark);
+      background: var( --color-text-200);
+      color: var(--color-text);
     }
   }
 

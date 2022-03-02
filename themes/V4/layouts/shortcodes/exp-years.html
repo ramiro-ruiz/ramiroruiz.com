@@ -1,0 +1,3 @@
+{{ $diff := now.Sub (time "2008-06-01") }}
+{{ $years := div (div $diff.Hours 24) 365 }}
+{{ math.Floor $years }}

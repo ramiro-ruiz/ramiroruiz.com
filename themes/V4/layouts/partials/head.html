@@ -14,13 +14,62 @@
     {{- else -}}
     	{{ .Site.Params.description }}
     {{- end -}}">
-
 	<meta name="theme-color" content="#1e1e1f">
 
-	{{ $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-	{{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }} <!--| fingerprint -->
+	<!-- favicons -->
+	<link rel="icon" href="/favicons/favicon.ico" sizes="any"> <!-- REVISED (Nov 8)! -->
+	<link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png"/>
+	<link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#1e1e1f">
+	<meta name="msapplication-TileColor" content="#ffc40d">
+	<link rel="manifest" href="/site.webmanifest" />
+
+	<!-- IndieAuth -->
+	<link href="https://twitter.com/{{ i18n "twitter" }}" rel="me">
+    <link href="https://instagram.com/ramiroruiz" rel="me">
+    <link href="https://github.com/ramiro-ruiz" rel="me">
+    <link href="mailto:yo@ramiroruiz.com" rel="me">
+    <link href="https://micro.blog/ramiroruiz" rel="me" />
+
+	<!-- IndiwWeb -->
+	<link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="micropub" href="https://ramiroruiz-micropub.herokuapp.com/micropub">
+    <link rel="microsub" href="https://aperture.p3k.io/microsub/426">
+    <link rel="webmention" href="https://webmention.io/{{ i18n "webmentionurl" }}/webmention" />
+    <link rel="pingback" href="https://webmention.io/{{ i18n "webmentionurl" }}/xmlrpc" />
+
+	<!-- open graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{- partial "page-title.html" . -}}"/>
+	<meta property="og:description" content="
+	{{- if .Page.Description -}}
+    	{{ . }}
+	{{- else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
+		{{ .Summary }}
+    {{- else -}}
+    	{{ .Site.Params.description }}
+    {{- end -}}"/>
+	<meta property="og:site_name" content="{{ .Site.Title }}"/>
+	<meta property="og:url" content="{{ .Permalink }}"/>
+	<meta property="og:locale" content="{{ .Lang }}">
+	{{- if .Params.og_image }}
+	<meta property="og:image" content="{{ .Params.og_image | relURL }}"/>
+	<meta property="og:image:secure_url" content="{{ .Params.og_image | absURL }}"/>
+	{{ else }}
+	<meta property="og:image" content="{{ .Site.Params.og_image | relURL }}"/>
+	<meta property="og:image:secure_url" content="{{ .Site.Params.og_image | absURL }}"/>
+	<meta name="twitter:image:src" content="{{ site.Params.og_image | absURL }}"/>
+	{{ end -}}
+	<meta property="og:type" content="website"/>
+
+	<!-- CSS -->
+	{{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
+	{{- $style := resources.Get "scss/main.scss" | resources.ToCSS $options -}} <!--| fingerprint -->
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
+	<!-- RSS Feeds -->
+	{{ if .IsHome }}<link rel="feed" href="{{ .Permalink }}tweet-feed">{{end}}
 	{{ with .OutputFormats.Get "RSS" -}}
 		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}

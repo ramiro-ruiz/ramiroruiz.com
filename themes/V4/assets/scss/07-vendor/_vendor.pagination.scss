@@ -5,22 +5,26 @@
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
+
+    @include respond-below(sm) {
+        order: 2;
+    }
 }
 
     .page-item {
 
         &.disabled .page-link {
-            color: var(--color-grey-400);
+            color: var(--color-text-400);
             
             @include hocus() {
-                color: var(--color-grey-400);
+                color: var(--color-text-400);
                 cursor: default;
             }
         }
 
         &.active .page-link {
-            background: var(--color-dark);
-            color: var(--color-white);
+            background: var(--color-text);
+            color: var(--color-bg);
         }
 
         &:nth-child(-n+2) .page-link,

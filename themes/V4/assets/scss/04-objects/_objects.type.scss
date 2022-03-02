@@ -3,22 +3,21 @@
 }
 
 .o-lead-intro {
-    font-family: var(--font-serif);
     margin: initial;
     @include lead-serif-1;
 
     a {
-        color: var(--color-dark);
+        color: var(--color-text);
         text-decoration: underline;
         text-underline-offset: var(--space-xxxs);
         text-decoration-thickness: rem(2);
-        text-decoration-color: var(--color-grey-400);
+        text-decoration-color: var(--color-text-400);
 
         &:hover {
             color: var(--color-grey-700);
-            text-shadow: rem(1) 0 rem(2) var(--color-grey-300);
+            text-shadow: rem(1) 0 rem(2) var(--color-text-300);
             text-decoration-thickness: rem(3);
-            text-decoration-color: var(--color-dark);
+            text-decoration-color: var(--color-text);
         }
     }
 }
@@ -28,23 +27,11 @@
     font-weight: 550;
 }
 
-.o-f-weight--400 {
-    font-weight: 400;
-}
-
-.o-f-weight--500 {
-    font-weight: 500;
-}
-
-.o-f-weight--600 {
-    font-weight: 600;
-}
-
-.o-f-weight--700 {
-    font-weight: 700;
-}
-
 .o-content {
+
+    > h1, h2, h3, h4 {
+        @include font-serif;
+    }
     
     > p {
         overflow-wrap: break-word;

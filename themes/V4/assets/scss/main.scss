@@ -48,12 +48,13 @@
 @import "05-components/components.post-meta";
 @import "05-components/components.user-post";
 @import "05-components/components.comments";
+@import "05-components/components.custom";
 
 /*---------- 06 Utilities  ----------*/
 @import "06-utilities/utilities.display";
 @import "06-utilities/utilities.margins-paddings";
 @import "06-utilities/utilities.alignment";
-@import "06-utilities/utilities.text-transform";
+@import "06-utilities/utilities.type";
 
 /*---------- 07 Vendor  ----------*/
 @import "07-vendor/vendor.pagination";

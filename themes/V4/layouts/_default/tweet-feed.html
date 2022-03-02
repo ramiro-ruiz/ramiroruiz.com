@@ -1,0 +1,16 @@
+{{ define "main" }}
+<main class="o-container--main o-stack o-stack--xl@sm {{ with .Params.custom_style }}c-custom--{{.}}{{ end }}">
+	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title) }}
+	<div class="o-grid-page o-stack o-stack--lg@md">
+		<div class="o-grid-page--list c-custom--tweet-feed">
+			<div class="o-stack o-stack--lg@lg">
+			{{ range (where (where .Site.Pages.ByPublishDate.Reverse "Type" "!=" "likes") "Type" "!=" "page") }}
+				{{ if .Params.tweet_id }}
+					{{ partial "components/note-items.html" . }}
+				{{end}}
+			{{end}}
+			</div>
+		</div>
+	</div>
+</main>
+{{ end }}

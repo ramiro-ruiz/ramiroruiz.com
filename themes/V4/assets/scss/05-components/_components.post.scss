@@ -47,6 +47,28 @@
         }
     }
 
+    .c-post-title--sm {
+        font-weight: 550;
+        font-size: 1.25rem;
+        line-height: 1.3;
+
+        @include respond-above(xs) {
+            font-size: 2rem;
+        }
+
+        @include respond-above(sm) {
+            font-size: 2.209rem;
+        }
+
+        @include respond-above(lg) {
+            font-size: 3.209rem;
+        }  
+  
+        @include respond-above(xl) {
+            font-size: 4.209rem;
+        }  
+    }
+
     .c-post__meta-item--date {
         @include respond-below(md) {
             grid-column: 1/-1;
@@ -174,9 +196,9 @@
             grid-template-columns: repeat(3, 1fr) auto;
             align-items: center;
             padding: var(--space-unit) 0;
-            border-top: rem(1) solid var(--color-grey-200);
-            border-bottom: rem(1) solid var(--color-grey-200);
-            color: var(--color-grey-800);
+            border-top: rem(1) solid var( --color-text-200);
+            border-bottom: rem(1) solid var( --color-text-200);
+            color: var(--color-text-800);
 
             @include respond-below(md) {
                 grid-gap: var(--space-xs);
@@ -186,7 +208,7 @@
             > .c-btn {
                 min-width: auto;
                 padding: var(--space-xs);
-                color: var(--color-grey-800);
+                color: var(--color-text-800);
 
                 @include respond-below(md) {
 
@@ -231,7 +253,7 @@
             
             .c-note__context-wrapper {
                 padding-bottom: var(--space-md);
-                border-bottom: rem(1.5) solid var(--color-grey-300);
+                border-bottom: rem(1.5) solid var(--color-text-300);
                 
                 &.c-post__context--repost {
                     padding-top: 0;
@@ -241,7 +263,7 @@
 
                     .c-user-post {
                         padding-left: rem(52);
-                        color: var(--color-dark);
+                        color: var(--color-text);
                     }
                 }
 
@@ -268,7 +290,7 @@
         
                 & + .c-post__context--repost {
                     padding-top: var(--space-md);
-                    border-top: rem(1.5) solid var(--color-grey-300);
+                    border-top: rem(1.5) solid var(--color-text-300);
                 }
             }
 
@@ -291,7 +313,7 @@
         }
 
         .c-post__context--repost & {
-            color: var(--color-dark);
+            color: var(--color-text);
         }
     }
 

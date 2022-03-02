@@ -4,19 +4,12 @@
     align-items: stretch;
     justify-content: space-between;
    // padding: var(--space-sm) var(--space-unit);
-    border-top: rem(1) solid var(--color-grey-300);
+    border-top: rem(1) solid var(--color-text-300);
 
     background: hsla(0, 0%, var(--glass-lightness), .65);
     -webkit-backdrop-filter: blur(1rem);
     backdrop-filter: blur(1rem);
   
-    // https://codepen.io/argyleink/pen/qBmJyvv 🔥
-    --glass-lightness: 100%;
-
-    // @media (prefers-color-scheme: dark) {
-    //     --glass-lightness: 0%;
-    // }
-
     @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
         background: hsla(0, 0%, var(--glass-lightness), .97);
     }
@@ -80,7 +73,7 @@
                 font-weight: 600;
                 text-decoration: underline; 
                 text-decoration-thickness: rem(2);
-                text-decoration-color: var(--color-dark);
+                text-decoration-color: var(--color-text);
             }
         }
 

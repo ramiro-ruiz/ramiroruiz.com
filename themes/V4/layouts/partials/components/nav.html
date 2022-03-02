@@ -10,7 +10,7 @@
     {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
     {{ $active = or $active (eq .Name $current.Title) }}
     {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog")) }}
-    {{ $active = or $active (and (eq .Name "About") (eq $current.Section "about")) }}
+    {{ $active = or $active (and (eq .Name "About") (eq $current.Type "about")) }}
         <a href="{{ .URL | relLangURL }}" class="c-nav__item {{ if $active }}is-active{{ end }}">{{ .Name }}</a>
     {{ end }}
     <a href="{{"all-notes"| relLangURL}}" class="c-nav__item {{- if in (.Permalink | string) "/note" | or ( in (.Permalink | string) "all-notes") }} is-active{{- end -}}">{{i18n "notes"}}</a>

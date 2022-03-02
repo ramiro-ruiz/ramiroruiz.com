@@ -4,6 +4,9 @@
 - id: about
   translation: "Acerca"
 
+- id: about_intro
+  translation: "Hola, soy Ramiro un diseñador en la caótica pero interesante ciudad de Monterrey, México."
+
 - id: hash
   translation: "/es/#"
 
@@ -131,3 +134,15 @@
 
 - id: email-me
   translation: "Envíame un mail"
+
+- id: elsewhere
+  translation: "En otros lugares"
+
+- id: contact
+  translation: "Contacto"
+
+- id: contact-email
+  translation: 'No dudes en ponerte en <a href="mailto:yo@ramiroruiz.com?subject=Contacto%del%20website">contacto</a> para cualquier cosa. get in touch.'
+
+- id: recent_tags
+  translation: "Tags recientes"

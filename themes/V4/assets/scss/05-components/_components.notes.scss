@@ -1,7 +1,7 @@
 
     .c-note__content {
         padding: rem(12) var(--space-unit);
-        border: rem(1) solid var(--color-grey-400);
+        border: rem(1) solid var(--color-text-400);
         border-radius: var(--space-xxxxs);
 
         .c-note--like & {
@@ -21,13 +21,13 @@
 
             & + .c-note__context-wrapper {
                 padding-top: var(--space-xs);
-                border-top: rem(1.5) solid var(--color-grey-300);
+                border-top: rem(1.5) solid var(--color-text-300);
             }
         }
 
         .c-note__context-wrapper {
             padding-bottom: var(--space-unit);
-            border-bottom: rem(1.5) solid var(--color-grey-300);
+            border-bottom: rem(1.5) solid var(--color-text-300);
 
             .c-note--repost & {
                 padding-bottom: 0;
@@ -47,8 +47,8 @@
         width: var(--space-unit);
         height: var(--space-unit);
         margin: 0;
-        box-shadow: 0 0 0 var(--space-xxxs) var(--color-white);
-        color: var(--color-grey-300);
+        box-shadow: 0 0 0 var(--space-xxxs) var(--color-bg);
+        color: var(--color-text-300);
     }
     
     .c-note__date {
@@ -63,13 +63,13 @@
     .c-note__context-date {
         text-underline-offset: var(--space-xxxs);
         text-decoration-thickness: rem(1);
-        text-decoration-color: var(--color-grey-400);
+        text-decoration-color: var(--color-text-400);
 
         &:hover {
-            color: var(--color-grey-900);
+            color: var(--color-text-900);
             text-shadow: none;
             text-decoration-thickness: rem(2);
-            text-decoration-color: var(--color-dark);
+            text-decoration-color: var(--color-text);
         }
     }
 
@@ -91,6 +91,10 @@
 
         .c-user-post__text {
             font-size: rem(16);
+        }
+
+        .u-syndication {
+           display: none; 
         }
     }
 
@@ -119,7 +123,7 @@
             margin-bottom: var(--space-xs);
             padding-bottom: var(--space-unit);
             padding-left: var(--space-unit);
-            border-bottom: rem(1.5) solid var(--color-grey-300);
+            border-bottom: rem(1.5) solid var(--color-text-300);
             color: var(--color-grey-600);
             font-family: var(--font-sans);
         }

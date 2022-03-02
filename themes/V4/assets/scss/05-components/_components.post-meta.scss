@@ -24,8 +24,13 @@
 
 .c-post__meta-header--article {
 
-    @include respond-below(sm) {
+    @media (min-width: 375px) {
         display: flex;
+        flex-wrap: wrap;
+        
+        > * + * {
+            margin-left: var(--space-md);
+        }
     }
 
     .c-post-meta--read {
@@ -35,9 +40,4 @@
             display: none;
         }
     }
-
-    > * + * {
-        margin-left: var(--space-md);
-    }
-
 }

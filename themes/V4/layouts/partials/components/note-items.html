@@ -54,11 +54,20 @@
             {{- partial "components/notes/repost.html" -}}
         {{end}}
         </div>
-        <a href="{{ .RelPermalink }}" class="c-note__date">
-            <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
-                {{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}
-            </time>
-        </a>
+        <div class="u-d-flex u-justify-between">
+            <a href="{{ .RelPermalink }}" class="c-note__date u-url">
+                <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
+                    {{ if eq .Lang "es" }}{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{.Date.Format "Jan 2 2006"}}{{ end }}
+                </time>
+            </a>
+            {{ with .Params.tweet_id }}
+            <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="u-syndication">
+                <svg class="o-icon" aria-hidden="true">
+                    <use href="#social-twitter"></use>
+                </svg>
+            </a>
+            {{ end }}
+        </div>
         <a class="c-note__icon" href="{{ .Type | relLangURL}}">
             <svg class="c-note__icon" aria-hidden="true">
                 <use href="#note-{{$type}}"></use>

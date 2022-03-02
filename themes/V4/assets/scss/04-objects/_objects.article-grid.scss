@@ -115,7 +115,7 @@
   }
 }
 
-.o-content [class^="o-pull"]:first-child {
+.o-content [class^="o-pull"]:first-child:not(.o-pull--full) {
 
   @include respond-above(sm) {
     margin-top: var(--space-xs);

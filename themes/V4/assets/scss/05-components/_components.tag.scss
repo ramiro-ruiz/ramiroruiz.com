@@ -10,6 +10,14 @@
 
 .c-tag-list {
     margin-top: var(--space-lg);
+    
+    @include respond-below(sm) {
+        order: 1;
+
+        + * {
+            order: 3;
+        }
+    }
 
     @include respond-above(sm) {      
       margin-top: 0;
@@ -17,6 +25,10 @@
 
     @include respond-above(lg) {
         padding-right: var(--space-unit);
+    }
+
+    ul {
+        margin-left: calc(var(--space-xxs)*-1);
     }
 }
 

@@ -1,5 +1,5 @@
 +++
-title = "Twitter feed"
+title = "Tweet feed"
 date = 2020-05-04T13:20:59-06:00
 draft = false
 weight = 0

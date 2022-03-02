@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang='{{ .Site.LanguageCode | default "en-us" }}'>
+{{ printf "<!-- Don't Grow Up, It's a Trap -->" | safeHTML }}
+<html lang='{{ .Lang }}'>
 	{{- partial "head.html" . -}}
 <body>
 	<div class="o-page o-stack--xl o-stack--xxl@md">

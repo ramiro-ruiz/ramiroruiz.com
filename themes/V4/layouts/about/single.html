@@ -1,0 +1,34 @@
+{{ define "main" }}
+<main class="o-container--main o-stack o-stack--xl@sm {{ with .Params.custom_style }}c-custom--{{.}}{{ end }}">
+	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title) }}
+	<div class="o-grid-page">
+		<div class="c-custom--about__lead o-grid__span-col--all">
+			<strong class="c-post-title--sm">
+				{{ "about_intro" | i18n}}
+			</strong>
+		</div>
+		<div class="c-custom--about__img">
+			<img src="/imgs/ramiroruiz.jpg" alt="Portrait of Ramiro Ruiz">
+		</div>
+		<div class="o-content o-stack">
+			{{ .Content | safeHTML }}
+		</div>
+		<div class="c-custom--about__elsewhere o-stack">
+			<div>
+				<h4>{{ "elsewhere" | i18n}}</h4>
+				<a class="u-mr-1 u-mb-1 u-d-inline-block" href="https://twitter.com/{{ "twitter" | i18n }}">Twitter</a>
+				<a class="u-mr-1 u-mb-1 u-d-inline-block" href="https://linkedin.com/in/ramiroruiz/">Linkedin</a>
+				<a class="u-mr-1 u-mb-1 u-d-inline-block" href="https://github.com/ramiro-ruiz/">GitHub</a>
+				<a class="u-mr-1 u-mb-1 u-d-inline-block" href="https://dribbble.com/ramiroruiz">Dribbble</a>
+				<a class="u-mr-1 u-mb-1 u-d-inline-block" href="https://instagram.com/ramiroruiz/">Instagram</a>
+				<a href="https://www.loversmagazine.com/interviews/ramiro-ruiz">Lovers Magazine</a>
+			</div>
+
+			<div>
+				<h4>{{ "contact" | i18n}}</h4>
+				<p>{{ "contact-email" | i18n | safeHTML }}</p>
+			</div>
+		</div>
+	</div>
+</main>
+{{ end }}

@@ -4,12 +4,12 @@ a {
   text-decoration: underline;
   text-underline-offset: var(--space-xxxs);
   text-decoration-thickness: rem(1.5);
-  text-decoration-color: var(--color-grey-400);
+  text-decoration-color: var(--color-text-400);
 
   @include hocus {
     text-decoration-thickness: rem(2);
-    text-decoration-color: var(--color-dark);
-    color: var(--color-grey-800);
+    text-decoration-color: var(--color-text);
+    color: var(--color-text-800);
   }
 }
 
@@ -21,13 +21,13 @@ a {
       text-decoration: underline;
       text-underline-offset: var(--space-xxxs);
       text-decoration-thickness: rem(1.5);
-      text-decoration-color: var(--color-grey-400);
+      text-decoration-color: var(--color-text-400);
       transition: var(--global-transition);
 
       @include hocus() {
-        color: var(--color-grey-800);
+        color: var(--color-text-800);
         text-decoration-thickness: rem(2);
-        text-decoration-color: var(--color-dark);
+        text-decoration-color: var(--color-text);
       }
     }
   }

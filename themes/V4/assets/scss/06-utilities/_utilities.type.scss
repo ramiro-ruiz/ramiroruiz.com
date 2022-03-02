@@ -1,0 +1,23 @@
+///Text transforms
+$transforms: initial, uppercase, capitalize, lowercase;
+@each $transform in ($transforms) {
+  .u-text-transform--#{$transform} {
+    text-transform: ($transform) !important;
+  }
+}
+
+.u-f-weight--400 {
+    font-weight: 400 !important;
+}
+
+.u-f-weight--500 {
+    font-weight: 500 !important;
+}
+
+.u-f-weight--600 {
+    font-weight: 600 !important;
+}
+
+.u-f-weight--700 {
+    font-weight: 700 !important;
+}

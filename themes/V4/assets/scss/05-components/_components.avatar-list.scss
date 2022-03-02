@@ -15,8 +15,8 @@
         }
 
         .c-avatar {
-            border: rem(.5) solid var(--color-grey-400);
-            box-shadow: 0 0 0 rem(1.5) var(--color-white);
+            border: rem(.5) solid var(--color-text-400);
+            box-shadow: 0 0 0 rem(1.5) var(--color-bg);
             width: var(--space-md);
             min-width: var(--space-md);
             height: var(--space-md);

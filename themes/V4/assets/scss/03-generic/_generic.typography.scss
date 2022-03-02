@@ -21,22 +21,36 @@ h1, h2, h3, h4 {
 
 /* -- Type scale -- */
 h1 {
-  font-size: 3.2rem;
-  
+  font-size: 2rem;
+
   @include respond-above(xs) {
+    font-size: 3.2rem;
+  }
+  
+  @include respond-above(lg) {
     font-size: 4.209rem;
   }
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
 
   @include respond-above(xs) {
+    font-size: 2rem;
+  }
+
+  @include respond-above(lg) {
     font-size: 2.369rem;
   }
 }
 
-h3 {font-size: 1.777rem;}
+h3 {
+  font-size: 1.2rem;
+
+  @include respond-above(xs) {
+    font-size: 1.777rem;
+  }
+}
 
 
 .o-stack.o-content {
@@ -57,7 +71,7 @@ h3 {font-size: 1.777rem;}
     margin-top: var(--space-unit);
   }
 
-  h2:not(:first-child), h3, h4 {
+  h2:not(:first-child), h3, *:not(.o-pull) h4 {
 
     @include respond-above(md) {
       margin-top: var(--space-xxl);

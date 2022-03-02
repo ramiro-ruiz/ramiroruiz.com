@@ -5,7 +5,7 @@
     z-index: 1;
     min-height: 100vh;
     padding-top: var(--space-md);
-    background-color: var(--color-white);
+    background-color: var(--color-bg);
 
     @include respond-above(lg) {
         padding-top: var(--space-xl);
