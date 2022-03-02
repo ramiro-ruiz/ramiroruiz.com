@@ -61,3 +61,7 @@ type = [ "HTML", "RSS"]
 
 enableRobotsTXT = true
 pluralizeListTitles = false
+
+[sitemap]
+  ChangeFreq = "daily"
+  Priority = "1"
