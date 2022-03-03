@@ -4,8 +4,6 @@
     flex-direction: column;
     z-index: 1;
     min-height: 100vh;
-    padding-top: var(--space-md);
-    padding-top: env(safe-area-inset-top);
     background-color: var(--color-bg);
     padding: var(--space-md) env(safe-area-inset-right) env(safe-area-inset-bottom);
 
