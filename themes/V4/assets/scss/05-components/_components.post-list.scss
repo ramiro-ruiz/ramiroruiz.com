@@ -15,6 +15,11 @@
         font-family: var(--font-serif);
         font-size: em(26);
         font-weight: 900;
+
+        a {
+            text-underline-offset: var(--space-xxxs);
+            text-decoration-thickness: rem(2);
+        }
     }
 
     .c-posts__item-meta {
