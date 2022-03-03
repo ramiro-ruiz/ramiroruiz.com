@@ -24,6 +24,7 @@ languageName = "English"
 weight = 1
 description= "Personal site of Ramiro Ruiz, designer."
 leadIntro = 'I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Welcome, here you’ll find a little <a href="/about">about me</a>, my <a href="/notes">thoughts</a>, <a href="/likes">likes</a>, <a href="/replies">replies</a> and <a href="/links">links</a> I find interesting.'
+og_description= "Designer and serial challenge taker from Monterrey, Mexico."
 
 [languages.en.menu]
   [[languages.en.menu.nav]]
@@ -42,6 +43,7 @@ languageName = "Español"
 weight = 2
 title = 'Ramiro Ruiz, Diseñador'
 description = "Sitio personal de Ramiro Ruiz, diseñador."
+og_description= "Diseñador y amante de desafíos en serie de Monterrey, Mexico."
 
 leadIntro = 'Soy Ramiro, diseñador & constructor digital de Monterrey, México. Aquí encontrarás un poco <a href="/es/acerca">sobre mí</a>, así como mis <a href="/es/todas-las-notas">notas</a>, <a href="/es/likes">favoritos</a>, <a href="/es/respuestas">respuestas</a> y <a href="/es/links">links</a> que me interesan.'
 [languages.es.menu]

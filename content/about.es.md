@@ -4,7 +4,7 @@ slug: acerca
 type: about
 custom_style: about
 ---
-Soy un diseñador y tomador de desafíos en serie con mas de {{< exp-years >}} años de experiencia en diseño de marcas y productos digitales, como persona felizmente curiosa, siempre estoy buscando aprender o encontrar nuevas formas de mejorar las cosas.
+Soy un diseñador y un amante de desafíos en serie con mas de {{< exp-years >}} años de experiencia en diseño de marcas y productos digitales, como persona felizmente curiosa, siempre estoy buscando aprender o encontrar nuevas formas de mejorar las cosas.
 
 Actualmente, trabajo como *product designer* y en cualquier otra tarea relacionada al ser el único diseñador en **Guidewheel**, una startup de rápido crecimiento.
 

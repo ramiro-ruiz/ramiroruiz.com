@@ -49,7 +49,7 @@
 	{{- else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
 		{{ .Summary }}
     {{- else -}}
-    	{{ .Site.Params.description }}
+    	{{ .Site.Params.og_description }}
     {{- end -}}"/>
 	<meta property="og:site_name" content="{{ .Site.Title }}"/>
 	<meta property="og:url" content="{{ .Permalink }}"/>

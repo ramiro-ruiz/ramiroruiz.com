@@ -1,4 +1,0 @@
----
-title: Archivo
-layout: archive
----
