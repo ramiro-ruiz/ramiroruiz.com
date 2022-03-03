@@ -1,0 +1,6 @@
+name = "V4"
+description = "4th design version of my personal site."
+
+[author]
+  name = "Ramiro"
+  homepage = "http://github.com/ramiro-ruiz"

@@ -1,0 +1,105 @@
+:root {
+  // BRAND COLORS
+  --color-dark-500: hsl(240, 1%, 38%);
+  --color-dark-700: hsl(240, 1%, 20%);
+  --color-dark-800: hsl(240, 1%, 16%);
+  --color-dark:     hsl(240, 2%, 12%);
+    
+  // Grey color options
+  --color-grey-0:    hsl(0, 0%, 99%);
+  --color-grey-100:  hsl(0, 0%, 97%);
+  --color-grey-200:  hsl(0, 0%, 95%);
+  --color-grey-300:  hsl(0, 0%, 89%);
+  --color-grey-400:  hsl(0, 0%, 70%);
+  --color-grey-500:  hsl(0, 0%, 50%);
+  --color-grey-600:  hsl(213, 5%, 41%);
+  --color-grey-700:  hsl(229, 6%, 34%);
+  --color-grey-800:  hsl(217, 10%, 25%);
+  --color-grey-900:  hsl(216, 18%, 16%);
+  
+  
+  // Success color options
+  --color-success-100:  hsl(71, 85%, 89%);
+  --color-success-200:  hsl(73, 87%, 79%);
+  --color-success-300:  hsl(75, 77%, 65%);
+  --color-success-400:  hsl(77, 66%, 54%);
+  --color-success-500:  hsl(79, 93%, 39%);
+  --color-success-600:  hsl(81, 93%, 33%);
+  --color-success-700:  hsl(84, 96%, 28%);
+  --color-success-800:  hsl(85, 98%, 22%);
+  --color-success-900:  hsl(87, 96%, 18%);
+  
+  
+  // Danger color options
+  --color-danger-0:    hsl(23, 100%, 98%);
+  --color-danger-100:  hsl(23, 100%, 91%);
+  --color-danger-200:  hsl(19, 98%, 82%);
+  --color-danger-300:  hsl(13, 100%, 74%);
+  --color-danger-400:  hsl(9, 99%, 67%);
+  --color-danger-500:  hsl(3, 99%, 56%);
+  --color-danger-600:  hsl(357, 79%, 48%);
+  --color-danger-700:  hsl(353, 81%, 39%);
+  --color-danger-800:  hsl(348, 86%, 31%);
+  --color-danger-900:  hsl(342, 92%, 25%);
+  
+  // Warning color options
+  
+  --color-warning-100:  hsl(45, 100%, 90%);
+  --color-warning-200:  hsl(44, 98%, 80%);
+  --color-warning-300:  hsl(42, 96%, 70%);
+  --color-warning-400:  hsl(39, 96%, 62%);
+  --color-warning-500:  hsl(36, 97%, 51%);
+  --color-warning-600:  hsl(35, 94%, 43%);
+  --color-warning-700:  hsl(32, 95%, 36%);
+  --color-warning-800:  hsl(29, 97%, 29%);
+  --color-warning-900:  hsl(27, 96%, 23%);
+  
+  
+  // Reassign literal variables to meaningful ones.
+  --color-white: white;
+  
+  --color-btn:                                var(--color-dark);
+  --color-btn-background:                     linear-gradient(180deg, rgba(249, 249, 249, 0.15) 46.07%, #F2F2F2 100%);
+  --color-btn-border:                         rgba(0,0,0,.75);
+
+  // https://codepen.io/argyleink/pen/qBmJyvv 🔥
+  --glass-lightness:                          100%;
+
+  // --color-btn-background-hover:               var(--color-gradient-subtle);
+  // --color-btn-background-active:              var(--color-gradient-reverse);
+  
+  // --color-btn-primary-background:             var(--color-brand-primary-500);
+  // --color-btn-primary-background-hover:       var(--color-brand-primary-600);
+  // --color-btn-primary-background-active:      var(--color-brand-primary-600);
+  
+  // --color-btn-disabled-background:            var(--color-grey-500);
+  
+  // --color-link:                               var(--color-brand-primary-500);
+  // --color-link-hover:                         var(--color-brand-primary-600); 
+
+  --color-text-100:       var(--color-grey-100);
+  --color-text-200:       var(--color-grey-200);
+  --color-text-300:       var(--color-grey-300);
+  --color-text-400:       var(--color-grey-400);
+  --color-text-600:       var(--color-grey-600);
+  --color-text-800:       var(--color-grey-800);
+  --color-text-900:       var(--color-grey-900);
+  --color-text:           var(--color-dark);
+  --color-bg:             var(--color-white);
+
+  @media (prefers-color-scheme: dark) {
+    --color-text-100: 		#2B2927;
+    --color-text-200:	    #363430;
+    --color-text-300:	    #4C4943;
+    --color-text-400:	    #615E56;
+    --color-text-600: 		#827E73;
+    --color-text-800: 		#B1AEA9;
+    --color-text-900: 		#CFCDC9;
+    --color-text:         #E2E0DF;
+    --color-btn:		      #E2E0DF;
+    --color-bg:           #21201E;
+    --color-btn-background: linear-gradient(180deg, var(--color-text-100) 46.07%, var(--color-text-200) 100%);
+    --color-btn-border: 	rgba(255,255,255,.75);
+    --glass-lightness:		0%;
+  }
+}

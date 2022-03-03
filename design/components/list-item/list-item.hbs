@@ -1,0 +1,80 @@
+{{#if post-item }}
+<article class="h-entry c-posts__item o-stack">
+    <div class="o-stack--xs">
+        <header class="o-stack--xxs">
+            <h1 class="c-posts__item-title"><a href="#">{{ entry-title}}</a></h1>
+            <div class="c-posts__item-meta">
+                <span class="u-d-inline-flex u-align-items-center">
+                    <svg class="o-icon" aria-hidden="true">
+                        <use href="#icon-calendar"></use>
+                    </svg>
+                    <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ entry-date }}</time>
+                </span>
+                <span class="u-d-inline-flex u-align-items-center u-ml-2">
+                    <svg class="o-icon" aria-hidden="true">
+                        <use href="#icon-read"></use>
+                    </svg>
+                    {{ entry-reading }} min
+                </span>
+            </div>
+        </header>
+        <p class="c-posts__item-summary">
+            {{ entry-summary }}
+        </p>
+    </div>
+    <a class="c-btn c-btn--link" href="/blog/2019/12/31/update-and-review-of-2019/">Continue reading →</a>
+</article>
+{{ else }}
+<article class="h-entry c-masonry-list__item c-note c-note--{{note-type}} o-stack--xxs">
+    <div class="c-note__content o-stack--xs">
+    {{#if reply }}
+        <div class="c-note__context-wrapper h-cite">
+            <h4 class="c-note__context-heading">
+                Replied to
+            </h4>
+            {{> @user-post}}
+        </div>
+    {{/if}}
+    {{#if link }}
+        <div class="c-note__context-wrapper o-stack--xxs">
+            <h1 class="c-note__context-heading c-note--link__context-heading">
+                <a href="{{ context-url }}">
+                    {{ link-title }}
+                </a>
+            </h1>
+            <div class="c-note__context h-cite">
+                <div class="c-note__context-text post-text e-content">
+                    {{context-text}}
+                </div>
+            </div>
+        </div>
+    {{/if}}
+    {{#if photo }}
+        <img class="u-photo c-note--photo__img" src="{{photo-url}}" alt="{{photo-alt}}">
+    {{/if}}
+    {{#if video }}
+        <video class="u-video c-note--video__item" controls="controls" poster="{{ vide-poster }}" src="{{ video-url }}">
+          {{video-alt}}
+        </video>
+    {{/if}}
+    {{#if note-text }}
+        <p class="c-note__content-text c-note--{{note-type}}__content-text">
+            {{{ note-text }}}
+        </p>
+    {{/if}}
+    {{#if repost }}
+        <div class="c-note__context-wrapper">
+            {{> @user-post}}
+        </div>
+    {{/if}}
+    </div>
+    <a href="#" class="c-note__date">
+        <time class="dt-published" datetime="2019-12-31T10:32:14-05:00">{{ note-date }}</time>
+    </a>
+    <a class="c-note__icon" href="{{note-type}}">
+        <svg class="c-note__icon" aria-hidden="true">
+            <use href="#note-{{note-type}}"></use>
+        </svg>
+    </a>
+</article>
+{{/if}}

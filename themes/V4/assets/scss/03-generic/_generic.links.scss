@@ -1,0 +1,33 @@
+a {
+  color: currentColor;
+  transition: var(--global-transition);
+  text-decoration: underline;
+  text-underline-offset: var(--space-xxxs);
+  text-decoration-thickness: rem(1.5);
+  text-decoration-color: var(--color-text-400);
+
+  @include hocus {
+    text-decoration-thickness: rem(2);
+    text-decoration-color: var(--color-text);
+    color: var(--color-text-800);
+  }
+}
+
+  .o-link__text {
+    text-decoration: none;
+
+    > span {
+      color: currentColor;
+      text-decoration: underline;
+      text-underline-offset: var(--space-xxxs);
+      text-decoration-thickness: rem(1.5);
+      text-decoration-color: var(--color-text-400);
+      transition: var(--global-transition);
+
+      @include hocus() {
+        color: var(--color-text-800);
+        text-decoration-thickness: rem(2);
+        text-decoration-color: var(--color-text);
+      }
+    }
+  }

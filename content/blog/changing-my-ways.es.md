@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "cambiando-mis-formas"
 excerpt: "Hoy en día he estado haciendo cosas que había aprendido que nunca debes hacer, mientras más limpio el código, mejor. Nada de clases adicionales cuando conoces bien los selectores y estructuras semánticas. Ahora todo se basa en componentes y en la escalabilidad que me tomó tiempo adaptarme."
-tags: ["aprender", "web", "diseño" , "mejores prácticas"]
+tags: ["Aprender", "Web", "Diseño" , "Mejores prácticas"]
 categories: "desarrollo"
 post_color: ""
 post_image: "changing-my-ways.jpg"

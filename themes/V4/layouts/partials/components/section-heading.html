@@ -1,0 +1,14 @@
+<h1 class="c-section-heading">
+    {{if .section_heading_current }}<strong{{else}}<a{{end}} class="c-section-heading__text {{ if .section_heading_current }} is-current{{end}}{{ if .isTag }} c-section-heading__text--tag{{end}}" {{ if .section_heading_current }}{{else}}href="{{ if .notes }}{{i18n "notes_url"}}{{ else if .blog }}blog{{end}}"{{end}}>
+        {{ if .notes }}{{i18n "notes"}}{{ else if .blog }}Blog{{else}}{{.section_heading}}{{end}}
+        {{ if .section_heading_current }}</strong{{else}}</a{{end}}>
+    {{ if or .notes .blog }}
+        <span class="c-section-heading__desc">
+            {{ if .blog }}
+                {{i18n "see_all_posts"}}
+            {{else}}
+                {{i18n "see_all_notes"}}
+            {{ end }}
+        </span>
+    {{ end }}
+</h1>

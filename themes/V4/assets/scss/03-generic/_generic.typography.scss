@@ -1,0 +1,86 @@
+:root, * {
+  // type scale
+  --text-xs: calc((var(--text-unit) / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+  --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
+}
+
+body {
+  font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+/* -- Type scale -- */
+h1 {
+  font-size: 2rem;
+
+  @include respond-above(xs) {
+    font-size: 3.2rem;
+  }
+  
+  @include respond-above(lg) {
+    font-size: 4.209rem;
+  }
+}
+
+h2 {
+  font-size: 1.7rem;
+
+  @include respond-above(xs) {
+    font-size: 2rem;
+  }
+
+  @include respond-above(lg) {
+    font-size: 2.369rem;
+  }
+}
+
+h3 {
+  font-size: 1.2rem;
+
+  @include respond-above(xs) {
+    font-size: 1.777rem;
+  }
+}
+
+
+.o-stack.o-content {
+
+  p + h2,
+  p + h3,
+  p + h4 {
+    margin-top: rem(56);
+  }
+
+  h2 + p,
+  h3 + p,
+  h4 + p  {
+    margin-top: var(--space-xs);
+  }
+
+  p + ul {
+    margin-top: var(--space-unit);
+  }
+
+  h2:not(:first-child), h3, *:not(.o-pull) h4 {
+
+    @include respond-above(md) {
+      margin-top: var(--space-xxl);
+    }
+  }
+  
+}
+
+ul {
+  list-style: circle;
+  padding-left: var(--space-md);
+}

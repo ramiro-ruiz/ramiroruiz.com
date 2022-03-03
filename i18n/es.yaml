@@ -4,6 +4,9 @@
 - id: about
   translation: "Acerca"
 
+- id: about_intro
+  translation: "Hola, soy Ramiro un diseñador en la caótica pero interesante ciudad de Monterrey, México."
+
 - id: hash
   translation: "/es/#"
 
@@ -66,14 +69,38 @@
 - id: notes
   translation: "Notas"
 
+- id: notes_url
+  translation: "todas-las-notas"
+
+- id: see_all_notes
+  translation: "Ver todas las notas"
+
+- id: see_all_posts
+  translation: "Ver todas las entradas"
+
+- id: note
+  translation: "Nota"
+
 - id: photos
   translation: "Fotos"
+
+- id: photo
+  translation: "Foto"
+
+- id: link
+  translation: "Enlace"
 
 - id: replies
   translation: "Respuestas"
 
+- id: reply
+  translation: "Respuesta"
+
 - id: likes
   translation: "Favoritos"
+
+- id: like
+  translation: "Me gusta"
 
 - id: liked
   translation: "Me gusto"
@@ -90,11 +117,32 @@
 - id: reply-to-tweet
   translation: "Respondiendo a un tweet:"
 
-- id: tweet-from
-  translation: "un tweet de"
+- id: a-tweet
+  translation: "un tweet </a> por"
 
 - id: twitter
   translation: "ramiroruiz_ES"
 
 - id: webmentionurl
-  translation: "ramiroruiz.com_es_"  
+  translation: "ramiroruiz.com_es_"
+
+- id: colophon
+  translation: "Colofón"
+
+- id: footer-text
+  translation: '<p>Diseñado y desarrollado con <svg class="o-icon u-mx-1" aria-hidden="true"><use href="#icon-like"></use></svg> en Mty. México.</p>'
+
+- id: email-me
+  translation: "Envíame un mail"
+
+- id: elsewhere
+  translation: "En otros lugares"
+
+- id: contact
+  translation: "Contacto"
+
+- id: contact-email
+  translation: 'No dudes en ponerte en <a href="mailto:yo@ramiroruiz.com?subject=Contacto%del%20website">contacto</a> para cualquier cosa.'
+
+- id: recent_tags
+  translation: "Tags recientes"

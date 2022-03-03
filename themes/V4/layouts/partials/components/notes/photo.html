@@ -1,0 +1,5 @@
+{{ with .Params.photos }}
+    {{ range first 1 . }}
+        <img class="u-photo c-note--photo__img" src="{{ .source }}" alt="{{ .alt }}">
+    {{ end }}
+{{ end }}

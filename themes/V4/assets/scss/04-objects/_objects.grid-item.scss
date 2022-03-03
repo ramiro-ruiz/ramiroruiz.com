@@ -1,0 +1,142 @@
+/* ==========================================================================
+   #GRID ITEMS
+   ========================================================================== */
+
+$ss-grid-item-alignments: (
+  start, center, end
+);
+
+$ss-grid-item-row: (
+  row
+);
+
+$ss-grid-item-col: (
+  col
+);
+
+@each $valignment in $ss-grid-item-alignments {
+  .o-grid__v-align--#{$valignment} {
+    align-self: #{$valignment};
+  }
+}
+
+// Column start and span
+@each $direction in $ss-grid-item-col {
+  @for $ss-grid-columns from 1 through 12 {
+    .o-grid__start-#{$direction}--#{$ss-grid-columns} {
+      grid-column-start: #{$ss-grid-columns};
+    }
+
+    .o-grid__span-#{$direction}--#{$ss-grid-columns} {
+      grid-column: span #{$ss-grid-columns};
+    }
+  }
+}
+
+// Row start and span
+@each $direction in $ss-grid-item-row {
+  @for $ss-grid-columns from 1 through 12 {
+    .o-grid__start-#{$direction}--#{$ss-grid-columns} {
+      grid-#{$direction}-start: #{$ss-grid-columns};
+    }
+
+    .o-grid__end-#{$direction}--#{$ss-grid-columns} {
+      grid-#{$direction}-end: #{$ss-grid-columns};
+    }
+
+    .o-grid__span-#{$direction}--#{$ss-grid-columns} {
+      grid-#{$direction}: span #{$ss-grid-columns};
+    }
+  }
+}
+
+// Column span all
+.o-grid__span-col--all {
+  @include span-all-columns;
+}
+
+ .o-grid__span-row--all {
+   grid-row: 1/-1;
+   height: 100%;
+ }
+
+// Responsive column span all
+@each $direction in $ss-grid-item-col {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @include ss-mq($breakpoint-name) {
+      .o-grid__span-col--all\@#{$breakpoint-name} {
+        @include span-all-columns;
+      }
+    }
+  }
+}
+
+// Responsive row span all
+@each $direction in $ss-grid-item-col {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @include ss-mq($breakpoint-name) {
+      .o-grid__span-row--all\@#{$breakpoint-name} {
+        grid-row: 1/-1;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// Responsive column start and span
+@each $direction in $ss-grid-item-col {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @for $ss-grid-columns from 1 through 12 {
+      @include ss-mq($breakpoint-name) {
+        .o-grid__start-#{$direction}--#{$ss-grid-columns}\@#{$breakpoint-name} {
+          grid-column-start: #{$ss-grid-columns};
+        }
+      }
+    }
+
+    @for $ss-grid-columns from 1 through 12 {
+      @include ss-mq($breakpoint-name) {
+        .o-grid__end-#{$direction}--#{$ss-grid-columns}\@#{$breakpoint-name} {
+          grid-column-end: #{$ss-grid-columns};
+        }
+      }
+    }
+
+    @include ss-mq($breakpoint-name) {
+      @for $ss-grid-columns from 1 through 12 {
+        .o-grid__span-#{$direction}--#{$ss-grid-columns}\@#{$breakpoint-name} {
+          grid-column: span #{$ss-grid-columns};
+        }
+      }
+    }
+  }
+}
+
+// Responsive row start and span
+@each $direction in $ss-grid-item-row {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @for $ss-grid-columns from 1 through 12 {
+      @include ss-mq($breakpoint-name) {
+        .o-grid__start-#{$direction}--#{$ss-grid-columns}\@#{$breakpoint-name} {
+          grid-#{$direction}-start: #{$ss-grid-columns};
+        }
+      }
+    }
+
+    @include ss-mq($breakpoint-name) {
+      @for $ss-grid-columns from 1 through 12 {
+        .o-grid__span-#{$direction}--#{$ss-grid-columns}\@#{$breakpoint-name} {
+          grid-#{$direction}: span #{$ss-grid-columns};
+        }
+      }
+    }
+  }
+}

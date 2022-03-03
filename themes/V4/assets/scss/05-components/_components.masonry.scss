@@ -1,0 +1,30 @@
+.c-masonry-list {
+    column-count: 0;
+    column-gap: var(--space-sm);
+
+    @include respond-above(xs) {
+        column-count: 2;
+    }
+
+    @include respond-above(md) {
+        column-count: 3;
+    }
+
+    > * {
+        break-inside: avoid;
+    }
+
+    .c-masonry-list__item { 
+        padding: var(--space-xs) var(--space-xs) var(--space-md);
+    }
+}
+
+    .c-masonry-list__item {
+        position: relative;
+        break-inside: avoid;
+        padding: var(--space-xs);
+
+        @include respond-above(xs) {
+            display: inline-block;
+        }
+    }

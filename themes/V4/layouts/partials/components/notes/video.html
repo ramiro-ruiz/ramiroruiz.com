@@ -1,0 +1,7 @@
+{{ with .Params.videos }}
+    {{ range first 1 . }}
+    <video class="u-video c-note--video__item" controls="controls" poster="{{ .poster }}" src="{{ .source }}">
+        {{.alt}}
+    </video>
+    {{end}}
+{{end}}

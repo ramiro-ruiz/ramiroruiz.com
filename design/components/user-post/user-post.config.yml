@@ -1,0 +1,9 @@
+title: User post
+context:
+  post-avatar: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+  post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+  post-author: Ramiro Ruiz
+  post-author-url: https://twitter.com/ramiroruiz
+  post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+  avatar-classes: c-user-post__avatar u-photo
+  avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png

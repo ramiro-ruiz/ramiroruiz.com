@@ -1,0 +1,23 @@
+<ul class="c-avatar-list">
+    {{ $type := .type }}
+    {{ $avatar_list := newScratch }}
+    {{ range .page }}
+        {{ $activity := (index . "activity") }}
+        {{ $activity_type := (index $activity "type") }}
+        {{ $data := (index . "data") }}
+        {{ $author_obj := (index $data "author") }}
+        {{ with $author_obj }}
+        {{ $author_name := (index . "name") }}
+        {{ $author_photo := (index . "photo") }}
+        {{ $author_url := (index . "url") }}
+            {{ if (eq $activity_type $type) }}
+            {{ $avatar_list.Add "zindex" 1 }}
+                <li class="c-avatar-list__item" style="z-index: calc(90 - {{ $avatar_list.Get "zindex" }});">
+                    <a href="{{ $author_url }}">
+                        {{ partial "components/avatar" (dict "avatar" $author_photo "context_author_name" $author_name) }}
+                    </a>
+                </li>
+            {{end}}
+        {{end}}
+    {{ end }}
+</ul>

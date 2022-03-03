@@ -1,0 +1,59 @@
+.o-heading {
+    font-family: var(--font-sans);
+}
+
+.o-lead-intro {
+    margin: initial;
+    @include lead-serif-1;
+
+    a {
+        color: var(--color-text);
+        text-decoration: underline;
+        text-underline-offset: var(--space-xxs);
+        text-decoration-thickness: rem(2);
+        text-decoration-color: var(--color-text-400);
+
+        &:hover {
+            color: var(--color-grey-700);
+            text-shadow: rem(1) 0 rem(2) var(--color-text-300);
+            text-decoration-thickness: rem(3);
+            text-decoration-color: var(--color-text);
+        }
+    }
+}
+
+.o-heading--md {
+    @include body-sans-3;
+    font-weight: 550;
+}
+
+.o-content {
+
+    > h1, h2, h3, h4 {
+        @include font-serif;
+    }
+    
+    > p {
+        overflow-wrap: break-word;
+        word-break: break-word;
+        @include body-serif-3;
+        font-weight: 380;
+
+        @include respond-above(xs) {
+            @include body-serif-2;
+            font-weight: 350;
+        }
+    }
+
+    a {
+        font-weight: 450;
+    }
+
+    li {
+        @include body-serif-3;
+
+        & + li {
+            margin-top: var(--space-xs);
+        }
+    }
+}

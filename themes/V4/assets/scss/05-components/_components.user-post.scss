@@ -1,0 +1,23 @@
+.c-user-post {
+    position: relative;
+    padding-left: rem(44);
+}
+    .c-user-post__header {
+        @include body-sans-5;
+    }
+        .c-user-post__author {
+            font-weight: 500;
+
+            &::after {
+                content: '·';
+            }
+        }
+        .c-user-post__avatar {
+            position: absolute;
+            left: 0;
+            top: rem(4);
+        }
+
+    .c-user-post__text {
+        @include body-sans-3;
+    }

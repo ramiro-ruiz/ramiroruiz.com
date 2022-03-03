@@ -1,0 +1,5 @@
+<div class="{{ container-classes }} {{#if post-items }}c-posts__list{{/if}}{{#if notes-masonry}}c-masonry-list{{/if}}">
+    {{#each item }}
+        {{> @list-item}}
+    {{/each}}
+</div>

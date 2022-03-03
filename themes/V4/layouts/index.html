@@ -1,0 +1,22 @@
+{{ define "main" }}
+	{{- partial "components/home-intro.html" . -}}
+	{{- partial "components/h-card.html" . -}}
+	<main class="o-stack--xl o-stack--xxl@md">
+		<section class="o-stack">
+			{{ partial "components/section-heading.html" (dict "blog" "yes") }}
+			<div class="c-posts__list">
+				{{ range first 3 (where .Site.RegularPages "Type" "blog") }}
+					{{ partial "components/list-entry" . }}
+				{{ end }}
+			</div>
+		</section>
+		<section class="o-stack">
+			{{ partial "components/section-heading.html" (dict "notes" "yes") }}
+			<div class="c-masonry-list">
+				{{ range first 16 (where .Site.Pages "Type" "in" (slice "photos" "links" "notes" "likes" "replies" "videos")) }}
+					{{- partial "components/note-items.html" . -}}
+				{{ end }}
+			</div>
+		</section>
+	</main>
+{{ end }}

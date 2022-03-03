@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{{ printf "<!-- Don't Grow Up, It's a Trap -->" | safeHTML }}
+<html lang='{{ .Lang }}'>
+	{{- partial "head.html" . -}}
+<body>
+	<div class="o-page o-stack--xl o-stack--xxl@md">
+		<div class="o-container o-stack--lg o-stack--xxl@md">
+			{{- partial "components/nav" . -}}
+			{{- block "main" . }}{{- end }}
+		</div>
+		{{- partial "footer" . -}}
+	</div>
+	{{- partial "svg-sprite" . -}}
+</body>
+</html>

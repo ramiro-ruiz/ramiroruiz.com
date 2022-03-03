@@ -1,0 +1,26 @@
+.o-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    min-height: 100vh;
+    padding-top: var(--space-md);
+    background-color: var(--color-bg);
+
+    @include respond-above(lg) {
+        padding-top: var(--space-xl);
+     }
+    
+    .c-nav {
+        position: fixed; 
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    
+        @include respond-above(sm) {
+            position: static;
+        }
+    }
+}

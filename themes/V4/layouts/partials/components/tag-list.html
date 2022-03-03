@@ -1,0 +1,18 @@
+<div class="c-tag-list o-pull o-pull--left u-mb-4">
+    <h3 class="u-f-weight--350">{{ i18n "recent_tags" }}</h3>
+    <ul class="u-pl-0 u-mt-1">
+        {{/* Create a sorted slice of tags present in the listed pages. */}}
+        {{ $tags := slice }}
+        {{ range  first 20 .RegularPages }}
+            {{ if .Params.tags }}
+                {{ $tags = $tags | append .Params.tags }}
+            {{ end }}
+        {{ end }}
+        {{ $tags = $tags | uniq | sort }}
+        {{/* Range through the tags, then range through the pages that contain that tag. */}}
+        {{ $pages := .Pages }}
+        {{ range $tags }}
+            <li class="c-tag-list__item"><a class="c-tag" href="{{ "/tags/" | relLangURL}}{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+    </ul>
+</div>

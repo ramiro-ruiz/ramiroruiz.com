@@ -1,0 +1,73 @@
+.c-custom--about {
+
+    .o-content {
+
+        h2:nth-child(4) {
+            margin-top: var(--space-xl);
+        }
+    }
+}
+
+    .c-custom--about__lead {
+        margin-bottom: var(--space-lg);
+
+        @include respond-above(sm) {
+            margin-bottom: var(--space-xl);
+        }
+
+        @include respond-above(lg) {
+            margin-bottom: var(--space-xxl);
+        }
+    }
+
+    .c-custom--about__img {
+        border-radius: var(--space-xxxxs);
+        overflow: hidden;
+        margin-bottom: var(--space-lg);
+        
+        @include respond-above(sm) {
+            margin-top: var(--space-xs);
+            grid-column: 1/2;
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center top;
+            max-height: 40vh;
+            filter: grayscale(1);
+            transition: var(--global-transition);
+
+            &:hover {
+                filter: grayscale(.4);;
+            }
+
+            @include respond-above(sm)  {
+                max-height: none;
+                min-height: rem(400);
+            }
+        }
+    }
+
+    .c-custom--about__elsewhere {
+
+        @include respond-above(sm) {
+            margin-top: var(--space-xl);
+            grid-column: 2/4;
+        }
+
+        @include respond-above(lg) {
+            margin-top: 0;
+            grid-column: 3/4;
+        }
+    }
+
+.c-custom--tweet-feed {
+
+    .c-note {
+
+        .u-syndication {
+            display: inline-block;
+        }
+    }
+}

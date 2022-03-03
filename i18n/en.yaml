@@ -4,6 +4,9 @@
 - id: about
   translation: "About"
 
+- id: about_intro
+  translation: "Hi, I’m Ramiro a designer in the caotic but interesting city of Monterrey, Mexico."
+
 - id: hash
   translation: "#"
 
@@ -66,14 +69,38 @@
 - id: notes
   translation: "Notes"
 
+- id: notes_url
+  translation: "all-notes"
+
+- id: see_all_notes
+  translation: "See all notes"
+
+- id: see_all_posts
+  translation: "See all posts"
+
+- id: note
+  translation: "Note"
+
 - id: photos
   translation: "Photos"
+
+- id: photo
+  translation: "Photo"
+
+- id: link
+  translation: "Link"
 
 - id: replies
   translation: "Replies"
 
+- id: reply
+  translation: "Reply"
+
 - id: likes
   translation: "Likes"
+
+- id: like
+  translation: "Like"
 
 - id: liked
   translation: "Liked"
@@ -90,11 +117,32 @@
 - id: reply-to-tweet
   translation: "Replying to a tweet:"
 
-- id: tweet-from
-  translation: "a tweet from"
+- id: a-tweet
+  translation: "a tweet</a> by"
 
 - id: twitter
   translation: "ramiroruiz"
- 
+
 - id: webmentionurl
-  translation: "ramiroruiz.com"  
+  translation: "ramiroruiz.com"
+
+- id: colophon
+  translation: "Colophon"
+
+- id: footer-text
+  translation: '<p>Designed & coded with <svg class="o-icon u-mx-1" aria-hidden="true"><use href="#icon-like"></use></svg> in Mty. Mexico.</p>'
+
+- id: email-me
+  translation: "Email me"
+
+- id: elsewhere
+  translation: "Elsewhere"
+
+- id: contact
+  translation: "Contact"
+
+- id: contact-email
+  translation: 'Don’t hesitate to <a href="mailto:yo@ramiroruiz.com?subject=Contact%20from%20website">get in touch</a> for anything.'
+
+- id: recent_tags
+  translation: "Recent tags"

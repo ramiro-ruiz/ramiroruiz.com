@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "integrandome-al-equipo-de-icalia-labs"
 excerpt: "Tuve un 2017 bastante complicado pero no hay tiempo para quejarse, aprendi algunas cosas y me fui a aprender un poco más. En Mayo, escuchando un podcast recomendaron un libro llamado Sprint, escrito por un diseñador de Google que muestra una nueva forma de trabajar para resolver problemas."
-tags: ["trabajo", "design sprints", "equipo"]
+tags: ["Trabajo", "Design sprints", "Equipo"]
 categories: "personal"
 post_color: "white"
 post_image: "icalia.jpg"

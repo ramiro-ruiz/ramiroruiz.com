@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "fortuna-heredada"
 excerpt: "Hace un par de meses mi padre estuvo en el hospital por 3 semanas, y como en muchos lugares del mundo, la atención médica es muy cara, por lo que tiene un seguro social que le brinda atención médica pero a un precio. Los hospitales están llenos, pocos lugares para sentarse, poca información…"
-tags: ["fortuna", "agradecido", "felicidad"]
+tags: ["Fortuna", "Agradecido", "Felicidad"]
 categories: "personal"
 post_color: "#D9AD53"
 post_image: "inherit.jpg"

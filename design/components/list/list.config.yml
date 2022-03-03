@@ -1,0 +1,111 @@
+title: List
+variants:
+    - name: default
+      label: Blog entry
+      context:
+        post-items: yes
+        item:
+        - post-item: yes
+          entry-title: Back to Fighting
+          entry-date: Dec 31 2019
+          entry-reading: 6
+          entry-summary: Last week, after almost 2 years without fighting. Past months full of problems, life-changing events, inactivity and a long recovery from an injury; I entered the cage again.
+
+        - post-item: yes
+          entry-title: Changing my ways
+          entry-date: May 6 2018
+          entry-reading: 4
+          entry-summary: A couple months ago, Frank Chimero, a great designer that I’d admired for a long time, wrote about the pain to re-learn many things in the web to keep yourself updated to the latest practices and trends.
+
+        - post-item: yes
+          entry-title: New website
+          entry-date: Apr 2 2018
+          entry-reading: 3
+          entry-summary: This morning I launched my new website. I used to be one of those designers that never reserved time for my brand, only working for clients and never on myself. What a surprise.
+    - name: masonry
+      label: Notes masonry
+      context:
+        notes-masonry: yes
+        item:
+        - name: like
+          label: Like
+          note-type: like
+          note-text: |
+            Liked a <a href="#">tweet</a> by <a href="#">ben_rosen</a>
+          note-date: Mar 24 2021
+        - name: link
+          label: Link
+          link: yes
+          note-type: link
+          context-url: https://leportella.com/why-have-a-blog.html
+          link-title: Why you should have a blog (and write in it) | Leticia Portella
+          context-text: Having your independent blog is an excellent way to share what you think in a decentralized way, independent of any major company that may add a paywall to it.
+          note-text: |
+            Never get tired of this kind of posts, they’re so inspiring.
+          note-date: Mar 24 2021
+        - name: note
+          label: Note
+          note-type: text
+          note-text: |
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          note-date: Mar 24 2021
+        - name: reply
+          label: Reply
+          reply: yes
+          post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          note-type: reply
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          avatar-size: sm
+          note-text: |
+            Wow this is an amazing take, it makes me think a lot about that angle.
+          note-date: Mar 24 2021
+        - name: repost (quoting)
+          label: Repost (quoting)
+          repost: yes
+          post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          avatar-size: sm
+          note-type: repost
+          note-text: |
+            I couldn't say it better!
+          note-date: Mar 24 2021
+        - name: repost
+          label: Repost
+          repost: yes
+          post-url: https://twitter.com/ramiroruiz/status/1355129784175620098
+          post-author: Ramiro Ruiz
+          post-author-url: https://twitter.com/ramiroruiz
+          post-text: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et ma.
+          avatar-classes: c-user-post__avatar u-photo
+          avatar-src: https://media.ramiroruiz.com/avatars/ramiroruiz/1130549139165634566/4SXqYSCJ_bigger.png
+          avatar-size: sm
+          note-type: repost
+          note-date: Mar 24 2021
+        - name: photo
+          label: Photo
+          photo: yes
+          photo-url: https://media.ramiroruiz.com/uploads/photos/2019/12/29/09-29-22/writing-at-the-couch-with-my-sleeping-kid.jpeg
+          photo-alt: Writing at the couch with my sleeping kid
+          note-type: photo
+          note-text: |
+            ♥️ these days.
+          note-date: Mar 24 2021
+        - name: video
+          label: Video
+          video: yes
+          video-poster: https://media.ramiroruiz.com/uploads/videos/2020/02/18/13-10-38/poster.jpg
+          video-url: https://media.ramiroruiz.com/uploads/videos/2020/02/18/13-10-38/light-sparring-session.mp4
+          video-alt: Light sparring session
+          note-type: video
+          note-text: |
+            What a fun session of light sparring this morning at @downtown.dojo I surely missed them.
+            <em>I Cut the parts where I get hit</em> 😆
+          note-date: Mar 24 2021

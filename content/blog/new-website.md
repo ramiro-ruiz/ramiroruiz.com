@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: ""
 excerpt: "This morning I launched my new website. I used to be one of those designers that never reserved time for my brand, only working for clients and never on myself. As a result, I’ve never been really proud of my site. I wanted the speed of a one-page site by having the main content but in a different format."
-tags: ["design", "hugo", "static site", "netlify"]
+tags: ["Design", "Hugo", "Static site", "Netlify"]
 categories: "design"
 post_color: ""
 post_image: "new-website.jpg"

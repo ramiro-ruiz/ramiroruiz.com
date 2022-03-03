@@ -1,0 +1,105 @@
+.c-footer {
+    padding-top: rem(56);
+    padding-bottom: rem(96);
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    font-weight: 250;
+    @include font-sans;
+
+    @include respond-above(sm) {
+        padding-top: rem(88);
+        padding-bottom: rem(64);
+    }
+
+    .o-grid {
+        align-items: flex-end;
+
+        > * + * {
+            @include respond-below(sm) {
+                display: flex;
+                align-items: center;
+                margin-top: var(--space-xs);
+
+                .c-btn {
+                    margin: 0 0 0 auto;
+                }
+            }
+            
+            @include respond-above(sm) {
+                text-align: right;
+            }
+        }
+    }
+
+    a,
+    .o-link__text span {
+        text-decoration-color: var(--color-text-600);
+       
+        &:hover,
+        &:focus,
+        .o-icon:hover + span  {
+            color: var(--color-bg);
+            text-decoration-color: var(--color-bg);
+        }
+    }
+}
+
+    .c-footer__lang  {
+
+        .o-icon {
+            opacity: .8;
+        }
+
+        @include hocus {
+
+            .o-icon {
+                opacity: 1;
+            }
+        }
+    }
+
+    .c-footer__text {
+        @include body-sans-5;
+        
+        @include respond-above(xs) {
+            @include body-sans-4;
+        }
+        
+        > p:first-child {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .o-icon {
+            color: var(--color-danger-500);
+        }
+    }
+
+    .c-footer__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--space-md);
+        height: var(--space-md);
+        margin: 0 rem(2);
+        padding: rem(4);
+        border-radius: rem(2);
+        background: var(--color-text-900);
+
+        .o-icon {
+            opacity: .8;
+        }
+
+        @include hocus {
+            & {
+                transform: translateY(rem(-1));
+                background: var(--color-text-800);
+                color: var(--color-bg)
+            }
+
+            .o-icon {
+                opacity: 1;
+            }  
+        }
+    }

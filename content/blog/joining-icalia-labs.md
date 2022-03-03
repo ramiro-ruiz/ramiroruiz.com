@@ -6,7 +6,7 @@ section: "post"
 slug: ""
 excerpt: "I had a wild 2017, not exactly in a good way.
 No time to complain, I learn some and went to learn some more (one of my favorite things). On May I was listening to a podcast where they recommend a book called Sprint, written by a designer from Google showing a new way of work to solve problems."
-tags: ["work", "design sprints", "team"]
+tags: ["Work", "Design sprints", "Team"]
 categories: "personal"
 post_color: "white"
 post_image: "icalia.jpg"

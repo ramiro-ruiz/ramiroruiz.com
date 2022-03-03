@@ -1,0 +1,39 @@
+///*----------------------------------*\
+//  #TOOL - BREAKPOINTS
+//\*----------------------------------*/
+// Credit to https://github.com/bolt-design-system/bolt
+
+/// This returns the breakpoint value (with px) from $ss-breakpoints map
+/// @param {string} $name - The name of the breakpoint (from within $ss-breakpoints)
+/// @return {string} The breakpoint value (with px)
+/// @example scss
+/// .element {
+///   @media screen and (max-width: #{ss-breakpoint(xsmall)}) {
+///     font-size: 24px;
+///   }
+/// }
+
+@function ss-breakpoint($name) {
+  @return map-get($ss-breakpoints, $name);
+}
+
+// alias for ss-breakpoint
+@function ss-bp($name) {
+  @return ss-breakpoint($name);
+}
+
+/// This provides a wrapper mixin for performing ss media queries with mq() which allows for the use of:
+/// $from (inclusive min-width boundary), $until (exclusive max-width boundary), $and (additional custom directives), $media-type (media type: screen, print, etc)
+/// @link https://github.com/sass-mq/sass-mq Sass MQ on GitHub
+/// @param $args... - ss Media Query args ([breakpoint-name], $from, $until, $and, $media-type)
+/// @example scss - ss's mq() wrapper
+/// .element {
+///   @include ss-mq(($until: small)){
+///     flex-direction: column;
+///   }
+/// }
+@mixin ss-mq($args...) {
+  @include mq($args...) {
+    @content;
+  }
+}

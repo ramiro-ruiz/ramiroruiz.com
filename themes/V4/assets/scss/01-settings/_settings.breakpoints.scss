@@ -1,0 +1,28 @@
+///*----------------------------------*\
+//  #BREAKPOINTS
+//\*----------------------------------*/
+// Credit to https://github.com/bolt-design-system/bolt
+
+/// Major breakpoints used globally.
+
+// $ss-breakpoints: (
+//   xs:   400px,
+//   sm:   600px,
+//   md:   800px,
+//   lg:   1000px,
+//   xl:   1200px,
+//   xxl:  1400px,
+// ) !default;
+
+$ss-breakpoints: (
+  xs:   480px,
+  sm:   576px,
+  md:   768px,
+  lg:   992px,
+  xl:   1200px,
+  xxl:  1400px
+) !default;
+
+/// A duplicate of $ss-breakpoints - used within mq()
+/// see {mixin} rts-mq
+$mq-breakpoints: $ss-breakpoints;

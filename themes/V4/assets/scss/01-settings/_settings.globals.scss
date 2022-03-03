@@ -1,0 +1,28 @@
+///*----------------------------------*\
+//  #GLOBAL SETTINGS
+//\*----------------------------------*/
+
+:root {
+    
+    /* Border radius */
+    --global-radius: var(--space-xxxs);
+    --global-radius-lg: var(--space-xs);
+
+    /* Scroll behavior */
+    scroll-behavior: smooth;
+
+    
+    /* Transitions */
+    --global-transition:                              all 0.3s ease;
+    --global-transition--fast:                        all 0.1s ease;
+    --global-transition--slow:                        all 0.5s ease;
+    
+    // /* Box shadows */
+    --global-box-shadow:                              0 0.0625rem 0.2rem 0 var(--color-text-300);
+
+    // --global-box-shadow__inset:                       inset 0.0625rem 0.0625rem 0.0625rem 0 rgba(--color-grey-900, 0.07);
+    // --global-box-shadow__inset--solid:                inset 0 0 0 0.0625rem rgba(--color-grey-900, 0.07);
+    // --global-box-shadow__inset--md:                   inset 0.0625rem 0.0625rem 0.0625rem 0 rgba(--color-grey-900, 0.2);  
+
+    --global-max-text-width:                           50ch;
+}

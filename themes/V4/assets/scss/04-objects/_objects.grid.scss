@@ -1,0 +1,273 @@
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+
+/**
+ * Grid layout system.
+ * There are plenty more options available to us: explore them below.
+ */
+
+
+/* Default/mandatory classes
+   ========================================================================== */
+
+/**
+ * 1. Allows us to use the layout object on any type of element.
+ * 2. We need to defensively reset any box-model properties.
+ * 3. Make the grid container.
+ * 4. Adds default grid gutters.
+ * 5. Sets a fluid 12 column grid that grows and shrinks to fit inside the grid width.
+ */
+
+@mixin o-grid {
+  display: grid; /* [3] */
+  grid-gap: var(--space-unit); /* [4] */
+  list-style: none; /* [1] */
+  padding: 0; /* [2] */
+}
+
+$global-grid-columns: repeat(12, 1fr);
+
+.o-grid {
+  @include o-grid;
+  grid-template-columns: $global-grid-columns; /* [5] */
+
+  > * {
+    @include span-all-columns; // Children span all columns by default, mobile first approach
+  }
+}
+
+
+.o-grid--fix {
+  $ss-fix-col: (
+    col
+  );
+
+  @each $direction in $ss-fix-col {
+    @for $ss-grid-columns from 1 through 12 {
+      &-#{$ss-grid-columns} {
+        grid-template-columns: repeat(#{$ss-grid-columns}, 1fr);
+
+        > * {
+          grid-column: auto; // Removes the span all columns approach for auto columns
+        }
+      }
+    }
+  }
+}
+
+
+// Flex auto width columns grid
+
+.o-grid-flow {
+  // Set the gutter width
+  $gutter-width: var(--space-unit);
+  $breakpoint: rem(640);
+
+  display: flex;
+  flex-flow: row wrap;
+  margin-left:  (#{$gutter-width})/ (-2); // The negative margins allow for nesting of columns
+  margin-right: (#{$gutter-width})/ (-2);
+  width: calc(100% + #{$gutter-width});
+
+  > * {
+    flex: 1 0 100%; // Columns automatically size themselves
+    margin-bottom: $gutter-width;
+    margin-left: $gutter-width / 2;
+    margin-right: $gutter-width / 2;
+    max-width: 100%; // Fallback for browsers that don't support calc
+    max-width: calc(100% - #{$gutter-width});
+    min-height: rem(1);
+    position: relative;
+
+    @media only screen and (min-width: $breakpoint) {
+      flex-basis: 0;
+    }
+  }
+
+  &.o-grid__gap--md {
+    margin-left:  (#{$gutter-width})/ (-2); // The negative margins allow for nesting of columns
+    margin-right: (#{$gutter-width})/ (-2);
+    width: calc(100% + #{$gutter-width});
+    $gutter-width: var(--space-lg);
+
+    > * {
+      margin-bottom: $gutter-width;
+      margin-left: $gutter-width / 2;
+      margin-right: $gutter-width / 2;
+      max-width: calc(100% - #{$gutter-width});
+    }
+  }
+}
+
+// Auto column grid classes
+$grid-auto-sizes: (auto--sm, rem(70)) (auto, rem(100)) (auto--md, rem(165)) (auto--lg, rem(200)) (auto--xl, rem(240));
+
+@each $size, $value in $grid-auto-sizes {
+  .o-grid--#{$size} {
+    grid-template-columns: repeat(auto-fit, minmax(#{$value}, 1fr));
+
+    > * {
+      grid-column: auto; // Removes the span all columns approach for auto columns
+    }
+  }
+}
+
+.o-grid--auto--content {
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(rem(100), max-content));
+
+  > * {
+    grid-column: auto; // Removes the span all columns approach for auto columns
+  }
+}
+
+.o-grid--auto--content--0 {
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(0, max-content));
+
+  > * {
+    grid-column: auto; // Removes the span all columns approach for auto columns
+  }
+}
+
+// Auto fill column grid classes
+$grid-auto-sizes: (auto-fill--sm, rem(70)) (auto-fill, rem(100)) (auto-fill--md, rem(165)) (auto-fill--lg, rem(200)) (auto-fill--xl, rem(240));
+
+@each $size, $value in $grid-auto-sizes {
+  .o-grid--#{$size} {
+    grid-template-columns: repeat(auto-fill, minmax(#{$value}, 1fr));
+
+    > * {
+      grid-column: auto; // Removes the span all columns approach for auto columns
+    }
+  }
+}
+
+
+
+/* Responsive grid classes
+   ========================================================================== */
+.o-grid {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @include ss-mq($breakpoint-name) {
+      &\@#{$breakpoint-name} {
+        @include o-grid;
+        grid-template-columns: $global-grid-columns;
+      }
+    }
+  }
+}
+
+.o-grid--fix {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @for $ss-grid-columns from 1 through 12 {
+      @include ss-mq($breakpoint-name) {
+        &-#{$ss-grid-columns}\@#{$breakpoint-name} {
+          grid-template-columns: repeat(#{$ss-grid-columns}, 1fr);
+
+          > * {
+            grid-column: auto; // Removes the span all columns approach for fix column grid
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Auto column grid
+@each $size, $value in $grid-auto-sizes {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @include ss-mq($breakpoint-name) {
+      .o-grid--#{$size}\@#{$breakpoint-name} {
+        @include o-grid;
+        grid-template-columns: repeat(auto-fit, minmax(#{$value}, 1fr));
+
+        > * {
+          grid-column: auto; // Removes the span all columns approach for auto columns
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/* Gutter size modifiers
+   ========================================================================== */
+
+$gap-sizes: (gap--0, 0) (gap, var(--space-unit)) (gap--s, var(--space-xs)) (gap--md, var(--space-lg));
+
+
+.o-grid__gap--0 {
+  grid-gap: 0;
+}
+
+.o-grid__gap {
+  grid-gap: var(--space-unit);
+}
+
+.o-grid__gap--sm {
+  grid-gap: var(--space-xs);
+}
+
+.o-grid__gap--md {
+  grid-gap: var(--space-lg);
+}
+
+.o-grid__col-gap--md {
+  grid-column-gap: var(--space-lg);
+}
+
+.o-grid__row-gap--sm {
+  grid-row-gap: var(--space-xs);
+}
+
+// Grid gap responsive classes
+@each $gap-size, $value in $gap-sizes {
+  @each $breakpoint in $ss-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @include ss-mq($breakpoint-name) {
+      .o-grid__#{$gap-size}\@#{$breakpoint-name} {
+        grid-gap: #{$value};
+      }
+    }
+  }
+}
+
+.o-grid-page {
+
+  @include respond-above(sm) {
+    display: grid;
+    grid-column-gap: var(--space-lg);
+    grid-template-columns: 1fr 2fr 1fr;
+
+  }
+  
+  > * {
+    @include respond-above(sm) {      
+      grid-column: 2/4;
+    }
+        
+    @include respond-above(lg) {
+      grid-column: 2;
+    }
+  }
+}
+
+  .o-grid-page--list {
+    
+    @include respond-below(sm) {      
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }

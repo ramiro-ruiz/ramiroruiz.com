@@ -1,0 +1,24 @@
+.c-avatar {
+    width: var(--space-lg);
+    min-width: var(--space-lg);
+    height: var(--space-lg);
+    border-radius: 50%;
+    filter: grayscale(1);
+    transition: 0.3s filter linear;
+
+    &:hover {
+        filter: grayscale(0);
+    }
+
+    &.c-avatar--sm {
+        width: var(--space-md);
+        min-width: var(--space-md);
+        height: var(--space-md);
+    }
+
+    &.c-avatar--lg {
+        width: rem(40);
+        min-width: rem(40);
+        height: rem(40);
+    }
+}

@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: "el-beneficio-de-las-restricciones"
 excerpt: "Cuando comencé como diseñador, regularmente me quejaba de la restricciones, sintiendo que necesitaba una libertad total para sacar toda mi creatividad. Era joven y no le temía la hoja en blanco, inmediatamente comencé a poner y mover cosas, pero todos mis resultados no tenían una autenticidad…"
-tags: ["restricciones", "creatividad"]
+tags: ["Restricciones", "Creatividad"]
 categories: "diseño"
 post_color: ""
 post_image: "constraints.jpg"

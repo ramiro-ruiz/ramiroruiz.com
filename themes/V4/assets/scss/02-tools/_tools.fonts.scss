@@ -1,0 +1,59 @@
+/**
+ * @license
+ *
+ * Font Family: Zodiak
+ * Designed by: Jérémie Hornus, Gaetan Baehr, Jean-Baptiste Morizot, Alisa Nowak, Theo Guillard
+ * URL: https://www.fontshare.com/fonts/zodiak
+ * © 2021 Indian Type Foundry
+ *
+ * Font Styles:
+ * Zodiak Variable(Variable font)
+ *
+*/
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 100.0 to 900.0)
+
+*/
+// url('../fonts/Zodiak-Variable.woff2') format('woff2'),
+
+@font-face {
+  font-family: 'Zodiak-Variable';
+  src: url('/fonts/Zodiak-Variable.woff2') format('woff2'),
+       url('/fonts/Zodiak-Variable.woff') format('woff'),
+       url('/fonts/Zodiak-Variable.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+@font-face {
+	font-family:'Work Sans';
+  src: url('/fonts/WorkSans[wght].woff2') format('woff2');
+	font-style: normal;
+  font-weight: 100 900;
+}
+
+:root {
+  // font family
+    --font-sans: "Work Sans", system-ui,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --font-serif: "Zodiak-Variable", Georgia, serif;
+  
+    // font size
+    --text-base-size: 1em; // body font-size
+    --text-scale-ratio: 1.2; // multiplier used to generate the type scale values 👇
+    
+    // line-height
+    --body-line-height: 1.4;
+    --heading-line-height: 1.2;
+    
+  
+    // unit - don't modify unless you want to change the typography unit (e.g., from Em to Rem units)
+    --text-unit: 1em; // if not Em units → --text-unit: var(--text-base-size);
+}

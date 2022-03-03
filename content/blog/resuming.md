@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: ""
 excerpt: "It is amazing the number of things we start and abandon, most of the time we bring excuses like time, money, commitments, etc. When you work on something without a clear deadline, it is a great challenge to finish it. Not long ago you wouldn't hear the word  procrastination very often…"
-tags: ["starting", "procastination","writing"]
+tags: ["Starting", "Procastination","Writing"]
 categories: "personal"
 post_color: ""
 post_image: "resuming.gif"

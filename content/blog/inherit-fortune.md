@@ -5,7 +5,7 @@ draft: false
 section: "post"
 slug: ""
 excerpt: "A couple of months ago my father stayed in the hospital around 3 weeks, as in most places in the world, healthcare is very expensive, so he has social insurance which gives you medical care but it comes with a price. Hospitals are packed, few places to sit, little information…"
-tags: ["fortune", "grateful", "happiness"]
+tags: ["Fortune", "Grateful", "Happiness"]
 categories: "personal"
 post_color: "#D9AD53"
 post_image: "inherit.jpg"

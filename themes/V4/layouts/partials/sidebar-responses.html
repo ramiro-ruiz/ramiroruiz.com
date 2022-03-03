@@ -1,0 +1,11 @@
+{{ $webmentions_number := $.Scratch.Get "webmentions_number" }}
+{{ with $webmentions_number }}
+<div class="c-post-meta c-post-meta--responses">
+    <svg class="o-icon u-mr-1" aria-hidden="true">
+        <use href="#icon-responses"></use>
+    </svg>
+    <a class="c-post-meta__link" href="#responses">
+        {{ . }} responses
+    </a>
+</div>
+{{ end }}

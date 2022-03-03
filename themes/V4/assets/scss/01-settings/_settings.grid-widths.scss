@@ -1,0 +1,39 @@
+:root {
+  // 16 columns with a 32px gutter in a max width of 1440px = 60px columns
+  --col-1:          04.16%;
+  --col-2:          10.55%;
+  --col-3:          16.94%;
+  --col-4:          23.34%;
+  --col-5:          29.72%;
+  --col-6:          36.11%;
+  --col-7:          42.50%;
+  --col-8:          48.88%;
+  --col-9:          55.27%;
+  --col-10:         61.66%;
+  --col-11:         68.05%;
+  --col-12:         74.44%;
+  --col-13:         80.83%;
+  --col-14:         87.22%;
+  --col-15:         93.61%;
+  --col-16:         100%;
+
+
+  --col-8--sm:      50.57471264%;
+  --col-4--sm:      22.413793105%;
+  --col-gap--sm:    2.298850575%;
+  --col-gap:        2.22%;
+
+  --w-art-col-1:    25%;
+  --w-art-col-2:    31.5%;
+  --w-art-col-4:    50%;
+
+  // Column widths using the 8 column content (680px) width as the context
+
+  --w-4-col--sm: 31.27413127%;
+  --w-4-col: 47.64705882%;
+  --w-4-col--xl: 47.72%;
+  --w-6-col: 73.82352941%;
+  --w-6-col--xl: 73.86363636%;
+  --w-7-col: 86.91176471%;
+  --w-7-col--xl: 87.17948718%;
+}

@@ -1,0 +1,55 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    @include respond-below(sm) {
+        order: 2;
+    }
+}
+
+    .page-item {
+
+        &.disabled .page-link {
+            color: var(--color-text-400);
+            
+            @include hocus() {
+                color: var(--color-text-400);
+                cursor: default;
+            }
+        }
+
+        &.active .page-link {
+            background: var(--color-text);
+            color: var(--color-bg);
+        }
+
+        &:nth-child(-n+2) .page-link,
+        &:nth-last-child(-n+2) .page-link {
+            border: 0;
+            background: none;
+            padding: var(--space-xxxs) var(--space-xxs);
+        }
+
+        &:nth-last-child(-n+2) .page-link {
+
+            @include hocus() {
+                color: inherit;
+            }
+        }
+
+        & + &:not(:last-child):not(:nth-child(2)) {
+            margin-left: var(--space-xxs);
+        }
+    }
+
+    .page-link {
+        @extend .c-btn;
+        @extend .c-btn--sm;
+        @include body-sans-6;
+        min-width: auto;
+        padding: var(--space-xxxs) var(--space-sm);
+    }

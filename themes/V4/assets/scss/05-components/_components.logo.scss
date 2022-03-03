@@ -1,0 +1,9 @@
+.c-logo__svg {
+    width: 2rem;
+    height: 1.5rem;
+
+    @include respond-above(sm) {
+        width: rem(40);
+        height: rem(32);
+    }
+}

@@ -1,0 +1,27 @@
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    flex: 1;
+    max-width: rem(1440);
+    padding: 0 var(--space-md);
+
+    @include respond-above(sm) {
+        padding: 0 var(--space-lg);
+    }
+
+    @media (min-width: 1460px) {
+        padding: 0;
+    }
+}
+
+    .o-container--main {
+        
+        @include respond-below(sm) {
+            margin-top: 0;
+        }
+    }
+
+    .o-container--list {
+        max-width: rem(800);
+    }

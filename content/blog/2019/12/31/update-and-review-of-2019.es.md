@@ -1,11 +1,11 @@
 ---
-title: "Actualización y retrospectiva del 2019"
+title: "Retrospectiva del 2019"
 date: 2019-12-31T10:32:14-05:00
 draft: false
 section: "post"
 slug: "actualizacion-y-retrospectiva-del-2019"
 excerpt: "Han pasado muchas cosas este año, y me siento mal al mantener este blog tan abandonado.  Sin embargo, han habido muchos cambios en mi sitio y he tenido mucha más actividad, pero más sobre eso más adelante. Mi última publicación fue sobre mi regreso a la jaula, comenzaré con esas actualizaciones."
-tags: ["personal", "retrospectiva", "indieweb", "sitio web", "aprendiendo"]
+tags: ["Personal", "Retrospectiva", "IndieWeb", "Sitio web", "Aprendiendo"]
 categories: "Review"
 post_color: "#50d890"
 post_image: ""
