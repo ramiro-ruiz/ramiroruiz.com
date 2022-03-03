@@ -2,4 +2,6 @@ node_modules
 .env
 .DS_Store
 /public
+/_old-layouts
+/design
 .hugo_build.lock
