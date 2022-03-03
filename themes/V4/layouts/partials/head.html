@@ -12,7 +12,7 @@
 	{{- else if eq .Type "photos" "links" "replies" "notes" "likes" "videos" }}
 		{{ .Summary }}
     {{- else -}}
-    	{{ .Site.Params.description }}
+    	{{ .Site.Params.og_description }}
     {{- end -}}">
 	<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 	<meta name="theme-color" content="#1e1e1f" media="(prefers-color-scheme: dark)">
