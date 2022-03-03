@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main class="o-container--main o-stack o-stack--xl@sm {{ with .Params.custom_style }}c-custom--{{.}}{{ end }}">
 	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title) }}
-	<div class="o-grid-page">
+	<div class="o-grid-page o-stack o-stack--0@sm">
 		<div class="c-custom--about__lead o-grid__span-col--all">
 			<strong class="c-post-title--sm">
 				{{ "about_intro" | i18n}}
