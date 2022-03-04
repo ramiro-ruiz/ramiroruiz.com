@@ -4,4 +4,5 @@ node_modules
 /public
 /design
 /_old-layouts
+/resources
 .hugo_build.lock
