@@ -80,6 +80,6 @@ HUGO_ENABLEGITINFO = "true"
   force = true # COMMENT: ensure that we always redirect
 
 [[redirects]]
-  from = "/blog/reanudando/"
+  from = "/es/blog/reanudando/"
   to = "https://v3.ramiroruiz.com/es/blog/reanudando/"
   force = true # COMMENT: ensure that we always redirect
