@@ -146,3 +146,12 @@
 
 - id: recent_tags
   translation: "Recent tags"
+
+- id: reply_note
+  translation: "Reply"
+
+- id: retweet_note
+  translation: "Retweet"
+
+- id: like_note
+  translation: "Like"

@@ -29,7 +29,7 @@
         <div class="c-post__reactions">
             {{ if (ge ($.Scratch.Get "__like_cnt") 1) }}
             <div class="c-post__reactions-likes">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
+                <svg class="o-icon" aria-hidden="true">
                     <use href="#icon-like"></use>
                 </svg>
                 {{ partial "components/avatar-list" (dict "page" . "type" "like") }}
@@ -37,7 +37,7 @@
             {{ end }}
             {{ if (ge ($.Scratch.Get "__repost_cnt") 1) }}
             <div class="c-post__reactions-reposts">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
+                <svg class="o-icon" aria-hidden="true">
                     <use href="#icon-repost"></use>
                 </svg>
                 {{ partial "components/avatar-list" (dict "page" . "type" "repost") }}
@@ -45,7 +45,7 @@
             {{ end }}
             {{ if (ge ($.Scratch.Get "__reply_cnt") 1) }}
             <div class="c-post__reactions-comments">
-                <svg class="o-icon u-mr-1" aria-hidden="true">
+                <svg class="o-icon" aria-hidden="true">
                     <use href="#icon-comments"></use>
                 </svg>
                 <span class="c-post__reactions-comments-number">
@@ -59,22 +59,22 @@
     {{ with $tweet_id }}
     <div class="c-post__actions">
         <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-            <svg class="o-icon u-mr-1" aria-hidden="true">
+            <svg class="o-icon" aria-hidden="true">
                 <use href="#icon-reply"></use>
             </svg>
-            Reply
+            {{ i18n "reply_note" }}
         </a>
         <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-            <svg class="o-icon u-mr-1" aria-hidden="true">
+            <svg class="o-icon" aria-hidden="true">
                 <use href="#icon-repost"></use>
             </svg>
-            Retweet
+            {{ i18n "retweet_note" }}
         </a>
         <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-            <svg class="o-icon u-mr-1" aria-hidden="true">
+            <svg class="o-icon" aria-hidden="true">
                 <use href="#icon-like"></use>
             </svg>
-            Like
+            {{ i18n "like_note" }}
         </a>
         <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
             <svg class="o-icon" aria-hidden="true">
@@ -87,20 +87,22 @@
     </footer>
     {{ if (ge ($.Scratch.Get "__reply_cnt") 1) }}
     <section class="c-comments__section o-stack--sm">
-        <h2 class="o-heading--md">Replies</h2>
+        <h2 class="o-heading--md">{{ i18n "replies"}}</h2>
         <ul class="c-comments o-stack o-stack--lg@md">
-        {{ range . }}
-            {{ $activity := (index . "activity") }}
+        {{ $comments := . }}
+        {{- $keysInReverseOrder := seq (sub (len . ) 1) -1 0 -}}
+        {{- range $keysInReverseOrder -}}
+            {{ $activity := (index $comments . "activity") }}
             {{ $activity_type := (index $activity "type") }}
             {{ if (eq $activity_type "reply") }}
-                {{ $data := (index . "data") }}
+                {{ $data := (index $comments . "data") }}
                 {{ $mention_url := (index $data "url") }}
                 {{ $mention_content := (index $data "content") }}
                 {{ with (index $data "published") }}
                     {{ $.Scratch.Set "__published_date" ((time .).Local | dateFormat "Mon Jan 2, 2006") }}
                 {{ end }}
-                {{ with (index . "verified_date") }} <!-- Webmention received date -->
-                    {{ $.Scratch.Set "__verified_date" ((time .).Local | dateFormat "Mon Jan 2, 2006 3:04 PM") }}
+                {{ with (index $comments . "verified_date") }} <!-- Webmention received date -->
+                    {{ $.Scratch.Set "__verified_date" ((time .).Local | dateFormat "Jan 2, 2006 · 3:04 PM") }}
                 {{ end }}
                 {{ $author_obj := (index $data "author") }}
                 {{ with $author_obj }}
