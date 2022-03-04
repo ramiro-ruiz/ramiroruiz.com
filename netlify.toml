@@ -30,6 +30,56 @@ HUGO_VERSION = "0.93.1"
 HUGO_ENABLEGITINFO = "true"
 
 [[redirects]]
+  from = "/2019/12/31/blog/quick-update-and-review-of-2019/"
+  to = "https://v3.ramiroruiz.com/2019/12/31/blog/quick-update-and-review-of-2019/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
   from = "/blog/back-to-fighting/"
   to = "https://v3.ramiroruiz.com/blog/back-to-fighting/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/changing-my-ways/"
+  to = "https://v3.ramiroruiz.com/blog/changing-my-ways/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/new-website/"
+  to = "https://v3.ramiroruiz.com/blog/new-website/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/joining-icalia-labs/"
+  to = "https://v3.ramiroruiz.com/blog/joining-icalia-labs/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/the-benefit-of-constraints/"
+  to = "https://v3.ramiroruiz.com/blog/the-benefit-of-constraints/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/best-resource-to-learn-ui-ux/"
+  to = "https://v3.ramiroruiz.com/blog/best-resource-to-learn-ui-ux/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/inherit-fortune/"
+  to = "https://v3.ramiroruiz.com/blog/inherit-fortune/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/play-with-fire/"
+  to = "https://v3.ramiroruiz.com/blog/play-with-fire/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/resuming/"
+  to = "https://v3.ramiroruiz.com/blog/resuming/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/blog/reanudando/"
+  to = "https://v3.ramiroruiz.com/es/blog/reanudando/"
   force = true # COMMENT: ensure that we always redirect
