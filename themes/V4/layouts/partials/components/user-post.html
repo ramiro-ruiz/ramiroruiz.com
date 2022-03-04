@@ -4,7 +4,7 @@
             {{ partial "components/avatar.html" (dict "classes" "c-user-post__avatar u-photo" "avatar_size" .avatar_size "avatar" .avatar "context_author_name" .context_author_name) }}
             <a class="c-user-post__author-name p-name u-url author_url" href="{{ .context_author_url }}">{{ .context_author_name }}</a>
         </span>
-        <a href="{{.context_url}}" class="c-user-post__date u-url"><time class="dt-published" datetime="{{.context_date}}">{{.context_date_friendly}}</time></a>
+        <a href="{{.context_url}}" class="c-user-post__date u-url"><time class="dt-published" datetime="{{.context_date}}">{{.context_date | dateFormat "Jan 2, 2006 · 3:04 PM"}}</time></a>
     </header>
     <div class="c-user-post__text post-text e-content">
         {{.context | safeHTML}}

@@ -12,6 +12,9 @@
     margin-top: var(--space-lg);
     
     @include respond-below(sm) {
+        border-top: rem(1) solid var(--color-text-400);
+        padding-top: var(--space-md);
+        margin-bottom: 0;
         order: 1;
 
         + * {

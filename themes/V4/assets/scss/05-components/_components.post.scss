@@ -278,7 +278,24 @@
                 }
 
                 .c-user-post__text {
-                    @include body-sans-2;
+                    
+                    @media (max-width: 370px) {
+                        @include body-sans-3;
+                        width: calc(100% + rem(52));
+                        margin-left: rem(-52);
+                    }
+
+                    @media (min-width: 370px) {
+                        @include body-sans-2;
+                    }
+                }
+
+                .c-note & .c-user-post__text {
+
+                    @media (max-width: 370px) {
+                        width: calc(100% + var(--space-lg));
+                        margin-left: calc(var(--space-lg) * -1);
+                    }
                 }
             }
          

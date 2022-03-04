@@ -8,8 +8,14 @@
         .c-user-post__author {
             font-weight: 500;
 
+            @media (max-width: 370px) {
+                display: block;
+            }
+
             &::after {
-                content: '·';
+                @media (min-width: 370px)  {
+                    content: '·';
+                }
             }
         }
         .c-user-post__avatar {

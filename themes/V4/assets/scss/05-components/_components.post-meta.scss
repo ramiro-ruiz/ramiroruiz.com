@@ -4,6 +4,10 @@
     display: flex;
     align-items: center;
     text-transform: capitalize;
+
+    .o-icon {
+        margin-right: var(--space-xxs);
+    }
 }
 
 .c-post__meta-item--date__time {
@@ -24,7 +28,7 @@
 
 .c-post__meta-header--article {
 
-    @media (min-width: 375px) {
+    @media (min-width: 380px) {
         display: flex;
         flex-wrap: wrap;
         

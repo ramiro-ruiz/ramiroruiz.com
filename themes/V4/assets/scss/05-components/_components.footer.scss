@@ -48,6 +48,7 @@
 
         .o-icon {
             opacity: .8;
+            margin-right: var(--space-xxs);
         }
 
         @include hocus {
@@ -66,6 +67,7 @@
         }
         
         > p:first-child {
+            filter: none;
             display: flex;
             flex-wrap: wrap;
             align-items: center;

@@ -5,6 +5,7 @@
     border-radius: 50%;
     filter: grayscale(1);
     transition: 0.3s filter linear;
+    box-shadow: 0 0 0 rem(1) var(--color-text-300);
 
     &:hover {
         filter: grayscale(0);

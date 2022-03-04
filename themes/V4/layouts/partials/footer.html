@@ -5,7 +5,7 @@
 				{{ range $i, $e := .Translations }}
 					{{ if $i }},{{ end }}
 				<a href="{{ .Permalink }}" class="c-footer__lang o-link__text u-d-inline-flex u-align-items-center" rel="alternate" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
-					<svg class="o-icon u-mr-1" aria-hidden="true">
+					<svg class="o-icon" aria-hidden="true">
 						<use href="#icon-lang"></use>
 					</svg>
 					<span>{{ $e.Language.LanguageName }}</span>
