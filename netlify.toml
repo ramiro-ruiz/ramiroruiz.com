@@ -83,3 +83,48 @@ HUGO_ENABLEGITINFO = "true"
   from = "/es/blog/reanudando/"
   to = "https://v3.ramiroruiz.com/es/blog/reanudando/"
   force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/juega-con-fuego/"
+  to = "https://v3.ramiroruiz.com/es/blog/juega-con-fuego/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/fortuna-heredada/"
+  to = "https://v3.ramiroruiz.com/es/blog/fortuna-heredada/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/el-mejor-recurso-para-aprender-ui-ux/"
+  to = "https://v3.ramiroruiz.com/es/blog/el-mejor-recurso-para-aprender-ui-ux/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/el-beneficio-de-las-restricciones/"
+  to = "https://v3.ramiroruiz.com/es/blog/el-beneficio-de-las-restricciones/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/integrandome-al-equipo-de-icalia-labs/"
+  to = "https://v3.ramiroruiz.com/es/blog/integrandome-al-equipo-de-icalia-labs/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/nuevo-sitio/"
+  to = "https://v3.ramiroruiz.com/es/blog/nuevo-sitio/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/cambiando-mis-formas/"
+  to = "https://v3.ramiroruiz.com/es/blog/cambiando-mis-formas/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/regresando-a-pelear/"
+  to = "https://v3.ramiroruiz.com/es/blog/regresando-a-pelear/"
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/es/blog/2019/12/31/actualizacion-y-retrospectiva-del-2019/"
+  to = "https://v3.ramiroruiz.com/es/blog/2019/12/31/actualizacion-y-retrospectiva-del-2019/"
+  force = true # COMMENT: ensure that we always redirect
