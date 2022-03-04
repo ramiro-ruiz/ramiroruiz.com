@@ -13,5 +13,5 @@
     {{ $active = or $active (and (eq .Name "About") (eq $current.Type "about")) }}
         <a href="{{ .URL | relLangURL }}" class="c-nav__item {{ if $active }}is-active{{ end }}">{{ .Name }}</a>
     {{ end }}
-    <a href="{{"all-notes"| relLangURL}}" class="c-nav__item {{- if in (.Permalink | string) "/note" | or ( in (.Permalink | string) "all-notes") }} is-active{{- end -}}">{{i18n "notes"}}</a>
+    <a href="{{"all-notes"| relLangURL}}" class="c-nav__item {{- if eq .Type "photos" "links" "replies" "notes" "likes" "videos" | or ( in (.Permalink | string) "all-notes") | or ( in (.Permalink | string) "notas") }} is-active{{- end -}}">{{i18n "notes"}}</a>
 </nav>
