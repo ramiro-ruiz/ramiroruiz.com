@@ -204,6 +204,10 @@
                 grid-gap: var(--space-xs);
                 width: 100%;
             }
+
+            .o-icon {
+                margin-right: var(--space-xxs);
+            }
             
             > .c-btn {
                 min-width: auto;
@@ -238,6 +242,10 @@
                 & + * {
                     margin-left: var(--space-lg);
                 }
+            }
+
+            .o-icon {
+                margin-right: var(--space-xxs);
             }
         }
 

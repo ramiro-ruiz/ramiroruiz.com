@@ -23,6 +23,10 @@
                 padding-top: var(--space-xs);
                 border-top: rem(1.5) solid var(--color-text-300);
             }
+
+            > * + * {
+                margin-top: var(--space-unit);
+            }
         }
 
         .c-note__context-wrapper {
