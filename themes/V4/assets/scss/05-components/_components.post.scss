@@ -200,6 +200,13 @@
             border-bottom: rem(1) solid var( --color-text-200);
             color: var(--color-text-800);
 
+            @include respond-below(xs) {
+
+                span {
+                    display: none;
+                }
+            }
+
             @include respond-below(md) {
                 grid-gap: var(--space-xs);
                 width: 100%;
