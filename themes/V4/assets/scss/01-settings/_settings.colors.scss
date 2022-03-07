@@ -86,6 +86,9 @@
   --color-text-900:       var(--color-grey-900);
   --color-text:           var(--color-dark);
   --color-bg:             var(--color-white);
+  --color-footer-bg:      var(--color-dark);
+  --color-footer-social:  var(--color-grey-900);
+  --color-footer-text:    var(--color-white);
 
   @media (prefers-color-scheme: dark) {
     --color-text-100: 		#2B2927;
@@ -98,6 +101,7 @@
     --color-text:         #E2E0DF;
     --color-btn:		      #E2E0DF;
     --color-bg:           #21201E;
+    --color-footer-bg:    #0f0f10;
     --color-btn-background: linear-gradient(180deg, var(--color-text-100) 46.07%, var(--color-text-200) 100%);
     --color-btn-border: 	rgba(255,255,255,.75);
     --glass-lightness:		0%;

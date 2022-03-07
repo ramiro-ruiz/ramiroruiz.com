@@ -66,3 +66,8 @@ type = [ "HTML", "RSS"]
 [sitemap]
   ChangeFreq = "daily"
   Priority = "1"
+
+
+[caches]
+  [caches.getjson]
+    maxAge = 0

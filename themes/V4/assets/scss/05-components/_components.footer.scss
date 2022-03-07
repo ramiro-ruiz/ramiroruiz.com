@@ -1,8 +1,8 @@
 .c-footer {
     padding-top: rem(56);
     padding-bottom: rem(96);
-    background-color: var(--color-text);
-    color: var(--color-bg);
+    background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
     font-weight: 250;
     @include font-sans;
 
@@ -38,8 +38,19 @@
         &:hover,
         &:focus,
         .o-icon:hover + span  {
-            color: var(--color-bg);
+            color: var(--color-white);
             text-decoration-color: var(--color-bg);
+        }
+    }
+
+    .c-btn--light {
+        background: transparent;
+        color: var(--color-white);
+        border-color: var(--color-white);
+
+        @include hocus() {
+        background: var(--color-white);
+        color: var(--color-dark)
         }
     }
 }
@@ -87,7 +98,7 @@
         margin: 0 rem(2);
         padding: rem(4);
         border-radius: rem(2);
-        background: var(--color-text-900);
+        background: var(--color-footer-social);
 
         .o-icon {
             opacity: .8;
@@ -96,8 +107,8 @@
         @include hocus {
             & {
                 transform: translateY(rem(-1));
-                background: var(--color-text-800);
-                color: var(--color-bg)
+                background: var(--color-dark);
+                color: var(--color-white)
             }
 
             .o-icon {
