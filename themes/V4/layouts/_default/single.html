@@ -5,7 +5,7 @@
 			{{ $blog_param_type := "post"}}
 			{{ $blog_item := eq $blog_param $blog_param_type}}
 			{{ $.Scratch.Set "blog_item" $blog_item }}
-				{{- if $blog_item -}}
+				{{- if .Title -}}
 				<h1 class="c-post-title">
                     {{.Title}}
                 </h1>
@@ -24,10 +24,10 @@
 								{{ end }}
 								<span class="c-post__meta-item--date__time">at {{ .Date.Format "3:04 PM" }}</span></span>
 						</div>
-						{{- if $blog_item -}}
+						{{- if .Title -}}
 							{{ partial "components/meta-read" . }}
 						{{- end -}}
-					{{ if $blog_item }}</div{{else}}</h1{{end}}>
+					{{ if .Title }}</div{{else}}</h1{{end}}>
 				</div>
 				<!-- Defining type name classes -->
 				{{ $type := "text" }}
