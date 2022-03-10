@@ -9,7 +9,7 @@
     {{ range .Site.Menus.nav }}
     {{ $active := or ($current.IsMenuCurrent "nav" .) ($current.HasMenuCurrent "nav" .) }}
     {{ $active = or $active (eq .Name $current.Title) }}
-    {{ $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog")) }}
+    {{ $active = or $active (and (eq .Name "Blog") (eq $current.Type "blog")) }}
     {{ $active = or $active (and (eq .Name "About") (eq $current.Type "about")) }}
         <a href="{{ .URL | relLangURL }}" class="c-nav__item {{ if $active }}is-active{{ end }}">{{ .Name }}</a>
     {{ end }}
