@@ -22,7 +22,7 @@
         grid-row: 1;
         @include heading-serif-4;
 
-        @include respond-above(sm) {
+        @include respond-above(xs) {
             @include heading-serif-3;
         }
 
@@ -152,7 +152,6 @@
     .c-post__content {
         position: relative;
         z-index: 5;
-        -webkit-transform: translate3d(0,0,0);
         
         @include respond-above(sm) {
             top: rem(-4);

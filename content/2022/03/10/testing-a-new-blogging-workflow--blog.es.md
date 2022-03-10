@@ -1,6 +1,6 @@
 ---
 date: 2022-03-10T01:30:06-06:00
-title: 'Probando nuevo flujo para el blog'
+title: 'Probando un nuevo flujo para bloguear'
 slug: 'blog/testing-a-new-blogging-workflow'
 type: 'blog'
 tags:
