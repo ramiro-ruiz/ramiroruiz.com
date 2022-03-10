@@ -65,11 +65,11 @@
   }
 
   &.c-btn--sm {
-    font-weight: 300;
+    font-weight: 350;
     line-height: 1.4;
     min-height: auto;
     border-width: rem(1);
-    padding: var(--space-xxxs) var(--space-unit);
+    padding: var(--space-xxxs) var(--space-sm);
   }
 
   &.c-btn--light {

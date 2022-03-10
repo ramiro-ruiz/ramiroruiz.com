@@ -57,34 +57,34 @@
     {{ end }}
     {{ $tweet_id := $.Scratch.Get "tweet_id" }}
     {{ with $tweet_id }}
-    <div class="c-post__actions">
-        <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-            <svg class="o-icon" aria-hidden="true">
-                <use href="#icon-reply"></use>
-            </svg>
-            <span>{{ i18n "reply_note" }}</span>
-        </a>
-        <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-            <svg class="o-icon" aria-hidden="true">
-                <use href="#icon-repost"></use>
-            </svg>
-            <span>{{ i18n "retweet_note" }}</span>
-        </a>
-        <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-            <svg class="o-icon" aria-hidden="true">
-                <use href="#icon-like"></use>
-            </svg>
-            <span>{{ i18n "like_note" }}</span>
-        </a>
-        <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-            <svg class="o-icon" aria-hidden="true">
-                <use href="#social-twitter"></use>
-            </svg>
-        </a>
-    </div>
-{{ end }}
+        <div class="c-post__actions">
+            <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon" aria-hidden="true">
+                    <use href="#icon-reply"></use>
+                </svg>
+                <span>{{ i18n "reply_note" }}</span>
+            </a>
+            <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon" aria-hidden="true">
+                    <use href="#icon-repost"></use>
+                </svg>
+                <span>{{ i18n "retweet_note" }}</span>
+            </a>
+            <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon" aria-hidden="true">
+                    <use href="#icon-like"></use>
+                </svg>
+                <span>{{ i18n "like_note" }}</span>
+            </a>
+            <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                <svg class="o-icon" aria-hidden="true">
+                    <use href="#social-twitter"></use>
+                </svg>
+            </a>
+        </div>
+    {{ end }}
+</footer>
 {{ with $webmentions_rcv.links }}
-    </footer>
     {{ if (ge ($.Scratch.Get "__reply_cnt") 1) }}
     <section class="c-comments__section o-stack--sm">
         <h2 class="o-heading--md">{{ i18n "replies"}}</h2>

@@ -19,9 +19,11 @@
                 </span>
             </div>
         </header>
-        <p class="c-posts__item-summary">
-            {{ .Summary }}
-        </p>
+        <div class="o-stack--sm">
+            <p class="c-posts__item-summary">
+                {{ .Summary }}
+            </p>
+            <a class="c-btn c-btn--sm c-btn--link" href="{{ .RelPermalink }}">{{ "fullpost" | i18n }}</a>
+        </div>
     </div>
-    {{/*  <a class="c-btn c-btn--link" href="{{ .RelPermalink }}">Continue reading →</a>  */}}
 </article>

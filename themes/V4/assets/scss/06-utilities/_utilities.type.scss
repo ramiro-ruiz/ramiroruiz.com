@@ -6,6 +6,10 @@ $transforms: initial, uppercase, capitalize, lowercase;
   }
 }
 
+.u-f-weight--300 {
+    font-weight: 300 !important;
+}
+
 .u-f-weight--350 {
     font-weight: 350 !important;
 }
@@ -24,4 +28,12 @@ $transforms: initial, uppercase, capitalize, lowercase;
 
 .u-f-weight--700 {
     font-weight: 700 !important;
+}
+
+.u-f-sans {
+    @include font-sans;
+}
+
+.u-f-serif {
+    @include font-serif;
 }

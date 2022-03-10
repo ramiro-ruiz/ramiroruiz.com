@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main class="o-container--main o-stack o-stack--xl@sm">
+	{{ partial "components/section-heading.html" (dict "section_heading_current" "yes" "section_heading" .Title) }}
+	<div class="o-grid-page o-stack o-stack--lg@md">
+		<div class="o-grid-page--list">
+			{{ if in (.Permalink | string) "/tags/" }}
+
+			{{ else }}
+				{{ partial "components/tag-list.html" . }}
+			{{ end }}
+			<div class="o-stack o-stack--lg@lg">
+				{{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") 20 }}
+                {{ range $paginator.Pages }}
+					{{ partial "components/list-entry" . }}
+				{{ end }}
+				{{ template "_internal/pagination.html" . }}
+			</div>
+		</div>
+	</div>
+</main>
+{{ end }}
