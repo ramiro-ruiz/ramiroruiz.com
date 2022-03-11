@@ -5,6 +5,11 @@ slug: 'blog/procesos-en-diseno-digital'
 type: 'blog'
 tags:
 - Procesos
+- Aplicaciones de diseño
+- Flash
+- Diseño web
+- Mis inicios
+- Fireworks
 lang: 'es'
 weather: '24.6°C'
 weather_summary: 'Despejado'

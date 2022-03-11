@@ -1,10 +1,15 @@
 ---
 date: 2022-03-11T15:51:10-06:00
-Processes in digital design
+title: 'Processes in digital design'
 slug: 'blog/processes-in-digital-design'
 type: 'blog'
 tags:
-
+- Processes
+- Design applications
+- Flash
+- Web design
+- My beginnings
+- Fireworks
 lang: 'en'
 weather: '76.27°F'
 weather_summary: 'Clear'
