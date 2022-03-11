@@ -3,8 +3,14 @@ date: 2022-03-11T13:11:53-06:00
 title: 'Procesos en diseño digital'
 slug: 'blog/procesos-en-diseno-digital'
 type: 'blog'
+draft: true
 tags:
 - Procesos
+- Aplicaciones de diseño
+- Flash
+- Diseño web
+- Mis inicios
+- Fireworks
 lang: 'es'
 weather: '29.7°C'
 weather_summary: 'Despejado'
