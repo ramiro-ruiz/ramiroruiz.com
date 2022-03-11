@@ -3,6 +3,7 @@ date: 2022-03-11T12:30:08-06:00
 title: 'Procesos en diseño digital'
 slug: 'blog/procesos-en-dise%C3%B1o-digital'
 type: 'blog'
+draft: true
 tags:
 - Procesos
 - Aplicaciones de diseño
