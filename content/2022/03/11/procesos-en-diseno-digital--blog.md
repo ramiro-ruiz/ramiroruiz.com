@@ -19,7 +19,7 @@ long: '-100.4021383453246'
 location_dms: '25° N, 100° W'
 
 
-tweet_id: ''
+tweet_id: '1502418477537181709'
 ---
 Since I started designing and creating digital projects at the end of 2008 I have seen many changes in the processes and tools to design and build for the web. And looking back, I realize how noticeable the changes are due to needs or the arrival of new technology. In the end, everyone decides the way that works best for them, but I firmly believe that the processes that stray the least from the code are the ones that obtain the best and fastest results.
 
