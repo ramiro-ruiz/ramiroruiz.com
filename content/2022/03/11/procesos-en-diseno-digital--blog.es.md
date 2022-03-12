@@ -19,7 +19,7 @@ long: '-100.4021383453246'
 location_dms: '25° N, 100° W'
 
 
-tweet_id: '1502419820020744195'
+tweet_id: ''
 ---
 Desde que comencé a diseñar y crear proyectos digitales a finales del 2008 he visto muchos cambios en los procesos y herramientas para diseñar y construir para la web.  Y haciendo una retrospectiva me doy cuenta de lo notorios que son los cambios debido a  necesidades o a la llegada de una nueva tecnología. Al final cada quien decide la forma que le funcione mejor, pero creo firmemente que los procesos que menos se alejan del código son los que mejores y más rápidos resultados obtienen.
 

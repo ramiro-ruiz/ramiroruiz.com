@@ -17,7 +17,7 @@ lat: '25.7554444646813'
 long: '-100.4021399347902'
 location_dms: '25° N, 100° W'
 
-tweet_id: ''
+tweet_id: '1502418477537181709'
 ---
 I’m finishing my new shortcut to quickly publish blog posts. This is one of my main focuses on this new redesign. The [last version](https://v3.ramiroruiz.com) had a lot of required things that added friction to the blogging experience. I wrote very little as a result.
 

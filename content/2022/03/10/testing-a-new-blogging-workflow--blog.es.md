@@ -17,7 +17,7 @@ lat: '25.7554444646813'
 long: '-100.4021399347902'
 location_dms: '25° N, 100° W'
 
-tweet_id: ''
+tweet_id: '1502419820020744195'
 ---
 Estoy terminando mi nuevo flujo para publicar rápidamente publicaciones de blog.  Este es uno de mis principales enfoques en este nuevo rediseño.  La [última versión](https://v3.ramiroruiz.com/es) tenía muchas cosas requeridas que agregaban fricción a la experiencia de bloguear.  Escribí muy poco como resultado.
 

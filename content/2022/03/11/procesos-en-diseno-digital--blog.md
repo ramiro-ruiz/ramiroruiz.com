@@ -19,7 +19,7 @@ long: '-100.4021383453246'
 location_dms: '25° N, 100° W'
 
 
-tweet_id: '1502418477537181709'
+tweet_id: ''
 ---
 Since I started designing and creating digital projects at the end of 2008 I have seen many changes in the processes and tools to design and build for the web. And looking back, I realize how noticeable the changes are due to needs or the arrival of new technology. In the end, everyone decides the way that works best for them, but I firmly believe that the processes that stray the least from the code are the ones that obtain the best and fastest results.
 
@@ -81,7 +81,7 @@ Fortunately, digital design software began to grow rapidly, starting with [Sketc
 2. I add detail and text in [Figma](https://www.figma.com)
 3. I write the code to build the design in [VS Code](https://code.visualstudio.com)
 
-Speaking of CSS, I resorted to using a [preprocessor](https://es.wikipedia.org/wiki/Sass) and adopted the architecture of [ITCSS](https://www.xfive.co/blog/itcss-scalable -maintainable-css-architecture/) created by [Harry Roberts](https://twitter.com/csswizardry). That made a big difference in the organization of my code and the ease of finding exactly what I was looking to make changes to. As well as not having to deal with [specificity](https://developer.mozilla.org/en/docs/Web/CSS/Specificity) issues.
+Speaking of CSS, I resorted to using a [preprocessor](https://es.wikipedia.org/wiki/Sass) and adopted the architecture of [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) created by [Harry Roberts](https://twitter.com/csswizardry). That made a big difference in the organization of my code and the ease of finding exactly what I was looking to make changes to. As well as not having to deal with [specificity](https://developer.mozilla.org/en/docs/Web/CSS/Specificity) issues.
 
 With the wave of new digital design apps, they helped reduce the time that step took, as well as start creating design systems using *symbols* in Sketch or *components* in Figma. Now it made sense to maintain and iterate the design in those apps.
 
