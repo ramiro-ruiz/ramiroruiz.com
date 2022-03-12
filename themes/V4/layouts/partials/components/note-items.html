@@ -62,14 +62,14 @@
             </a>
             {{ with .Params.tweet_id }}
             <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="u-syndication">
-                <svg class="o-icon" aria-hidden="true">
+                <svg class="o-icon" aria-hidden="true" width="16" height="16">
                     <use href="#social-twitter"></use>
                 </svg>
             </a>
             {{ end }}
         </div>
         <a class="c-note__icon" href="{{ .Type | relLangURL}}">
-            <svg class="c-note__icon" aria-hidden="true">
+            <svg class="c-note__icon" width="16" height="16" aria-hidden="true">
                 <use href="#note-{{$type}}"></use>
             </svg>
         </a>

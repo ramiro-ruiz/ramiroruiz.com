@@ -4,7 +4,7 @@
             <h1 class="c-posts__item-title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
             <div class="c-posts__item-meta">
                 <span class="u-d-inline-flex u-align-items-center">
-                    <svg class="o-icon" aria-hidden="true">
+                    <svg class="o-icon" width="16" height="16" aria-hidden="true">
                         <use href="#icon-calendar"></use>
                     </svg>
                     <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
@@ -12,7 +12,7 @@
                     </time>
                 </span>
                 <span class="u-d-inline-flex u-align-items-center u-ml-2">
-                    <svg class="o-icon" aria-hidden="true">
+                    <svg class="o-icon" width="16" height="16" aria-hidden="true">
                         <use href="#icon-read"></use>
                     </svg>
                     {{ .ReadingTime }} min

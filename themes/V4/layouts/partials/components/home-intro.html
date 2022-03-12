@@ -1,6 +1,6 @@
 <section class="c-home-intro">
     {{ partial "components/hola.html" . }}
-    <p class="o-lead-intro">
-        {{ .Site.Params.leadIntro | safeHTML }}
-    </p>
+    <h1 class="o-lead-intro">
+        <span class="u-visually-hidden">Hola!,</span> {{ .Site.Params.leadIntro | safeHTML }}
+    </h1>
 </section>

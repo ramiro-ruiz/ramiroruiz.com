@@ -1,6 +1,6 @@
 <div class="c-post__meta o-stack--xxs@md">
     <div class="c-post-meta c-post-meta--time">
-        <svg class="o-icon" aria-hidden="true">
+        <svg class="o-icon" width="16" height="16" aria-hidden="true">
             <use href="#icon-time"></use>
         </svg>
         {{ .Date.Format "3:04 PM" }}
@@ -13,7 +13,7 @@
         {{ range $i, $e := .Translations }}
             {{ if $i }},{{ end }}
             <div class="c-post-meta c-post-meta--lang">
-                <svg class="o-icon" aria-hidden="true">
+                <svg class="o-icon" width="16" height="16" aria-hidden="true">
                     <use href="#icon-lang"></use>
                 </svg>
                 <a class="c-post-meta__link" href="{{ .Permalink }}" rel="alternate" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
@@ -24,7 +24,7 @@
     {{ end }}
     {{- if .Params.weather}}
         <div title="{{ .Params.weather_summary }}" class="c-post-meta c-post-meta--weather">
-            <svg class="o-icon" aria-hidden="true">
+            <svg class="o-icon" width="16" height="16" aria-hidden="true">
                 <use href="#icon-weather-{{ .Params.weather_icon }}"></use>
             </svg>
             {{ .Params.weather }}
@@ -32,7 +32,7 @@
     {{ end -}}
     {{- if .Params.location_dms}}
     <div class="c-post-meta c-post-meta--location">
-        <svg class="o-icon" aria-hidden="true">
+        <svg class="o-icon" width="16" height="16" aria-hidden="true">
             <use href="#icon-location"></use>
         </svg>
         <a class="c-post-meta__link p-location h-geo" href="https://www.openstreetmap.org/#map=15/{{.Params.lat}}/{{.Params.long}}">
