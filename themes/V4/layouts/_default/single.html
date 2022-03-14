@@ -16,14 +16,14 @@
 							<svg class="o-icon" width="16" height="16" aria-hidden="true">
 								<use href="#icon-calendar"></use>
                             </svg>
-                            <span>
+							<time class="dt-published" datetime="{{.Date}}">
 								{{ if eq .Lang "es" }}
 								{{ .Date.Day }} {{ index $.Site.Data.meses (printf "%d" .Date.Month) }} {{ .Date.Year }}
 								{{ else }}
 								{{.Date.Format "Jan 2 2006"}}
 								{{ end }}
-								<span class="c-post__meta-item--date__time">at {{ .Date.Format "3:04 PM" }}</span>
-							</span>
+								<span class="c-post__meta-item--date__time">{{"atTime" | i18n}} {{ .Date.Format "3:04 PM" }}</span>
+							</time>
 						</div>
 						{{- if .Title -}}
 							{{ partial "components/meta-read" . }}

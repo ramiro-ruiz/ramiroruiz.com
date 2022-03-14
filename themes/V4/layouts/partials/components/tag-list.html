@@ -12,7 +12,7 @@
         {{/* Range through the tags, then range through the pages that contain that tag. */}}
         {{ $pages := .Pages }}
         {{ range $tags }}
-            <li class="c-tag-list__item"><a class="c-tag" href="{{ "/tags/" | relLangURL}}{{ . | urlize }}">{{ . }}</a></li>
+            <li class="c-tag-list__item"><a class="c-tag p-category" href="{{ "/tags/" | relLangURL}}{{ . | urlize }}">{{ . }}</a></li>
         {{ end }}
     </ul>
 </div>

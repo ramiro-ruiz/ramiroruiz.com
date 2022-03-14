@@ -1,4 +1,7 @@
 <div class="h-card" hidden>
-    <img src="/imgs/ramiroruiz.jpg" alt="{{.Site.Params.author}}" />
-    <a class="p-name u-url" href="{{"/" | relLangURL}}">{{.Site.Params.author}}</a>
+    <img class="u-photo" src="/imgs/ramiroruiz.jpg" alt="{{.Site.Params.author}}" />
+    <a class="p-name u-url u-uid" href="{{"/" | relLangURL}}" rel="me">{{.Site.Params.author}}</a>
+    <p class="p-note">
+        {{ "h-cardIntro" | i18n }}
+    </p>
 </div>

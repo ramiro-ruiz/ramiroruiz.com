@@ -49,13 +49,16 @@
 - id: fullpost
   translation: "Continue reading"
 
+- id: atTime
+  translation: "at"
+
 - id: moreposts
   translation: "More posts"
 
 - id: readingTime
   translation:
     one: "One minute read"
-    other: "{{ .Count }} minutes read"
+    other: "{{ .Count }} min read"
 
 - id: photoby
   translation: "Background photo by"
@@ -155,3 +158,6 @@
 
 - id: like_note
   translation: "Like"
+
+- id: h-cardIntro
+  translation: "I’m a designer and serial challenge taker with over 13 years of experience in brand and product design, as a happily curious person I’m always looking to learn or find new ways to improve things."
