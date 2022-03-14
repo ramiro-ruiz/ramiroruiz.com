@@ -23,7 +23,7 @@ author = "Ramiro Ruiz"
 languageName = "English"
 weight = 1
 description= "Personal site of Ramiro Ruiz, designer."
-leadIntro = 'I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Welcome, here you’ll find a little <a href="/about">about me</a>, my <a href="/notes">thoughts</a>, <a href="/likes">likes</a>, <a href="/replies">replies</a> and <a href="/links">links</a> I find interesting.'
+leadIntro = 'I’m Ramiro, a designer & digital builder from Monterrey, Mexico. Welcome, here you’ll find a little <a href="/about">about me</a>, my <a href="/notes">thoughts</a>, <a href="/likes">likes</a>, <a href="/replies">replies</a> and <a href="/links">links</a> I&nbsp;find&nbsp;interesting.'
 og_description= "Designer and serial challenge taker from Monterrey, Mexico."
 
 [languages.en.menu]

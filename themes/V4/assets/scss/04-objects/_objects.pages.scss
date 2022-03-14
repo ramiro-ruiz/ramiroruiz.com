@@ -10,16 +10,6 @@
     @include respond-above(lg) {
         padding-top: var(--space-xl);
      }
-
-     &::after {
-        content: '';
-        background-color: var(--color-footer-bg);
-        width: 100%;
-        height: 240px;
-        display: block;
-        position: fixed;
-        bottom: -238px;
-     }
     
     .c-nav {
         position: fixed; 
