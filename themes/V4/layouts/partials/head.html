@@ -75,5 +75,7 @@
 	{{- end }}
 
 	<!-- UMAMI analytics -->
-	<script async defer data-website-id="3aca1e76-688b-4639-8841-25bdb3df605c" src="https://ramiroruiz.up.railway.app/umami.js"></script>
+	{{- if not .Site.IsServer -}}
+		<script async defer data-website-id="3aca1e76-688b-4639-8841-25bdb3df605c" src="https://ramiroruiz.up.railway.app/umami.js"></script>
+	{{- end -}}
 </head>
