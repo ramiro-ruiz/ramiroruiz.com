@@ -99,6 +99,9 @@
 - id: reply
   translation: "Respuesta"
 
+- id: replied_to
+  translation: "Respondí a"
+
 - id: likes
   translation: "Favoritos"
 

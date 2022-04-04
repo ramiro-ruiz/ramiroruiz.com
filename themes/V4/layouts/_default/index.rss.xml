@@ -21,7 +21,7 @@
     {{- with .OutputFormats.Get "RSS" -}}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end -}}
-    {{ range first 20 (where (where .Site.Pages.ByPublishDate.Reverse "Type" "!=" "likes") "Type" "!=" "page")  }}
+    {{ range first 20 (where .Site.Pages.ByPublishDate.Reverse "Type" "!=" "page")  }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -30,18 +30,7 @@
       <guid>{{ .Permalink }}</guid>
       <description>
         {{ if eq .Type "replies"}}
-          {{- partial "components/notes/reply.html"
-            (dict
-              "avatar" .Params.avatar
-              "avatar_size" "lg"
-              "context_author_name" .Params.context_author_name
-              "context_author_url" .Params.context_author_url
-              "context_url" .Params.context_url
-              "context_date" .Params.context_date
-              "context_date_friendly" .Params.context_date_friendly
-              "context" .Params.context
-            )
-          -}}
+        <h4>{{ "replied_to" | i18n}} <a href="{{.Params.context_url}}">{{.Params.context_author_name}}</a></h4>
         {{ end }}
         {{if eq .Type "links" }}
           {{ partial "components/notes/link.html"
