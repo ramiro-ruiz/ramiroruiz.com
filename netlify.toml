@@ -128,3 +128,18 @@ HUGO_ENABLEGITINFO = "true"
   from = "/es/blog/2019/12/31/actualizacion-y-retrospectiva-del-2019/"
   to = "https://v3.ramiroruiz.com/es/blog/2019/12/31/actualizacion-y-retrospectiva-del-2019/"
   force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "/*"
+  to = "/en/404/"
+  status = 404
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/404/"
+  status = 404
+
+[[redirects]]
+  from = "/es/*"
+  to = "/es/404/"
+  status = 404
