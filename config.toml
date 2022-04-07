@@ -63,6 +63,10 @@ home = [ "HTML", "RSS"]
 section = [ "HTML", "RSS"]
 type = [ "HTML", "RSS"]
 
+[taxonomies]
+  tag = "tags"
+  type = "type"
+
 [sitemap]
   ChangeFreq = "daily"
   Priority = "1"
