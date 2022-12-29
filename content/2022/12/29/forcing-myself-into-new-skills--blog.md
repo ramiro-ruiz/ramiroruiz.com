@@ -6,6 +6,7 @@ type: 'blog'
 tags:
 - Learning
 - Habits
+- Writing
 - Forcing
 lang: 'en'
 weather: '79.9°F'
