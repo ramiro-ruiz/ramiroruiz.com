@@ -127,13 +127,18 @@
             margin-bottom: var(--space-xs);
             padding-bottom: var(--space-unit);
             padding-left: var(--space-md);
-            border-bottom: rem(1.5) solid var(--color-text-300);
             color: var(--color-grey-600);
             font-family: var(--font-sans);
 
             p {
                 @include body-sans-3;
                 max-width: none;
+            }
+
+            & + p {
+                border-top: rem(1.5) solid var(--color-text-300);
+                margin-top: 0;
+                padding-top: var(--space-sm);
             }
         }
     }
