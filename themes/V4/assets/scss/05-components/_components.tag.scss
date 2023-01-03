@@ -27,7 +27,7 @@
     }
 
     @include respond-above(lg) {
-        padding-right: var(--space-unit);
+        padding-left: var(--space-unit);
     }
 
     ul {
