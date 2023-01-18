@@ -133,6 +133,10 @@
             p {
                 @include body-sans-3;
                 max-width: none;
+
+                & + p {
+                    margin-top: var(--space-unit);
+                }
             }
 
             & + p {
