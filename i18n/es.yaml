@@ -136,7 +136,7 @@
   translation: "Colofón"
 
 - id: footer-text
-  translation: '<p>Diseñado y desarrollado con <svg class="o-icon u-mx-1" aria-hidden="true"><use href="#icon-like"></use></svg> en Mty. México.</p>'
+  translation: '<p>Diseñado y desarrollado en Monterrey, MX.</p>'
 
 - id: email-me
   translation: "Envíame un mail"
