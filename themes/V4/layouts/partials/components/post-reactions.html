@@ -56,6 +56,7 @@
         </div>
     {{ end }}
     {{ $tweet_id := $.Scratch.Get "tweet_id" }}
+    {{ $mastodon_link := $.Scratch.Get "mastodon_link" }}
     {{ with $tweet_id }}
         <div class="c-post__actions">
             <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
@@ -81,6 +82,13 @@
                     <use href="#social-twitter"></use>
                 </svg>
             </a>
+            {{ with $mastodon_link }}
+                <a href="{{ . }}" title="{{ i18n "syndicated-mastodon" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                    <svg class="o-icon" aria-hidden="true">
+                        <use href="#social-mastodon"></use>
+                    </svg>
+                </a>
+            {{ end }}
         </div>
     {{ end }}
 </footer>
