@@ -143,3 +143,13 @@ HUGO_ENABLEGITINFO = "true"
   from = "/es/*"
   to = "/es/404/"
   status = 404
+
+[[plugins]]
+  package = "netlify-plugin-webmentions"
+
+	[plugins.inputs]
+	# The base url of your site (optional, default: main URL set in Netlify)
+	baseUrl = "https://ramiroruiz.com"
+
+	# Path to the feed URL (optional, default: /feed.xml)
+	feedPath = "/index.xml"
