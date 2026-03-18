@@ -64,9 +64,14 @@
 	<meta property="og:type" content="website"/>
 
 	<!-- CSS -->
-	{{- $options := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
-	{{- $style := resources.Get "scss/main.scss" | resources.ToCSS $options -}} <!--| fingerprint -->
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+	{{- $style := "" -}}
+	{{- with resources.Get "scss/main.scss" -}}
+		{{- $opts := dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" hugo.IsDevelopment "transpiler" "libsass" -}}
+		{{- with . | toCSS $opts -}}
+			{{- $style = . -}}
+		{{- end -}}
+	{{- end -}}
+	<link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
 
 	<!-- RSS Feeds -->
 	{{ if .IsHome }}<link rel="feed" href="{{ .Permalink }}tweet-feed">{{end}}
@@ -75,7 +80,7 @@
 	{{- end }}
 
 	<!-- UMAMI analytics -->
-	{{- if not .Site.IsServer -}}
+	{{- if not hugo.IsServer -}}
 		<script defer src="https://cloud.umami.is/script.js" data-website-id="8cbfd862-82d5-4ea4-b615-8217d0067f5e"></script>
 	{{- end -}}
 </head>

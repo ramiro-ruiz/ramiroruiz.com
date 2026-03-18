@@ -20,8 +20,16 @@
         <!-- Example:
             curl "https://webmention.io/api/mentions?target=<INSERT-URL-HERE>&per-page=200&page=0"
         -->
-        {{ $webmentions_rcv := getJSON (printf "https://webmention.io/api/mentions?target=%s%s" $domain $page.RelPermalink ) }}
-        <!-- {{ $webmentions_rcv := getJSON (printf "%sapi/mentions?%s&per-page=%d&page=0" .endpoint $wm_targets $num_mentions_max) }} -->
+        {{ $url := printf "https://webmention.io/api/mentions?target=%s%s" $domain $page.RelPermalink }}
+        {{ $webmentions_rcv := dict "links" (slice) }}
+        {{ with resources.GetRemote $url }}
+            {{ if not .Err }}
+                {{ with .Content | transform.Unmarshal }}
+                    {{ $webmentions_rcv = . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{/* Alternative: use .endpoint with $wm_targets for multi-target queries */}}
         {{ $.Scratch.Set "webmentions_rcv" $webmentions_rcv }}
 
         {{ $webmentions_number := len $webmentions_rcv.links }}
