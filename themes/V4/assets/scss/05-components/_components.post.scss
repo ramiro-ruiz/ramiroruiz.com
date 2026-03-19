@@ -152,6 +152,7 @@
     .c-post__content {
         position: relative;
         z-index: 5;
+        min-width: 0;
         
         @include respond-above(sm) {
             top: rem(-4);

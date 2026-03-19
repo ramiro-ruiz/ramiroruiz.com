@@ -64,14 +64,12 @@
 	<meta property="og:type" content="website"/>
 
 	<!-- CSS -->
-	{{- $style := "" -}}
 	{{- with resources.Get "scss/main.scss" -}}
 		{{- $opts := dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" hugo.IsDevelopment "transpiler" "dartsass" -}}
 		{{- with . | toCSS $opts -}}
-			{{- $style = . -}}
+	<link rel="stylesheet" href="{{ .RelPermalink }}">
 		{{- end -}}
 	{{- end -}}
-	<link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
 
 	<!-- RSS Feeds -->
 	{{ if .IsHome }}<link rel="feed" href="{{ .Permalink }}tweet-feed">{{end}}

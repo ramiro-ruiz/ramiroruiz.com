@@ -1,95 +1,84 @@
 /* ==========================================================================
    #Article grid classes
+   Recalculated for the o-grid-page (1fr 2fr 1fr) CSS grid with var(--space-lg)
+   column gap.
+   At sm: content spans columns 2+3 → width = 3fr + gap.
+          Sidebar (col 1) = (100% - gap) / 3.
+   At lg: content spans column 2 → width = 2fr.
+          Each sidebar = 50%.
    ========================================================================== */
 
 .o-pull {
-  
   @include respond-above(sm) {
-    width: var(--w-art-col-2);
-    margin-top: rem(60); 
-  }
-
-  @include respond-between(sm, md) {
-    &.o-pull-right {
-      width: 100%;
-    }
-  }
-
-  @include respond-above(lg) {
-    width: var(--w-art-col-4);
-  }
-
-  @include respond-above(xl) {
-    width: var(--w-art-col-4);
+    margin-top: rem(60);
   }
 }
 
 .o-pull--inset {
-  
   @include respond-above(md) {
     width: 86.9318%;
     margin-top: rem(60);
   }
 }
-  .o-pull--inset-sm {
 
-    @include respond-above(md) {
-      width: var(--w-6-col);
+.o-pull--inset-sm {
+  @include respond-above(md) {
+    width: var(--w-6-col);
 
-      &.o-pull-right {
-        width: var(--w-4-col);
-      }
-    }
-
-    @include respond-above(lg) {
-      
-      &,
-      &.o-pull-right {
-        width: var(--w-6-col--xl);
-      }
+    &.o-pull-right {
+      width: var(--w-4-col);
     }
   }
+
+  @include respond-above(lg) {
+    &,
+    &.o-pull-right {
+      width: var(--w-6-col--xl);
+    }
+  }
+}
 
 .o-pull--left {
-
   @include respond-above(sm) {
-    margin-left: calc((var(--w-art-col-2) + var(--space-lg)) * -1);
+    width: calc((100% - var(--space-lg)) / 3);
+    margin-left: calc((100% + 2 * var(--space-lg)) / -3);
     float: left;
   }
-  
+
   @include respond-above(md) {
     margin-right: var(--space-lg);
   }
-  
+
   @include respond-above(lg) {
-    margin-left: calc((var(--w-art-col-4) + var(--space-lg)) * -1);
+    width: 50%;
+    margin-left: calc(-50% - var(--space-lg));
   }
 }
 
 .o-pull--right {
-  
   @include respond-above(md) {
-      margin-right: 0;
-      margin-left: var(--space-unit);
-      float: right;
+    width: 45%;
+    margin-right: 0;
+    margin-left: var(--space-unit);
+    float: right;
   }
 
   @include respond-above(lg) {
-    margin-right: calc((var(--w-art-col-4) + var(--space-lg)) * -1);
+    width: 50%;
+    margin-right: calc(-50% - var(--space-lg));
     margin-left: var(--space-lg);
   }
 }
 
 .o-pull--full {
-  
   @include respond-above(sm) {
-    margin-left: calc((var(--w-art-col-2) + var(--space-lg)) * -1);
-    width: calc(100% + var(--w-art-col-2) + var(--space-lg));
+    margin-left: calc((100% + 2 * var(--space-lg)) / -3);
+    width: calc(100% + (100% - var(--space-lg)) / 3 + var(--space-lg));
   }
-  
+
   @include respond-above(lg) {
-    margin-left: calc((var(--w-art-col-4) + var(--space-lg)) * -1);
-    width: calc(100% + (var(--w-art-col-4) * 2) + (var(--space-lg) * 2));
+    margin-left: calc(-50% - var(--space-lg));
+    width: calc(200% + 2 * var(--space-lg));
   }
 }
 
@@ -97,32 +86,40 @@
   transform: translateX(calc(var(--space-unit) * -1));
   width: calc(100% + (var(--space-unit) * 2));
 
-  
   @include respond-above(sm) {
     transform: translateX(calc(var(--space-md) * -1));
-    margin-left: calc((var(--w-art-col-2) + var(--space-lg)) * -1);
-    width: calc(100% + var(--w-art-col-2) + var(--space-lg) + (var(--space-md) * 2));
+    margin-left: calc((100% + 2 * var(--space-lg)) / -3);
+    width: calc(
+      100% + (100% - var(--space-lg)) / 3 + var(--space-lg) +
+        (var(--space-md) * 2)
+    );
   }
 
   @include respond-above(lg) {
-    margin-left: calc((var(--w-art-col-4) + var(--space-lg)) * -1);
-    width: calc(100% + (var(--w-art-col-4) * 2) + (var(--space-lg) * 2) + (var(--space-md) * 2));
+    margin-left: calc(-50% - var(--space-lg));
+    width: calc(200% + 2 * var(--space-lg) + (var(--space-md) * 2));
   }
-  
+}
+
+.o-pull--left-bleed {
+  @include respond-above(sm) {
+    transform: translateX(calc(var(--space-md) * -1));
+    margin-left: calc((100% + 2 * var(--space-lg)) / -3);
+    width: calc(100% + (100% + 2 * var(--space-lg)) / 3 + var(--space-md));
+  }
+
   @include respond-above(lg) {
-    //margin-left: calc((var(--w-art-col-4) + var(--space-lg)) * -1);
-    //width: calc(100% + (var(--w-art-col-4) * 2) + (var(--space-lg) * 2));
+    margin-left: calc(-50% - var(--space-lg));
+    width: calc(150% + var(--space-lg) + var(--space-md));
   }
 }
 
 .o-content [class^="o-pull"]:first-child:not(.o-pull--full) {
-
   @include respond-above(sm) {
     margin-top: var(--space-xs);
   }
 
   + * {
-
     @include respond-above(sm) {
       margin-top: 0 !important;
     }
