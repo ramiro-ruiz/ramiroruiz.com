@@ -10,7 +10,6 @@ tags:
 - Web design
 - My beginnings
 - Fireworks
-lang: 'en'
 weather: '76.27°F'
 weather_summary: 'Clear'
 weather_icon: 'clear-day'

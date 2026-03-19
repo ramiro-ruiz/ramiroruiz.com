@@ -10,7 +10,6 @@ tags:
 - Diseño web
 - Mis inicios
 - Fireworks
-lang: 'es'
 weather: '24.6°C'
 weather_summary: 'Despejado'
 weather_icon: 'clear-day'

@@ -9,7 +9,6 @@ tags:
 - Writing
 - Workflows
 - Shortcuts
-lang: 'en'
 weather: '48.9°F'
 weather_summary: 'Clear'
 weather_icon: 'clear-night'

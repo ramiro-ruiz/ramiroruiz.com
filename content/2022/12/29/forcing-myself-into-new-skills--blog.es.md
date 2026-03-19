@@ -8,7 +8,6 @@ tags:
 - Habitos
 - Forzar
 - Escribir
-lang: 'es'
 weather: '26.6°C'
 weather_summary: 'Mayormente nublado'
 weather_icon: 'partly-cloudy-day'

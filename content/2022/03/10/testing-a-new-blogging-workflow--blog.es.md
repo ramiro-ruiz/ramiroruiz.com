@@ -9,7 +9,6 @@ tags:
 - Escribir
 - Flujos de trabajo
 - Shortcuts
-lang: 'es'
 weather: '9.4°C'
 weather_summary: 'Despejado'
 weather_icon: 'clear-night'

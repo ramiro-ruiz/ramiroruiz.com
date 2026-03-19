@@ -8,7 +8,6 @@ tags:
 - Inteligencía artificial
 - Technología
 - Futuro
-lang: 'es'
 weather: '23.1°C'
 weather_summary: 'Despejado'
 weather_icon: 'clear-day'

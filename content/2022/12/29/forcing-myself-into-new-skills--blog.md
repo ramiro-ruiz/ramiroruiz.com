@@ -8,7 +8,6 @@ tags:
 - Habits
 - Writing
 - Forcing
-lang: 'en'
 weather: '79.9°F'
 weather_summary: 'Mostly Cloudy'
 weather_icon: 'partly-cloudy-day'

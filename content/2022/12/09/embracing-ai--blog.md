@@ -8,7 +8,6 @@ tags:
 - Artificial intelligence
 - Tech
 - Future
-lang: 'en'
 weather: '73.66°F'
 weather_summary: 'Clear'
 weather_icon: 'clear-day'
