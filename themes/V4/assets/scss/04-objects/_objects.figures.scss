@@ -6,26 +6,17 @@
     position: relative; 
     z-index: 5;
 
+    img {
+        width: 100%;
+    }
+
     @include respond-above(sm) {
-        left: 30%;
         width: 100vw;
-        transform: translateX(-50%);
+        margin-left: calc(-50vw + 50%);
     
         .o-figure__caption {
             text-align: center;
         }
-    }
-
-    @include respond-above(md) {
-        left: 36%;
-    }
-
-    @include respond-above(lg) {
-        left: 44%;
-    }
-
-    @include respond-above(xl) {
-        left: 50%;
     }
 }
 

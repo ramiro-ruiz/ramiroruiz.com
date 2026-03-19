@@ -66,7 +66,7 @@
 	<!-- CSS -->
 	{{- $style := "" -}}
 	{{- with resources.Get "scss/main.scss" -}}
-		{{- $opts := dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" hugo.IsDevelopment "transpiler" "libsass" -}}
+		{{- $opts := dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" hugo.IsDevelopment "transpiler" "dartsass" -}}
 		{{- with . | toCSS $opts -}}
 			{{- $style = . -}}
 		{{- end -}}

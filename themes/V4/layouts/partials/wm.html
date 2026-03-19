@@ -22,8 +22,9 @@
         -->
         {{ $url := printf "https://webmention.io/api/mentions?target=%s%s" $domain $page.RelPermalink }}
         {{ $webmentions_rcv := dict "links" (slice) }}
-        {{ with resources.GetRemote $url }}
-            {{ if not .Err }}
+        {{ with try (resources.GetRemote $url) }}
+            {{ with .Err }}
+            {{ else with .Value }}
                 {{ with .Content | transform.Unmarshal }}
                     {{ $webmentions_rcv = . }}
                 {{ end }}
