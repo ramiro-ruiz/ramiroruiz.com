@@ -38,6 +38,7 @@ body {
   color: var(--color-text);
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  text-wrap: balance;
 }
 
 /* Greyscale emojis */
@@ -46,7 +47,7 @@ p {
   transition: var(--global-transition);
 
   &:hover {
-      filter: grayscale(.2);;
+    filter: grayscale(0.2);
   }
 }
 
@@ -73,7 +74,7 @@ select {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
   *,
   *::before,
