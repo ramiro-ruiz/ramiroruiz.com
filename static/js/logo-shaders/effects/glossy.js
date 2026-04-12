@@ -21,14 +21,19 @@ float luminance(vec3 c) { return dot(c, vec3(0.299, 0.587, 0.114)); }
 void main() {
   vec2 texel = 1.0 / u_resolution;
   vec4 logo = texture(u_logo, v_uv);
-  float logoLum = luminance(logo.rgb);
+  // Alpha clip
+  if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
   // Normal from gradient
   float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x, 0)).rgb);
   float lumR = luminance(texture(u_logo, v_uv + vec2(texel.x, 0)).rgb);
   float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y)).rgb);
   float lumD = luminance(texture(u_logo, v_uv + vec2(0, texel.y)).rgb);
-  vec3 normal = normalize(vec3((lumL - lumR) * 2.0, (lumU - lumD) * 2.0, 1.0));
+  float aL = texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).a;
+  float aR = texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).a;
+  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).a;
+  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).a;
+  vec3 normal = normalize(vec3((lumL - lumR) * 2.0 + (aL - aR) * 2.0, (lumU - lumD) * 2.0 + (aU - aD) * 2.0, 1.0));
 
   // Lighting
   vec2 lightPos = u_cursor / u_resolution;
@@ -46,8 +51,8 @@ void main() {
   float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 3.0) * u_fresnelStrength;
 
   // Combine
-  vec3 color = u_baseColor * diff * logoLum;
-  color += u_specColor * spec * logoLum;
+  vec3 color = u_baseColor * diff;
+  color += u_specColor * spec;
   color += u_baseColor * fresnel * 0.3;
 
   fragColor = vec4(color, logo.a);

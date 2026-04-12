@@ -33,14 +33,19 @@ float noise(vec2 p) {
 void main() {
   vec2 texel = 1.0 / u_resolution;
   vec4 logo = texture(u_logo, v_uv);
-  float logoLum = luminance(logo.rgb);
+  // Alpha clip
+  if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
   // Emboss normal from logo gradient
   float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x, 0)).rgb);
   float lumR = luminance(texture(u_logo, v_uv + vec2(texel.x, 0)).rgb);
   float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y)).rgb);
   float lumD = luminance(texture(u_logo, v_uv + vec2(0, texel.y)).rgb);
-  vec3 normal = normalize(vec3((lumL - lumR) * u_embossDepth, (lumU - lumD) * u_embossDepth, 1.0));
+  float aL = texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).a;
+  float aR = texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).a;
+  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).a;
+  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).a;
+  vec3 normal = normalize(vec3((lumL - lumR) * u_embossDepth + (aL - aR) * 2.0, (lumU - lumD) * u_embossDepth + (aU - aD) * 2.0, 1.0));
 
   // Surface variation from low-frequency noise
   float surfaceNoise = noise(v_uv * 20.0 + u_time * 0.05) * 0.1;
@@ -64,7 +69,7 @@ void main() {
   vec3 specColor = mix(u_goldTint, vec3(1.0), 0.3) * spec * 0.8;
   vec3 fresnelColor = u_goldTint * fresnel * 0.3;
 
-  vec3 color = (diffColor + specColor + fresnelColor) * logoLum;
+  vec3 color = diffColor + specColor + fresnelColor;
 
   fragColor = vec4(color, logo.a);
 }

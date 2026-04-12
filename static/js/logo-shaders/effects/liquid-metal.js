@@ -46,7 +46,8 @@ float fbm(vec2 p) {
 void main() {
   vec2 texel = 1.0 / u_resolution;
   vec4 logo = texture(u_logo, v_uv);
-  float logoLum = luminance(logo.rgb);
+  // Alpha clip
+  if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
   // Animated noise normal map
   vec2 noiseUV = v_uv * u_rippleScale + u_time * u_rippleSpeed * 0.1;
@@ -72,8 +73,7 @@ void main() {
 
   // Combine
   vec3 color = u_metalColor * env * (0.8 + fresnel * 0.5);
-  color *= logoLum;
-  color += u_metalColor * fresnel * logoLum * 0.2;
+  color += u_metalColor * fresnel * 0.2;
 
   fragColor = vec4(color, logo.a);
 }

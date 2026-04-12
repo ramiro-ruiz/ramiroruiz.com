@@ -51,6 +51,9 @@ void main() {
   }
   glow /= 42.0;
 
+  // Alpha clip
+  if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
+
   // Cursor proximity boost
   float cursorDist = length(px - u_cursor);
   float cursorBoost = 1.0 + 2.0 * exp(-cursorDist * cursorDist / 30000.0);
@@ -65,12 +68,11 @@ void main() {
   vec3 neonGlow = u_glowColor * glow * u_intensity * cursorBoost * pulse;
 
   // Logo as dark silhouette with glow edges
-  float logoShape = luminance(logo.rgb);
   vec3 color = bg + neonGlow;
   // Brighten logo interior slightly with glow color
-  color += u_glowColor * logoShape * 0.15;
+  color += u_glowColor * logo.a * 0.15;
 
-  fragColor = vec4(color, max(logo.a, glow * u_intensity));
+  fragColor = vec4(color, logo.a);
 }
 `;
 

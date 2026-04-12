@@ -25,7 +25,8 @@ float thinFilm(float cosAngle, float thickness, float wavelength) {
 
 void main() {
   vec4 logo = texture(u_logo, v_uv);
-  float logoLum = luminance(logo.rgb);
+  // Alpha clip
+  if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
   // Viewing angle derived from cursor position + UV
   vec2 cursorNorm = u_cursor / u_resolution;
@@ -43,11 +44,11 @@ void main() {
 
   vec3 iridescent = vec3(r, g, b);
 
-  // Apply to logo — luminance-gated (dark stays dark)
-  vec3 color = logo.rgb * mix(vec3(1.0), iridescent, u_iridescence * logoLum);
+  // Apply iridescent color
+  vec3 color = mix(vec3(1.0), iridescent, u_iridescence);
 
   // Boost brightness for the holographic pop
-  color *= 1.0 + logoLum * u_iridescence * 0.3;
+  color *= 1.0 + u_iridescence * 0.3;
 
   fragColor = vec4(color, logo.a);
 }

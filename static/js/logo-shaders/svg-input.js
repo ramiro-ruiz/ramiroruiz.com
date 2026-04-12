@@ -83,16 +83,9 @@ export function getCurrentSVGSource() {
 }
 
 export function loadDefaultLogo(callback) {
-  const svg = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="100%" stop-color="#a0a0a0"/>
-      </linearGradient>
-    </defs>
-    <circle cx="50" cy="50" r="40" fill="url(#g)"/>
-    <polygon points="50,22 65,58 35,58" fill="#333"/>
-    <circle cx="50" cy="50" r="12" fill="none" stroke="#333" stroke-width="2"/>
+  // Bold abstract "R" mark — silhouette with transparent bg for proper alpha clipping
+  const svg = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 20h70c30 0 54 24 54 54 0 22-13 41-32 49l38 57H140l-34-52H80v52H40V20zm40 72h30c12 0 22-10 22-22s-10-22-22-22H80v44z" fill="white"/>
   </svg>`;
   document.getElementById('svgTextarea').value = svg;
   loadSVG(svg, callback);
