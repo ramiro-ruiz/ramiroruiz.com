@@ -18,38 +18,33 @@ uniform float u_distortion;
 
 float luminance(vec3 c) { return dot(c, vec3(0.299, 0.587, 0.114)); }
 
-// Simplex-like noise
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
-
 float noise(vec2 p) {
-  vec2 i = floor(p);
-  vec2 f = fract(p);
+  vec2 i = floor(p); vec2 f = fract(p);
   f = f * f * (3.0 - 2.0 * f);
-  return mix(
-    mix(hash(i), hash(i + vec2(1, 0)), f.x),
-    mix(hash(i + vec2(0, 1)), hash(i + vec2(1, 1)), f.x),
-    f.y
-  );
+  return mix(mix(hash(i), hash(i+vec2(1,0)), f.x), mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), f.x), f.y);
 }
-
 float fbm(vec2 p) {
   float v = 0.0, a = 0.5;
   mat2 rot = mat2(0.8, 0.6, -0.6, 0.8);
-  for (int i = 0; i < 4; i++) {
-    v += a * noise(p);
-    p = rot * p * 2.0;
-    a *= 0.5;
-  }
+  for (int i = 0; i < 4; i++) { v += a * noise(p); p = rot * p * 2.0; a *= 0.5; }
   return v;
+}
+
+vec3 metalEnv(vec3 dir, vec3 col, float bright) {
+  float b1 = pow(max(0.0, sin(dir.x * 4.0 + dir.y * 2.0)), 3.0) * 1.0;
+  float b2 = pow(max(0.0, sin(dir.x * 2.0 - dir.y * 5.0 + 1.2)), 4.0) * 0.7;
+  float b3 = pow(max(0.0, cos(dir.y * 6.0 + dir.x * 2.0)), 2.0) * 0.3;
+  float env = (b1 + b2 + b3) * bright;
+  return mix(col * 0.15, col * 1.5 + vec3(0.1), clamp(env, 0.0, 1.0));
 }
 
 void main() {
   vec2 texel = 1.0 / u_resolution;
   vec4 logo = texture(u_logo, v_uv);
-  // Alpha clip
   if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
-  // Animated noise normal map
+  // Animated noise normals (rippling surface)
   vec2 noiseUV = v_uv * u_rippleScale + u_time * u_rippleSpeed * 0.1;
 
   // Cursor ripple
@@ -57,23 +52,37 @@ void main() {
   float cursorDist = length(v_uv - cursorNorm);
   float ripple = sin(cursorDist * 30.0 - u_time * 4.0) * exp(-cursorDist * 5.0) * 0.3;
 
-  float nx = fbm(noiseUV + vec2(0.1, 0.0)) - fbm(noiseUV - vec2(0.1, 0.0)) + ripple;
-  float ny = fbm(noiseUV + vec2(0.0, 0.1)) - fbm(noiseUV - vec2(0.0, 0.1)) + ripple;
+  float noisX = fbm(noiseUV + vec2(0.1, 0.0)) - fbm(noiseUV - vec2(0.1, 0.0)) + ripple;
+  float noisY = fbm(noiseUV + vec2(0.0, 0.1)) - fbm(noiseUV - vec2(0.0, 0.1)) + ripple;
 
-  vec3 normal = normalize(vec3(nx * u_distortion, ny * u_distortion, 1.0));
+  // Edge bevel
+  float aL = texture(u_logo, v_uv + vec2(-texel.x * 3.0, 0)).a;
+  float aR = texture(u_logo, v_uv + vec2(texel.x * 3.0, 0)).a;
+  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 3.0)).a;
+  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 3.0)).a;
+
+  float nx = noisX * u_distortion + (aL - aR) * 3.0 + (v_uv.x - 0.5) * 0.3;
+  float ny = noisY * u_distortion + (aU - aD) * 3.0 + (v_uv.y - 0.5) * 0.3;
+
+  vec3 normal = normalize(vec3(nx, ny, 1.0));
   vec3 viewDir = vec3(0.0, 0.0, 1.0);
+  vec3 lightDir = normalize(vec3((cursorNorm - 0.5) * 2.0, 0.5));
 
   // Environment reflection
   vec3 reflectDir = reflect(-viewDir, normal);
-  float env = 0.3 + 0.5 * smoothstep(0.3, 0.7, sin(reflectDir.x * 5.0) * cos(reflectDir.y * 3.0));
-  env += 0.2 * smoothstep(0.4, 0.6, sin(reflectDir.x * 2.0 + reflectDir.y * 7.0));
+  vec3 envColor = metalEnv(reflectDir + lightDir * 0.4, u_metalColor, 1.5);
 
   // Fresnel
   float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), u_fresnelPower);
 
-  // Combine
-  vec3 color = u_metalColor * env * (0.8 + fresnel * 0.5);
-  color += u_metalColor * fresnel * 0.2;
+  // Specular
+  vec3 halfDir = normalize(lightDir + viewDir);
+  float spec = pow(max(dot(normal, halfDir), 0.0), 50.0) * 0.7;
+
+  vec3 color = envColor * 1.2;
+  color += vec3(1.0) * spec;
+  color += u_metalColor * fresnel * 0.4;
+  color += u_metalColor * 0.05;
 
   fragColor = vec4(color, logo.a);
 }

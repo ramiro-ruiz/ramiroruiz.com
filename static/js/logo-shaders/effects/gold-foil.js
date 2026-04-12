@@ -18,58 +18,80 @@ uniform float u_roughness;
 float luminance(vec3 c) { return dot(c, vec3(0.299, 0.587, 0.114)); }
 
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
-
 float noise(vec2 p) {
-  vec2 i = floor(p);
-  vec2 f = fract(p);
+  vec2 i = floor(p); vec2 f = fract(p);
   f = f * f * (3.0 - 2.0 * f);
-  return mix(
-    mix(hash(i), hash(i + vec2(1, 0)), f.x),
-    mix(hash(i + vec2(0, 1)), hash(i + vec2(1, 1)), f.x),
-    f.y
-  );
+  return mix(mix(hash(i), hash(i+vec2(1,0)), f.x), mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), f.x), f.y);
+}
+
+// Warm gold environment — rich reflections with golden tones
+vec3 goldEnv(vec3 dir, vec3 tint, float brightness) {
+  float band1 = pow(max(0.0, sin(dir.x * 3.0 + dir.y * 1.5)), 2.0) * 1.0;
+  float band2 = pow(max(0.0, sin(dir.x * 1.5 - dir.y * 3.5 + 1.0)), 3.0) * 0.7;
+  float band3 = pow(max(0.0, cos(dir.y * 5.0 + dir.x * 2.0)), 2.0) * 0.4;
+  float env = (band1 + band2 + band3) * brightness;
+
+  vec3 highlight = tint * 2.0 + vec3(0.15, 0.1, 0.0); // warm white-gold highlights
+  vec3 shadow = tint * vec3(0.4, 0.25, 0.1) * 0.3; // deep warm shadow
+  return mix(shadow, highlight, clamp(env, 0.0, 1.0));
 }
 
 void main() {
   vec2 texel = 1.0 / u_resolution;
   vec4 logo = texture(u_logo, v_uv);
-  // Alpha clip
   if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
-  // Emboss normal from logo gradient
-  float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x, 0)).rgb);
-  float lumR = luminance(texture(u_logo, v_uv + vec2(texel.x, 0)).rgb);
-  float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y)).rgb);
-  float lumD = luminance(texture(u_logo, v_uv + vec2(0, texel.y)).rgb);
-  float aL = texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).a;
-  float aR = texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).a;
-  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).a;
-  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).a;
-  vec3 normal = normalize(vec3((lumL - lumR) * u_embossDepth + (aL - aR) * 2.0, (lumU - lumD) * u_embossDepth + (aU - aD) * 2.0, 1.0));
+  // === BEVEL NORMALS ===
+  float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).rgb);
+  float lumR = luminance(texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).rgb);
+  float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).rgb);
+  float lumD = luminance(texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).rgb);
+  float aL = texture(u_logo, v_uv + vec2(-texel.x * 3.0, 0)).a;
+  float aR = texture(u_logo, v_uv + vec2(texel.x * 3.0, 0)).a;
+  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 3.0)).a;
+  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 3.0)).a;
 
-  // Surface variation from low-frequency noise
-  float surfaceNoise = noise(v_uv * 20.0 + u_time * 0.05) * 0.1;
-  normal = normalize(normal + vec3(surfaceNoise, surfaceNoise, 0.0));
+  float nx = (aL - aR) * 4.0 + (lumL - lumR) * u_embossDepth;
+  float ny = (aU - aD) * 4.0 + (lumU - lumD) * u_embossDepth;
 
-  // Light from cursor
+  // Dome curvature
+  vec2 fromCenter = (v_uv - 0.5) * 0.35;
+  nx += fromCenter.x;
+  ny += fromCenter.y;
+
+  // Subtle surface noise for organic variation
+  float n1 = noise(v_uv * 25.0 + u_time * 0.03);
+  float n2 = noise(v_uv * 25.0 + vec2(5.2, 1.3) + u_time * 0.03);
+  nx += (n1 - 0.5) * 0.15;
+  ny += (n2 - 0.5) * 0.15;
+
+  vec3 normal = normalize(vec3(nx, ny, 1.0));
+
+  // === LIGHTING ===
   vec2 lightPos = u_cursor / u_resolution;
-  vec3 lightDir = normalize(vec3(lightPos - 0.5, 0.5));
+  vec3 lightDir = normalize(vec3((lightPos - 0.5) * 2.0, 0.5));
   vec3 viewDir = vec3(0.0, 0.0, 1.0);
 
-  // Gold BRDF: warm diffuse + tinted specular
-  float diff = max(dot(normal, lightDir), 0.0);
-  vec3 halfDir = normalize(lightDir + viewDir);
-  float spec = pow(max(dot(normal, halfDir), 0.0), 15.0 + (1.0 - u_roughness) * 60.0);
+  // Environment reflection
+  vec3 reflectDir = reflect(-viewDir, normal);
+  vec3 envColor = goldEnv(reflectDir + lightDir * 0.5, u_goldTint, u_lightIntensity);
 
-  // Fresnel — gold has colored Fresnel reflections
+  // Diffuse
+  float diff = max(dot(normal, lightDir), 0.0) * 0.5 + 0.5;
+
+  // Specular — tight bright highlight
+  vec3 halfDir = normalize(lightDir + viewDir);
+  float spec = pow(max(dot(normal, halfDir), 0.0), 30.0 + (1.0 - u_roughness) * 120.0);
+
+  // Gold Fresnel — gold reflects its own tint at grazing angles
   float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 2.5);
 
-  // Combine
-  vec3 diffColor = u_goldTint * (diff * 0.6 + 0.4) * u_lightIntensity;
-  vec3 specColor = mix(u_goldTint, vec3(1.0), 0.3) * spec * 0.8;
-  vec3 fresnelColor = u_goldTint * fresnel * 0.3;
-
-  vec3 color = diffColor + specColor + fresnelColor;
+  // === COMPOSE ===
+  vec3 color = envColor * 0.7;
+  color += u_goldTint * diff * 0.4;
+  color += mix(u_goldTint * 1.5, vec3(1.0), 0.3) * spec * 0.9;
+  color += u_goldTint * fresnel * 0.5;
+  color += u_goldTint * 0.05;
 
   fragColor = vec4(color, logo.a);
 }
@@ -83,8 +105,8 @@ registerEffect({
   schema: {
     goldTint: { type: 'color', label: 'Gold Tint', default: '#d4a843', group: 'Material' },
     embossDepth: { type: 'range', label: 'Emboss Depth', min: 1, max: 8, step: 0.1, default: 3.0, group: 'Material' },
-    lightIntensity: { type: 'range', label: 'Light Intensity', min: 0.5, max: 2.0, step: 0.1, default: 1.2, group: 'Lighting' },
-    roughness: { type: 'range', label: 'Roughness', min: 0, max: 1, step: 0.01, default: 0.3, group: 'Material' },
+    lightIntensity: { type: 'range', label: 'Light Intensity', min: 0.5, max: 3.0, step: 0.1, default: 1.8, group: 'Lighting' },
+    roughness: { type: 'range', label: 'Roughness', min: 0, max: 1, step: 0.01, default: 0.2, group: 'Material' },
   },
   setUniforms(gl, loc, props, hexToVec3) {
     gl.uniform3fv(loc.u_goldTint, hexToVec3(props.goldTint));
