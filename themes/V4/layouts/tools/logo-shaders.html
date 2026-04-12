@@ -1,0 +1,61 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/logo-shaders.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<div class="editor-wrap">
+  <header class="editor-header">
+    <div class="editor-header-left">
+      <a href="{{ "/" | relLangURL }}" class="editor-logo" title="Back to ramiroruiz.com">
+        {{ partial "components/logo.html" . }}
+      </a>
+      <h1 class="editor-title">{{ .Title }}</h1>
+    </div>
+  </header>
+
+  <main class="editor-layout">
+    <aside class="left-panel" id="leftPanel">
+      <div class="svg-input-section">
+        <h2 class="panel-title">Logo</h2>
+        <div class="svg-drop-zone" id="svgDropZone">
+          <p class="drop-label">Paste SVG or drag a file here</p>
+          <textarea class="svg-textarea" id="svgTextarea" placeholder="<svg>...</svg>" rows="4"></textarea>
+          <input type="file" id="svgFileInput" accept=".svg" hidden>
+          <button class="upload-btn" id="uploadBtn">or upload .svg</button>
+        </div>
+      </div>
+      <div class="effect-list-section">
+        <h2 class="panel-title">Effects</h2>
+        <div class="effect-grid" id="effectGrid"></div>
+      </div>
+    </aside>
+
+    <section class="canvas-panel" id="canvasPanel">
+      <div class="canvas-container" id="canvasContainer"></div>
+    </section>
+
+    <aside class="controls-panel" id="controlsPanel">
+      <h2 class="panel-title">Controls</h2>
+      <div class="controls-body" id="controlsBody">
+        <p class="controls-empty">Select an effect to start</p>
+      </div>
+    </aside>
+  </main>
+
+  <section class="code-panel" id="codePanel">
+    <div class="code-tabs">
+      <button class="code-tab active" data-tab="code">Code</button>
+      <button class="code-tab" data-tab="image">Image</button>
+      <button class="code-tab" data-tab="video">Video</button>
+    </div>
+    <div class="code-actions" id="codeActions">
+      <button class="copy-btn" id="copyBtn">Copy Code</button>
+    </div>
+    <div class="output-body" id="outputBody">
+      <pre class="code-output"><code id="codeOutput"></code></pre>
+    </div>
+  </section>
+</div>
+
+<script type="module" src="/js/logo-shaders/editor.js"></script>
+{{ end }}
