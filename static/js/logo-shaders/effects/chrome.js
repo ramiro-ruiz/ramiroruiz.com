@@ -17,67 +17,80 @@ uniform float u_envBrightness;
 
 float luminance(vec3 c) { return dot(c, vec3(0.299, 0.587, 0.114)); }
 
-// Rich procedural environment — studio lighting with multiple bands
-vec3 envMap(vec3 dir, vec3 metalCol) {
-  float d1 = smoothstep(0.3, 0.7, sin(dir.x * 4.0 + dir.y * 2.0)) * 0.9;
-  float d2 = smoothstep(0.2, 0.6, sin(dir.x * 2.0 - dir.y * 5.0 + 1.5)) * 0.7;
-  float d3 = smoothstep(0.4, 0.6, cos(dir.y * 7.0 + dir.x * 3.0 + 0.8)) * 0.5;
-  float d4 = smoothstep(0.3, 0.5, sin(dir.x * 8.0 + dir.y * 1.0 + 2.0)) * 0.3;
-  float env = (d1 + d2 + d3 + d4) * 0.4;
+// Rich studio environment — high contrast bands like a real HDRI
+vec3 studioEnv(vec3 dir, vec3 metalCol, float brightness) {
+  // Multiple light bands at different angles
+  float band1 = pow(max(0.0, sin(dir.x * 3.5 + dir.y * 1.5)), 3.0) * 1.2;
+  float band2 = pow(max(0.0, sin(dir.x * 1.5 - dir.y * 4.0 + 1.2)), 4.0) * 0.8;
+  float band3 = pow(max(0.0, cos(dir.y * 6.0 + dir.x * 2.0 + 0.5)), 2.0) * 0.4;
+  float band4 = pow(max(0.0, sin(dir.x * 8.0 - dir.y * 2.0 + 2.5)), 5.0) * 0.6;
 
-  // Colored reflections — warm highlights, cool shadows
-  vec3 warm = metalCol * 1.3;
-  vec3 cool = metalCol * vec3(0.7, 0.8, 1.0) * 0.5;
-  return mix(cool, warm, env);
+  float env = (band1 + band2 + band3 + band4) * brightness;
+
+  // Warm highlights, cool fill
+  vec3 highlight = metalCol * 1.6 + vec3(0.1);
+  vec3 fill = metalCol * vec3(0.5, 0.55, 0.65) * 0.3;
+  return mix(fill, highlight, clamp(env, 0.0, 1.0));
 }
 
 void main() {
   vec2 texel = 1.0 / u_resolution;
   vec4 logo = texture(u_logo, v_uv);
 
-  // Alpha clip — transparent areas stay transparent
   if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
-  // Normal from luminance gradient (emboss the logo shape)
-  float lumC = luminance(logo.rgb);
+  // === BEVEL NORMALS FROM ALPHA EDGES ===
+  // Sample alpha at multiple radii for edge detection
+  float a = logo.a;
+  float aL = texture(u_logo, v_uv + vec2(-texel.x * 3.0, 0)).a;
+  float aR = texture(u_logo, v_uv + vec2(texel.x * 3.0, 0)).a;
+  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 3.0)).a;
+  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 3.0)).a;
+
+  // Alpha gradient = edge direction and intensity
+  float edgeX = aL - aR;
+  float edgeY = aU - aD;
+
+  // Also get luminance gradient for logos with internal detail
   float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).rgb);
   float lumR = luminance(texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).rgb);
   float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).rgb);
   float lumD = luminance(texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).rgb);
 
-  // Also factor in alpha edges for sharper silhouette normals
-  float aL = texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).a;
-  float aR = texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).a;
-  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).a;
-  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).a;
+  // Combine: alpha edges (bevel at silhouette) + luminance edges (internal detail)
+  float nx = edgeX * 4.0 + (lumL - lumR) * 2.0;
+  float ny = edgeY * 4.0 + (lumU - lumD) * 2.0;
 
-  float nx = (lumL - lumR) * 3.0 + (aL - aR) * 2.0;
-  float ny = (lumU - lumD) * 3.0 + (aU - aD) * 2.0;
+  // === DOME CURVATURE ===
+  // Add subtle dome so flat interiors still catch varying reflections
+  vec2 center = vec2(0.5);
+  vec2 fromCenter = (v_uv - center) * 0.4;
+  nx += fromCenter.x;
+  ny += fromCenter.y;
+
   vec3 normal = normalize(vec3(nx, ny, 1.0));
 
-  // Light from cursor
+  // === LIGHTING ===
   vec2 lightPos = u_cursor / u_resolution;
-  vec3 lightDir = normalize(vec3((lightPos - 0.5) * 1.5, 0.6));
+  vec3 lightDir = normalize(vec3((lightPos - 0.5) * 2.0, 0.5));
   vec3 viewDir = vec3(0.0, 0.0, 1.0);
 
-  // Reflection vector
+  // Environment reflection
   vec3 reflectDir = reflect(-viewDir, normal);
-  vec3 envColor = envMap(reflectDir + lightDir * 0.4, u_metalColor) * u_envBrightness;
+  vec3 envColor = studioEnv(reflectDir + lightDir * 0.5, u_metalColor, u_envBrightness);
 
-  // Fresnel — edges reflect more (like real metal)
-  float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 2.0 + u_roughness * 3.0);
+  // Fresnel — strong edge reflection
+  float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 2.5);
 
-  // Specular highlight
+  // Specular
   vec3 halfDir = normalize(lightDir + viewDir);
-  float spec = pow(max(dot(normal, halfDir), 0.0), 30.0 + (1.0 - u_roughness) * 120.0);
+  float spec = pow(max(dot(normal, halfDir), 0.0), 40.0 + (1.0 - u_roughness) * 150.0);
 
-  // Compose: env reflection + specular + fresnel rim
-  vec3 color = envColor * u_reflectionIntensity * (0.6 + fresnel * 0.4);
-  color += vec3(1.0) * spec * (1.0 - u_roughness * 0.7) * 0.8;
-  color += u_metalColor * fresnel * 0.3;
-
-  // Ambient base so no part of the logo is pure black
-  color += u_metalColor * 0.08;
+  // === COMPOSE ===
+  vec3 color = envColor * u_reflectionIntensity;
+  color += vec3(1.0) * spec * (1.0 - u_roughness * 0.6) * 0.9;
+  color += u_metalColor * fresnel * 0.4;
+  color += u_metalColor * 0.05; // ambient floor
 
   fragColor = vec4(color, logo.a);
 }
@@ -92,7 +105,7 @@ registerEffect({
     metalColor: { type: 'color', label: 'Metal Color', default: '#c0c0c0', group: 'Material' },
     roughness: { type: 'range', label: 'Roughness', min: 0, max: 1, step: 0.01, default: 0.15, group: 'Material' },
     reflectionIntensity: { type: 'range', label: 'Reflection', min: 0.2, max: 3, step: 0.1, default: 1.5, group: 'Lighting' },
-    envBrightness: { type: 'range', label: 'Environment', min: 0.2, max: 3, step: 0.1, default: 1.5, group: 'Lighting' },
+    envBrightness: { type: 'range', label: 'Environment', min: 0.2, max: 3, step: 0.1, default: 1.8, group: 'Lighting' },
   },
   setUniforms(gl, loc, props, hexToVec3) {
     gl.uniform3fv(loc.u_metalColor, hexToVec3(props.metalColor));
