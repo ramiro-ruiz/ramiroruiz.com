@@ -15,6 +15,7 @@ uniform float u_brushAngle;
 uniform float u_highlightWidth;
 uniform float u_noiseIntensity;
 uniform float u_embossDepth;
+uniform float u_bevelWidth;
 
 float luminance(vec3 c) { return dot(c, vec3(0.299, 0.587, 0.114)); }
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
@@ -42,18 +43,35 @@ void main() {
   vec4 logo = texture(u_logo, v_uv);
   if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
-  // Edge bevel + dome
-  float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).rgb);
-  float lumR = luminance(texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).rgb);
-  float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).rgb);
-  float lumD = luminance(texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).rgb);
-  float aL = texture(u_logo, v_uv + vec2(-texel.x * 3.0, 0)).a;
-  float aR = texture(u_logo, v_uv + vec2(texel.x * 3.0, 0)).a;
-  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 3.0)).a;
-  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 3.0)).a;
+  // === MULTI-RADIUS EDGE BEVEL ===
+  float bevelX = 0.0;
+  float bevelY = 0.0;
+  for (int r = 1; r <= 8; r++) {
+    float radius = float(r) * u_bevelWidth;
+    float aL = texture(u_logo, v_uv + vec2(-radius * texel.x, 0.0)).a;
+    float aR = texture(u_logo, v_uv + vec2( radius * texel.x, 0.0)).a;
+    float aU = texture(u_logo, v_uv + vec2(0.0, -radius * texel.y)).a;
+    float aD = texture(u_logo, v_uv + vec2(0.0,  radius * texel.y)).a;
+    float weight = 1.0 / float(r);
+    bevelX += (aL - aR) * weight;
+    bevelY += (aU - aD) * weight;
+  }
 
-  float nx = (aL - aR) * 3.5 + (lumL - lumR) * u_embossDepth + (v_uv.x - 0.5) * 0.3;
-  float ny = (aU - aD) * 3.5 + (lumU - lumD) * u_embossDepth + (v_uv.y - 0.5) * 0.3;
+  float bevelMag = length(vec2(bevelX, bevelY));
+  float bevelIntensity = smoothstep(0.0, 0.5, bevelMag) * 3.5;
+
+  // Luminance gradient for internal detail
+  float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).rgb);
+  float lumR = luminance(texture(u_logo, v_uv + vec2( texel.x * 2.0, 0)).rgb);
+  float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).rgb);
+  float lumD = luminance(texture(u_logo, v_uv + vec2(0,  texel.y * 2.0)).rgb);
+
+  // Edge rim light
+  float rimLight = smoothstep(0.2, 0.4, bevelMag) * (1.0 - smoothstep(0.4, 0.7, bevelMag));
+  rimLight *= 0.35;
+
+  float nx = bevelX * bevelIntensity + (lumL - lumR) * u_embossDepth + (v_uv.x - 0.5) * 0.3;
+  float ny = bevelY * bevelIntensity + (lumU - lumD) * u_embossDepth + (v_uv.y - 0.5) * 0.3;
   vec3 normal = normalize(vec3(nx, ny, 1.0));
 
   // Lighting
@@ -87,6 +105,7 @@ void main() {
   color += vec3(0.95) * anisoSpec * 0.6;
   color += u_steelTint * fresnel * 0.3;
   color += vec3(brush * u_noiseIntensity * 0.04);
+  color += vec3(1.0) * rimLight;
   color += u_steelTint * 0.05;
 
   fragColor = vec4(color, logo.a);
@@ -97,13 +116,14 @@ registerEffect({
   id: 'brushed-steel',
   name: 'Brushed Steel',
   fragmentShader,
-  uniforms: ['u_logo', 'u_resolution', 'u_time', 'u_cursor', 'u_steelTint', 'u_brushAngle', 'u_highlightWidth', 'u_noiseIntensity', 'u_embossDepth'],
+  uniforms: ['u_logo', 'u_resolution', 'u_time', 'u_cursor', 'u_steelTint', 'u_brushAngle', 'u_highlightWidth', 'u_noiseIntensity', 'u_embossDepth', 'u_bevelWidth'],
   schema: {
     steelTint: { type: 'color', label: 'Steel Tint', default: '#b0b8c0', group: 'Material' },
     brushAngle: { type: 'range', label: 'Brush Angle', min: 0, max: 3.14, step: 0.01, default: 0, group: 'Material' },
     highlightWidth: { type: 'range', label: 'Highlight Width', min: 0.2, max: 3.0, step: 0.1, default: 1.0, group: 'Lighting' },
     noiseIntensity: { type: 'range', label: 'Brush Noise', min: 0, max: 1.0, step: 0.05, default: 0.5, group: 'Material' },
     embossDepth: { type: 'range', label: 'Emboss Depth', min: 0.5, max: 5.0, step: 0.1, default: 2.5, group: 'Material' },
+    bevelWidth: { type: 'range', label: 'Bevel Width', min: 1, max: 6, step: 0.1, default: 2.5, group: 'Material' },
   },
   setUniforms(gl, loc, props, hexToVec3) {
     gl.uniform3fv(loc.u_steelTint, hexToVec3(props.steelTint));
@@ -111,5 +131,6 @@ registerEffect({
     gl.uniform1f(loc.u_highlightWidth, props.highlightWidth);
     gl.uniform1f(loc.u_noiseIntensity, props.noiseIntensity);
     gl.uniform1f(loc.u_embossDepth, props.embossDepth);
+    gl.uniform1f(loc.u_bevelWidth, props.bevelWidth);
   },
 });

@@ -14,6 +14,7 @@ uniform vec3 u_goldTint;
 uniform float u_embossDepth;
 uniform float u_lightIntensity;
 uniform float u_roughness;
+uniform float u_bevelWidth;
 
 float luminance(vec3 c) { return dot(c, vec3(0.299, 0.587, 0.114)); }
 
@@ -41,18 +42,35 @@ void main() {
   vec4 logo = texture(u_logo, v_uv);
   if (logo.a < 0.01) { fragColor = vec4(0.0); return; }
 
-  // === BEVEL NORMALS ===
-  float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).rgb);
-  float lumR = luminance(texture(u_logo, v_uv + vec2(texel.x * 2.0, 0)).rgb);
-  float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).rgb);
-  float lumD = luminance(texture(u_logo, v_uv + vec2(0, texel.y * 2.0)).rgb);
-  float aL = texture(u_logo, v_uv + vec2(-texel.x * 3.0, 0)).a;
-  float aR = texture(u_logo, v_uv + vec2(texel.x * 3.0, 0)).a;
-  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 3.0)).a;
-  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 3.0)).a;
+  // === MULTI-RADIUS EDGE BEVEL ===
+  float bevelX = 0.0;
+  float bevelY = 0.0;
+  for (int r = 1; r <= 8; r++) {
+    float radius = float(r) * u_bevelWidth;
+    float aL = texture(u_logo, v_uv + vec2(-radius * texel.x, 0.0)).a;
+    float aR = texture(u_logo, v_uv + vec2( radius * texel.x, 0.0)).a;
+    float aU = texture(u_logo, v_uv + vec2(0.0, -radius * texel.y)).a;
+    float aD = texture(u_logo, v_uv + vec2(0.0,  radius * texel.y)).a;
+    float weight = 1.0 / float(r);
+    bevelX += (aL - aR) * weight;
+    bevelY += (aU - aD) * weight;
+  }
 
-  float nx = (aL - aR) * 4.0 + (lumL - lumR) * u_embossDepth;
-  float ny = (aU - aD) * 4.0 + (lumU - lumD) * u_embossDepth;
+  float bevelMag = length(vec2(bevelX, bevelY));
+  float bevelIntensity = smoothstep(0.0, 0.5, bevelMag) * 3.5;
+
+  // Luminance gradient for internal detail
+  float lumL = luminance(texture(u_logo, v_uv + vec2(-texel.x * 2.0, 0)).rgb);
+  float lumR = luminance(texture(u_logo, v_uv + vec2( texel.x * 2.0, 0)).rgb);
+  float lumU = luminance(texture(u_logo, v_uv + vec2(0, -texel.y * 2.0)).rgb);
+  float lumD = luminance(texture(u_logo, v_uv + vec2(0,  texel.y * 2.0)).rgb);
+
+  float nx = bevelX * bevelIntensity + (lumL - lumR) * u_embossDepth;
+  float ny = bevelY * bevelIntensity + (lumU - lumD) * u_embossDepth;
+
+  // Edge rim light
+  float rimLight = smoothstep(0.2, 0.4, bevelMag) * (1.0 - smoothstep(0.4, 0.7, bevelMag));
+  rimLight *= 0.35;
 
   // Dome curvature
   vec2 fromCenter = (v_uv - 0.5) * 0.35;
@@ -91,6 +109,7 @@ void main() {
   color += u_goldTint * diff * 0.4;
   color += mix(u_goldTint * 1.5, vec3(1.0), 0.3) * spec * 0.9;
   color += u_goldTint * fresnel * 0.5;
+  color += vec3(1.0) * rimLight;
   color += u_goldTint * 0.05;
 
   fragColor = vec4(color, logo.a);
@@ -101,10 +120,11 @@ registerEffect({
   id: 'gold-foil',
   name: 'Gold Foil',
   fragmentShader,
-  uniforms: ['u_logo', 'u_resolution', 'u_time', 'u_cursor', 'u_goldTint', 'u_embossDepth', 'u_lightIntensity', 'u_roughness'],
+  uniforms: ['u_logo', 'u_resolution', 'u_time', 'u_cursor', 'u_goldTint', 'u_embossDepth', 'u_lightIntensity', 'u_roughness', 'u_bevelWidth'],
   schema: {
     goldTint: { type: 'color', label: 'Gold Tint', default: '#d4a843', group: 'Material' },
     embossDepth: { type: 'range', label: 'Emboss Depth', min: 1, max: 8, step: 0.1, default: 3.0, group: 'Material' },
+    bevelWidth: { type: 'range', label: 'Bevel Width', min: 1, max: 6, step: 0.1, default: 2.5, group: 'Material' },
     lightIntensity: { type: 'range', label: 'Light Intensity', min: 0.5, max: 3.0, step: 0.1, default: 1.8, group: 'Lighting' },
     roughness: { type: 'range', label: 'Roughness', min: 0, max: 1, step: 0.01, default: 0.2, group: 'Material' },
   },
@@ -113,5 +133,6 @@ registerEffect({
     gl.uniform1f(loc.u_embossDepth, props.embossDepth);
     gl.uniform1f(loc.u_lightIntensity, props.lightIntensity);
     gl.uniform1f(loc.u_roughness, props.roughness);
+    gl.uniform1f(loc.u_bevelWidth, props.bevelWidth);
   },
 });

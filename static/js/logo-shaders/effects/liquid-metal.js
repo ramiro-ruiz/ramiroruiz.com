@@ -15,6 +15,7 @@ uniform float u_rippleSpeed;
 uniform float u_rippleScale;
 uniform float u_fresnelPower;
 uniform float u_distortion;
+uniform float u_bevelWidth;
 
 float luminance(vec3 c) { return dot(c, vec3(0.299, 0.587, 0.114)); }
 
@@ -55,14 +56,29 @@ void main() {
   float noisX = fbm(noiseUV + vec2(0.1, 0.0)) - fbm(noiseUV - vec2(0.1, 0.0)) + ripple;
   float noisY = fbm(noiseUV + vec2(0.0, 0.1)) - fbm(noiseUV - vec2(0.0, 0.1)) + ripple;
 
-  // Edge bevel
-  float aL = texture(u_logo, v_uv + vec2(-texel.x * 3.0, 0)).a;
-  float aR = texture(u_logo, v_uv + vec2(texel.x * 3.0, 0)).a;
-  float aU = texture(u_logo, v_uv + vec2(0, -texel.y * 3.0)).a;
-  float aD = texture(u_logo, v_uv + vec2(0, texel.y * 3.0)).a;
+  // === MULTI-RADIUS EDGE BEVEL ===
+  float bevelX = 0.0;
+  float bevelY = 0.0;
+  for (int r = 1; r <= 8; r++) {
+    float radius = float(r) * u_bevelWidth;
+    float aL = texture(u_logo, v_uv + vec2(-radius * texel.x, 0.0)).a;
+    float aR = texture(u_logo, v_uv + vec2( radius * texel.x, 0.0)).a;
+    float aU = texture(u_logo, v_uv + vec2(0.0, -radius * texel.y)).a;
+    float aD = texture(u_logo, v_uv + vec2(0.0,  radius * texel.y)).a;
+    float weight = 1.0 / float(r);
+    bevelX += (aL - aR) * weight;
+    bevelY += (aU - aD) * weight;
+  }
 
-  float nx = noisX * u_distortion + (aL - aR) * 3.0 + (v_uv.x - 0.5) * 0.3;
-  float ny = noisY * u_distortion + (aU - aD) * 3.0 + (v_uv.y - 0.5) * 0.3;
+  float bevelMag = length(vec2(bevelX, bevelY));
+  float bevelIntensity = smoothstep(0.0, 0.5, bevelMag) * 3.5;
+
+  // Edge rim light
+  float rimLight = smoothstep(0.2, 0.4, bevelMag) * (1.0 - smoothstep(0.4, 0.7, bevelMag));
+  rimLight *= 0.35;
+
+  float nx = noisX * u_distortion + bevelX * bevelIntensity + (v_uv.x - 0.5) * 0.3;
+  float ny = noisY * u_distortion + bevelY * bevelIntensity + (v_uv.y - 0.5) * 0.3;
 
   vec3 normal = normalize(vec3(nx, ny, 1.0));
   vec3 viewDir = vec3(0.0, 0.0, 1.0);
@@ -82,6 +98,7 @@ void main() {
   vec3 color = envColor * 1.2;
   color += vec3(1.0) * spec;
   color += u_metalColor * fresnel * 0.4;
+  color += vec3(1.0) * rimLight;
   color += u_metalColor * 0.05;
 
   fragColor = vec4(color, logo.a);
@@ -92,9 +109,10 @@ registerEffect({
   id: 'liquid-metal',
   name: 'Liquid Metal',
   fragmentShader,
-  uniforms: ['u_logo', 'u_resolution', 'u_time', 'u_cursor', 'u_metalColor', 'u_rippleSpeed', 'u_rippleScale', 'u_fresnelPower', 'u_distortion'],
+  uniforms: ['u_logo', 'u_resolution', 'u_time', 'u_cursor', 'u_metalColor', 'u_rippleSpeed', 'u_rippleScale', 'u_fresnelPower', 'u_distortion', 'u_bevelWidth'],
   schema: {
     metalColor: { type: 'color', label: 'Metal Color', default: '#a8c8e8', group: 'Material' },
+    bevelWidth: { type: 'range', label: 'Bevel Width', min: 1, max: 6, step: 0.1, default: 2.5, group: 'Material' },
     rippleSpeed: { type: 'range', label: 'Ripple Speed', min: 0.1, max: 2.0, step: 0.05, default: 0.5, group: 'Animation' },
     rippleScale: { type: 'range', label: 'Ripple Scale', min: 2, max: 20, default: 8, group: 'Animation' },
     fresnelPower: { type: 'range', label: 'Fresnel Power', min: 1, max: 5, step: 0.1, default: 2.5, group: 'Material' },
@@ -106,5 +124,6 @@ registerEffect({
     gl.uniform1f(loc.u_rippleScale, props.rippleScale);
     gl.uniform1f(loc.u_fresnelPower, props.fresnelPower);
     gl.uniform1f(loc.u_distortion, props.distortion);
+    gl.uniform1f(loc.u_bevelWidth, props.bevelWidth);
   },
 });
