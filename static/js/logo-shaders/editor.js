@@ -124,14 +124,39 @@ function renderCanvas() {
   let cursor = { x: canvas.width / 2, y: canvas.height / 2 };
   let uniforms = { ...activeProps };
   let animFrame = null;
+  let userInteracted = false;
 
   canvas.addEventListener('mousemove', (e) => {
+    userInteracted = true;
     cursor = cssToCanvas(canvas, e.clientX, e.clientY);
+  });
+
+  canvas.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    userInteracted = true;
+    const touch = e.touches[0];
+    cursor = cssToCanvas(canvas, touch.clientX, touch.clientY);
+  }, { passive: false });
+
+  canvas.addEventListener('touchstart', (e) => {
+    userInteracted = true;
+    const touch = e.touches[0];
+    cursor = cssToCanvas(canvas, touch.clientX, touch.clientY);
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+    userInteracted = false;
   });
 
   function render(time) {
     animFrame = requestAnimationFrame(render);
     const t = time / 1000;
+
+    // Auto-animate light when no interaction (subtle orbit)
+    if (!userInteracted) {
+      cursor.x = canvas.width * (0.5 + 0.3 * Math.sin(t * 0.5));
+      cursor.y = canvas.height * (0.5 + 0.2 * Math.cos(t * 0.7));
+    }
 
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.uniform1i(loc.u_logo, 0);
