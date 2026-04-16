@@ -46,6 +46,7 @@
       type: "textarea",
       name: "empresa_valores",
       q: "\u00bfCu\u00e1les son los valores que busca representar su empresa?",
+      hint: "Ej: Innovaci\u00f3n, honestidad, calidad, cercan\u00eda, excelencia, sustentabilidad\u2026",
     },
     {
       type: "textarea",
@@ -57,12 +58,15 @@
       type: "textarea",
       name: "logos_referencia",
       q: "Mencione algunos logos que le agraden visualmente y explique por qu\u00e9.",
+      hintHtml: 'Puede buscar inspiraci\u00f3n en <a href="https://logopond.com" target="_blank" rel="noopener">Logopond</a> y <a href="https://www.logomoose.com" target="_blank" rel="noopener">LogoMoose</a>.',
+      upload: true,
     },
     {
       type: "textarea",
       name: "competidores",
       q: "Mencione dos o tres de sus competidores.",
       hint: "Mencione los puntos fuertes y d\u00e9biles de su imagen.",
+      upload: true,
     },
 
     { type: "section", title: "Su Audiencia", num: "02" },
@@ -101,6 +105,7 @@
       type: "textarea",
       name: "marca_iconos",
       q: "\u00bfTiene im\u00e1genes o iconos espec\u00edficos en mente para su logo?",
+      upload: true,
     },
     {
       type: "input",
@@ -202,6 +207,109 @@
   function autoGrow(textarea) {
     textarea.style.height = "auto";
     textarea.style.height = textarea.scrollHeight + "px";
+  }
+
+  function buildUpload(name) {
+    var wrap = el("div", { className: "q-upload" });
+    var input = el("input", {
+      type: "file",
+      name: name,
+      accept: "image/*",
+      multiple: "multiple",
+      className: "q-upload__input",
+    });
+    var zone = el("div", { className: "q-upload__zone" });
+    zone.appendChild(input);
+    var zoneLabel = el("span", { className: "q-upload__zone-label" });
+    zoneLabel.innerHTML =
+      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>' +
+      " <span>Subir im\u00e1genes</span>";
+    zone.appendChild(zoneLabel);
+    var preview = el("div", { className: "q-upload__preview" });
+
+    input.addEventListener("dragover", function (e) {
+      e.preventDefault();
+      zone.classList.add("is-dragover");
+    });
+    input.addEventListener("dragleave", function () {
+      zone.classList.remove("is-dragover");
+    });
+    input.addEventListener("drop", function (e) {
+      e.preventDefault();
+      zone.classList.remove("is-dragover");
+      handleFiles(e.dataTransfer.files);
+    });
+
+    input.addEventListener("change", function () {
+      handleFiles(input.files);
+    });
+
+    var MAX_SIZE = 4 * 1024 * 1024; // 4MB (leave room under 5MB limit)
+    var MAX_DIM = 1600;
+
+    function compressImage(file, callback) {
+      var img = new Image();
+      img.onload = function () {
+        var w = img.width;
+        var h = img.height;
+        if (w > MAX_DIM || h > MAX_DIM) {
+          if (w > h) { h = Math.round(h * MAX_DIM / w); w = MAX_DIM; }
+          else { w = Math.round(w * MAX_DIM / h); h = MAX_DIM; }
+        }
+        var canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+        canvas.toBlob(
+          function (blob) {
+            var compressed = new File([blob], file.name.replace(/\.\w+$/, ".jpg"), {
+              type: "image/jpeg",
+            });
+            callback(compressed);
+          },
+          "image/jpeg",
+          0.82,
+        );
+        URL.revokeObjectURL(img.src);
+      };
+      img.src = URL.createObjectURL(file);
+    }
+
+    function addThumb(file) {
+      var thumb = el("div", { className: "q-upload__thumb" });
+      var img = document.createElement("img");
+      img.src = URL.createObjectURL(file);
+      img.alt = file.name;
+      var remove = el("button", {
+        className: "q-upload__remove",
+        type: "button",
+        html: "\u00d7",
+        "aria-label": "Eliminar",
+      });
+      remove.addEventListener("click", function () {
+        thumb.remove();
+      });
+      thumb.appendChild(img);
+      thumb.appendChild(remove);
+      thumb._file = file;
+      preview.appendChild(thumb);
+    }
+
+    function handleFiles(fileList) {
+      Array.from(fileList).forEach(function (file) {
+        if (!file.type.startsWith("image/")) return;
+        if (file.size > MAX_SIZE) {
+          compressImage(file, addThumb);
+        } else {
+          addThumb(file);
+        }
+      });
+      input.value = "";
+    }
+
+    wrap.appendChild(zone);
+    wrap.appendChild(preview);
+    return wrap;
   }
 
   // ── Build Slides ──
@@ -313,7 +421,9 @@
       }),
     );
     content.appendChild(el("h2", { className: "q-question", text: q.q }));
-    if (q.hint)
+    if (q.hintHtml)
+      content.appendChild(el("p", { className: "q-hint", html: q.hintHtml }));
+    else if (q.hint)
       content.appendChild(el("p", { className: "q-hint", text: q.hint }));
     var field = el("div", { className: "q-field" });
     var ta = el("textarea", {
@@ -326,6 +436,7 @@
       autoGrow(ta);
     });
     field.appendChild(ta);
+    if (q.upload) field.appendChild(buildUpload(q.name + "_files"));
     content.appendChild(field);
     var actions = buildActions(isLast);
     var hint = actions.querySelector(".q-key-hint");
@@ -535,45 +646,50 @@
     }
 
     function collectData() {
-      var data = {};
-      // Inputs and textareas
-      container.querySelectorAll("input, textarea").forEach(function (el) {
-        if (el.name && el.value.trim()) data[el.name] = el.value.trim();
-      });
+      var fd = new FormData();
+      fd.append("access_key", ACCESS_KEY);
+      // Text inputs and textareas
+      var nombre = "";
+      var empresa = "";
+      container
+        .querySelectorAll("input[type=text], input[type=email], textarea")
+        .forEach(function (el) {
+          if (el.name && el.value.trim()) {
+            fd.append(el.name, el.value.trim());
+            if (el.name === "nombre") nombre = el.value.trim();
+            if (el.name === "empresa_nombre") empresa = el.value.trim();
+          }
+        });
       // Rating buttons
       container
         .querySelectorAll(".q-rating-btn.is-selected")
         .forEach(function (btn) {
-          data[btn.dataset.name] = btn.dataset.value;
+          fd.append(btn.dataset.name, btn.dataset.value);
         });
-      return data;
+      // TODO: File uploads require Web3Forms Pro ($4/mo) or a free image host
+      // like Cloudinary. For now files are collected but not sent.
+      // container.querySelectorAll(".q-upload__thumb").forEach(function (thumb) {
+      //   if (thumb._file) fd.append("attachment", thumb._file, thumb._file.name);
+      // });
+      fd.append(
+        "subject",
+        "Cuestionario de Logo \u2014 " + (empresa || nombre || "Sin nombre"),
+      );
+      fd.append("from_name", nombre || "An\u00f3nimo");
+      return fd;
     }
 
     function submit() {
-      var data = collectData();
+      var fd = collectData();
       var btn = slides[current].querySelector(".q-btn");
       var origHTML = btn.innerHTML;
       btn.innerHTML = "Enviando\u2026";
       btn.classList.add("q-btn--loading");
 
-      var payload = Object.assign(
-        {
-          access_key: ACCESS_KEY,
-          subject:
-            "Cuestionario de Logo \u2014 " +
-            (data.empresa_nombre || data.nombre || "Sin nombre"),
-          from_name: data.nombre || "An\u00f3nimo",
-        },
-        data,
-      );
-
       fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
+        headers: { Accept: "application/json" },
+        body: fd,
       })
         .then(function (res) {
           return res.json();

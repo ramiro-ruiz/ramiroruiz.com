@@ -1,9 +1,8 @@
 /* Questionnaire — Typeform-style one-at-a-time form */
 
 :root {
-  --q-accent: hsl(24, 80%, 52%);
-  --q-accent-hover: hsl(24, 80%, 44%);
-  --q-accent-soft: hsl(24, 70%, 95%);
+  --q-accent: var(--color-dark, hsl(240, 2%, 12%));
+  --q-accent-hover: var(--color-dark-700, hsl(240, 1%, 20%));
   --q-accent-text: #fff;
   --q-radius: 6px;
   --q-transition: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
@@ -11,9 +10,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --q-accent: hsl(24, 75%, 58%);
-    --q-accent-hover: hsl(24, 75%, 52%);
-    --q-accent-soft: hsl(24, 30%, 18%);
+    --q-accent: var(--color-text, #E2E0DF);
+    --q-accent-hover: var(--color-text-900, #CFCDC9);
+    --q-accent-text: var(--color-bg, #21201E);
   }
 }
 
@@ -83,17 +82,19 @@
 }
 
 .q-home {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-text-400);
+  color: var(--color-text);
   text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: color 0.2s;
+  display: flex;
+  transition: opacity 0.2s;
 }
 
 .q-home:hover {
-  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.q-home .c-logo__svg {
+  height: 28px;
+  width: auto;
 }
 
 .q-counter {
@@ -180,7 +181,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--q-accent);
+  color: var(--color-text-600);
   margin: 0 0 0.75rem;
 }
 
@@ -197,7 +198,7 @@
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--q-accent);
+  color: var(--color-text-600);
   margin: 0 0 0.75rem;
   display: flex;
   align-items: center;
@@ -263,6 +264,110 @@
   overflow: hidden;
 }
 
+/* ── Upload ── */
+.q-upload {
+  margin-top: 1rem;
+}
+
+.q-upload__zone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1.5px dashed var(--color-text-300);
+  border-radius: var(--q-radius);
+  color: var(--color-text-400);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.q-upload__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.q-upload__zone-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.q-upload__zone:hover,
+.q-upload__zone.is-dragover {
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.q-upload__preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.q-upload__preview:empty {
+  display: none;
+}
+
+.q-upload__thumb {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--color-text-200);
+}
+
+.q-upload__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.q-upload__remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.q-upload__thumb:hover .q-upload__remove {
+  opacity: 1;
+}
+
+/* ── Hint links ── */
+.q-hint a {
+  color: var(--color-text-600);
+  text-decoration-color: var(--color-text-400);
+  transition: color 0.2s;
+}
+
+.q-hint a:hover {
+  color: var(--color-text);
+}
+
 /* ── Rating ── */
 .q-rating-list {
   display: flex;
@@ -305,8 +410,8 @@
 }
 
 .q-rating-btn:hover {
-  border-color: var(--q-accent);
-  color: var(--q-accent);
+  border-color: var(--color-text);
+  color: var(--color-text);
 }
 
 .q-rating-btn.is-selected {
