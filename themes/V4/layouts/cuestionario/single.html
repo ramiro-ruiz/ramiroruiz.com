@@ -1,0 +1,23 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/cuestionario.css">
+
+<div class="q-app" id="qApp">
+  <div class="q-progress">
+    <div class="q-progress__fill" id="progressFill"></div>
+  </div>
+
+  <header class="q-header">
+    <button class="q-back" id="backBtn" hidden aria-label="Pregunta anterior">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12.5 15L7.5 10L12.5 5"/>
+      </svg>
+    </button>
+    <a href="{{ "/" | relLangURL }}" class="q-home">ramiroruiz.com</a>
+    <span class="q-counter" id="counter"></span>
+  </header>
+
+  <main class="q-slides" id="slides"></main>
+</div>
+
+<script src="/js/cuestionario.js"></script>
+{{ end }}
