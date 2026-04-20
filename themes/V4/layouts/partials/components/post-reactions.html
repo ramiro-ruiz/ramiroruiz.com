@@ -57,37 +57,55 @@
     {{ end }}
     {{ $tweet_id := $.Scratch.Get "tweet_id" }}
     {{ $mastodon_link := $.Scratch.Get "mastodon_link" }}
-    {{ with $tweet_id }}
+    {{ $bluesky_link := $.Scratch.Get "bluesky_link" }}
+    {{ if or $tweet_id $mastodon_link $bluesky_link }}
         <div class="c-post__actions">
-            <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-                <svg class="o-icon" aria-hidden="true">
-                    <use href="#icon-reply"></use>
-                </svg>
-                <span>{{ i18n "reply_note" }}</span>
-            </a>
-            <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-                <svg class="o-icon" aria-hidden="true">
-                    <use href="#icon-repost"></use>
-                </svg>
-                <span>{{ i18n "retweet_note" }}</span>
-            </a>
-            <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-                <svg class="o-icon" aria-hidden="true">
-                    <use href="#icon-like"></use>
-                </svg>
-                <span>{{ i18n "like_note" }}</span>
-            </a>
-            <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-                <svg class="o-icon" aria-hidden="true">
-                    <use href="#social-twitter"></use>
-                </svg>
-            </a>
-            {{ with $mastodon_link }}
-                <a href="{{ . }}" title="{{ i18n "syndicated-mastodon" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
-                    <svg class="o-icon" aria-hidden="true">
-                        <use href="#social-mastodon"></use>
-                    </svg>
-                </a>
+            {{ with $tweet_id }}
+                <div class="c-post__actions-row c-post__actions-row--twitter">
+                    <a title="Reply using Twitter" href="https://twitter.com/intent/tweet?in_reply_to={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                        <svg class="o-icon" aria-hidden="true">
+                            <use href="#icon-reply"></use>
+                        </svg>
+                        <span>{{ i18n "reply_note" }}</span>
+                    </a>
+                    <a title="Retweet using Twitter" href="https://twitter.com/intent/retweet?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                        <svg class="o-icon" aria-hidden="true">
+                            <use href="#icon-repost"></use>
+                        </svg>
+                        <span>{{ i18n "retweet_note" }}</span>
+                    </a>
+                    <a title="Like using Twitter" href="https://twitter.com/intent/like?tweet_id={{.}}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                        <svg class="o-icon" aria-hidden="true">
+                            <use href="#icon-like"></use>
+                        </svg>
+                        <span>{{ i18n "like_note" }}</span>
+                    </a>
+                    <a href="https://twitter.com/{{ i18n "twitter" }}/status/{{.}}" title="{{ i18n "syndicated-twitter" }}" rel="syndication" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                        <svg class="o-icon" aria-hidden="true">
+                            <use href="#social-twitter"></use>
+                        </svg>
+                    </a>
+                </div>
+            {{ end }}
+            {{ if or $mastodon_link $bluesky_link }}
+                <div class="c-post__actions-row c-post__actions-row--other">
+                    {{ with $mastodon_link }}
+                        <a title="{{ i18n "reply_mastodon" }}" href="{{ . }}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                            <svg class="o-icon" aria-hidden="true">
+                                <use href="#icon-reply"></use>
+                            </svg>
+                            <span>{{ i18n "reply_mastodon" }}</span>
+                        </a>
+                    {{ end }}
+                    {{ with $bluesky_link }}
+                        <a title="{{ i18n "reply_bluesky" }}" href="{{ . }}" class="c-btn c-btn--subtle c-btn--icon u-syndication">
+                            <svg class="o-icon" aria-hidden="true">
+                                <use href="#icon-reply"></use>
+                            </svg>
+                            <span>{{ i18n "reply_bluesky" }}</span>
+                        </a>
+                    {{ end }}
+                </div>
             {{ end }}
         </div>
     {{ end }}

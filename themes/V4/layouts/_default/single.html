@@ -86,6 +86,7 @@
 		</article>
 		{{ $.Scratch.Set "tweet_id" .Params.tweet_id }}
 		{{ $.Scratch.Set "mastodon_link" .Params.mastodon_link }}
+		{{ $.Scratch.Set "bluesky_link" .Params.bluesky_link }}
 		{{- partial "components/post-reactions" . -}}
 	</main>
 {{ end }}

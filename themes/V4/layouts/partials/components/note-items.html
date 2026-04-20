@@ -75,6 +75,13 @@
                     </svg>
                 </a>
                 {{ end }}
+                {{ with .Params.bluesky_link }}
+                <a href="{{.}}" title="{{ i18n "syndicated-bluesky" }}" rel="syndication" class="u-syndication">
+                    <svg class="o-icon" aria-hidden="true" width="16" height="16">
+                        <use href="#social-bluesky"></use>
+                    </svg>
+                </a>
+                {{ end }}
             </div>
         </div>
         <a class="c-note__icon" href="{{ .Type | relLangURL}}">

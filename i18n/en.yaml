@@ -72,6 +72,9 @@
 - id: syndicated-mastodon
   translation: "This post was syndicated to Mastodon"
 
+- id: syndicated-bluesky
+  translation: "This post was syndicated to Bluesky"
+
 - id: notes
   translation: "Notes"
 
@@ -164,6 +167,12 @@
 
 - id: like_note
   translation: "Like"
+
+- id: reply_mastodon
+  translation: "Reply on Mastodon"
+
+- id: reply_bluesky
+  translation: "Reply on Bluesky"
 
 - id: h-cardIntro
   translation: "I’m a designer and serial challenge taker with over 13 years of experience in brand and product design, as a happily curious person I’m always looking to learn or find new ways to improve things."

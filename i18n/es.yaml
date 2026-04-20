@@ -72,6 +72,9 @@
 - id: syndicated-mastodon
   translation: "Esta publicación fue sindicada a Mastodon"
 
+- id: syndicated-bluesky
+  translation: "Esta publicación fue sindicada a Bluesky"
+
 - id: notes
   translation: "Notas"
 
@@ -164,6 +167,12 @@
 
 - id: like_note
   translation: "Me gusta"
+
+- id: reply_mastodon
+  translation: "Responder en Mastodon"
+
+- id: reply_bluesky
+  translation: "Responder en Bluesky"
 
 - id: h-cardIntro
   translation: "Soy un diseñador y un amante de desafíos en serie con mas de 13 años de experiencia en diseño de marcas y productos digitales, como persona felizmente curiosa, siempre estoy buscando aprender o encontrar nuevas formas de mejorar las cosas."
