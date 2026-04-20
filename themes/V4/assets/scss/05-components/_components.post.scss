@@ -216,7 +216,7 @@
     grid-gap: var(--space-xs);
   }
 
-  .o-icon {
+  .o-icon:not(:only-child) {
     margin-right: var(--space-xxs);
   }
 
